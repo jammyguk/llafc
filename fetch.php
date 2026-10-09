@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 use Jadgray\FullTimeApi\Division;
 
 $season = 503728397;
-$group  = '1_647159852';
+$group  = '1_29099243';
 
 try {
     $d = new Division();
