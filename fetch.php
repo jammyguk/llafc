@@ -19,12 +19,84 @@ $leagues = [
         'division' => '862501863',
         'season'   => '503728397',
     ],
-    // [
-    //     'id'       => 'u11-div2',
-    //     'name'     => 'U11 Div 2 Example',
-    //     'division' => '0000000000',
-    //     'season'   => '503728397',
-    // ],
+    [
+        'id'       => 'u12-div2',
+        'name'     => 'U12 Division 2',
+        'division' => '66157653',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div3',
+        'name'     => 'U12 Division 3',
+        'division' => '531402548',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div4',
+        'name'     => 'U12 Division 4',
+        'division' => '475633763',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div5',
+        'name'     => 'U12 Division 5',
+        'division' => '773748290',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div6',
+        'name'     => 'U12 Division 6',
+        'division' => '804709299',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div7',
+        'name'     => 'U12 Division 7',
+        'division' => '809305723',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div8',
+        'name'     => 'U12 Division 8',
+        'division' => '605578398',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div9',
+        'name'     => 'U12 Division 9',
+        'division' => '260569942',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div10',
+        'name'     => 'U12 Division 10',
+        'division' => '29812328',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div11',
+        'name'     => 'U12 Division 11',
+        'division' => '524981514',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div12',
+        'name'     => 'U12 Division 12',
+        'division' => '225046148',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div13',
+        'name'     => 'U12 Division 13',
+        'division' => '336151119',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u12-div14',
+        'name'     => 'U12 Division 14',
+        'division' => '466409266',
+        'season'   => '503728397',
+    ],
 ];
 
 function fetchJson($url, $tries = 3) {
