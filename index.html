@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lionstext - Loughborough Lions AFC U12 Reds</title>
+<title>Lionstext - Loughborough Lions AFC</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
 <style>
 :root{
@@ -24,11 +24,15 @@ body{margin:0;min-height:100%;background:#000;color:var(--white);display:flex;ju
 .hl{background:var(--red);color:var(--white)}
 .logo{display:block;width:11ch;height:auto;margin:.3em 0}
 .rowlogo{display:flex;gap:2ch;align-items:flex-start}
-.fast{display:grid;grid-template-columns:repeat(4,1fr);margin-top:.6em}
+.fast{display:grid;grid-template-columns:repeat(5,1fr);margin-top:.6em}
 .fast button{font:inherit;line-height:1.1;border:0;padding:.1em 0;cursor:pointer;color:#000;text-align:center}
 .fast button[aria-current="page"]{outline:2px solid #fff;outline-offset:-2px}
 .fast button:focus-visible{outline:3px solid #fff;outline-offset:-3px}
-.fast .fr{background:var(--red)}.fast .fg{background:var(--green)}.fast .fy{background:var(--yellow)}.fast .fc{background:var(--cyan)}
+.fast .fr{background:var(--red)}.fast .fg{background:var(--green)}.fast .fy{background:var(--yellow)}.fast .fc{background:var(--cyan)}.fast .fm{background:var(--magenta)}
+.pick{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;color:var(--white);white-space:pre;
+  line-height:1.1;padding:.2em 0;cursor:pointer;overflow:hidden}
+.pick:hover,.pick:focus-visible{background:var(--blue);outline:none}
+.pick.sel{color:var(--yellow)}
 [hidden]{display:none!important}
 @media (prefers-reduced-motion:no-preference){.blink{animation:b 1s steps(1) infinite}@keyframes b{50%{opacity:0}}}
 </style>
@@ -36,35 +40,40 @@ body{margin:0;min-height:100%;background:#000;color:var(--white);display:flex;ju
 <body>
 <div class="tv" id="tv"></div>
 <script>
-const CONFIG={club:"LOUGHBOROUGH LIONS AFC",team:"LOUGHBOROUGH LIONS AFC U12 REDS",league:"U12 DIV 1 D&J MOBILE CATERING LTD",us:"Loughborough Lions AFC U12 Reds",note:"LOADING..."};
+// Team shown the first time someone visits.
+const DEFAULT={league:"u12-div1",team:"Loughborough Lions AFC U12 Reds"};
 const LOGO="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACLAQAAAACBgqylAAADJUlEQVR42p2VMY8cNRiGH3tWt1MEzVBlFaLbQaImAYREgW4noqWIUqdYaFAQxUlpQAp3BlJcwQ8IRaT9EfT4wkk0QE6hoZwlp4AQipzokGbvZscU4/HaK+Cic7M7j/x9fu3v/Wxg1/rRgmRtnA0GsBD+a/NcOV4YDE1W+WUBRplZRDOmsHFm0jYCCpIQCAc92HCJPUgBRgHISefRKgVN5TT2yyoR61jufFdGIAEdbc5aZT///71UwwiU7SjVMshh75DZcC8nSrfzWQBucXjMrQBIXZtlGYCju1BcDsBFCeW9AGwKJdRBJKyUa0p/eBqBJXceujN1u2129i+HM2S9a02oQ7f7iW4DMD3cmP59GoBB+vbNvIhqe3wY68hMvRcCA1CHMwZ5WoQz6vLrK9IEwErvj076SfFgK/miL82nwO64bqNu0J8sYtPxzqNYWPX6QRMBM9yrI1DfzUwEGr0Zd0N747eSUAfDaq0rm2qtLq0+qwmdf87dtx88+eibdz97/OPDNx2Q14dKTn+ZvQQgrVXQyiffQjMQ1kqAankw4iqne33SIjn5E83GsQOj/Q8Zvf/yVwcA8plI278Wur1389fnai4KTCwjexGlYxiDVUmVqcysunJKDvkF7w9yUiiaHqSkDKD0SfOjzuIjv8r9ARIwfaEK1XTXzEqHBEWiemCdN7dXMzR1iU4j6QXVIAQNHPmkgpI2Z/nlfxaqUjtYKDTS3YrXAMX1Le/CrQY0mRdWd92iVi7EQIXy57FkBgZd05eh6+uhys5RF6xtVx+7zh/A49/j25L8ledrOfpAKUQBiFkFsBACGAPi9IJrf9lrlSuAAvnaYrVKDSznlN0TIQHfbdL8u/mbwr+TFUho8x6kugtJ18Pq/s8Y9zI9cODKvAv5HrZf/fk2bPUzFe9tf3wR0ThhpuQtM7+E7EFd8JMurzL4w4UkNbffePqMcd//wl0/E+VPPvoBJhogaTwYG4DMK2bYAEwqf5QnCUA5C0qoIbHBficGsiZ0RdNBPxILVkem0FEKmJgoBWTNJDabsP1Flviga/HJj+u1Ugz727IPaXMn4x+T8hmWmAKmHwAAAABJRU5ErkJggg==";
 const W=40, tv=document.getElementById("tv");
 const U=s=>String(s).toUpperCase(), cut=(s,n)=>U(s).slice(0,n).padEnd(n), rj=(s,n)=>String(s).padStart(n);
-const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
 const DOW=["SUN","MON","TUE","WED","THU","FRI","SAT"], MON=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
 const dd=d=>String(d.getDate()).padStart(2,"0");
 const ln=(t,c="w",x="")=>`<div class="ln ${c} ${x}">${esc(String(t).padEnd(W))}</div>`;
 const band=(t,c="band")=>`<div class="ln ${c}">${esc((" "+t).padEnd(W))}</div>`;
-const dh=(t)=>`<div class="dh band"><span>${esc((" "+t).padEnd(W/2))}</span></div>`;
+const dh=(t)=>`<div class="dh band"><span>${esc((" "+t).slice(0,W).padEnd(W/2))}</span></div>`;
+const pick=(a,v,t,sel)=>`<button class="pick${sel?" sel":""}" data-a="${a}" data-v="${esc(v)}">${esc(String(t).slice(0,W).padEnd(W))}</button>`;
 const res=r=>r.f>r.a?"W":r.f<r.a?"L":"D";
-let cur=100;
-let DATA={results:[],league:[],fixtures:[],table:[],updated:null};
 
-function parseFeed(raw){
-  const pick=(o,keys)=>{for(const k of keys){if(o[k]!==undefined&&o[k]!==null&&o[k]!=="")return o[k];}return undefined;};
+let STATE={league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING..."};
+let RAW={leagues:{},updated:null};
+let DATA={results:[],league:[],fixtures:[],table:[],teams:[],leagueName:"",updated:null};
+let cur=100;
+
+function parseFeed(raw,us){
+  const pk=(o,keys)=>{for(const k of keys){if(o[k]!==undefined&&o[k]!==null&&o[k]!=="")return o[k];}return undefined;};
   const clean=s=>String(s||"").replace(/&amp;/g,"&").replace(/&#39;/g,"'").replace(/&quot;/g,'"').trim();
-  const teamMatches=name=>U(clean(name)).includes(U(CONFIG.us));
+  const teamMatches=name=>!!us&&U(clean(name))===U(clean(us));
   const ts=d=>new Date(d.yr,d.mon-1,d.day).getTime();
   const norm=o=>{
-    const dt=String(pick(o,["fixtureDateTime","matchDate","date","Date","kickOff"])||"");
+    const dt=String(pk(o,["fixtureDateTime","matchDate","date","Date","kickOff"])||"");
     const m=dt.match(/(\d{1,2})\/(\d{1,2})\/(\d{2,4})(?:\s+(\d{1,2}:\d{2}))?/);
     let date=null,time="";
     if(m){let yr=+m[3];if(yr<100)yr+=2000;date={day:+m[1],mon:+m[2],yr:yr};time=m[4]||"";}
-    const sc=String(pick(o,["score","result","scoreLine"])||"").match(/(\d+)\s*[-:–]\s*(\d+)/);
-    let hs=pick(o,["homeScore","homeGoals","HomeScore"]);
-    let as=pick(o,["awayScore","awayGoals","AwayScore"]);
+    const sc=String(pk(o,["score","result","scoreLine"])||"").match(/(\d+)\s*[-:–]\s*(\d+)/);
+    let hs=pk(o,["homeScore","homeGoals","HomeScore"]);
+    let as=pk(o,["awayScore","awayGoals","AwayScore"]);
     if(hs===undefined&&sc){hs=sc[1];as=sc[2];}
-    return {home:clean(pick(o,["homeTeam","home","Home"])),away:clean(pick(o,["awayTeam","away","Away"])),
+    return {home:clean(pk(o,["homeTeam","home","Home"])),away:clean(pk(o,["awayTeam","away","Away"])),
             date,time,hs:hs===undefined?NaN:+hs,as:as===undefined?NaN:+as};
   };
   const fx=(raw.fixtures||[]).map(norm).filter(x=>x.date);
@@ -84,15 +93,15 @@ function parseFeed(raw){
   const league=scored.map(r=>({date:r.date,home:r.home,away:r.away,hs:r.hs,as:r.as,
     own:teamMatches(r.home)||teamMatches(r.away)}));
 
-  // Use the manually supplied table in data.json if present (no goal
-  // difference), otherwise calculate one from scored results.
+  // Use a manually supplied table if the league has one, otherwise
+  // calculate it from the scored results.
   let table;
   if(Array.isArray(raw.table)&&raw.table.length){
     table=raw.table.map(t=>({
-      n:clean(pick(t,["teamName","team","name"])),
-      p:+pick(t,["played","p"])||0, w:+pick(t,["won","w"])||0,
-      d:+pick(t,["drawn","d"])||0, l:+pick(t,["lost","l"])||0,
-      pts:+pick(t,["points","pts"])||0, noGd:true
+      n:clean(pk(t,["teamName","team","name"])),
+      p:+pk(t,["played","p"])||0, w:+pk(t,["won","w"])||0,
+      d:+pk(t,["drawn","d"])||0, l:+pk(t,["lost","l"])||0,
+      pts:+pk(t,["points","pts"])||0, noGd:true
     }));
     table.forEach(t=>{if(teamMatches(t.n))t.own=true;});
   } else {
@@ -106,7 +115,33 @@ function parseFeed(raw){
     Object.values(tbl).forEach(t=>{t.pts=t.w*3+t.d;if(teamMatches(t.n))t.own=true;});
     table=Object.values(tbl);
   }
-  return {fixtures,results,league,table,updated:raw.updated||null};
+
+  // Every team that appears anywhere in this league's data.
+  const names={};
+  fx.concat(rs).forEach(x=>{[x.home,x.away].forEach(n=>{if(n)names[n]=1;});});
+  table.forEach(t=>{if(t.n)names[t.n]=1;});
+  const teams=Object.keys(names).sort((a,b)=>U(a).localeCompare(U(b)));
+
+  return {fixtures,results,league,table,teams};
+}
+
+function compute(){
+  const L=RAW.leagues[STATE.league];
+  DATA=L?parseFeed(L,STATE.team):{results:[],league:[],fixtures:[],table:[],teams:[]};
+  DATA.leagueName=(L&&L.name)||"";
+  DATA.updated=RAW.updated;
+}
+
+function save(){
+  try{localStorage.setItem("lionstext",JSON.stringify({league:STATE.league,team:STATE.team}));}catch(e){}
+  try{history.replaceState(null,"","#"+encodeURIComponent(STATE.league)+"|"+encodeURIComponent(STATE.team));}catch(e){}
+}
+function load(){
+  let s=null;
+  try{if(location.hash.length>1){const a=location.hash.slice(1).split("|");
+      if(a[0]&&a[1])s={league:decodeURIComponent(a[0]),team:decodeURIComponent(a[1])};}}catch(e){}
+  if(!s){try{s=JSON.parse(localStorage.getItem("lionstext"));}catch(e){}}
+  if(s&&s.league&&s.team){STATE.league=s.league;STATE.team=s.team;}
 }
 
 function head(p){
@@ -115,15 +150,24 @@ function head(p){
 }
 
 function page(p){
+  const ids=Object.keys(RAW.leagues);
+  if(p==110&&ids.length==1){STATE.pickLeague=ids[0];p=111;}
+  if(p==111&&!STATE.pickLeague)STATE.pickLeague=STATE.league;
+  const T=U(STATE.team), LN=U(DATA.leagueName);
+  const isLions=T.includes("LOUGHBOROUGH LIONS");
   let h=head(p);
   if(p==100){
     const f=DATA.fixtures[0];
-    h+=dh(CONFIG.team)+ln("");
-    h+=`<div class="rowlogo"><img class="logo" alt="Loughborough Lions AFC crest" src="${LOGO}"><div>`+
-       `<div class="ln c">${esc("LOUGHBOROUGH".padEnd(27))}</div>`+
-       `<div class="ln c">${esc("LIONS AFC".padEnd(27))}</div>`+
-       `<div class="ln w">${esc("EST 2021".padEnd(27))}</div><div class="ln"> </div>`+
-       `<div class="ln y">${esc("U12 DIV 1".padEnd(27))}</div></div></div>`;
+    if(isLions){
+      h+=dh(T)+ln("");
+      h+=`<div class="rowlogo"><img class="logo" alt="Loughborough Lions AFC crest" src="${LOGO}"><div>`+
+         `<div class="ln c">${esc("LOUGHBOROUGH".padEnd(27))}</div>`+
+         `<div class="ln c">${esc("LIONS AFC".padEnd(27))}</div>`+
+         `<div class="ln w">${esc("EST 2021".padEnd(27))}</div><div class="ln"> </div>`+
+         `<div class="ln y">${esc(LN.slice(0,27).padEnd(27))}</div></div></div>`;
+    } else {
+      h+=dh(T)+ln("")+ln(LN,"c")+ln("")+ln("");
+    }
     if(f){
       h+=band("NEXT MATCH","band blink")+
          ln(`${String(f.date.day).padStart(2,"0")} ${MON[f.date.mon-1]}  ${f.t||""} KO`,"y")+
@@ -137,17 +181,17 @@ function page(p){
     } else {
       h+=ln("NO RESULTS YET","w");
     }
-    h+=ln("")+ln(" PRESS A COLOUR BUTTON BELOW","c");
+    h+=ln("")+ln(" PRESS TEAMS TO CHANGE TEAM","c");
   }
   if(p==101){
-    h+=dh("FIXTURES")+ln(CONFIG.team,"c")+ln("");
+    h+=dh("FIXTURES")+ln(T,"c")+ln("");
     if(!DATA.fixtures.length) h+=ln("NO FIXTURES SCHEDULED YET","w");
     DATA.fixtures.forEach(x=>{
       h+=ln(`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]} ${x.t||""} ${x.home?"H":"A"} ${cut(x.opp,18)}`.slice(0,W),"y");
     });
   }
   if(p==102){
-    h+=dh("RESULTS")+ln(CONFIG.league,"c")+ln("");
+    h+=dh("RESULTS")+ln(LN,"c")+ln("");
     if(!DATA.league.length) h+=ln("NO RESULTS YET","w");
     const key=d=>d.yr*10000+d.mon*100+d.day;
     const days={};
@@ -165,7 +209,7 @@ function page(p){
     });
   }
   if(p==103){
-    h+=dh("LEAGUE TABLE")+ln(CONFIG.league,"c")+ln("");
+    h+=dh("LEAGUE TABLE")+ln(LN,"c")+ln("");
     const hasGd=!(DATA.table[0]&&DATA.table[0].noGd);
     h+=`<div class="ln band">${esc((hasGd
       ?("PO  TEAM".padEnd(17)+rj("P",2)+" "+rj("W",2)+" "+rj("D",2)+" "+rj("L",2)+" "+rj("GD",3)+" "+rj("PTS",3))
@@ -181,20 +225,52 @@ function page(p){
       }
       h+=ln(s.slice(0,W),t.own?"hl":"w");});
   }
-  h+=ln("")+ln(DATA.updated?("UPDATED "+U(DATA.updated)).slice(0,W):CONFIG.note,"m");
-  h+=`<nav class="fast" aria-label="Pages">`+[["fr",100,"HOME"],["fg",101,"FIXTURES"],["fy",102,"RESULTS"],["fc",103,"TABLE"]].map(([c,n,l])=>
-     `<button class="${c}" data-p="${n}" ${n==p?'aria-current="page"':""}>${l}</button>`).join("")+`</nav>`;
+  if(p==110){
+    h+=dh("CHOOSE A LEAGUE")+ln("");
+    ids.forEach(id=>{h+=pick("league",id,U(RAW.leagues[id].name||id),id==STATE.league);});
+  }
+  if(p==111){
+    const L=RAW.leagues[STATE.pickLeague]||{};
+    const teams=parseFeed(L,"").teams;
+    h+=dh("CHOOSE A TEAM")+ln(U(L.name||""),"c")+ln("");
+    if(!teams.length) h+=ln("NO TEAMS FOUND YET","w");
+    teams.forEach(n=>{
+      const sel=STATE.pickLeague==STATE.league&&U(n)==U(STATE.team);
+      h+=pick("team",n,(sel?"> ":"  ")+U(n),sel);
+    });
+    if(ids.length>1) h+=ln("")+pick("leagues","","  << ALL LEAGUES",false);
+  }
+  h+=ln("")+ln(DATA.updated?("UPDATED "+U(DATA.updated)).slice(0,W):STATE.note,"m");
+  h+=`<nav class="fast" aria-label="Pages">`+[["fr",100,"HOME"],["fg",101,"FIXTURES"],["fy",102,"RESULTS"],["fc",103,"TABLE"],["fm",110,"TEAMS"]].map(([c,n,l])=>
+     `<button class="${c}" data-p="${n}" ${(n==p||(n==110&&p>=110))?'aria-current="page"':""}>${l}</button>`).join("")+`</nav>`;
   tv.innerHTML=h; cur=p;
-  tv.querySelectorAll("button").forEach(b=>b.onclick=()=>page(+b.dataset.p));
+  tv.querySelectorAll("button[data-p]").forEach(b=>b.onclick=()=>page(+b.dataset.p));
+  tv.querySelectorAll("button[data-a]").forEach(b=>b.onclick=()=>{
+    const a=b.dataset.a,v=b.dataset.v;
+    if(a=="league"){STATE.pickLeague=v;page(111);}
+    else if(a=="leagues"){page(110);}
+    else if(a=="team"){STATE.league=STATE.pickLeague;STATE.team=v;save();compute();page(100);}
+  });
 }
 
 setInterval(()=>{const o=document.getElementById("hd");if(o)o.outerHTML=head(cur);},1000);
-document.addEventListener("keydown",e=>{const k={"1":100,"2":101,"3":102,"4":103}[e.key];if(k)page(k);});
+document.addEventListener("keydown",e=>{const k={"1":100,"2":101,"3":102,"4":103,"5":110}[e.key];if(k)page(k);});
 
+load();
 fetch("data.json?_="+Date.now())
   .then(r=>r.json())
-  .then(raw=>{DATA=parseFeed(raw);page(100);})
-  .catch(()=>{CONFIG.note="COULDN'T LOAD DATA.JSON";page(100);});
+  .then(raw=>{
+    // Older data.json files had a single league at the top level.
+    if(!raw.leagues){
+      raw={updated:raw.updated,leagues:{"u12-div1":{name:"U12 Div 1 D&J Mobile Catering Ltd",
+        fixtures:raw.fixtures,results:raw.results,table:raw.table}}};
+    }
+    RAW=raw;
+    if(!RAW.leagues[STATE.league]){STATE.league=DEFAULT.league;STATE.team=DEFAULT.team;}
+    if(!RAW.leagues[STATE.league]){const k=Object.keys(RAW.leagues)[0];if(k)STATE.league=k;}
+    compute();page(100);
+  })
+  .catch(()=>{STATE.note="COULDN'T LOAD DATA.JSON";page(100);});
 
 page(100);
 </script>
