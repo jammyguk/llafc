@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lionstext - Loughborough Lions AFC U12 Reds</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+<style>
+:root{
+  --black:#000; --red:#ff0000; --green:#00ff00; --yellow:#ffff00; --blue:#0000ff; --magenta:#ff00ff; --cyan:#00ffff; --white:#fff;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:#000;color:var(--white);display:flex;justify-content:center;
+  font-family:"VT323","Courier New",monospace;font-size:min(26px,5.6vw);line-height:1.1;-webkit-font-smoothing:none}
+.tv{width:40ch;padding:.5em 0 1em}
+.ln{white-space:pre;height:1.1em;overflow:hidden}
+.band{background:var(--blue);color:var(--white)}
+.dh{height:2.2em;overflow:hidden}
+.dh span{display:block;transform:scaleY(2);transform-origin:top left;white-space:pre}
+.w{color:var(--white)}.y{color:var(--yellow)}.c{color:var(--cyan)}.g{color:var(--green)}.m{color:var(--magenta)}.r{color:var(--red)}
+.hl{background:var(--red);color:var(--white)}
+.logo{display:block;width:10ch;height:auto;image-rendering:pixelated;margin:.3em 0}
+.rowlogo{display:flex;gap:2ch;align-items:flex-start}
+.fast{display:grid;grid-template-columns:repeat(4,1fr);margin-top:.6em}
+.fast button{font:inherit;line-height:1.1;border:0;padding:.1em 0;cursor:pointer;color:#000;text-align:center}
+.fast button[aria-current="page"]{outline:2px solid #fff;outline-offset:-2px}
+.fast button:focus-visible{outline:3px solid #fff;outline-offset:-3px}
+.fast .fr{background:var(--red)}.fast .fg{background:var(--green)}.fast .fy{background:var(--yellow)}.fast .fc{background:var(--cyan)}
+[hidden]{display:none!important}
+@media (prefers-reduced-motion:no-preference){.blink{animation:b 1s steps(1) infinite}@keyframes b{50%{opacity:0}}}
+</style>
+</head>
+<body>
+<div class="tv" id="tv"></div>
+<script>
+const CONFIG={club:"LOUGHBOROUGH LIONS AFC",team:"U12 REDS",league:"LEAGUE",us:"U12 REDS",note:"LOADING..."};
+const LOGO="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAsAQAAAAA/FMfWAAAAuUlEQVR42lXMIUoEYQCG4ef/ZhSTiiAYBBcxbFpMYlhwMHgCD+ANbGKczV7CI4gYzKaNewCRwaBiUpMgu2tZEJ/88vKnlBmjKKUICHOiaEUeG+GF8EDUs56Ya4VjqlI9nXcx3SMcEdODRrgi3BLeLP511s66ph5m/26ohzr1yuW4C6e962rja3cwCM1NU21+rq6fhPuP3qLc0fddPbfda2gV0YiKydI0JuNlbDsU7/pqP6M5XIAt//wCCQkpixp6D0kAAAAASUVORK5CYII=";
+const W=40, tv=document.getElementById("tv");
+const U=s=>String(s).toUpperCase(), cut=(s,n)=>U(s).slice(0,n).padEnd(n), rj=(s,n)=>String(s).padStart(n);
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const DOW=["SUN","MON","TUE","WED","THU","FRI","SAT"], MON=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+const dd=d=>String(d.getDate()).padStart(2,"0");
+const ln=(t,c="w",x="")=>`<div class="ln ${c} ${x}">${esc(String(t).padEnd(W))}</div>`;
+const band=(t,c="band")=>`<div class="ln ${c}">${esc((" "+t).padEnd(W))}</div>`;
+const dh=(t)=>`<div class="dh band"><span>${esc((" "+t).padEnd(W/2))}</span></div>`;
+const res=r=>r.f>r.a?"W":r.f<r.a?"L":"D";
+let cur=100;
+let DATA={results:[],fixtures:[],table:[],updated:null};
+
+function parseFeed(raw){
+  const teamMatches = (name) => U(name).includes(U(CONFIG.us));
+  const parseDate = (d) => { const [day,mon,yr] = d.split("/"); return {day:+day, mon:+mon, yr:+yr}; };
+
+  const fixtures = (raw.fixtures||[])
+    .filter(f=>teamMatches(f.Home)||teamMatches(f.Away))
+    .map(f=>({ date:parseDate(f.Date), t:f.Time, opp: teamMatches(f.Home)?f.Away:f.Home, home: teamMatches(f.Home) }))
+    .sort((a,b)=> new Date(a.date.yr,a.date.mon-1,a.date.day) - new Date(b.date.yr,b.date.mon-1,b.date.day));
+
+  const results = (raw.results||[])
+    .filter(r=>teamMatches(r.Home)||teamMatches(r.Away))
+    .map(r=>({ date:parseDate(r.Date), opp: teamMatches(r.Home)?r.Away:r.Home, home: teamMatches(r.Home),
+               f: teamMatches(r.Home)? +r.HomeScore : +r.AwayScore,
+               a: teamMatches(r.Home)? +r.AwayScore : +r.HomeScore }))
+    .sort((a,b)=> new Date(b.date.yr,b.date.mon-1,b.date.day) - new Date(a.date.yr,a.date.mon-1,a.date.day));
+
+  const table = {};
+  const touch = n => table[n] ||= {n, p:0,w:0,d:0,l:0,gf:0,ga:0};
+  (raw.results||[]).forEach(r=>{
+    const hf=+r.HomeScore, af=+r.AwayScore;
+    if (isNaN(hf)||isNaN(af)) return;
+    const H=touch(r.Home), A=touch(r.Away);
+    H.p++; A.p++; H.gf+=hf; H.ga+=af; A.gf+=af; A.ga+=hf;
+    if(hf>af){H.w++;A.l++} else if(hf<af){A.w++;H.l++} else {H.d++;A.d++}
+  });
+  Object.values(table).forEach(t=>{ if(teamMatches(t.n)) t.own=true; });
+
+  return { fixtures, results, table: Object.values(table), updated: raw.updated||null };
+}
+
+function head(p){
+  const n=new Date(), t=[n.getHours(),n.getMinutes(),n.getSeconds()].map(x=>String(x).padStart(2,"0"));
+  return `<div class="ln" id="hd"><span class="w">P${p} </span><span class="y">LIONSTEXT ${p} </span><span class="w">${DOW[n.getDay()]} ${dd(n)} ${MON[n.getMonth()]} </span><span class="c">${t[0]}:${t[1]}/${t[2]}</span></div>`;
+}
+
+function page(p){
+  let h=head(p);
+  if(p==100){
+    const f=DATA.fixtures[0];
+    h+=dh(CONFIG.team)+ln("");
+    h+=`<div class="rowlogo"><img class="logo" alt="Loughborough Lions AFC crest" src="${LOGO}"><div>`+
+       `<div class="ln c">${esc("LOUGHBOROUGH".padEnd(28))}</div>`+
+       `<div class="ln c">${esc("LIONS AFC".padEnd(28))}</div>`+
+       `<div class="ln w">${esc("EST 2021".padEnd(28))}</div><div class="ln"> </div>`+
+       `<div class="ln y">${esc(cut(CONFIG.league,28))}</div></div></div>`;
+    if(f){
+      h+=band("NEXT MATCH","band blink")+
+         ln(`${String(f.date.day).padStart(2,"0")} ${MON[f.date.mon-1]}  ${f.t||""} KO`,"y")+
+         ln(`${f.home?"HOME":"AWAY"}  ${cut(f.opp,28).trimEnd()}`,"w")+ln("");
+    } else {
+      h+=band("NEXT MATCH")+ln("NO FIXTURES FOUND YET","w")+ln("");
+    }
+    h+=band("LAST "+DATA.results.length+" RESULTS");
+    if(DATA.results.length){
+      h+=`<div class="ln">`+DATA.results.slice(0,8).map(x=>`<span class="${res(x)=="W"?"g":res(x)=="L"?"r":"y"}">${res(x)} </span>`).join("")+`</div>`;
+    } else {
+      h+=ln("NO RESULTS YET","w");
+    }
+    h+=ln("")+ln(" PRESS A COLOUR BUTTON BELOW","c");
+  }
+  if(p==101){
+    h+=dh("FIXTURES")+ln(CONFIG.team,"c")+ln("");
+    if(!DATA.fixtures.length) h+=ln("NO FIXTURES SCHEDULED YET","w");
+    DATA.fixtures.forEach(x=>{
+      h+=ln(`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]} ${x.t||""} ${x.home?"H":"A"} ${cut(x.opp,18)}`.slice(0,W),"y");
+    });
+  }
+  if(p==102){
+    h+=dh("RESULTS")+ln(CONFIG.team,"c")+ln("");
+    if(!DATA.results.length) h+=ln("NO RESULTS YET","w");
+    DATA.results.forEach(x=>{const c=res(x);
+      h+=`<div class="ln"><span class="w">${esc(`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]} ${x.home?"H":"A"} ${cut(x.opp,18)} `)}</span><span class="${c=="W"?"g":c=="L"?"r":"y"}">${c}</span><span class="w"> ${x.f}-${x.a}</span></div>`;});
+  }
+  if(p==103){
+    h+=dh("LEAGUE TABLE")+ln(CONFIG.league,"c")+ln("");
+    h+=`<div class="ln band">${esc(("PO  TEAM".padEnd(17)+rj("P",2)+" "+rj("W",2)+" "+rj("D",2)+" "+rj("L",2)+" "+rj("GD",3)+" "+rj("PTS",3)).padEnd(W))}</div>`;
+    const rows=DATA.table.slice().sort((a,b)=>(b.w*3+b.d)-(a.w*3+a.d)||(b.gf-b.ga)-(a.gf-a.ga)||b.gf-a.gf);
+    if(!rows.length) h+=ln("TABLE NOT AVAILABLE YET","w");
+    rows.forEach((t,i)=>{const gd=t.gf-t.ga;
+      const s=`${rj(i+1,2)}  ${cut(t.n,13)}${rj(t.p,2)} ${rj(t.w,2)} ${rj(t.d,2)} ${rj(t.l,2)} ${rj((gd>0?"+":"")+gd,3)} ${rj(t.w*3+t.d,3)}`;
+      h+=ln(s.slice(0,W),t.own?"hl":"w");});
+  }
+  h+=ln("")+ln(DATA.updated?("UPDATED "+U(DATA.updated)).slice(0,W):CONFIG.note,"m");
+  h+=`<nav class="fast" aria-label="Pages">`+[["fr",100,"HOME"],["fg",101,"FIXTURES"],["fy",102,"RESULTS"],["fc",103,"TABLE"]].map(([c,n,l])=>
+     `<button class="${c}" data-p="${n}" ${n==p?'aria-current="page"':""}>${l}</button>`).join("")+`</nav>`;
+  tv.innerHTML=h; cur=p;
+  tv.querySelectorAll("button").forEach(b=>b.onclick=()=>page(+b.dataset.p));
+}
+
+setInterval(()=>{const o=document.getElementById("hd");if(o)o.outerHTML=head(cur);},1000);
+document.addEventListener("keydown",e=>{const k={"1":100,"2":101,"3":102,"4":103}[e.key];if(k)page(k);});
+
+fetch("data.json?_=" + Date.now())
+  .then(r=>r.json())
+  .then(raw=>{ DATA = parseFeed(raw); page(100); })
+  .catch(()=>{ CONFIG.note="COULDN'T LOAD DATA.JSON"; page(100); });
+
+page(100);
+</script>
+</body>
+</html>
