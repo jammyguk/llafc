@@ -48,7 +48,7 @@ const band=(t,c="band")=>`<div class="ln ${c}">${esc((" "+t).padEnd(W))}</div>`;
 const dh=(t)=>`<div class="dh band"><span>${esc((" "+t).padEnd(W/2))}</span></div>`;
 const res=r=>r.f>r.a?"W":r.f<r.a?"L":"D";
 let cur=100;
-let DATA={results:[],fixtures:[],table:[],updated:null};
+let DATA={results:[],league:[],fixtures:[],table:[],updated:null};
 
 function parseFeed(raw){
   const pick=(o,keys)=>{for(const k of keys){if(o[k]!==undefined&&o[k]!==null&&o[k]!=="")return o[k];}return undefined;};
@@ -81,6 +81,9 @@ function parseFeed(raw){
               f:teamMatches(r.home)?r.hs:r.as,a:teamMatches(r.home)?r.as:r.hs}))
     .sort((a,b)=>ts(b.date)-ts(a.date));
 
+  const league=scored.map(r=>({date:r.date,home:r.home,away:r.away,hs:r.hs,as:r.as,
+    own:teamMatches(r.home)||teamMatches(r.away)}));
+
   // Use the manually supplied table in data.json if present (no goal
   // difference), otherwise calculate one from scored results.
   let table;
@@ -103,7 +106,7 @@ function parseFeed(raw){
     Object.values(tbl).forEach(t=>{t.pts=t.w*3+t.d;if(teamMatches(t.n))t.own=true;});
     table=Object.values(tbl);
   }
-  return {fixtures,results,table,updated:raw.updated||null};
+  return {fixtures,results,league,table,updated:raw.updated||null};
 }
 
 function head(p){
@@ -144,10 +147,22 @@ function page(p){
     });
   }
   if(p==102){
-    h+=dh("RESULTS")+ln(CONFIG.team,"c")+ln("");
-    if(!DATA.results.length) h+=ln("NO RESULTS YET","w");
-    DATA.results.forEach(x=>{const c=res(x);
-      h+=`<div class="ln"><span class="w">${esc(`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]} ${x.home?"H":"A"} ${cut(x.opp,18)} `)}</span><span class="${c=="W"?"g":c=="L"?"r":"y"}">${c}</span><span class="w"> ${x.f}-${x.a}</span></div>`;});
+    h+=dh("RESULTS")+ln(CONFIG.league,"c")+ln("");
+    if(!DATA.league.length) h+=ln("NO RESULTS YET","w");
+    const key=d=>d.yr*10000+d.mon*100+d.day;
+    const days={};
+    DATA.league.forEach(r=>{(days[key(r.date)]=days[key(r.date)]||[]).push(r);});
+    Object.keys(days).sort((a,b)=>b-a).forEach(k=>{
+      const rows=days[k], d=rows[0].date;
+      const dow=DOW[new Date(d.yr,d.mon-1,d.day).getDay()];
+      h+=band(`${dow} ${String(d.day).padStart(2,"0")} ${MON[d.mon-1]} ${d.yr}`);
+      rows.sort((a,b)=>(b.own?1:0)-(a.own?1:0)||U(a.home).localeCompare(U(b.home)))
+        .forEach(r=>{
+          const s=`${cut(r.home,16)}${rj(r.hs,2)}-${String(r.as).padEnd(2)} ${cut(r.away,16)}`;
+          h+=ln(s.slice(0,W),r.own?"hl":"w");
+        });
+      h+=ln("");
+    });
   }
   if(p==103){
     h+=dh("LEAGUE TABLE")+ln(CONFIG.league,"c")+ln("");
