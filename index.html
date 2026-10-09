@@ -51,33 +51,46 @@ let cur=100;
 let DATA={results:[],fixtures:[],table:[],updated:null};
 
 function parseFeed(raw){
-  const teamMatches = (name) => U(name).includes(U(CONFIG.us));
-  const parseDate = (d) => { const [day,mon,yr] = d.split("/"); return {day:+day, mon:+mon, yr:+yr}; };
+  const pick=(o,keys)=>{for(const k of keys){if(o[k]!==undefined&&o[k]!==null&&o[k]!=="")return o[k];}return undefined;};
+  const clean=s=>String(s||"").replace(/&amp;/g,"&").replace(/&#39;/g,"'").replace(/&quot;/g,'"').trim();
+  const teamMatches=name=>U(clean(name)).includes(U(CONFIG.us));
+  const ts=d=>new Date(d.yr,d.mon-1,d.day).getTime();
+  const norm=o=>{
+    const dt=String(pick(o,["fixtureDateTime","matchDate","date","Date","kickOff"])||"");
+    const m=dt.match(/(\d{1,2})\/(\d{1,2})\/(\d{2,4})(?:\s+(\d{1,2}:\d{2}))?/);
+    let date=null,time="";
+    if(m){let yr=+m[3];if(yr<100)yr+=2000;date={day:+m[1],mon:+m[2],yr:yr};time=m[4]||"";}
+    const sc=String(pick(o,["score","result","scoreLine"])||"").match(/(\d+)\s*[-:–]\s*(\d+)/);
+    let hs=pick(o,["homeScore","homeGoals","HomeScore"]);
+    let as=pick(o,["awayScore","awayGoals","AwayScore"]);
+    if(hs===undefined&&sc){hs=sc[1];as=sc[2];}
+    return {home:clean(pick(o,["homeTeam","home","Home"])),away:clean(pick(o,["awayTeam","away","Away"])),
+            date,time,hs:hs===undefined?NaN:+hs,as:as===undefined?NaN:+as};
+  };
+  const fx=(raw.fixtures||[]).map(norm).filter(x=>x.date);
+  const rs=(raw.results||[]).map(norm).filter(x=>x.date);
+  const today=new Date();today.setHours(0,0,0,0);
 
-  const fixtures = (raw.fixtures||[])
-    .filter(f=>teamMatches(f.Home)||teamMatches(f.Away))
-    .map(f=>({ date:parseDate(f.Date), t:f.Time, opp: teamMatches(f.Home)?f.Away:f.Home, home: teamMatches(f.Home) }))
-    .sort((a,b)=> new Date(a.date.yr,a.date.mon-1,a.date.day) - new Date(b.date.yr,b.date.mon-1,b.date.day));
+  const fixtures=fx.filter(f=>(teamMatches(f.home)||teamMatches(f.away))&&ts(f.date)>=today.getTime())
+    .map(f=>({date:f.date,t:f.time,opp:teamMatches(f.home)?f.away:f.home,home:teamMatches(f.home)}))
+    .sort((a,b)=>ts(a.date)-ts(b.date));
 
-  const results = (raw.results||[])
-    .filter(r=>teamMatches(r.Home)||teamMatches(r.Away))
-    .map(r=>({ date:parseDate(r.Date), opp: teamMatches(r.Home)?r.Away:r.Home, home: teamMatches(r.Home),
-               f: teamMatches(r.Home)? +r.HomeScore : +r.AwayScore,
-               a: teamMatches(r.Home)? +r.AwayScore : +r.HomeScore }))
-    .sort((a,b)=> new Date(b.date.yr,b.date.mon-1,b.date.day) - new Date(a.date.yr,a.date.mon-1,a.date.day));
+  const scored=rs.filter(r=>!isNaN(r.hs)&&!isNaN(r.as));
+  const results=scored.filter(r=>teamMatches(r.home)||teamMatches(r.away))
+    .map(r=>({date:r.date,opp:teamMatches(r.home)?r.away:r.home,home:teamMatches(r.home),
+              f:teamMatches(r.home)?r.hs:r.as,a:teamMatches(r.home)?r.as:r.hs}))
+    .sort((a,b)=>ts(b.date)-ts(a.date));
 
-  const table = {};
-  const touch = n => table[n] ||= {n, p:0,w:0,d:0,l:0,gf:0,ga:0};
-  (raw.results||[]).forEach(r=>{
-    const hf=+r.HomeScore, af=+r.AwayScore;
-    if (isNaN(hf)||isNaN(af)) return;
-    const H=touch(r.Home), A=touch(r.Away);
-    H.p++; A.p++; H.gf+=hf; H.ga+=af; A.gf+=af; A.ga+=hf;
-    if(hf>af){H.w++;A.l++} else if(hf<af){A.w++;H.l++} else {H.d++;A.d++}
+  const table={};
+  const touch=n=>table[n]||(table[n]={n,p:0,w:0,d:0,l:0,gf:0,ga:0});
+  scored.forEach(r=>{
+    const H=touch(r.home),A=touch(r.away);
+    H.p++;A.p++;H.gf+=r.hs;H.ga+=r.as;A.gf+=r.as;A.ga+=r.hs;
+    if(r.hs>r.as){H.w++;A.l++}else if(r.hs<r.as){A.w++;H.l++}else{H.d++;A.d++}
   });
-  Object.values(table).forEach(t=>{ if(teamMatches(t.n)) t.own=true; });
+  Object.values(table).forEach(t=>{if(teamMatches(t.n))t.own=true;});
 
-  return { fixtures, results, table: Object.values(table), updated: raw.updated||null };
+  return {fixtures,results,table:Object.values(table),updated:raw.updated||null};
 }
 
 function head(p){
