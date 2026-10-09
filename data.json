@@ -1,453 +1,457 @@
 {
-    "teams": [],
-    "fixtures": [
-        {
-            "fixtureDateTime": "11\/10\/26 10:30",
-            "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "awayTeam": "Croft Juniors 2013 U12 Blues",
-            "location": "Harborough Town FC LE16 9HF",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "11\/10\/26 10:30",
-            "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
-            "awayTeam": "Heather Juniors U12 Lions",
-            "location": "Harborough Town Juniors U12 Reds Sunday",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "11\/10\/26 10:30",
-            "homeTeam": "Melton Town U12 Tigers",
-            "awayTeam": "Studs Junior U12",
-            "location": "MELTON SPORTS VILLAGE",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "11\/10\/26 12:30",
-            "homeTeam": "Beaumont Park U12 Jaguars",
-            "awayTeam": "Loughborough Lions AFC U12 Reds",
-            "location": "BEAUMONT PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "11\/10\/26 12:30",
-            "homeTeam": "Beaumont Park U12 Panthers",
-            "awayTeam": "Whetstone Athletic U12 Lions",
-            "location": "BEAUMONT PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "25\/10\/26 10:30",
-            "homeTeam": "Beaumont Park U12 Jaguars",
-            "awayTeam": "Beaumont Park U12 Panthers",
-            "location": "BEAUMONT PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "25\/10\/26 10:30",
-            "homeTeam": "Heather Juniors U12 Lions",
-            "awayTeam": "Loughborough Lions AFC U12 Reds",
-            "location": "HEATHER ST JOHNS FC (ST JOHNS PARK)",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "25\/10\/26 10:30",
-            "homeTeam": "Melton Town U12 Tigers",
-            "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "location": "MELTON SPORTS VILLAGE",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "25\/10\/26 12:30",
-            "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
-            "awayTeam": "Croft Juniors 2013 U12 Blues",
-            "location": "Harborough Town Juniors U12 Reds Sunday",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "25\/10\/26 12:30",
-            "homeTeam": "Whetstone Athletic U12 Lions",
-            "awayTeam": "Studs Junior U12",
-            "location": "ELIZABETH PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "08\/11\/26 11:05",
-            "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "awayTeam": "Whetstone Athletic U12 Lions",
-            "location": "Harborough Town FC LE16 9HF",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "08\/11\/26 11:05",
-            "homeTeam": "Loughborough Lions AFC U12 Reds",
-            "awayTeam": "Beaumont Park U12 Jaguars",
-            "location": "Charnwood College LE11 4SQ",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "08\/11\/26 11:05",
-            "homeTeam": "Studs Junior U12",
-            "awayTeam": "Heather Juniors U12 Lions",
-            "location": "WINSTANLEY COMMUNITY COLLEGE",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "08\/11\/26 13:00",
-            "homeTeam": "Beaumont Park U12 Panthers",
-            "awayTeam": "Harborough Town Juniors U12 Reds Sunday",
-            "location": "BEAUMONT PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "22\/11\/26 10:30",
-            "homeTeam": "Beaumont Park U12 Jaguars",
-            "awayTeam": "Harborough Town Juniors U12 Reds Sunday",
-            "location": "BEAUMONT PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "22\/11\/26 10:30",
-            "homeTeam": "Loughborough Lions AFC U12 Reds",
-            "awayTeam": "Heather Juniors U12 Lions",
-            "location": "Charnwood College LE11 4SQ",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "22\/11\/26 10:30",
-            "homeTeam": "Studs Junior U12",
-            "awayTeam": "Whetstone Athletic U12 Lions",
-            "location": "WINSTANLEY COMMUNITY COLLEGE",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "22\/11\/26 12:30",
-            "homeTeam": "Beaumont Park U12 Panthers",
-            "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "location": "BEAUMONT PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "22\/11\/26 12:30",
-            "homeTeam": "Croft Juniors 2013 U12 Blues",
-            "awayTeam": "Melton Town U12 Tigers",
-            "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "06\/12\/26 10:30",
-            "homeTeam": "Beaumont Park U12 Jaguars",
-            "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "location": "BEAUMONT PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "06\/12\/26 10:30",
-            "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
-            "awayTeam": "Whetstone Athletic U12 Lions",
-            "location": "Harborough Town Juniors U12 Reds Sunday",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "06\/12\/26 10:30",
-            "homeTeam": "Loughborough Lions AFC U12 Reds",
-            "awayTeam": "Studs Junior U12",
-            "location": "Charnwood College LE11 4SQ",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "06\/12\/26 12:30",
-            "homeTeam": "Beaumont Park U12 Panthers",
-            "awayTeam": "Melton Town U12 Tigers",
-            "location": "BEAUMONT PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "06\/12\/26 12:30",
-            "homeTeam": "Croft Juniors 2013 U12 Blues",
-            "awayTeam": "Heather Juniors U12 Lions",
-            "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "13\/12\/26 10:30",
-            "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
-            "awayTeam": "Beaumont Park U12 Jaguars",
-            "location": "Harborough Town Juniors U12 Reds Sunday",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "13\/12\/26 10:30",
-            "homeTeam": "Heather Juniors U12 Lions",
-            "awayTeam": "Beaumont Park U12 Panthers",
-            "location": "HEATHER ST JOHNS FC (ST JOHNS PARK)",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "13\/12\/26 10:30",
-            "homeTeam": "Melton Town U12 Tigers",
-            "awayTeam": "Whetstone Athletic U12 Lions",
-            "location": "MELTON SPORTS VILLAGE",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "13\/12\/26 10:30",
-            "homeTeam": "Studs Junior U12",
-            "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "location": "WINSTANLEY COMMUNITY COLLEGE",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "13\/12\/26 12:30",
-            "homeTeam": "Croft Juniors 2013 U12 Blues",
-            "awayTeam": "Loughborough Lions AFC U12 Reds",
-            "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "20\/12\/26 10:30",
-            "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "awayTeam": "Melton Town U12 Tigers",
-            "location": "Harborough Town FC LE16 9HF",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "20\/12\/26 10:30",
-            "homeTeam": "Whetstone Athletic U12 Lions",
-            "awayTeam": "Heather Juniors U12 Lions",
-            "location": "ELIZABETH PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "20\/12\/26 12:30",
-            "homeTeam": "Beaumont Park U12 Jaguars",
-            "awayTeam": "Studs Junior U12",
-            "location": "BEAUMONT PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "20\/12\/26 12:30",
-            "homeTeam": "Beaumont Park U12 Panthers",
-            "awayTeam": "Croft Juniors 2013 U12 Blues",
-            "location": "BEAUMONT PARK",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "20\/12\/26 12:30",
-            "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
-            "awayTeam": "Loughborough Lions AFC U12 Reds",
-            "location": "Harborough Town Juniors U12 Reds Sunday",
-            "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+    "updated": "2026-10-09 13:53:16 UTC",
+    "leagues": {
+        "u12-div1": {
+            "name": "U12 Div 1 D&J Mobile Catering Ltd",
+            "fixtures": [
+                {
+                    "fixtureDateTime": "11\/10\/26 10:30",
+                    "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "awayTeam": "Croft Juniors 2013 U12 Blues",
+                    "location": "Harborough Town FC LE16 9HF",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "11\/10\/26 10:30",
+                    "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
+                    "awayTeam": "Heather Juniors U12 Lions",
+                    "location": "Harborough Town Juniors U12 Reds Sunday",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "11\/10\/26 10:30",
+                    "homeTeam": "Melton Town U12 Tigers",
+                    "awayTeam": "Studs Junior U12",
+                    "location": "MELTON SPORTS VILLAGE",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "11\/10\/26 12:30",
+                    "homeTeam": "Beaumont Park U12 Jaguars",
+                    "awayTeam": "Loughborough Lions AFC U12 Reds",
+                    "location": "BEAUMONT PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "11\/10\/26 12:30",
+                    "homeTeam": "Beaumont Park U12 Panthers",
+                    "awayTeam": "Whetstone Athletic U12 Lions",
+                    "location": "BEAUMONT PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "25\/10\/26 10:30",
+                    "homeTeam": "Beaumont Park U12 Jaguars",
+                    "awayTeam": "Beaumont Park U12 Panthers",
+                    "location": "BEAUMONT PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "25\/10\/26 10:30",
+                    "homeTeam": "Heather Juniors U12 Lions",
+                    "awayTeam": "Loughborough Lions AFC U12 Reds",
+                    "location": "HEATHER ST JOHNS FC (ST JOHNS PARK)",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "25\/10\/26 10:30",
+                    "homeTeam": "Melton Town U12 Tigers",
+                    "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "location": "MELTON SPORTS VILLAGE",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "25\/10\/26 12:30",
+                    "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
+                    "awayTeam": "Croft Juniors 2013 U12 Blues",
+                    "location": "Harborough Town Juniors U12 Reds Sunday",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "25\/10\/26 12:30",
+                    "homeTeam": "Whetstone Athletic U12 Lions",
+                    "awayTeam": "Studs Junior U12",
+                    "location": "ELIZABETH PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "awayTeam": "Whetstone Athletic U12 Lions",
+                    "location": "Harborough Town FC LE16 9HF",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Loughborough Lions AFC U12 Reds",
+                    "awayTeam": "Beaumont Park U12 Jaguars",
+                    "location": "Charnwood College LE11 4SQ",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Studs Junior U12",
+                    "awayTeam": "Heather Juniors U12 Lions",
+                    "location": "WINSTANLEY COMMUNITY COLLEGE",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 13:00",
+                    "homeTeam": "Beaumont Park U12 Panthers",
+                    "awayTeam": "Harborough Town Juniors U12 Reds Sunday",
+                    "location": "BEAUMONT PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Beaumont Park U12 Jaguars",
+                    "awayTeam": "Harborough Town Juniors U12 Reds Sunday",
+                    "location": "BEAUMONT PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Loughborough Lions AFC U12 Reds",
+                    "awayTeam": "Heather Juniors U12 Lions",
+                    "location": "Charnwood College LE11 4SQ",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Studs Junior U12",
+                    "awayTeam": "Whetstone Athletic U12 Lions",
+                    "location": "WINSTANLEY COMMUNITY COLLEGE",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 12:30",
+                    "homeTeam": "Beaumont Park U12 Panthers",
+                    "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "location": "BEAUMONT PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 12:30",
+                    "homeTeam": "Croft Juniors 2013 U12 Blues",
+                    "awayTeam": "Melton Town U12 Tigers",
+                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "06\/12\/26 10:30",
+                    "homeTeam": "Beaumont Park U12 Jaguars",
+                    "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "location": "BEAUMONT PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "06\/12\/26 10:30",
+                    "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
+                    "awayTeam": "Whetstone Athletic U12 Lions",
+                    "location": "Harborough Town Juniors U12 Reds Sunday",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "06\/12\/26 10:30",
+                    "homeTeam": "Loughborough Lions AFC U12 Reds",
+                    "awayTeam": "Studs Junior U12",
+                    "location": "Charnwood College LE11 4SQ",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "06\/12\/26 12:30",
+                    "homeTeam": "Beaumont Park U12 Panthers",
+                    "awayTeam": "Melton Town U12 Tigers",
+                    "location": "BEAUMONT PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "06\/12\/26 12:30",
+                    "homeTeam": "Croft Juniors 2013 U12 Blues",
+                    "awayTeam": "Heather Juniors U12 Lions",
+                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "13\/12\/26 10:30",
+                    "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
+                    "awayTeam": "Beaumont Park U12 Jaguars",
+                    "location": "Harborough Town Juniors U12 Reds Sunday",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "13\/12\/26 10:30",
+                    "homeTeam": "Heather Juniors U12 Lions",
+                    "awayTeam": "Beaumont Park U12 Panthers",
+                    "location": "HEATHER ST JOHNS FC (ST JOHNS PARK)",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "13\/12\/26 10:30",
+                    "homeTeam": "Melton Town U12 Tigers",
+                    "awayTeam": "Whetstone Athletic U12 Lions",
+                    "location": "MELTON SPORTS VILLAGE",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "13\/12\/26 10:30",
+                    "homeTeam": "Studs Junior U12",
+                    "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "location": "WINSTANLEY COMMUNITY COLLEGE",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "13\/12\/26 12:30",
+                    "homeTeam": "Croft Juniors 2013 U12 Blues",
+                    "awayTeam": "Loughborough Lions AFC U12 Reds",
+                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "20\/12\/26 10:30",
+                    "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "awayTeam": "Melton Town U12 Tigers",
+                    "location": "Harborough Town FC LE16 9HF",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "20\/12\/26 10:30",
+                    "homeTeam": "Whetstone Athletic U12 Lions",
+                    "awayTeam": "Heather Juniors U12 Lions",
+                    "location": "ELIZABETH PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "20\/12\/26 12:30",
+                    "homeTeam": "Beaumont Park U12 Jaguars",
+                    "awayTeam": "Studs Junior U12",
+                    "location": "BEAUMONT PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "20\/12\/26 12:30",
+                    "homeTeam": "Beaumont Park U12 Panthers",
+                    "awayTeam": "Croft Juniors 2013 U12 Blues",
+                    "location": "BEAUMONT PARK",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "20\/12\/26 12:30",
+                    "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
+                    "awayTeam": "Loughborough Lions AFC U12 Reds",
+                    "location": "Harborough Town Juniors U12 Reds Sunday",
+                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                }
+            ],
+            "results": [
+                {
+                    "fixtureDateTime": "04\/10\/26 12:30",
+                    "homeTeam": "Croft Juniors 2013 U12 Blues",
+                    "score": "0 - 1",
+                    "homeScore": "0",
+                    "awayScore": "1",
+                    "awayTeam": "Beaumont Park U12 Jaguars",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "04\/10\/26 12:30",
+                    "homeTeam": "Studs Junior U12",
+                    "score": "4 - 0",
+                    "homeScore": "4",
+                    "awayScore": "0",
+                    "awayTeam": "Beaumont Park U12 Panthers",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "04\/10\/26 10:30",
+                    "homeTeam": "Heather Juniors U12 Lions",
+                    "score": "8 - 1",
+                    "homeScore": "8",
+                    "awayScore": "1",
+                    "awayTeam": "Melton Town U12 Tigers",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "04\/10\/26 10:30",
+                    "homeTeam": "Loughborough Lions AFC U12 Reds",
+                    "score": "4 - 3",
+                    "homeScore": "4",
+                    "awayScore": "3",
+                    "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "27\/09\/26 10:30",
+                    "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
+                    "score": "0 - 2",
+                    "homeScore": "0",
+                    "awayScore": "2",
+                    "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "27\/09\/26 10:30",
+                    "homeTeam": "Heather Juniors U12 Lions",
+                    "score": "6 - 1",
+                    "homeScore": "6",
+                    "awayScore": "1",
+                    "awayTeam": "Croft Juniors 2013 U12 Blues",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "27\/09\/26 10:30",
+                    "homeTeam": "Melton Town U12 Tigers",
+                    "score": "0 - 1",
+                    "homeScore": "0",
+                    "awayScore": "1",
+                    "awayTeam": "Beaumont Park U12 Panthers",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "27\/09\/26 10:30",
+                    "homeTeam": "Studs Junior U12",
+                    "score": "1 - 0",
+                    "homeScore": "1",
+                    "awayScore": "0",
+                    "awayTeam": "Beaumont Park U12 Jaguars",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "27\/09\/26 10:30",
+                    "homeTeam": "Whetstone Athletic U12 Lions",
+                    "score": "0 - 4",
+                    "homeScore": "0",
+                    "awayScore": "4",
+                    "awayTeam": "Loughborough Lions AFC U12 Reds",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "20\/09\/26 12:30",
+                    "homeTeam": "Beaumont Park U12 Jaguars",
+                    "score": "3 - 0",
+                    "homeScore": "3",
+                    "awayScore": "0",
+                    "awayTeam": "Whetstone Athletic U12 Lions",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "20\/09\/26 12:30",
+                    "homeTeam": "Beaumont Park U12 Panthers",
+                    "score": "5 - 2 (HT 0-1)",
+                    "homeScore": "5",
+                    "awayScore": "2",
+                    "awayTeam": "Studs Junior U12",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "20\/09\/26 12:30",
+                    "homeTeam": "Croft Juniors 2013 U12 Blues",
+                    "score": "2 - 1",
+                    "homeScore": "2",
+                    "awayScore": "1",
+                    "awayTeam": "Harborough Town Juniors U12 Reds Sunday",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "20\/09\/26 10:30",
+                    "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "score": "2 - 1",
+                    "homeScore": "2",
+                    "awayScore": "1",
+                    "awayTeam": "Heather Juniors U12 Lions",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "20\/09\/26 10:30",
+                    "homeTeam": "Loughborough Lions AFC U12 Reds",
+                    "score": "6 - 1",
+                    "homeScore": "6",
+                    "awayScore": "1",
+                    "awayTeam": "Melton Town U12 Tigers",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "13\/09\/26 10:30",
+                    "homeTeam": "Heather Juniors U12 Lions",
+                    "score": "2 - 1",
+                    "homeScore": "2",
+                    "awayScore": "1",
+                    "awayTeam": "Beaumont Park U12 Jaguars",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "13\/09\/26 10:30",
+                    "homeTeam": "Melton Town U12 Tigers",
+                    "score": "0 - 2",
+                    "homeScore": "0",
+                    "awayScore": "2",
+                    "awayTeam": "Croft Juniors 2013 U12 Blues",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "13\/09\/26 10:30",
+                    "homeTeam": "Studs Junior U12",
+                    "score": "2 - 5",
+                    "homeScore": "2",
+                    "awayScore": "5",
+                    "awayTeam": "Loughborough Lions AFC U12 Reds",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "13\/09\/26 10:30",
+                    "homeTeam": "Whetstone Athletic U12 Lions",
+                    "score": "3 - 2",
+                    "homeScore": "3",
+                    "awayScore": "2",
+                    "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "06\/09\/26 12:30",
+                    "homeTeam": "Beaumont Park U12 Jaguars",
+                    "score": "6 - 1",
+                    "homeScore": "6",
+                    "awayScore": "1",
+                    "awayTeam": "Melton Town U12 Tigers",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "06\/09\/26 12:30",
+                    "homeTeam": "Beaumont Park U12 Panthers",
+                    "score": "1 - 1",
+                    "homeScore": "1",
+                    "awayScore": "1",
+                    "awayTeam": "Heather Juniors U12 Lions",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "06\/09\/26 12:30",
+                    "homeTeam": "Croft Juniors 2013 U12 Blues",
+                    "score": "1 - 0",
+                    "homeScore": "1",
+                    "awayScore": "0",
+                    "awayTeam": "Whetstone Athletic U12 Lions",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "06\/09\/26 10:30",
+                    "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "score": "0 - 0",
+                    "homeScore": "0",
+                    "awayScore": "0",
+                    "awayTeam": "Studs Junior U12",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "06\/09\/26 10:30",
+                    "homeTeam": "Loughborough Lions AFC U12 Reds",
+                    "score": "0 - 1",
+                    "homeScore": "0",
+                    "awayScore": "1",
+                    "awayTeam": "Harborough Town Juniors U12 Reds Sunday",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                }
+            ]
         }
-    ],
-    "results": [
-        {
-            "fixtureDateTime": "04\/10\/26 12:30",
-            "homeTeam": "Croft Juniors 2013 U12 Blues",
-            "score": "0 - 1",
-            "homeScore": "0",
-            "awayScore": "1",
-            "awayTeam": "Beaumont Park U12 Jaguars",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "04\/10\/26 12:30",
-            "homeTeam": "Studs Junior U12",
-            "score": "4 - 0",
-            "homeScore": "4",
-            "awayScore": "0",
-            "awayTeam": "Beaumont Park U12 Panthers",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "04\/10\/26 10:30",
-            "homeTeam": "Heather Juniors U12 Lions",
-            "score": "8 - 1",
-            "homeScore": "8",
-            "awayScore": "1",
-            "awayTeam": "Melton Town U12 Tigers",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "04\/10\/26 10:30",
-            "homeTeam": "Loughborough Lions AFC U12 Reds",
-            "score": "4 - 3",
-            "homeScore": "4",
-            "awayScore": "3",
-            "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "27\/09\/26 10:30",
-            "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
-            "score": "0 - 2",
-            "homeScore": "0",
-            "awayScore": "2",
-            "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "27\/09\/26 10:30",
-            "homeTeam": "Heather Juniors U12 Lions",
-            "score": "6 - 1",
-            "homeScore": "6",
-            "awayScore": "1",
-            "awayTeam": "Croft Juniors 2013 U12 Blues",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "27\/09\/26 10:30",
-            "homeTeam": "Melton Town U12 Tigers",
-            "score": "0 - 1",
-            "homeScore": "0",
-            "awayScore": "1",
-            "awayTeam": "Beaumont Park U12 Panthers",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "27\/09\/26 10:30",
-            "homeTeam": "Studs Junior U12",
-            "score": "1 - 0",
-            "homeScore": "1",
-            "awayScore": "0",
-            "awayTeam": "Beaumont Park U12 Jaguars",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "27\/09\/26 10:30",
-            "homeTeam": "Whetstone Athletic U12 Lions",
-            "score": "0 - 4",
-            "homeScore": "0",
-            "awayScore": "4",
-            "awayTeam": "Loughborough Lions AFC U12 Reds",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "20\/09\/26 12:30",
-            "homeTeam": "Beaumont Park U12 Jaguars",
-            "score": "3 - 0",
-            "homeScore": "3",
-            "awayScore": "0",
-            "awayTeam": "Whetstone Athletic U12 Lions",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "20\/09\/26 12:30",
-            "homeTeam": "Beaumont Park U12 Panthers",
-            "score": "5 - 2 (HT 0-1)",
-            "homeScore": "5",
-            "awayScore": "2",
-            "awayTeam": "Studs Junior U12",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "20\/09\/26 12:30",
-            "homeTeam": "Croft Juniors 2013 U12 Blues",
-            "score": "2 - 1",
-            "homeScore": "2",
-            "awayScore": "1",
-            "awayTeam": "Harborough Town Juniors U12 Reds Sunday",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "20\/09\/26 10:30",
-            "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "score": "2 - 1",
-            "homeScore": "2",
-            "awayScore": "1",
-            "awayTeam": "Heather Juniors U12 Lions",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "20\/09\/26 10:30",
-            "homeTeam": "Loughborough Lions AFC U12 Reds",
-            "score": "6 - 1",
-            "homeScore": "6",
-            "awayScore": "1",
-            "awayTeam": "Melton Town U12 Tigers",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "13\/09\/26 10:30",
-            "homeTeam": "Heather Juniors U12 Lions",
-            "score": "2 - 1",
-            "homeScore": "2",
-            "awayScore": "1",
-            "awayTeam": "Beaumont Park U12 Jaguars",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "13\/09\/26 10:30",
-            "homeTeam": "Melton Town U12 Tigers",
-            "score": "0 - 2",
-            "homeScore": "0",
-            "awayScore": "2",
-            "awayTeam": "Croft Juniors 2013 U12 Blues",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "13\/09\/26 10:30",
-            "homeTeam": "Studs Junior U12",
-            "score": "2 - 5",
-            "homeScore": "2",
-            "awayScore": "5",
-            "awayTeam": "Loughborough Lions AFC U12 Reds",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "13\/09\/26 10:30",
-            "homeTeam": "Whetstone Athletic U12 Lions",
-            "score": "3 - 2",
-            "homeScore": "3",
-            "awayScore": "2",
-            "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "06\/09\/26 12:30",
-            "homeTeam": "Beaumont Park U12 Jaguars",
-            "score": "6 - 1",
-            "homeScore": "6",
-            "awayScore": "1",
-            "awayTeam": "Melton Town U12 Tigers",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "06\/09\/26 12:30",
-            "homeTeam": "Beaumont Park U12 Panthers",
-            "score": "1 - 1",
-            "homeScore": "1",
-            "awayScore": "1",
-            "awayTeam": "Heather Juniors U12 Lions",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "06\/09\/26 12:30",
-            "homeTeam": "Croft Juniors 2013 U12 Blues",
-            "score": "1 - 0",
-            "homeScore": "1",
-            "awayScore": "0",
-            "awayTeam": "Whetstone Athletic U12 Lions",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "06\/09\/26 10:30",
-            "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
-            "score": "0 - 0",
-            "homeScore": "0",
-            "awayScore": "0",
-            "awayTeam": "Studs Junior U12",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        },
-        {
-            "fixtureDateTime": "06\/09\/26 10:30",
-            "homeTeam": "Loughborough Lions AFC U12 Reds",
-            "score": "0 - 1",
-            "homeScore": "0",
-            "awayScore": "1",
-            "awayTeam": "Harborough Town Juniors U12 Reds Sunday",
-            "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-        }
-    ],
-    "updated": "2026-10-09 13:19:34 UTC"
+    }
 }
