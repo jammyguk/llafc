@@ -22,7 +22,7 @@ body{margin:0;min-height:100%;background:#000;color:var(--white);display:flex;ju
 .dh span{display:block;transform:scaleY(2);transform-origin:top left;white-space:pre}
 .w{color:var(--white)}.y{color:var(--yellow)}.c{color:var(--cyan)}.g{color:var(--green)}.m{color:var(--magenta)}.r{color:var(--red)}
 .hl{background:var(--red);color:var(--white)}
-.logo{display:block;width:10ch;height:auto;image-rendering:pixelated;margin:.3em 0}
+.logo{display:block;width:11ch;height:auto;margin:.3em 0}
 .rowlogo{display:flex;gap:2ch;align-items:flex-start}
 .fast{display:grid;grid-template-columns:repeat(4,1fr);margin-top:.6em}
 .fast button{font:inherit;line-height:1.1;border:0;padding:.1em 0;cursor:pointer;color:#000;text-align:center}
@@ -36,8 +36,8 @@ body{margin:0;min-height:100%;background:#000;color:var(--white);display:flex;ju
 <body>
 <div class="tv" id="tv"></div>
 <script>
-const CONFIG={club:"LOUGHBOROUGH LIONS AFC",team:"LOUGHBOROUGH LIONS AFC U12 REDS",league:"LEAGUE",us:"Loughborough Lions AFC U12 Reds",note:"LOADING..."};
-const LOGO="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAsAQAAAAA/FMfWAAAAuUlEQVR42lXMIUoEYQCG4ef/ZhSTiiAYBBcxbFpMYlhwMHgCD+ANbGKczV7CI4gYzKaNewCRwaBiUpMgu2tZEJ/88vKnlBmjKKUICHOiaEUeG+GF8EDUs56Ya4VjqlI9nXcx3SMcEdODRrgi3BLeLP511s66ph5m/26ohzr1yuW4C6e962rja3cwCM1NU21+rq6fhPuP3qLc0fddPbfda2gV0YiKydI0JuNlbDsU7/pqP6M5XIAt//wCCQkpixp6D0kAAAAASUVORK5CYII=";
+const CONFIG={club:"LOUGHBOROUGH LIONS AFC",team:"LOUGHBOROUGH LIONS AFC U12 REDS",league:"U12 DIV 1 D&J MOBILE CATERING LTD",us:"Loughborough Lions AFC U12 Reds",note:"LOADING..."};
+const LOGO="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACLAQAAAACBgqylAAADJUlEQVR42p2VMY8cNRiGH3tWt1MEzVBlFaLbQaImAYREgW4noqWIUqdYaFAQxUlpQAp3BlJcwQ8IRaT9EfT4wkk0QE6hoZwlp4AQipzokGbvZscU4/HaK+Cic7M7j/x9fu3v/Wxg1/rRgmRtnA0GsBD+a/NcOV4YDE1W+WUBRplZRDOmsHFm0jYCCpIQCAc92HCJPUgBRgHISefRKgVN5TT2yyoR61jufFdGIAEdbc5aZT///71UwwiU7SjVMshh75DZcC8nSrfzWQBucXjMrQBIXZtlGYCju1BcDsBFCeW9AGwKJdRBJKyUa0p/eBqBJXceujN1u2129i+HM2S9a02oQ7f7iW4DMD3cmP59GoBB+vbNvIhqe3wY68hMvRcCA1CHMwZ5WoQz6vLrK9IEwErvj076SfFgK/miL82nwO64bqNu0J8sYtPxzqNYWPX6QRMBM9yrI1DfzUwEGr0Zd0N747eSUAfDaq0rm2qtLq0+qwmdf87dtx88+eibdz97/OPDNx2Q14dKTn+ZvQQgrVXQyiffQjMQ1kqAankw4iqne33SIjn5E83GsQOj/Q8Zvf/yVwcA8plI278Wur1389fnai4KTCwjexGlYxiDVUmVqcysunJKDvkF7w9yUiiaHqSkDKD0SfOjzuIjv8r9ARIwfaEK1XTXzEqHBEWiemCdN7dXMzR1iU4j6QXVIAQNHPmkgpI2Z/nlfxaqUjtYKDTS3YrXAMX1Le/CrQY0mRdWd92iVi7EQIXy57FkBgZd05eh6+uhys5RF6xtVx+7zh/A49/j25L8ledrOfpAKUQBiFkFsBACGAPi9IJrf9lrlSuAAvnaYrVKDSznlN0TIQHfbdL8u/mbwr+TFUho8x6kugtJ18Pq/s8Y9zI9cODKvAv5HrZf/fk2bPUzFe9tf3wR0ThhpuQtM7+E7EFd8JMurzL4w4UkNbffePqMcd//wl0/E+VPPvoBJhogaTwYG4DMK2bYAEwqf5QnCUA5C0qoIbHBficGsiZ0RdNBPxILVkem0FEKmJgoBWTNJDabsP1Flviga/HJj+u1Ugz727IPaXMn4x+T8hmWmAKmHwAAAABJRU5ErkJggg==";
 const W=40, tv=document.getElementById("tv");
 const U=s=>String(s).toUpperCase(), cut=(s,n)=>U(s).slice(0,n).padEnd(n), rj=(s,n)=>String(s).padStart(n);
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
@@ -81,16 +81,29 @@ function parseFeed(raw){
               f:teamMatches(r.home)?r.hs:r.as,a:teamMatches(r.home)?r.as:r.hs}))
     .sort((a,b)=>ts(b.date)-ts(a.date));
 
-  const table={};
-  const touch=n=>table[n]||(table[n]={n,p:0,w:0,d:0,l:0,gf:0,ga:0});
-  scored.forEach(r=>{
-    const H=touch(r.home),A=touch(r.away);
-    H.p++;A.p++;H.gf+=r.hs;H.ga+=r.as;A.gf+=r.as;A.ga+=r.hs;
-    if(r.hs>r.as){H.w++;A.l++}else if(r.hs<r.as){A.w++;H.l++}else{H.d++;A.d++}
-  });
-  Object.values(table).forEach(t=>{if(teamMatches(t.n))t.own=true;});
-
-  return {fixtures,results,table:Object.values(table),updated:raw.updated||null};
+  // Use the manually supplied table in data.json if present (no goal
+  // difference), otherwise calculate one from scored results.
+  let table;
+  if(Array.isArray(raw.table)&&raw.table.length){
+    table=raw.table.map(t=>({
+      n:clean(pick(t,["teamName","team","name"])),
+      p:+pick(t,["played","p"])||0, w:+pick(t,["won","w"])||0,
+      d:+pick(t,["drawn","d"])||0, l:+pick(t,["lost","l"])||0,
+      pts:+pick(t,["points","pts"])||0, noGd:true
+    }));
+    table.forEach(t=>{if(teamMatches(t.n))t.own=true;});
+  } else {
+    const tbl={};
+    const touch=n=>tbl[n]||(tbl[n]={n,p:0,w:0,d:0,l:0,gf:0,ga:0});
+    scored.forEach(r=>{
+      const H=touch(r.home),A=touch(r.away);
+      H.p++;A.p++;H.gf+=r.hs;H.ga+=r.as;A.gf+=r.as;A.ga+=r.hs;
+      if(r.hs>r.as){H.w++;A.l++}else if(r.hs<r.as){A.w++;H.l++}else{H.d++;A.d++}
+    });
+    Object.values(tbl).forEach(t=>{t.pts=t.w*3+t.d;if(teamMatches(t.n))t.own=true;});
+    table=Object.values(tbl);
+  }
+  return {fixtures,results,table,updated:raw.updated||null};
 }
 
 function head(p){
@@ -104,10 +117,10 @@ function page(p){
     const f=DATA.fixtures[0];
     h+=dh(CONFIG.team)+ln("");
     h+=`<div class="rowlogo"><img class="logo" alt="Loughborough Lions AFC crest" src="${LOGO}"><div>`+
-       `<div class="ln c">${esc("LOUGHBOROUGH".padEnd(28))}</div>`+
-       `<div class="ln c">${esc("LIONS AFC".padEnd(28))}</div>`+
-       `<div class="ln w">${esc("EST 2021".padEnd(28))}</div><div class="ln"> </div>`+
-       `<div class="ln y">${esc(cut(CONFIG.league,28))}</div></div></div>`;
+       `<div class="ln c">${esc("LOUGHBOROUGH".padEnd(27))}</div>`+
+       `<div class="ln c">${esc("LIONS AFC".padEnd(27))}</div>`+
+       `<div class="ln w">${esc("EST 2021".padEnd(27))}</div><div class="ln"> </div>`+
+       `<div class="ln y">${esc("U12 DIV 1".padEnd(27))}</div></div></div>`;
     if(f){
       h+=band("NEXT MATCH","band blink")+
          ln(`${String(f.date.day).padStart(2,"0")} ${MON[f.date.mon-1]}  ${f.t||""} KO`,"y")+
@@ -138,11 +151,19 @@ function page(p){
   }
   if(p==103){
     h+=dh("LEAGUE TABLE")+ln(CONFIG.league,"c")+ln("");
-    h+=`<div class="ln band">${esc(("PO  TEAM".padEnd(17)+rj("P",2)+" "+rj("W",2)+" "+rj("D",2)+" "+rj("L",2)+" "+rj("GD",3)+" "+rj("PTS",3)).padEnd(W))}</div>`;
-    const rows=DATA.table.slice().sort((a,b)=>(b.w*3+b.d)-(a.w*3+a.d)||(b.gf-b.ga)-(a.gf-a.ga)||b.gf-a.gf);
+    const hasGd=!(DATA.table[0]&&DATA.table[0].noGd);
+    h+=`<div class="ln band">${esc((hasGd
+      ?("PO  TEAM".padEnd(17)+rj("P",2)+" "+rj("W",2)+" "+rj("D",2)+" "+rj("L",2)+" "+rj("GD",3)+" "+rj("PTS",3))
+      :("PO  TEAM".padEnd(20)+rj("P",2)+" "+rj("W",2)+" "+rj("D",2)+" "+rj("L",2)+" "+rj("PTS",3))).padEnd(W))}</div>`;
+    const rows=DATA.table.slice().sort((a,b)=>b.pts-a.pts||((b.gf||0)-(b.ga||0))-((a.gf||0)-(a.ga||0))||(b.gf||0)-(a.gf||0));
     if(!rows.length) h+=ln("TABLE NOT AVAILABLE YET","w");
-    rows.forEach((t,i)=>{const gd=t.gf-t.ga;
-      const s=`${rj(i+1,2)}  ${cut(t.n,13)}${rj(t.p,2)} ${rj(t.w,2)} ${rj(t.d,2)} ${rj(t.l,2)} ${rj((gd>0?"+":"")+gd,3)} ${rj(t.w*3+t.d,3)}`;
+    rows.forEach((t,i)=>{
+      let s;
+      if(hasGd){const gd=(t.gf||0)-(t.ga||0);
+        s=`${rj(i+1,2)}  ${cut(t.n,13)}${rj(t.p,2)} ${rj(t.w,2)} ${rj(t.d,2)} ${rj(t.l,2)} ${rj((gd>0?"+":"")+gd,3)} ${rj(t.pts,3)}`;
+      } else {
+        s=`${rj(i+1,2)}  ${cut(t.n,16)}${rj(t.p,2)} ${rj(t.w,2)} ${rj(t.d,2)} ${rj(t.l,2)} ${rj(t.pts,3)}`;
+      }
       h+=ln(s.slice(0,W),t.own?"hl":"w");});
   }
   h+=ln("")+ln(DATA.updated?("UPDATED "+U(DATA.updated)).slice(0,W):CONFIG.note,"m");
@@ -155,10 +176,10 @@ function page(p){
 setInterval(()=>{const o=document.getElementById("hd");if(o)o.outerHTML=head(cur);},1000);
 document.addEventListener("keydown",e=>{const k={"1":100,"2":101,"3":102,"4":103}[e.key];if(k)page(k);});
 
-fetch("data.json?_=" + Date.now())
+fetch("data.json?_="+Date.now())
   .then(r=>r.json())
-  .then(raw=>{ DATA = parseFeed(raw); page(100); })
-  .catch(()=>{ CONFIG.note="COULDN'T LOAD DATA.JSON"; page(100); });
+  .then(raw=>{DATA=parseFeed(raw);page(100);})
+  .catch(()=>{CONFIG.note="COULDN'T LOAD DATA.JSON";page(100);});
 
 page(100);
 </script>
