@@ -1,44 +1,51 @@
 <?php
 $season = '503728397';
 $division = '862501863';
+$base = 'https://faapi.jwhsolutions.co.uk/api';
 
-$fixturesUrl = "https://faapi.jwhsolutions.co.uk/api/Fixtures/$division/season/$season";
-$resultsUrl  = "https://faapi.jwhsolutions.co.uk/api/Results/$division/season/$season";
-
-function fetchJson($url) {
-    $opts = [
-        'http' => [
-            'method' => 'GET',
-            'header' => "Accept: application/json\r\n",
-            'timeout' => 30,
-        ],
-    ];
-    $context = stream_context_create($opts);
-    $raw = @file_get_contents($url, false, $context);
-    if ($raw === false) {
-        return null;
+function fetchJson($url, $tries = 3) {
+    for ($i = 1; $i <= $tries; $i++) {
+        $ctx = stream_context_create([
+            'http' => [
+                'method' => 'GET',
+                'header' => "Accept: application/json\r\nUser-Agent: Mozilla/5.0\r\n",
+                'timeout' => 90,
+                'ignore_errors' => true,
+            ],
+        ]);
+        $raw = @file_get_contents($url, false, $ctx);
+        $status = $http_response_header[0] ?? 'no response';
+        echo "Try $i: $url -> $status\n";
+        if ($raw !== false && strpos($status, '200') !== false) {
+            $json = json_decode($raw, true);
+            if (is_array($json)) {
+                return $json;
+            }
+        }
+        sleep(5);
     }
-    $json = json_decode($raw, true);
-    return $json;
+    return null;
 }
 
-try {
-    $fixtures = fetchJson($fixturesUrl);
-    $results  = fetchJson($resultsUrl);
-
-    $data = [
-        'teams'    => [],
-        'fixtures' => $fixtures ?: [],
-        'results'  => $results ?: [],
-        'updated'  => gmdate('Y-m-d H:i:s') . ' UTC',
-    ];
-
-    if (!empty($data['fixtures']) || !empty($data['results'])) {
-        file_put_contents('data.json', json_encode($data, JSON_PRETTY_PRINT));
-        echo "Updated data.json\n";
-    } else {
-        echo "Fetch returned empty, leaving existing data.json untouched\n";
-    }
-} catch (Exception $e) {
-    echo "Fetch failed: " . $e->getMessage() . "\n";
+$old = [];
+if (file_exists('data.json')) {
+    $old = json_decode(file_get_contents('data.json'), true) ?: [];
 }
+
+$fixtures = fetchJson("$base/Fixtures/$division/season/$season");
+$results  = fetchJson("$base/Results/$division/season/$season");
+
+if ($fixtures === null && $results === null) {
+    echo "Both requests failed, leaving data.json untouched\n";
+    exit;
+}
+
+$data = [
+    'teams'    => [],
+    'fixtures' => $fixtures ?? ($old['fixtures'] ?? []),
+    'results'  => $results  ?? ($old['results']  ?? []),
+    'updated'  => gmdate('Y-m-d H:i:s') . ' UTC',
+];
+
+file_put_contents('data.json', json_encode($data, JSON_PRETTY_PRINT));
+echo "Updated data.json\n";
