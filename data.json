@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-11 09:20:18 UTC",
+    "updated": "2026-10-11 10:20:21 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -2541,13 +2541,6 @@
                     "competition": "U12 A.B. WALLACE TROPHIES Div 6"
                 },
                 {
-                    "fixtureDateTime": "11\/10\/26 10:30",
-                    "homeTeam": "Stoneygate Lions U12 Blues",
-                    "awayTeam": "Kibworth Town U12 Eagles",
-                    "location": "JUDGEMEADOW COMMUNITY COLLEGE",
-                    "competition": "U12 A.B. WALLACE TROPHIES Div 6"
-                },
-                {
                     "fixtureDateTime": "11\/10\/26 12:30",
                     "homeTeam": "Anstey Nomads U12 Reds",
                     "awayTeam": "Hinckley Town Juniors U12 Warriors",
@@ -2808,6 +2801,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "11\/10\/26 10:30",
+                    "homeTeam": "Stoneygate Lions U12 Blues",
+                    "score": "2 - 5 (HT 2-4)",
+                    "homeScore": "2",
+                    "awayScore": "5",
+                    "awayTeam": "Kibworth Town U12 Eagles",
+                    "division": "U12 A.B. WALLACE TROPHIES Div 6"
+                },
                 {
                     "fixtureDateTime": "04\/10\/26 10:30",
                     "homeTeam": "Chetwynd A U12 Cobras",
