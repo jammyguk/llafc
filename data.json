@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-11 13:22:56 UTC",
+    "updated": "2026-10-11 14:19:40 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -1069,13 +1069,6 @@
                     "competition": "U12 ESF26 - The Ultimate Tour Div 3"
                 },
                 {
-                    "fixtureDateTime": "11\/10\/26 10:30",
-                    "homeTeam": "Ingles U12 Reds",
-                    "awayTeam": "Carib Sport &amp; Social Football Club U12 S",
-                    "location": "LITTLE HAW LANE PLAYING FIELDS",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3"
-                },
-                {
                     "fixtureDateTime": "11\/10\/26 14:00",
                     "homeTeam": "Harborough Town Juniors U12 Rangers",
                     "awayTeam": "Leicester Nirvana Juniors U12 Reds",
@@ -1354,6 +1347,15 @@
                     "homeScore": "3",
                     "awayScore": "2",
                     "awayTeam": "Whetstone Athletic U12 Jaguars",
+                    "division": "U12 ESF26 - The Ultimate Tour Div 3"
+                },
+                {
+                    "fixtureDateTime": "11\/10\/26 10:30",
+                    "homeTeam": "Ingles U12 Reds",
+                    "score": "1 - 2 (HT 0-1)",
+                    "homeScore": "1",
+                    "awayScore": "2",
+                    "awayTeam": "Carib Sport &amp; Social Football Club U12 S",
                     "division": "U12 ESF26 - The Ultimate Tour Div 3"
                 },
                 {
@@ -3436,13 +3438,6 @@
                     "competition": "Under 12 Division 8"
                 },
                 {
-                    "fixtureDateTime": "11\/10\/26 12:30",
-                    "homeTeam": "Harborough Town Juniors U12 2016",
-                    "awayTeam": "Mountsorrel Juniors U12 Tigers",
-                    "location": "Harborough Town FC LE16 9HF",
-                    "competition": "Under 12 Division 8"
-                },
-                {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Loughborough Lions AFC U12 Bronzes",
                     "awayTeam": "Thurmaston Magpies Junior U12 Lightning",
@@ -3661,6 +3656,15 @@
                     "homeScore": "2",
                     "awayScore": "2",
                     "awayTeam": "AFC Market Bosworth Juniors U12 Wolves",
+                    "division": "Under 12 Division 8"
+                },
+                {
+                    "fixtureDateTime": "11\/10\/26 12:30",
+                    "homeTeam": "Harborough Town Juniors U12 2016",
+                    "score": "2 - 2",
+                    "homeScore": "2",
+                    "awayScore": "2",
+                    "awayTeam": "Mountsorrel Juniors U12 Tigers",
                     "division": "Under 12 Division 8"
                 },
                 {
@@ -5386,13 +5390,6 @@
                     "competition": "Under 12 Division 13"
                 },
                 {
-                    "fixtureDateTime": "11\/10\/26 10:30",
-                    "homeTeam": "Karma Leicester F.C. U12 Blue",
-                    "awayTeam": "Hinckley RFC U12 Stars",
-                    "location": "THE GROVE COMMUNITY HUB",
-                    "competition": "Under 12 Division 13"
-                },
-                {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Birstall United U12 Lions",
                     "awayTeam": "Beaumont Town 2012 U12 Pumas",
@@ -5624,6 +5621,15 @@
                     "homeScore": "4",
                     "awayScore": "2",
                     "awayTeam": "Thurlaston Magpies Junior U12 Falcons",
+                    "division": "Under 12 Division 13"
+                },
+                {
+                    "fixtureDateTime": "11\/10\/26 10:30",
+                    "homeTeam": "Karma Leicester F.C. U12 Blue",
+                    "score": "1 - 2",
+                    "homeScore": "1",
+                    "awayScore": "2",
+                    "awayTeam": "Hinckley RFC U12 Stars",
                     "division": "Under 12 Division 13"
                 },
                 {
