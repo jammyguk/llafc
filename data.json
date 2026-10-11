@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-10 18:19:26 UTC",
+    "updated": "2026-10-11 07:23:22 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -759,6 +759,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "11\/10\/26 12:30",
+                    "homeTeam": "Mountsorrel Juniors U12 Shadowcats",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Coalville Town Ravens U12 Raptors",
+                    "division": "U12 Div2 The Black Horse Aylestone"
+                },
                 {
                     "fixtureDateTime": "04\/10\/26 12:30",
                     "homeTeam": "Coalville Town Ravens U12 Raptors",
@@ -5089,6 +5098,24 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "11\/10\/26 12:30",
+                    "homeTeam": "Anstey Nomads U12 47's",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Wigston Willow U12 Hunters",
+                    "division": "Under 12 Division 12"
+                },
+                {
+                    "fixtureDateTime": "11\/10\/26 12:30",
+                    "homeTeam": "Leicester Nirvana Juniors U12 Greens",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Glen Villa Juniors U12 Jaguars",
+                    "division": "Under 12 Division 12"
+                },
+                {
                     "fixtureDateTime": "04\/10\/26 12:30",
                     "homeTeam": "Glen Villa Juniors U12 Jaguars",
                     "score": "Postponed P - P",
@@ -5486,6 +5513,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "11\/10\/26 10:30",
+                    "homeTeam": "Birstall United U12 Lions",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Croft Juniors 2013 U12 Royals",
+                    "division": "Under 12 Division 13"
+                },
                 {
                     "fixtureDateTime": "04\/10\/26 12:30",
                     "homeTeam": "Amanah All Stars U12 Amanah All Stars",
