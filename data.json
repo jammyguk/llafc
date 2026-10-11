@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-11 14:19:40 UTC",
+    "updated": "2026-10-11 15:19:40 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -1352,7 +1352,7 @@
                 {
                     "fixtureDateTime": "11\/10\/26 10:30",
                     "homeTeam": "Ingles U12 Reds",
-                    "score": "1 - 2 (HT 0-1)",
+                    "score": "1 - 2 (HT 1-1)",
                     "homeScore": "1",
                     "awayScore": "2",
                     "awayTeam": "Carib Sport &amp; Social Football Club U12 S",
@@ -3043,13 +3043,6 @@
             "name": "U12 Division 7",
             "fixtures": [
                 {
-                    "fixtureDateTime": "11\/10\/26 14:00",
-                    "homeTeam": "Thurlaston Magpies Junior U12 Raptors",
-                    "awayTeam": "Oadby Owls U12 Tawnys",
-                    "location": "THURLASTON FOOTBALL CLUB",
-                    "competition": "Under 12 Division 7"
-                },
-                {
                     "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "AFC Barwell U12 Dragons",
                     "awayTeam": "Melton Foxes FC U12 Lions",
@@ -3254,6 +3247,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "11\/10\/26 14:00",
+                    "homeTeam": "Thurlaston Magpies Junior U12 Raptors",
+                    "score": "4 - 1",
+                    "homeScore": "4",
+                    "awayScore": "1",
+                    "awayTeam": "Oadby Owls U12 Tawnys",
+                    "division": "Under 12 Division 7"
+                },
                 {
                     "fixtureDateTime": "11\/10\/26 12:30",
                     "homeTeam": "Whetstone Athletic U12 Tigers",
@@ -4298,20 +4300,6 @@
                     "competition": "Under 12 Division 10"
                 },
                 {
-                    "fixtureDateTime": "11\/10\/26 12:30",
-                    "homeTeam": "Croft Juniors 2013 U12 Diamonds",
-                    "awayTeam": "Ibstock United Juniors U12 Tigers",
-                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
-                    "competition": "Under 12 Division 10"
-                },
-                {
-                    "fixtureDateTime": "11\/10\/26 14:00",
-                    "homeTeam": "Kibworth Town U12 Falcons",
-                    "awayTeam": "Coalville Town Ravens U12 Robins",
-                    "location": "Birds Barn, Fleckney Road LE8 0HJ",
-                    "competition": "Under 12 Division 10"
-                },
-                {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Beaumont Park U12 Tigers",
                     "awayTeam": "Ibstock United Juniors U12 Tigers",
@@ -4474,6 +4462,24 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "11\/10\/26 14:00",
+                    "homeTeam": "Kibworth Town U12 Falcons",
+                    "score": "1 - 7 (HT 0-0)",
+                    "homeScore": "1",
+                    "awayScore": "7",
+                    "awayTeam": "Coalville Town Ravens U12 Robins",
+                    "division": "Under 12 Division 10"
+                },
+                {
+                    "fixtureDateTime": "11\/10\/26 12:30",
+                    "homeTeam": "Croft Juniors 2013 U12 Diamonds",
+                    "score": "0 - 7 (HT 0-0)",
+                    "homeScore": "0",
+                    "awayScore": "7",
+                    "awayTeam": "Ibstock United Juniors U12 Tigers",
+                    "division": "Under 12 Division 10"
+                },
                 {
                     "fixtureDateTime": "11\/10\/26 10:30",
                     "homeTeam": "Beaumont Park U12 Tigers",
