@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-15 08:12:40 UTC",
+    "updated": "2026-10-16 08:18:34 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -3414,6 +3414,13 @@
                 },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Aylestone Park Youth U12 94",
+                    "awayTeam": "Loughborough Lions AFC U12 Bronzes",
+                    "location": "AYLESTONE PARK",
+                    "competition": "Under 12 Division 8"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "FC Burbage U12 Jaguars",
                     "awayTeam": "Coalville Town Ravens U12 Rooks",
                     "location": "COLTS CLOSE RECREATION PARK",
@@ -3554,15 +3561,6 @@
                 }
             ],
             "results": [
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Aylestone Park Youth U12 94",
-                    "score": "1 - 0 (HT 0-0)",
-                    "homeScore": "1",
-                    "awayScore": "0",
-                    "awayTeam": "Loughborough Lions AFC U12 Bronzes",
-                    "division": "Under 12 Division 8"
-                },
                 {
                     "fixtureDateTime": "11\/10\/26 12:30",
                     "homeTeam": "Coalville Town Ravens U12 Rooks",
