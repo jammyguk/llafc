@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-16 08:18:34 UTC",
+    "updated": "2026-10-17 08:08:43 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -3428,16 +3428,16 @@
                 },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Thurmaston Magpies Junior U12 Lightning",
-                    "awayTeam": "Loughborough Lions AFC U12 Bronzes",
-                    "location": "JUBILEE PARK (THURMASTON)",
-                    "competition": "Under 12 Division 8"
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Mountsorrel Juniors U12 Tigers",
                     "awayTeam": "Quorn U12 Panthers",
                     "location": "Cedars academy 3G Wanlip Lane Birstall LE4 4GH",
+                    "competition": "Under 12 Division 8"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Thurmaston Magpies Junior U12 Lightning",
+                    "awayTeam": "Loughborough Lions AFC U12 Bronzes",
+                    "location": "JUBILEE PARK (THURMASTON)",
                     "competition": "Under 12 Division 8"
                 },
                 {
