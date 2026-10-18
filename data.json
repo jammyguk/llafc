@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-18 16:21:41 UTC",
+    "updated": "2026-10-18 17:21:42 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -5655,13 +5655,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "25\/10\/26 10:30",
-                    "homeTeam": "Riverside United Junior U12 Seahawks",
-                    "awayTeam": "Narborough Foxes U12",
-                    "location": "WREAKE VALLEY ACADEMY",
-                    "competition": "Under 12 Division 14"
-                },
-                {
-                    "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Shepshed Dynamo Youth &amp; Junior U12 Cobra",
                     "awayTeam": "Sileby Juniors U12 Stingrays",
                     "location": "IVESHEAD SCHOOL",
@@ -5679,6 +5672,13 @@
                     "homeTeam": "Harborough Town Juniors U12 2022",
                     "awayTeam": "Iannis FC U12 Reds",
                     "location": "Harborough Town FC LE16 9HF",
+                    "competition": "Under 12 Division 14"
+                },
+                {
+                    "fixtureDateTime": "25\/10\/26 12:30",
+                    "homeTeam": "Riverside United Junior U12 Seahawks",
+                    "awayTeam": "Narborough Foxes U12",
+                    "location": "WREAKE VALLEY ACADEMY",
                     "competition": "Under 12 Division 14"
                 },
                 {
