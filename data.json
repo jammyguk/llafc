@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-20 07:43:01 UTC",
+    "updated": "2026-10-21 07:56:22 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -4570,6 +4570,27 @@
                     "competition": "Under 12 Division 11"
                 },
                 {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Ibstock United Juniors U12 Lions",
+                    "awayTeam": "Coalville Town Ravens U12 Redwings",
+                    "location": "ASHBY ROAD PLAYING FIELDS",
+                    "competition": "Under 12 Division 11"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "Melton Foxes FC U12 Foxes",
+                    "awayTeam": "Hathern Juniors U12 Falcons",
+                    "location": "MARS SPORTS GROUND",
+                    "competition": "Under 12 Division 11"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "Royce Rangers U12 Rhinos",
+                    "awayTeam": "Shepshed Dynamo Youth &amp; Junior U12 Viper",
+                    "location": "ROYCE RANGERS FC",
+                    "competition": "Under 12 Division 11"
+                },
+                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Ibstock United Juniors U12 Lions",
                     "awayTeam": "Melton Foxes FC U12 Foxes",
@@ -4868,6 +4889,34 @@
                     "homeTeam": "Leicester Nirvana Juniors U12 Greens",
                     "awayTeam": "Lutterworth Town Juniors U12 AFC",
                     "location": "HAMILTON PARK",
+                    "competition": "Under 12 Division 12"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Borough Alliance Junior U12 Pumas",
+                    "awayTeam": "Anstey Nomads U12 47's",
+                    "location": "SYMINGTONS RECREATION GROUND",
+                    "competition": "Under 12 Division 12"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Loughborough Lions AFC U12 Golds",
+                    "awayTeam": "Loughborough Dynamo Junior U12 Ambers",
+                    "location": "Charnwood College LE11 4SQ",
+                    "competition": "Under 12 Division 12"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "AFC Barwell U12 Raptors",
+                    "awayTeam": "Lutterworth Town Juniors U12 AFC",
+                    "location": "AFC BARWELL",
+                    "competition": "Under 12 Division 12"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "Rothley Imps Junior U12 Renegades",
+                    "awayTeam": "Wigston Willow U12 Hunters",
+                    "location": "ROTHLEY SPORTS &amp; SOCIAL CLUB",
                     "competition": "Under 12 Division 12"
                 },
                 {
@@ -5236,13 +5285,6 @@
                 },
                 {
                     "fixtureDateTime": "25\/10\/26 10:30",
-                    "homeTeam": "Birstall United U12 Lions",
-                    "awayTeam": "Beaumont Town 2012 U12 Pumas",
-                    "location": "BIRSTALL UNITED FOOTBALL CLUB",
-                    "competition": "Under 12 Division 13"
-                },
-                {
-                    "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Glenfield United FC U12 Foxes",
                     "awayTeam": "Amanah All Stars U12 Amanah All Stars",
                     "location": "BEAUMONT LEYS SCHOOL",
@@ -5267,6 +5309,20 @@
                     "homeTeam": "Loughborough Lions AFC U12 Silvers",
                     "awayTeam": "Hinckley Borough FC U12 Boys",
                     "location": "Charnwood College LE11 4SQ",
+                    "competition": "Under 12 Division 13"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Beaumont Town 2012 U12 Pumas",
+                    "awayTeam": "Glenfield United FC U12 Foxes",
+                    "location": "MOWMACRE SPORTS GROUND",
+                    "competition": "Under 12 Division 13"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Croft Juniors 2013 U12 Royals",
+                    "awayTeam": "Birstall United U12 Lions",
+                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
                     "competition": "Under 12 Division 13"
                 },
                 {
@@ -5306,9 +5362,9 @@
                 },
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Croft Juniors 2013 U12 Royals",
-                    "awayTeam": "Birstall United U12 Lions",
-                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
+                    "homeTeam": "Birstall United U12 Lions",
+                    "awayTeam": "Beaumont Town 2012 U12 Pumas",
+                    "location": "BIRSTALL UNITED FOOTBALL CLUB",
                     "competition": "Under 12 Division 13"
                 },
                 {
@@ -5679,34 +5735,6 @@
                     "homeTeam": "Riverside United Junior U12 Seahawks",
                     "awayTeam": "Narborough Foxes U12",
                     "location": "WREAKE VALLEY ACADEMY",
-                    "competition": "Under 12 Division 14"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Shepshed Dynamo Youth &amp; Junior U12 Cobra",
-                    "awayTeam": "Quorn U12 Wildcats",
-                    "location": "IVESHEAD SCHOOL",
-                    "competition": "Under 12 Division 14"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "Croft Juniors 2013 U12 Cobalts",
-                    "awayTeam": "Narborough Foxes U12",
-                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
-                    "competition": "Under 12 Division 14"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "Harborough Town Juniors U12 2022",
-                    "awayTeam": "Riverside United Junior U12 Seahawks",
-                    "location": "Harborough Town FC LE16 9HF",
-                    "competition": "Under 12 Division 14"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "Oadby Owls U12 Falcons",
-                    "awayTeam": "Sileby Juniors U12 Stingrays",
-                    "location": "Beauchamp College 3G LE2 5TP",
                     "competition": "Under 12 Division 14"
                 },
                 {
