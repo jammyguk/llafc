@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-21 07:56:22 UTC",
+    "updated": "2026-10-22 08:22:23 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -1066,6 +1066,13 @@
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Whetstone Athletic U12 Jaguars",
                     "awayTeam": "Community Football Academy U12 Foxes",
+                    "location": "ELIZABETH PARK",
+                    "competition": "U12 ESF26 - The Ultimate Tour Div 3"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Whetstone Athletic U12 Jaguars",
+                    "awayTeam": "East Goscote United U12 Boys",
                     "location": "ELIZABETH PARK",
                     "competition": "U12 ESF26 - The Ultimate Tour Div 3"
                 },
