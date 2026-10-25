@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-25 08:27:26 UTC",
+    "updated": "2026-10-25 09:27:27 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -64,7 +64,7 @@
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Beaumont Park U12 Panthers",
                     "awayTeam": "Harborough Town Juniors U12 Reds Sunday",
-                    "location": "BEAUMONT LEYS SCHOOL",
+                    "location": "SOUTH CHARNWOOD HIGH SCHOOL",
                     "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
                 },
                 {
@@ -92,7 +92,7 @@
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Beaumont Park U12 Panthers",
                     "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
-                    "location": "BEAUMONT PARK",
+                    "location": "SOUTH CHARNWOOD HIGH SCHOOL",
                     "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
                 },
                 {
@@ -127,7 +127,7 @@
                     "fixtureDateTime": "06\/12\/26 12:30",
                     "homeTeam": "Beaumont Park U12 Panthers",
                     "awayTeam": "Melton Town U12 Tigers",
-                    "location": "BEAUMONT PARK",
+                    "location": "SOUTH CHARNWOOD HIGH SCHOOL",
                     "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
                 },
                 {
@@ -197,7 +197,7 @@
                     "fixtureDateTime": "20\/12\/26 12:30",
                     "homeTeam": "Beaumont Park U12 Panthers",
                     "awayTeam": "Croft Juniors 2013 U12 Blues",
-                    "location": "BEAUMONT PARK",
+                    "location": "SOUTH CHARNWOOD HIGH SCHOOL",
                     "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
                 },
                 {
@@ -546,7 +546,7 @@
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Beaumont Park U12 Pumas",
                     "awayTeam": "Quorn U12 Jaguars",
-                    "location": "BEAUMONT PARK",
+                    "location": "BEAUMONT LEYS SCHOOL",
                     "competition": "U12 Div2 The Black Horse Aylestone"
                 },
                 {
@@ -651,7 +651,7 @@
                     "fixtureDateTime": "13\/12\/26 10:30",
                     "homeTeam": "Beaumont Park U12 Pumas",
                     "awayTeam": "Mountsorrel Juniors U12 Shadowcats",
-                    "location": "BEAUMONT PARK",
+                    "location": "BEAUMONT LEYS SCHOOL",
                     "competition": "U12 Div2 The Black Horse Aylestone"
                 },
                 {
