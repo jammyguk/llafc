@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-25 15:27:59 UTC",
+    "updated": "2026-10-25 16:24:02 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -16,13 +16,6 @@
                     "homeTeam": "Heather Juniors U12 Lions",
                     "awayTeam": "Loughborough Lions AFC U12 Reds",
                     "location": "HEATHER ST JOHNS FC (ST JOHNS PARK)",
-                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-                },
-                {
-                    "fixtureDateTime": "25\/10\/26 12:30",
-                    "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
-                    "awayTeam": "Croft Juniors 2013 U12 Blues",
-                    "location": "Harborough Town Juniors U12 Reds Sunday",
                     "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
                 },
                 {
@@ -202,6 +195,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "25\/10\/26 12:30",
+                    "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
+                    "score": "1 - 0",
+                    "homeScore": "1",
+                    "awayScore": "0",
+                    "awayTeam": "Croft Juniors 2013 U12 Blues",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 12:30",
                     "homeTeam": "Whetstone Athletic U12 Lions",
@@ -517,13 +519,6 @@
                     "competition": "U12 Div2 The Black Horse Aylestone"
                 },
                 {
-                    "fixtureDateTime": "25\/10\/26 14:00",
-                    "homeTeam": "Iannis FC U12",
-                    "awayTeam": "Kirby Muxloe U12 Kings",
-                    "location": "THE GROVE COMMUNITY HUB",
-                    "competition": "U12 Div2 The Black Horse Aylestone"
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Barrow Town U12 Hawks",
                     "awayTeam": "Oadby Owls U12 Juniors",
@@ -721,6 +716,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "25\/10\/26 14:00",
+                    "homeTeam": "Iannis FC U12",
+                    "score": "5 - 1",
+                    "homeScore": "5",
+                    "awayScore": "1",
+                    "awayTeam": "Kirby Muxloe U12 Kings",
+                    "division": "U12 Div2 The Black Horse Aylestone"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 12:30",
                     "homeTeam": "Mountsorrel Juniors U12 Shadowcats",
@@ -2373,6 +2377,15 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "25\/10\/26 12:30",
+                    "homeTeam": "Karma Leicester F.C. U12",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Sporting Markfield U12 Foxes",
+                    "division": "U12 Industrial Laundry Equipment Div 5"
+                },
+                {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Lutterworth Athletic Youth U12 Thunder",
                     "score": "0 - 10 (HT 0-5)",
@@ -2601,13 +2614,6 @@
                     "competition": "U12 A.B. WALLACE TROPHIES Div 6"
                 },
                 {
-                    "fixtureDateTime": "25\/10\/26 14:00",
-                    "homeTeam": "Cosby United Youth &amp; Junior U12 Sharks",
-                    "awayTeam": "Borough Alliance Junior U12 Wolves",
-                    "location": "COSBY RECREATION GROUND",
-                    "competition": "U12 A.B. WALLACE TROPHIES Div 6"
-                },
-                {
                     "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "Fleckney Athletic Junior U12 Foxes",
                     "awayTeam": "Borough Alliance Junior U12 Wolves",
@@ -2819,6 +2825,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "25\/10\/26 14:00",
+                    "homeTeam": "Cosby United Youth &amp; Junior U12 Sharks",
+                    "score": "2 - 3",
+                    "homeScore": "2",
+                    "awayScore": "3",
+                    "awayTeam": "Borough Alliance Junior U12 Wolves",
+                    "division": "U12 A.B. WALLACE TROPHIES Div 6"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 12:30",
                     "homeTeam": "Anstey Nomads U12 Reds",
