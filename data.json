@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-25 10:36:15 UTC",
+    "updated": "2026-10-25 11:30:04 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -1625,13 +1625,6 @@
                 },
                 {
                     "fixtureDateTime": "25\/10\/26 10:30",
-                    "homeTeam": "Dunton &amp; Broughton United Jnrs U12 Tiger",
-                    "awayTeam": "Uppingham Town U12",
-                    "location": "BROUGHTON ASTLEY LEISURE CENTRE",
-                    "competition": "Under 12 Division 4 Cotton Counselling"
-                },
-                {
-                    "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "GNG Juniors U12 Lions",
                     "awayTeam": "Whetstone Athletic U12 Panthers",
                     "location": "RIVERSIDE FOOTBALL GROUND",
@@ -1870,6 +1863,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "25\/10\/26 10:30",
+                    "homeTeam": "Dunton &amp; Broughton United Jnrs U12 Tiger",
+                    "score": "4 - 2 (HT 1-1)",
+                    "homeScore": "4",
+                    "awayScore": "2",
+                    "awayTeam": "Uppingham Town U12",
+                    "division": "Under 12 Division 4 Cotton Counselling"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Kirby Muxloe U12 88's",
@@ -2581,13 +2583,6 @@
                 },
                 {
                     "fixtureDateTime": "25\/10\/26 10:30",
-                    "homeTeam": "Fleckney Athletic Junior U12 Foxes",
-                    "awayTeam": "Stoneygate Lions U12 Blues",
-                    "location": "LODGE ROAD RECREATION GROUND",
-                    "competition": "U12 A.B. WALLACE TROPHIES Div 6"
-                },
-                {
-                    "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Glen Villa Juniors U12 Panthers",
                     "awayTeam": "Hinckley Town Juniors U12 Warriors",
                     "location": "Great Glen Recreation Ground LE8 9FA",
@@ -2826,6 +2821,15 @@
                     "homeScore": "Postponed P",
                     "awayScore": "P",
                     "awayTeam": "Kibworth Town U12 Eagles",
+                    "division": "U12 A.B. WALLACE TROPHIES Div 6"
+                },
+                {
+                    "fixtureDateTime": "25\/10\/26 10:30",
+                    "homeTeam": "Fleckney Athletic Junior U12 Foxes",
+                    "score": "1 - 2 (HT 1-2)",
+                    "homeScore": "1",
+                    "awayScore": "2",
+                    "awayTeam": "Stoneygate Lions U12 Blues",
                     "division": "U12 A.B. WALLACE TROPHIES Div 6"
                 },
                 {
