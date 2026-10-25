@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-25 16:24:02 UTC",
+    "updated": "2026-10-25 17:25:38 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -719,7 +719,7 @@
                 {
                     "fixtureDateTime": "25\/10\/26 14:00",
                     "homeTeam": "Iannis FC U12",
-                    "score": "5 - 1",
+                    "score": "5 - 1 (HT 1-1)",
                     "homeScore": "5",
                     "awayScore": "1",
                     "awayTeam": "Kirby Muxloe U12 Kings",
@@ -746,7 +746,7 @@
                 {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Blaby &amp; Whetstone U12 Rangers",
-                    "score": "1 - 1",
+                    "score": "1 - 1 (HT 1-0)",
                     "homeScore": "1",
                     "awayScore": "1",
                     "awayTeam": "Barrow Town U12 Hawks",
@@ -1289,6 +1289,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "25\/10\/26 14:00",
+                    "homeTeam": "Harborough Town Juniors U12 Rangers",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Sporting Markfield U12 Tigers",
+                    "division": "U12 ESF26 - The Ultimate Tour Div 3"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Community Football Academy U12 Foxes",
@@ -2828,7 +2837,7 @@
                 {
                     "fixtureDateTime": "25\/10\/26 14:00",
                     "homeTeam": "Cosby United Youth &amp; Junior U12 Sharks",
-                    "score": "2 - 3",
+                    "score": "2 - 3 (HT 1-1)",
                     "homeScore": "2",
                     "awayScore": "3",
                     "awayTeam": "Borough Alliance Junior U12 Wolves",
@@ -5566,20 +5575,6 @@
                     "competition": "Under 12 Division 13"
                 },
                 {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Croft Juniors 2013 U12 Royals",
-                    "awayTeam": "Birstall United U12 Lions",
-                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
-                    "competition": "Under 12 Division 13"
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Beaumont Town 2012 U12 Pumas",
-                    "awayTeam": "Hinckley RFC U12 Stars",
-                    "location": "MOWMACRE SPORTS GROUND",
-                    "competition": "Under 12 Division 13"
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Croft Juniors 2013 U12 Royals",
                     "awayTeam": "Karma Leicester F.C. U12 Blue",
@@ -5609,9 +5604,9 @@
                 },
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Birstall United U12 Lions",
-                    "awayTeam": "Beaumont Town 2012 U12 Pumas",
-                    "location": "BIRSTALL UNITED FOOTBALL CLUB",
+                    "homeTeam": "Croft Juniors 2013 U12 Royals",
+                    "awayTeam": "Birstall United U12 Lions",
+                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
                     "competition": "Under 12 Division 13"
                 },
                 {
