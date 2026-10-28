@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-27 08:03:23 UTC",
+    "updated": "2026-10-28 08:14:53 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -1508,20 +1508,6 @@
         "u12-div4": {
             "name": "U12 Division 4",
             "fixtures": [
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Coalville Town Ravens U12 Ravens",
-                    "awayTeam": "GNG Juniors U12 Lions",
-                    "location": "COALVILLE FC (VOLTAGE SOLUTIONS STADIUM)",
-                    "competition": "Under 12 Division 4 Cotton Counselling"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Dunton &amp; Broughton United Jnrs U12 Tiger",
-                    "awayTeam": "AFC Andrews U12 Foxes",
-                    "location": "BROUGHTON ASTLEY LEISURE CENTRE",
-                    "competition": "Under 12 Division 4 Cotton Counselling"
-                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "AFC Andrews U12 Foxes",
@@ -4138,6 +4124,13 @@
             "name": "U12 Division 10",
             "fixtures": [
                 {
+                    "fixtureDateTime": "08\/11\/26 10:30",
+                    "homeTeam": "Kibworth Town U12 Falcons",
+                    "awayTeam": "Allexton &amp; New Parks Junior U12 Hawks",
+                    "location": "Birds Barn, Fleckney Road LE8 0HJ",
+                    "competition": "Under 12 Division 10"
+                },
+                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Coalville Town Ravens U12 Robins",
                     "awayTeam": "Croft Juniors 2013 U12 Diamonds",
@@ -4756,13 +4749,6 @@
                     "competition": "Under 12 Division 12"
                 },
                 {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Loughborough Lions AFC U12 Golds",
-                    "awayTeam": "Loughborough Dynamo Junior U12 Ambers",
-                    "location": "Charnwood College LE11 4SQ",
-                    "competition": "Under 12 Division 12"
-                },
-                {
                     "fixtureDateTime": "01\/11\/26 12:30",
                     "homeTeam": "AFC Barwell U12 Raptors",
                     "awayTeam": "Lutterworth Town Juniors U12 AFC",
@@ -4774,6 +4760,13 @@
                     "homeTeam": "Glen Villa Juniors U12 Jaguars",
                     "awayTeam": "Lutterworth Town Juniors U12 AFC",
                     "location": "Great Glen Recreation Ground LE8 9FA",
+                    "competition": "Under 12 Division 12"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "Loughborough Lions AFC U12 Golds",
+                    "awayTeam": "Loughborough Dynamo Junior U12 Ambers",
+                    "location": "Charnwood College LE11 4SQ",
                     "competition": "Under 12 Division 12"
                 },
                 {
