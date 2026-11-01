@@ -1,5 +1,5 @@
 {
-    "updated": "2026-10-31 18:33:04 UTC",
+    "updated": "2026-11-01 08:04:51 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -2198,6 +2198,15 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Wigston Willow U12 Pumas",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Sporting Markfield U12 Foxes",
+                    "division": "U12 Industrial Laundry Equipment Div 5"
+                },
+                {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Lutterworth Athletic Youth U12 Thunder",
                     "score": "0 - 10 (HT 0-5)",
@@ -2621,6 +2630,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Fleckney Athletic Junior U12 Foxes",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Borough Alliance Junior U12 Wolves",
+                    "division": "U12 A.B. WALLACE TROPHIES Div 6"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 14:00",
                     "homeTeam": "Cosby United Youth &amp; Junior U12 Sharks",
@@ -3471,6 +3489,33 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Coalville Town Ravens U12 Rooks",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "FC Burbage U12 Jaguars",
+                    "division": "Under 12 Division 8"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Quorn U12 Panthers",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Thurmaston Magpies Junior U12 Lightning",
+                    "division": "Under 12 Division 8"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Thurmaston Magpies Junior U12 Storm",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "AFC Market Bosworth Juniors U12 Wolves",
+                    "division": "Under 12 Division 8"
+                },
+                {
                     "fixtureDateTime": "25\/10\/26 12:30",
                     "homeTeam": "Coalville Town Ravens U12 Rooks",
                     "score": "3 - 4 (HT 0-0)",
@@ -3850,7 +3895,7 @@
                     "competition": "Under 12 Division 9"
                 },
                 {
-                    "fixtureDateTime": "13\/12\/26 10:30",
+                    "fixtureDateTime": "13\/12\/26 12:30",
                     "homeTeam": "Thompsons United U12 Blazes",
                     "awayTeam": "AFC Andrews U12 Ants",
                     "location": "ULLESTHORPE PLAYING FIELD",
@@ -4933,6 +4978,24 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "AFC Barwell U12 Raptors",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Lutterworth Town Juniors U12 AFC",
+                    "division": "Under 12 Division 12"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "Rothley Imps Junior U12 Renegades",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Wigston Willow U12 Hunters",
+                    "division": "Under 12 Division 12"
+                },
+                {
                     "fixtureDateTime": "25\/10\/26 12:30",
                     "homeTeam": "Anstey Nomads U12 47's",
                     "score": "1 - 4 (HT 1-1)",
@@ -5314,6 +5377,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Birstall United U12 Lions",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Croft Juniors 2013 U12 Royals",
+                    "division": "Under 12 Division 13"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Glenfield United FC U12 Foxes",
