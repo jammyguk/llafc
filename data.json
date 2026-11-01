@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-01 11:36:02 UTC",
+    "updated": "2026-11-01 12:48:12 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -2008,13 +2008,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Mowbray Rangers U12 Jaguars",
-                    "awayTeam": "Rothley Imps Junior U12 Raptors",
-                    "location": "MOWBRAY RANGERS FC",
-                    "competition": "U12 Industrial Laundry Equipment Div 5"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "Wigston Willow U12 Pumas",
                     "awayTeam": "Sporting Markfield U12 Foxes",
                     "location": "WIGSTON ACADEMY",
@@ -2197,6 +2190,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Mowbray Rangers U12 Jaguars",
+                    "score": "0 - 10",
+                    "homeScore": "0",
+                    "awayScore": "10",
+                    "awayTeam": "Rothley Imps Junior U12 Raptors",
+                    "division": "U12 Industrial Laundry Equipment Div 5"
+                },
                 {
                     "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "Wigston Willow U12 Pumas",
@@ -2915,20 +2917,6 @@
             "name": "U12 Division 7",
             "fixtures": [
                 {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "AFC Barwell U12 Dragons",
-                    "awayTeam": "Melton Foxes FC U12 Lions",
-                    "location": "AFC BARWELL",
-                    "competition": "Under 12 Division 7"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Stoke Golding U12 Dragons",
-                    "awayTeam": "Highfield Rangers J&amp;Y U12 Tigers",
-                    "location": "St Martins School CV13 6HT #1",
-                    "competition": "Under 12 Division 7"
-                },
-                {
                     "fixtureDateTime": "01\/11\/26 12:30",
                     "homeTeam": "Whetstone Athletic U12 Tigers",
                     "awayTeam": "Queniborough Athletic Juniors FC U12",
@@ -3119,6 +3107,24 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "AFC Barwell U12 Dragons",
+                    "score": "4 - 3",
+                    "homeScore": "4",
+                    "awayScore": "3",
+                    "awayTeam": "Melton Foxes FC U12 Lions",
+                    "division": "Under 12 Division 7"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Stoke Golding U12 Dragons",
+                    "score": "2 - 4 (HT 0-2)",
+                    "homeScore": "2",
+                    "awayScore": "4",
+                    "awayTeam": "Highfield Rangers J&amp;Y U12 Tigers",
+                    "division": "Under 12 Division 7"
+                },
                 {
                     "fixtureDateTime": "11\/10\/26 14:00",
                     "homeTeam": "Thurlaston Magpies Junior U12 Raptors",
@@ -3313,13 +3319,6 @@
                 },
                 {
                     "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Mountsorrel Juniors U12 Tigers",
-                    "awayTeam": "Harborough Town Juniors U12 2016",
-                    "location": "HALSTEAD ROAD PLAYING FIELDS",
-                    "competition": "Under 12 Division 8"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "Quorn U12 Panthers",
                     "awayTeam": "Thurmaston Magpies Junior U12 Lightning",
                     "location": "FARLEY WAY STADIUM",
@@ -3495,6 +3494,15 @@
                     "homeScore": "Postponed P",
                     "awayScore": "P",
                     "awayTeam": "FC Burbage U12 Jaguars",
+                    "division": "Under 12 Division 8"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Mountsorrel Juniors U12 Tigers",
+                    "score": "0 - 2",
+                    "homeScore": "0",
+                    "awayScore": "2",
+                    "awayTeam": "Harborough Town Juniors U12 2016",
                     "division": "Under 12 Division 8"
                 },
                 {
@@ -4787,13 +4795,6 @@
             "name": "U12 Division 12",
             "fixtures": [
                 {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Borough Alliance Junior U12 Pumas",
-                    "awayTeam": "Anstey Nomads U12 47's",
-                    "location": "SYMINGTONS RECREATION GROUND",
-                    "competition": "Under 12 Division 12"
-                },
-                {
                     "fixtureDateTime": "01\/11\/26 12:30",
                     "homeTeam": "AFC Barwell U12 Raptors",
                     "awayTeam": "Lutterworth Town Juniors U12 AFC",
@@ -4993,6 +4994,15 @@
                     "homeScore": "Postponed P",
                     "awayScore": "P",
                     "awayTeam": "Wigston Willow U12 Hunters",
+                    "division": "Under 12 Division 12"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Borough Alliance Junior U12 Pumas",
+                    "score": "2 - 1",
+                    "homeScore": "2",
+                    "awayScore": "1",
+                    "awayTeam": "Anstey Nomads U12 47's",
                     "division": "Under 12 Division 12"
                 },
                 {
@@ -5209,13 +5219,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Beaumont Town 2012 U12 Pumas",
-                    "awayTeam": "Glenfield United FC U12 Foxes",
-                    "location": "MOWMACRE SPORTS GROUND",
-                    "competition": "Under 12 Division 13"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "Birstall United U12 Lions",
                     "awayTeam": "Croft Juniors 2013 U12 Royals",
                     "location": "BIRSTALL UNITED FOOTBALL CLUB",
@@ -5377,6 +5380,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Beaumont Town 2012 U12 Pumas",
+                    "score": "2 - 0",
+                    "homeScore": "2",
+                    "awayScore": "0",
+                    "awayTeam": "Glenfield United FC U12 Foxes",
+                    "division": "Under 12 Division 13"
+                },
                 {
                     "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "Birstall United U12 Lions",
