@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-01 15:38:19 UTC",
+    "updated": "2026-11-01 16:37:48 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -2007,13 +2007,6 @@
             "name": "U12 Division 5",
             "fixtures": [
                 {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Wigston Willow U12 Pumas",
-                    "awayTeam": "Sporting Markfield U12 Foxes",
-                    "location": "WIGSTON ACADEMY",
-                    "competition": "U12 Industrial Laundry Equipment Div 5"
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Anstey Nomads U12 Swifts",
                     "awayTeam": "Mowbray Rangers U12 Jaguars",
@@ -2197,15 +2190,6 @@
                     "homeScore": "0",
                     "awayScore": "10",
                     "awayTeam": "Rothley Imps Junior U12 Raptors",
-                    "division": "U12 Industrial Laundry Equipment Div 5"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Wigston Willow U12 Pumas",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "Sporting Markfield U12 Foxes",
                     "division": "U12 Industrial Laundry Equipment Div 5"
                 },
                 {
@@ -2421,13 +2405,6 @@
             "name": "U12 Division 6",
             "fixtures": [
                 {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Fleckney Athletic Junior U12 Foxes",
-                    "awayTeam": "Borough Alliance Junior U12 Wolves",
-                    "location": "LODGE ROAD RECREATION GROUND",
-                    "competition": "U12 A.B. WALLACE TROPHIES Div 6"
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Birstall United U12 Bears",
                     "awayTeam": "Glen Villa Juniors U12 Panthers",
@@ -2632,15 +2609,6 @@
                 }
             ],
             "results": [
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Fleckney Athletic Junior U12 Foxes",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "Borough Alliance Junior U12 Wolves",
-                    "division": "U12 A.B. WALLACE TROPHIES Div 6"
-                },
                 {
                     "fixtureDateTime": "25\/10\/26 14:00",
                     "homeTeam": "Cosby United Youth &amp; Junior U12 Sharks",
@@ -2917,13 +2885,6 @@
             "name": "U12 Division 7",
             "fixtures": [
                 {
-                    "fixtureDateTime": "01\/11\/26 14:00",
-                    "homeTeam": "Thurlaston Magpies Junior U12 Raptors",
-                    "awayTeam": "Community Football Academy U12 Shubaan",
-                    "location": "THURLASTON FOOTBALL CLUB",
-                    "competition": "Under 12 Division 7"
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Highfield Rangers J&amp;Y U12 Tigers",
                     "awayTeam": "Hinckley Town Juniors U12 Dragons",
@@ -3100,6 +3061,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "01\/11\/26 14:00",
+                    "homeTeam": "Thurlaston Magpies Junior U12 Raptors",
+                    "score": "5 - 0",
+                    "homeScore": "5",
+                    "awayScore": "0",
+                    "awayTeam": "Community Football Academy U12 Shubaan",
+                    "division": "Under 12 Division 7"
+                },
                 {
                     "fixtureDateTime": "01\/11\/26 12:30",
                     "homeTeam": "Whetstone Athletic U12 Tigers",
@@ -3313,27 +3283,6 @@
             "name": "U12 Division 8",
             "fixtures": [
                 {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Coalville Town Ravens U12 Rooks",
-                    "awayTeam": "FC Burbage U12 Jaguars",
-                    "location": "Scotland Playing Fields LE67 3SJ",
-                    "competition": "Under 12 Division 8"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Quorn U12 Panthers",
-                    "awayTeam": "Thurmaston Magpies Junior U12 Lightning",
-                    "location": "FARLEY WAY STADIUM",
-                    "competition": "Under 12 Division 8"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Thurmaston Magpies Junior U12 Storm",
-                    "awayTeam": "AFC Market Bosworth Juniors U12 Wolves",
-                    "location": "JUBILEE PARK (THURMASTON)",
-                    "competition": "Under 12 Division 8"
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "AFC Market Bosworth Juniors U12 Wolves",
                     "awayTeam": "Harborough Town Juniors U12 2016",
@@ -3491,38 +3440,11 @@
             "results": [
                 {
                     "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Coalville Town Ravens U12 Rooks",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "FC Burbage U12 Jaguars",
-                    "division": "Under 12 Division 8"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "Mountsorrel Juniors U12 Tigers",
                     "score": "0 - 2",
                     "homeScore": "0",
                     "awayScore": "2",
                     "awayTeam": "Harborough Town Juniors U12 2016",
-                    "division": "Under 12 Division 8"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Quorn U12 Panthers",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "Thurmaston Magpies Junior U12 Lightning",
-                    "division": "Under 12 Division 8"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Thurmaston Magpies Junior U12 Storm",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "AFC Market Bosworth Juniors U12 Wolves",
                     "division": "Under 12 Division 8"
                 },
                 {
