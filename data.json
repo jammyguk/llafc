@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-01 12:48:12 UTC",
+    "updated": "2026-11-01 14:01:50 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -2917,13 +2917,6 @@
             "name": "U12 Division 7",
             "fixtures": [
                 {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "Whetstone Athletic U12 Tigers",
-                    "awayTeam": "Queniborough Athletic Juniors FC U12",
-                    "location": "ELIZABETH PARK",
-                    "competition": "Under 12 Division 7"
-                },
-                {
                     "fixtureDateTime": "01\/11\/26 14:00",
                     "homeTeam": "Thurlaston Magpies Junior U12 Raptors",
                     "awayTeam": "Community Football Academy U12 Shubaan",
@@ -3107,6 +3100,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "Whetstone Athletic U12 Tigers",
+                    "score": "2 - 2",
+                    "homeScore": "2",
+                    "awayScore": "2",
+                    "awayTeam": "Queniborough Athletic Juniors FC U12",
+                    "division": "Under 12 Division 7"
+                },
                 {
                     "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "AFC Barwell U12 Dragons",
@@ -4513,13 +4515,6 @@
             "name": "U12 Division 11",
             "fixtures": [
                 {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Ibstock United Juniors U12 Lions",
-                    "awayTeam": "Coalville Town Ravens U12 Redwings",
-                    "location": "ASHBY ROAD PLAYING FIELDS",
-                    "competition": "Under 12 Division 11"
-                },
-                {
                     "fixtureDateTime": "01\/11\/26 12:30",
                     "homeTeam": "Melton Foxes FC U12 Foxes",
                     "awayTeam": "Hathern Juniors U12 Falcons",
@@ -4654,6 +4649,24 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "Royce Rangers U12 Rhinos",
+                    "score": "2 - 5",
+                    "homeScore": "2",
+                    "awayScore": "5",
+                    "awayTeam": "Shepshed Dynamo Youth &amp; Junior U12 Viper",
+                    "division": "Under 12 Division 11"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 10:30",
+                    "homeTeam": "Ibstock United Juniors U12 Lions",
+                    "score": "0 - 4 (HT 0-2)",
+                    "homeScore": "0",
+                    "awayScore": "4",
+                    "awayTeam": "Coalville Town Ravens U12 Redwings",
+                    "division": "Under 12 Division 11"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Hathern Juniors U12 Falcons",
