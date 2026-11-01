@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-01 14:01:50 UTC",
+    "updated": "2026-11-01 14:39:50 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -4515,20 +4515,6 @@
             "name": "U12 Division 11",
             "fixtures": [
                 {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "Melton Foxes FC U12 Foxes",
-                    "awayTeam": "Hathern Juniors U12 Falcons",
-                    "location": "MARS SPORTS GROUND",
-                    "competition": "Under 12 Division 11"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "Royce Rangers U12 Rhinos",
-                    "awayTeam": "Shepshed Dynamo Youth &amp; Junior U12 Viper",
-                    "location": "ROYCE RANGERS FC",
-                    "competition": "Under 12 Division 11"
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Ibstock United Juniors U12 Lions",
                     "awayTeam": "Melton Foxes FC U12 Foxes",
@@ -4649,6 +4635,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "Melton Foxes FC U12 Foxes",
+                    "score": "16 - 0",
+                    "homeScore": "16",
+                    "awayScore": "0",
+                    "awayTeam": "Hathern Juniors U12 Falcons",
+                    "division": "Under 12 Division 11"
+                },
                 {
                     "fixtureDateTime": "01\/11\/26 12:30",
                     "homeTeam": "Royce Rangers U12 Rhinos",
@@ -4812,20 +4807,6 @@
                     "homeTeam": "AFC Barwell U12 Raptors",
                     "awayTeam": "Lutterworth Town Juniors U12 AFC",
                     "location": "AFC BARWELL",
-                    "competition": "Under 12 Division 12"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "Glen Villa Juniors U12 Jaguars",
-                    "awayTeam": "Lutterworth Town Juniors U12 AFC",
-                    "location": "Great Glen Recreation Ground LE8 9FA",
-                    "competition": "Under 12 Division 12"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "Loughborough Lions AFC U12 Golds",
-                    "awayTeam": "Loughborough Dynamo Junior U12 Ambers",
-                    "location": "Charnwood College LE11 4SQ",
                     "competition": "Under 12 Division 12"
                 },
                 {
@@ -4998,6 +4979,24 @@
                     "homeScore": "Postponed P",
                     "awayScore": "P",
                     "awayTeam": "Lutterworth Town Juniors U12 AFC",
+                    "division": "Under 12 Division 12"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "Glen Villa Juniors U12 Jaguars",
+                    "score": "6 - 4",
+                    "homeScore": "6",
+                    "awayScore": "4",
+                    "awayTeam": "Lutterworth Town Juniors U12 AFC",
+                    "division": "Under 12 Division 12"
+                },
+                {
+                    "fixtureDateTime": "01\/11\/26 12:30",
+                    "homeTeam": "Loughborough Lions AFC U12 Golds",
+                    "score": "2 - 1",
+                    "homeScore": "2",
+                    "awayScore": "1",
+                    "awayTeam": "Loughborough Dynamo Junior U12 Ambers",
                     "division": "Under 12 Division 12"
                 },
                 {
