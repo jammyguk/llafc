@@ -346,6 +346,11 @@ function page(p){
       h+=ln("NO RESULTS YET","w");
     }
     h+=ln("")+ln(" PRESS TEAMS TO CHANGE TEAM","c");
+    if(isLions){
+      const topic="lionstext-"+T.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+      h+=ln("")+`<div class="ln g"><a class="vlink" href="https://ntfy.sh/${topic}" target="_blank" rel="noopener"> > GET MATCH ALERTS ON YOUR PHONE</a></div>`+
+         ln("   RESULTS AND KICK-OFF CHANGES","m")+ln("   (FREE NTFY APP, OPENS A SETUP PAGE)","m");
+    }
   }
   if(p==101){
     h+=dh("FIXTURES")+ln(T,"c")+ln("");
