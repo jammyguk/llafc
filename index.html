@@ -29,6 +29,8 @@ body{margin:0;min-height:100%;background:#000;color:var(--white);display:flex;ju
 .fast button{font:inherit;line-height:1.1;border:0;padding:.1em 0;cursor:pointer;color:#000;text-align:center}
 .fast button[aria-current="page"]{outline:2px solid #fff;outline-offset:-2px}
 .fast button:focus-visible{outline:3px solid #fff;outline-offset:-3px}
+.fast.six button{font-size:.8em}
+.fast .fw{background:var(--white)}
 .fast .fr{background:var(--red)}.fast .fg{background:var(--green)}.fast .fy{background:var(--yellow)}.fast .fc{background:var(--cyan)}.fast .fm{background:var(--magenta)}
 .pick{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;color:var(--white);white-space:pre-wrap;
   line-height:1.1;padding:.2em 0;cursor:pointer;overflow:hidden}
@@ -193,6 +195,46 @@ function addCups(){
   DATA.results.sort((x,y)=>tsd(y.date)-tsd(x.date));
 }
 
+// Last-8 knockout bracket for a cup. Data comes from cups.json: "bracket":{"qf":[4 ties],"sf":[2 ties],"f":[1 tie]},
+// each tie {home,away,hs,as,pens}. Anything not played yet shows as TBC.
+function bracketHtml(cup,us){
+  const B=cup.bracket||{}, qf=B.qf||[], sf=B.sf||[], fi=(B.f||[])[0];
+  const win=t=>{if(!t||t.hs==null||t.as==null)return "";
+    let d=t.hs-t.as;if(!d&&t.pens)d=t.pens[0]-t.pens[1];return d>0?t.home:d<0?t.away:"";};
+  const q=i=>qf[i]||{};
+  const teams=[q(0).home,q(0).away,q(1).home,q(1).away,q(2).home,q(2).away,q(3).home,q(3).away];
+  const qw=[0,1,2,3].map(i=>win(qf[i]));
+  const sw=[0,1].map(i=>win(sf[i]));
+  const champ=win(fi);
+  const g=Array.from({length:15},()=>Array.from({length:W},()=>[" ",""]));
+  const put=(r,c,s,cl)=>{[...s].forEach((ch,i)=>{g[r][c+i]=[ch,cl];});};
+  const nm=t=>(t?short(U(t).replace(/^LOUGHBOROUGH LIONS (AFC )?(U\d+ )?/,"LIONS "),11):"TBC").padEnd(11);
+  const col=t=>t&&U(t)==us?"y":"w";
+  const half=(n,s,f,o)=>{
+    [0,2,4,6].forEach((r,k)=>{put(o+r,0,nm(n[k]),col(n[k]));put(o+r,11,"-+","c");});
+    put(o+1,12,"|-","c");put(o+1,14,nm(s[0]),col(s[0]));put(o+1,25,"-+","c");
+    put(o+5,12,"|-","c");put(o+5,14,nm(s[1]),col(s[1]));put(o+5,25,"-+","c");
+    put(o+2,26,"|","c");put(o+4,26,"|","c");
+    put(o+3,26,"|-","c");put(o+3,28,nm(f),col(f));
+  };
+  half(teams.slice(0,4),[qw[0],qw[1]],sw[0],0);
+  half(teams.slice(4),[qw[2],qw[3]],sw[1],8);
+  for(let r=3;r<=10;r++)put(r,39,(r==3||r==10)?"+":"|","c");
+  const row=cells=>{let out="",cur=null,buf="";
+    cells.forEach(([ch,cl])=>{cl=cl||"w";if(cl!==cur){if(buf)out+=`<span class="${cur}">${esc(buf)}</span>`;cur=cl;buf="";}buf+=ch;});
+    return `<div class="ln">${out}<span class="${cur}">${esc(buf)}</span></div>`;};
+  const hdr=Array.from({length:W},()=>[" ",""]);
+  [[0,"QUARTER-FINAL"],[14,"SEMI-FINAL"],[28,"FINAL"]].forEach(([c,s])=>[...s].forEach((ch,i)=>{hdr[c+i]=[ch,"m"];}));
+  let h=row(hdr)+g.map(row).join("")+ln("");
+  const f1=fi&&fi.home?fi.home:(sw[0]||""), f2=fi&&fi.away?fi.away:(sw[1]||"");
+  const sc=fi&&fi.hs!=null&&fi.as!=null?` ${fi.hs}-${fi.as} `:"  v  ";
+  h+=band("THE FINAL")+ln("");
+  h+=lines((f1?short(f1,16):"TBC")+sc+(f2?short(f2,16):"TBC"),"y");
+  if(fi&&fi.pens)h+=ln("PENS "+fi.pens[0]+"-"+fi.pens[1],"y");
+  if(champ)h+=ln("")+ln("WINNERS: "+short(champ,28),"g");
+  return h+ln("");
+}
+
 function compute(){
   const L=RAW.leagues[STATE.league];
   DATA=L?parseFeed(L,STATE.team):{results:[],league:[],fixtures:[],table:[],teams:[]};
@@ -302,6 +344,29 @@ function page(p){
       h+=ln(s.slice(0,W),t.own?"hl":"w");
     });
   }
+  if(p==104){
+    h+=dh("CUPS")+ln(T,"c")+ln("");
+    const us=T, shown=[];
+    CUPS.forEach(c=>{
+      const nm=c.name||"CUP";
+      const rs=DATA.results.filter(x=>x.cup===nm).slice().reverse();
+      const fx=DATA.fixtures.filter(x=>x.cup===nm);
+      if(!rs.length&&!fx.length&&!c.bracket)return;
+      shown.push(nm);
+      wrapText(U(nm),W-1).forEach(x=>{h+=band(x);});
+      rs.forEach(x=>{
+        const r=res(x);
+        h+=ln(`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]}  ${r} ${x.f}-${x.a}  ${short(x.opp,22)}${x.pf!==undefined?" PENS":""}`,r=="W"?"g":r=="L"?"r":"y");
+      });
+      fx.forEach(x=>{
+        h+=ln(`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]}  ${x.home?"HOME":"AWAY"} ${short(x.opp,24)}`,"w");
+      });
+      h+=ln("");
+      if(c.bracket)h+=bracketHtml(c,us);
+      else h+=ln("BRACKET SHOWN FROM THE QUARTER-FINALS","c")+ln("");
+    });
+    if(!shown.length)h+=ln("NOT IN ANY CUP YET","w");
+  }
   if(p==110){
     h+=dh("CHOOSE A LEAGUE")+ln("");
     ids.slice().sort((a,b)=>lorder(a,RAW.leagues[a])-lorder(b,RAW.leagues[b])).forEach(id=>{h+=pick("league",id,lshort(id,RAW.leagues[id]),id==STATE.league);});
@@ -318,7 +383,9 @@ function page(p){
     if(ids.length>1) h+=ln("")+pick("leagues","","  << ALL LEAGUES",false);
   }
   h+=ln("")+ln(DATA.updated?("UPDATED "+U(DATA.updated)).slice(0,W):STATE.note,"m");
-  h+=`<nav class="fast" aria-label="Pages">`+[["fr",100,"HOME"],["fg",101,"FIXTURES"],["fy",102,"RESULTS"],["fc",103,"TABLE"],["fm",110,"TEAMS"]].map(([c,n,l])=>
+  const keys=[["fr",100,"HOME"],["fg",101,"FIXTURES"],["fy",102,"RESULTS"],["fc",103,"TABLE"],["fm",110,"TEAMS"]];
+  if(CUPS.length)keys.splice(4,0,["fw",104,"CUP"]);
+  h+=`<nav class="fast${keys.length>5?" six":""}" style="grid-template-columns:repeat(${keys.length},1fr)" aria-label="Pages">`+keys.map(([c,n,l])=>
      `<button class="${c}" data-p="${n}" ${(n==p||(n==110&&p>=110))?'aria-current="page"':""}>${l}</button>`).join("")+`</nav>`;
   tv.innerHTML=h; cur=p;
   tv.querySelectorAll("button[data-p]").forEach(b=>b.onclick=()=>page(+b.dataset.p));
@@ -331,7 +398,7 @@ function page(p){
 }
 
 setInterval(()=>{const o=document.getElementById("hd");if(o)o.outerHTML=head(cur);},1000);
-document.addEventListener("keydown",e=>{const k={"1":100,"2":101,"3":102,"4":103,"5":110}[e.key];if(k)page(k);});
+document.addEventListener("keydown",e=>{const k={"1":100,"2":101,"3":102,"4":103,"5":110,"6":104}[e.key];if(k)page(k);});
 
 load();
 fetch("data.json?_="+Date.now())
