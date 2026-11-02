@@ -367,14 +367,17 @@ function cupRoad(c,nm,us){
   if(alive.length){
     o+=ln(`${alive.length} TEAMS ${fixedRound?"IN THIS ROUND":"STILL IN"}${inCup?"  - WE ARE IN":""}`,inCup?"y":"w");
     if(!fixedRound&&inCup){
-      const others=alive.filter(t=>U(t)!=us).sort((a,b)=>U(a).localeCompare(U(b)));
+      const divOf={};allTeams().forEach(t=>{const m=/(\d+)$/.exec(t.id);if(m&&!divOf[norm(t.n)])divOf[norm(t.n)]=+m[1];});
+      const dv=t=>divOf[norm(t)]||99;
+      const others=alive.filter(t=>U(t)!=us).sort((a,b)=>dv(a)-dv(b)||U(a).localeCompare(U(b)));
       o+=tog("draw",`WHO WE COULD DRAW (${others.length})`);
       if(open("draw")){
         o+=ln("DRAW NOT MADE YET - ANY OF THESE","m");
         others.forEach(t=>{
           const lions=U(t).includes("LOUGHBOROUGH LIONS");
-          o+=ln(" "+short(t,29).padEnd(29)+" "+rj(lastScore[t]||"",6),lions?"y":"w");});
-        o+=ln(" (SCORE = THEIR LAST WIN, P = PENS)","m");
+          const d=dv(t),tag=(d==99?"--":"D"+d).padEnd(3);
+          o+=ln(" "+tag+"- "+short(t,25).padEnd(25)+" "+rj(lastScore[t]||"",6),lions?"y":"w");});
+        o+=ln(" (D=DIVISION --=OTHER LEAGUE P=PENS)","m");
       }
     }
   }
