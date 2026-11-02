@@ -166,6 +166,9 @@ function addCups(){
   const us=U(STATE.team), today=new Date();today.setHours(0,0,0,0);
   const tsd=d=>new Date(d.yr,d.mon-1,d.day).getTime();
   DATA.cupRes=[];
+  const played={};
+  CUPS.forEach(c=>(c.results||[]).forEach(r=>{
+    if(U(r.home)==us||U(r.away)==us)played[(c.name||"CUP")+"|"+r.date]=1;}));
   CUPS.forEach(c=>{
     const nm=c.name||"CUP";
     (c.fixtures||[]).forEach(f=>{
@@ -177,8 +180,10 @@ function addCups(){
     (c.results||[]).forEach(r=>{
       const p=pdate(r.date);if(!p)return;
       const h=U(r.home)==us, a=U(r.away)==us;
+      // Show the whole round (every match in this cup on this date) if the team played in it.
+      if(h||a||played[nm+"|"+r.date])
+        DATA.cupRes.push({date:p.date,home:r.home,away:r.away,hs:r.hs,as:r.as,pens:r.pens,name:nm,own:h||a});
       if(!(h||a))return;
-      DATA.cupRes.push({date:p.date,home:r.home,away:r.away,hs:r.hs,as:r.as,pens:r.pens,name:nm});
       const x={date:p.date,opp:h?r.away:r.home,home:h,f:h?r.hs:r.as,a:h?r.as:r.hs,cup:nm};
       if(r.pens){x.pf=h?r.pens[0]:r.pens[1];x.pa=h?r.pens[1]:r.pens[0];}
       DATA.results.push(x);
@@ -273,11 +278,13 @@ function page(p){
           h+=ln(short(r.home,16).padEnd(16)+" "+rj(r.hs,2)+"-"+String(r.as).padEnd(2)+" "+short(r.away,16),r.own?"y":"w");
         });
       let lastCup="";
-      crows.forEach(r=>{
-        if(r.name!==lastCup){h+=lines("CUP - "+U(r.name),"c");lastCup=r.name;}
-        h+=ln(short(r.home,16).padEnd(16)+" "+rj(r.hs,2)+"-"+String(r.as).padEnd(2)+" "+short(r.away,16),"y");
-        if(r.pens)h+=ln("   PENS "+r.pens[0]+"-"+r.pens[1],"y");
-      });
+      crows.sort((a,b)=>(a.name<b.name?-1:a.name>b.name?1:0)||(b.own?1:0)-(a.own?1:0)||U(a.home).localeCompare(U(b.home)))
+        .forEach(r=>{
+          if(r.name!==lastCup){h+=lines("CUP - "+U(r.name),"c");lastCup=r.name;}
+          const c=r.own?"y":"w";
+          h+=ln(short(r.home,16).padEnd(16)+" "+rj(r.hs,2)+"-"+String(r.as).padEnd(2)+" "+short(r.away,16),c);
+          if(r.pens)h+=ln("   PENS "+r.pens[0]+"-"+r.pens[1],c);
+        });
       h+=ln("");
     });
   }
