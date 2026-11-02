@@ -1,9 +1,10 @@
 name: Update data
 on:
   schedule:
-    # Sundays: every 15 minutes from 10am UK time (runs from 09:00 UTC; the first
-    # hour is skipped in winter by the check below) until the evening.
-    - cron: '*/15 9-19 * * 0'
+    # Sundays 10am-4pm UK time: scan every 5 minutes (match time).
+    - cron: '*/5 9-15 * * 0'
+    # Sundays 4pm-8pm UK time: scan every 15 minutes.
+    - cron: '*/15 15-19 * * 0'
     # Every other time: every 3 hours.
     - cron: '0 */3 * * *'
   workflow_dispatch:
@@ -26,12 +27,13 @@ jobs:
           dow=$(TZ=Europe/London date +%u)    # 7 = Sunday
           hour=$(TZ=Europe/London date +%-H)
           run=true
-          # the 15-minute runs only start at 10am UK time
-          if [ "$SCHED" = '*/15 9-19 * * 0' ] && [ "$hour" -lt 10 ]; then run=false; fi
-          # the 3-hourly runs step aside while the 15-minute runs are going
-          if [ "$SCHED" = '0 */3 * * *' ] && [ "$dow" = 7 ] && [ "$hour" -ge 10 ] && [ "$hour" -le 20 ]; then run=false; fi
+          case "$SCHED" in
+            '*/5 9-15 * * 0')    { [ "$dow" = 7 ] && [ "$hour" -ge 10 ] && [ "$hour" -le 15 ]; } || run=false ;;
+            '*/15 15-19 * * 0')  { [ "$dow" = 7 ] && [ "$hour" -ge 16 ] && [ "$hour" -le 19 ]; } || run=false ;;
+            '0 */3 * * *')       { [ "$dow" = 7 ] && [ "$hour" -ge 10 ] && [ "$hour" -le 19 ]; } && run=false ;;
+          esac
           echo "run=$run" >> "$GITHUB_OUTPUT"
-          echo "UK day=$dow hour=$hour run=$run"
+          echo "UK day=$dow hour=$hour schedule=[$SCHED] run=$run"
 
   # Reads the data from FullTime using our own copy of the open-source FullTimeAPI
   # (pinned to the version we tested). This job can only READ the repo.
@@ -70,7 +72,7 @@ jobs:
       - name: Fetch the data
         env:
           API_BASE: http://127.0.0.1:5069/api
-          MAX_PARALLEL: '4'
+          MAX_PARALLEL: '14'
         run: php fetch.php
       - uses: actions/upload-artifact@v4
         with:

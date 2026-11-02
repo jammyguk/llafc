@@ -239,6 +239,13 @@ foreach ($leagues as $lg) {
     $out[$id] = $entry;
 }
 
+// Only write a new data.json if the fixtures/results actually changed since
+// last time (so a quiet scan makes no commit and no site rebuild).
+if (($old['leagues'] ?? null) == $out) {
+    echo "Scanned all leagues: no changes.\n";
+    exit(0);
+}
+
 $data = [
     'updated' => gmdate('Y-m-d H:i:s') . ' UTC',
     'leagues' => $out,
