@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-02 13:55:51 UTC",
+    "updated": "2026-11-02 14:10:32 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -458,13 +458,6 @@
                 },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Beaumont Park U12 Pumas",
-                    "awayTeam": "Quorn U12 Jaguars",
-                    "location": "BEAUMONT LEYS SCHOOL",
-                    "competition": "U12 Div2 The Black Horse Aylestone"
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Harborough Town Juniors U12 94",
                     "awayTeam": "Blaby &amp; Whetstone U12 Rangers",
                     "location": "Harborough Town FC LE16 9HF",
@@ -475,6 +468,13 @@
                     "homeTeam": "Narborough Foxes U12 Reds",
                     "awayTeam": "Anstey Nomads U12 23's",
                     "location": "BROCKINGTON COLLEGE",
+                    "competition": "U12 Div2 The Black Horse Aylestone"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 13:00",
+                    "homeTeam": "Beaumont Park U12 Pumas",
+                    "awayTeam": "Quorn U12 Jaguars",
+                    "location": "BEAUMONT LEYS SCHOOL",
                     "competition": "U12 Div2 The Black Horse Aylestone"
                 },
                 {
@@ -4732,13 +4732,6 @@
                     "competition": "Under 12 Division 12"
                 },
                 {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "Rothley Imps Junior U12 Renegades",
-                    "awayTeam": "Wigston Willow U12 Hunters",
-                    "location": "ROTHLEY SPORTS &amp; SOCIAL CLUB",
-                    "competition": "Under 12 Division 12"
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Loughborough Dynamo Junior U12 Ambers",
                     "awayTeam": "Anstey Nomads U12 47's",
@@ -4757,13 +4750,6 @@
                     "homeTeam": "Glen Villa Juniors U12 Jaguars",
                     "awayTeam": "Loughborough Lions AFC U12 Golds",
                     "location": "Great Glen Recreation Ground LE8 9FA",
-                    "competition": "Under 12 Division 12"
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 13:00",
-                    "homeTeam": "Wigston Willow U12 Hunters",
-                    "awayTeam": "Borough Alliance Junior U12 Pumas",
-                    "location": "WIGSTON ACADEMY",
                     "competition": "Under 12 Division 12"
                 },
                 {
@@ -4802,13 +4788,6 @@
                     "competition": "Under 12 Division 12"
                 },
                 {
-                    "fixtureDateTime": "22\/11\/26 12:30",
-                    "homeTeam": "Wigston Willow U12 Hunters",
-                    "awayTeam": "AFC Barwell U12 Raptors",
-                    "location": "WIGSTON ACADEMY",
-                    "competition": "Under 12 Division 12"
-                },
-                {
                     "fixtureDateTime": "06\/12\/26 10:30",
                     "homeTeam": "Borough Alliance Junior U12 Pumas",
                     "awayTeam": "AFC Barwell U12 Raptors",
@@ -4827,20 +4806,6 @@
                     "homeTeam": "Anstey Nomads U12 47's",
                     "awayTeam": "Leicester Nirvana Juniors U12 Greens",
                     "location": "THE MARTIN HIGH SCHOOL",
-                    "competition": "Under 12 Division 12"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 12:30",
-                    "homeTeam": "Wigston Willow U12 Hunters",
-                    "awayTeam": "Loughborough Lions AFC U12 Golds",
-                    "location": "WIGSTON ACADEMY",
-                    "competition": "Under 12 Division 12"
-                },
-                {
-                    "fixtureDateTime": "13\/12\/26 10:30",
-                    "homeTeam": "Loughborough Dynamo Junior U12 Ambers",
-                    "awayTeam": "Wigston Willow U12 Hunters",
-                    "location": "NANPANTAN SPORTS GROUND",
                     "competition": "Under 12 Division 12"
                 },
                 {
@@ -4884,13 +4849,6 @@
                     "awayTeam": "Loughborough Dynamo Junior U12 Ambers",
                     "location": "Great Glen Recreation Ground LE8 9FA",
                     "competition": "Under 12 Division 12"
-                },
-                {
-                    "fixtureDateTime": "20\/12\/26 12:30",
-                    "homeTeam": "Wigston Willow U12 Hunters",
-                    "awayTeam": "Lutterworth Town Juniors U12 AFC",
-                    "location": "WIGSTON ACADEMY",
-                    "competition": "Under 12 Division 12"
                 }
             ],
             "results": [
@@ -4922,15 +4880,6 @@
                     "division": "Under 12 Division 12"
                 },
                 {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "Rothley Imps Junior U12 Renegades",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "Wigston Willow U12 Hunters",
-                    "division": "Under 12 Division 12"
-                },
-                {
                     "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "Borough Alliance Junior U12 Pumas",
                     "score": "2 - 1",
@@ -4955,15 +4904,6 @@
                     "homeScore": "5",
                     "awayScore": "0",
                     "awayTeam": "Glen Villa Juniors U12 Jaguars",
-                    "division": "Under 12 Division 12"
-                },
-                {
-                    "fixtureDateTime": "25\/10\/26 10:30",
-                    "homeTeam": "Loughborough Lions AFC U12 Golds",
-                    "score": "5 - 2",
-                    "homeScore": "5",
-                    "awayScore": "2",
-                    "awayTeam": "Wigston Willow U12 Hunters",
                     "division": "Under 12 Division 12"
                 },
                 {
@@ -5021,15 +4961,6 @@
                     "division": "Under 12 Division 12"
                 },
                 {
-                    "fixtureDateTime": "27\/09\/26 12:30",
-                    "homeTeam": "Leicester Nirvana Juniors U12 Greens",
-                    "score": "12 - 1 (HT 4-0)",
-                    "homeScore": "12",
-                    "awayScore": "1",
-                    "awayTeam": "Wigston Willow U12 Hunters",
-                    "division": "Under 12 Division 12"
-                },
-                {
                     "fixtureDateTime": "27\/09\/26 10:30",
                     "homeTeam": "Loughborough Lions AFC U12 Golds",
                     "score": "2 - 2",
@@ -5075,15 +5006,6 @@
                     "division": "Under 12 Division 12"
                 },
                 {
-                    "fixtureDateTime": "20\/09\/26 12:30",
-                    "homeTeam": "Wigston Willow U12 Hunters",
-                    "score": "1 - 9 (HT 0-5)",
-                    "homeScore": "1",
-                    "awayScore": "9",
-                    "awayTeam": "Rothley Imps Junior U12 Renegades",
-                    "division": "Under 12 Division 12"
-                },
-                {
                     "fixtureDateTime": "20\/09\/26 10:30",
                     "homeTeam": "Borough Alliance Junior U12 Pumas",
                     "score": "5 - 0",
@@ -5117,15 +5039,6 @@
                     "homeScore": "2",
                     "awayScore": "2",
                     "awayTeam": "Rothley Imps Junior U12 Renegades",
-                    "division": "Under 12 Division 12"
-                },
-                {
-                    "fixtureDateTime": "06\/09\/26 12:30",
-                    "homeTeam": "Wigston Willow U12 Hunters",
-                    "score": "0 - 3 (HT 0-1)",
-                    "homeScore": "0",
-                    "awayScore": "3",
-                    "awayTeam": "Leicester Nirvana Juniors U12 Greens",
                     "division": "Under 12 Division 12"
                 },
                 {
