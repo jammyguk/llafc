@@ -319,7 +319,7 @@ function page(p){
   if(p==102){
     h+=dh("RESULTS")+lines(LN,"c")+ln("");
     if(!DATA.league.length&&!DATA.cupRes.length) h+=ln("NO RESULTS YET","w");
-    else if(!DATA.league.some(r=>r.own)&&!DATA.cupRes.some(r=>r.own)&&!STATE.all) h+=ln("NO RESULTS YET FOR THIS TEAM","w");
+
     const key=d=>d.yr*10000+d.mon*100+d.day;
     const days={};
     DATA.league.forEach(r=>{(days[key(r.date)]=days[key(r.date)]||[]).push(r);});
@@ -328,32 +328,26 @@ function page(p){
     const mline=r=>short(r.home,16).padEnd(16)+" "+rj(r.hs,2)+"-"+String(r.as).padEnd(2)+" "+short(r.away,16);
     const vline=r=>{const u=veoUrl(r.date,U(r.home)==U(STATE.team)?r.away:r.home);
       return u?`<div class="ln g"><a class="vlink" href="${esc(u)}" target="_blank" rel="noopener">   > WATCH ON VEO</a></div>`:"";};
-    let hidden=false;
     Object.keys(Object.assign({},days,cdays)).sort((a,b)=>b-a).forEach(k=>{
       const rows=(days[k]||[]).slice().sort((a,b)=>U(a.home).localeCompare(U(b.home))), crows=cdays[k]||[], d=(rows[0]||crows[0]).date;
-      const hasOwn=rows.some(r=>r.own)||crows.some(r=>r.own);
-      if(!hasOwn&&!STATE.all){hidden=true;return;}
-      const open=STATE.all||STATE.exp[k];
+      const open=STATE.exp[k];
       const dow=DOW[new Date(d.yr,d.mon-1,d.day).getDay()];
       h+=ln(`${dow} ${String(d.day).padStart(2,"0")} ${MON[d.mon-1]} ${d.yr}`,"c");
-      // the selected team's own league game first, then the rest of the league behind "see more"
-      rows.filter(r=>r.own).forEach(r=>{h+=ln(mline(r),"y")+vline(r);});
-      if(open)rows.filter(r=>!r.own).forEach(r=>{h+=ln(mline(r),"w");});
+      // whole league for the date, selected team first
+      rows.slice().sort((a,b)=>(b.own?1:0)-(a.own?1:0)).forEach(r=>{h+=ln(mline(r),r.own?"y":"w")+(r.own?vline(r):"");});
       const names=[...new Set(crows.map(r=>r.name))].sort();
       names.forEach(n=>{
         const own=crows.filter(r=>r.name===n&&r.own), oth=crows.filter(r=>r.name===n&&!r.own);
-        if(!own.length&&!open)return;
+        if(!own.length)return;
         h+=lines("CUP - "+U(n),"c");
         const out=(r,c)=>{h+=ln(mline(r),c);if(r.pens)h+=ln("   PENS "+r.pens[0]+"-"+r.pens[1],c);if(r.own)h+=vline(r);};
         own.forEach(r=>out(r,"y"));
         if(open)oth.slice().sort((a,b)=>U(a.home).localeCompare(U(b.home))).forEach(r=>out(r,"w"));
       });
-      const more=rows.some(r=>!r.own)||crows.some(r=>!r.own);
+      const more=names.some(n=>crows.some(r=>r.name===n&&r.own)&&crows.some(r=>r.name===n&&!r.own));
       if(more)h+=morebtn("more",k,open?"  SEE LESS":"  SEE MORE..");
       h+=ln("");
     });
-    if(hidden)h+=morebtn("all","","  SEE ALL DATES..");
-    else if(STATE.all)h+=morebtn("all","","  SHOW MY TEAM ONLY");
   }
   if(p==103){
     h+=dh("LEAGUE TABLE")+lines(ltitle(STATE.league,RAW.leagues[STATE.league]),"c")+ln("");
@@ -420,7 +414,6 @@ function page(p){
     else if(a=="leagues"){page(110);}
     else if(a=="team"){STATE.league=STATE.pickLeague;STATE.team=v;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="more"){STATE.exp[v]=!STATE.exp[v];page(102);}
-    else if(a=="all"){STATE.all=!STATE.all;page(102);}
   });
 }
 
