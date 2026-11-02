@@ -398,7 +398,7 @@ function page(p){
       let s=`${rj(i+1,2)} ${short(t.n,nw).padEnd(nw)} ${rj(t.p,2)} ${rj(t.w,2)} ${rj(t.d,2)} ${rj(t.l,2)}`;
       if(hasGd){const gd=(t.gf||0)-(t.ga||0);s+=` ${rj((gd>0?"+":"")+gd,3)}`;}
       s+=` ${rj(t.pts,3)}`;
-      h+=ln(s.slice(0,W),t.own?"hl":"w");
+      h+=ln(s.slice(0,W),t.own?"y":"w");
     });
   }
   if(p==104){
