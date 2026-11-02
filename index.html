@@ -131,7 +131,7 @@ function short(s,n){let t=U(s).trim();
     if(k<0)return t.slice(0,n);w[k]=w[k].slice(0,-1);t=w.join(" ");}
   return t;}
 
-let STATE={q:"",league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false};
+let STATE={q:"",cx:{},league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false};
 let RAW={leagues:{},updated:null};
 let DATA={results:[],league:[],fixtures:[],table:[],teams:[],leagueName:"",updated:null};
 let cur=100;
@@ -343,7 +343,61 @@ function bindPicks(root){
     else if(a=="team"){STATE.q="";STATE.league=STATE.pickLeague;STATE.team=v;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="steam"){const [id,t]=v.split("\u0001");STATE.q="";STATE.league=id;STATE.pickLeague=id;STATE.team=t;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="more"){STATE.exp[v]=!STATE.exp[v];page(102);}
+    else if(a=="cx"){STATE.cx[v]=!STATE.cx[v];page(104);}
   });
+}
+// ---- Cup road: who is still in, who we could draw, and every tie so far (all collapsed until opened) ----
+function cupRoad(c,nm,us){
+  const tsd=d=>d.yr*10000+d.mon*100+d.day;
+  const winOf=r=>{let d=r.hs-r.as;if(!d&&r.pens)d=r.pens[0]-r.pens[1];return d>0?r.home:d<0?r.away:"";};
+  const rounds={};
+  (c.results||[]).forEach(r=>{const p=pdate(r.date);if(!p)return;(rounds[tsd(p.date)]=rounds[tsd(p.date)]||{date:p.date,ties:[]}).ties.push(r);});
+  const rkeys=Object.keys(rounds).sort((a,b)=>a-b);
+  const futFx=(c.fixtures||[]).map(f=>({f,p:pdate(f.date)})).filter(x=>x.p);
+  // Teams still in: winners of the latest round of results; or, if the next round is already fixed, the teams in it.
+  let alive=[],lastScore={};
+  if(rkeys.length){rounds[rkeys[rkeys.length-1]].ties.forEach(r=>{const w=winOf(r);if(w){alive.push(w);lastScore[w]=(U(w)==U(r.home)?r.hs+"-"+r.as:r.as+"-"+r.hs)+(r.pens?"p":"");}});}
+  const fixedRound=futFx.length>0;
+  if(fixedRound){alive=[];futFx.forEach(x=>{alive.push(x.f.home,x.f.away);});}
+  const inCup=alive.some(t=>U(t)==us);
+  const open=k=>STATE.cx[nm+"|"+k];
+  const tog=(k,label)=>pick("cx",nm+"|"+k,(open(k)?"- ":"+ ")+label,false);
+  let o="";
+  o+=ln("THE ROAD TO THE FINAL","c");
+  if(alive.length){
+    o+=ln(`${alive.length} TEAMS ${fixedRound?"IN THIS ROUND":"STILL IN"}${inCup?"  - WE ARE IN":""}`,inCup?"y":"w");
+    if(!fixedRound&&inCup){
+      const others=alive.filter(t=>U(t)!=us).sort((a,b)=>U(a).localeCompare(U(b)));
+      o+=tog("draw",`WHO WE COULD DRAW (${others.length})`);
+      if(open("draw")){
+        o+=ln("DRAW NOT MADE YET - ANY OF THESE","m");
+        others.forEach(t=>{
+          const lions=U(t).includes("LOUGHBOROUGH LIONS");
+          o+=ln(" "+short(t,29).padEnd(29)+" "+rj(lastScore[t]||"",6),lions?"y":"w");});
+        o+=ln(" (SCORE = THEIR LAST WIN, P = PENS)","m");
+      }
+    }
+  }
+  // Every tie so far, one line each, grouped by round date
+  const nties=(c.results||[]).length+futFx.length;
+  if(nties){
+    o+=tog("all",`EVERY TIE SO FAR (${nties})`);
+    if(open("all")){
+      const line=(h,mid,a)=>short(h,16).padEnd(16)+" "+mid+" "+short(a,16);
+      const own=(h,a)=>U(h)==us||U(a)==us;
+      rkeys.slice().reverse().forEach(k=>{const R=rounds[k];
+        o+=band(`${String(R.date.day).padStart(2,"0")} ${MON[R.date.mon-1]} - ${R.ties.length} TIES`);
+        R.ties.forEach(r=>{o+=ln(line(r.home,rj(r.hs,2)+"-"+(String(r.as)+(r.pens?"p":"")).padEnd(2),r.away),own(r.home,r.away)?"y":"w");});
+      });
+      const byD={};futFx.forEach(x=>{(byD[tsd(x.p.date)]=byD[tsd(x.p.date)]||{date:x.p.date,t:[]}).t.push(x.f);});
+      Object.keys(byD).sort((a,b)=>a-b).forEach(k=>{const R=byD[k];
+        o+=band(`${String(R.date.day).padStart(2,"0")} ${MON[R.date.mon-1]} - TO PLAY (${R.t.length})`);
+        R.t.forEach(f=>{o+=ln(line(f.home," v  ",f.away),own(f.home,f.away)?"y":"w");});
+      });
+    }
+  }
+  o+=ln("BRACKET SHOWN FROM THE QUARTER-FINALS","c")+ln("");
+  return o;
 }
 function page(p){
   const ids=Object.keys(RAW.leagues);
@@ -461,7 +515,7 @@ function page(p){
       });
       h+=ln("");
       if(c.bracket)h+=bracketHtml(c,us);
-      else h+=ln("BRACKET SHOWN FROM THE QUARTER-FINALS","c")+ln("");
+      else h+=cupRoad(c,nm,us);
     });
     if(!shown.length)h+=ln("NOT IN ANY CUP YET","w");
   }
