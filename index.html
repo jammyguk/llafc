@@ -22,6 +22,7 @@ body{margin:0;min-height:100%;background:#000;color:var(--white);display:flex;ju
 .dh span{display:block;transform:scaleY(2);transform-origin:top left;white-space:pre}
 .w{color:var(--white)}.y{color:var(--yellow)}.c{color:var(--cyan)}.g{color:var(--green)}.m{color:var(--magenta)}.r{color:var(--red)}
 .hl{background:var(--red);color:var(--white)}
+.dim{color:#9a9a9a}
 .logo{display:block;width:11ch;height:auto;margin:.3em 0}
 .rowlogo{display:flex;gap:2ch;align-items:flex-start}
 .fast{display:grid;grid-template-columns:repeat(5,1fr);margin-top:.6em}
@@ -29,7 +30,7 @@ body{margin:0;min-height:100%;background:#000;color:var(--white);display:flex;ju
 .fast button[aria-current="page"]{outline:2px solid #fff;outline-offset:-2px}
 .fast button:focus-visible{outline:3px solid #fff;outline-offset:-3px}
 .fast .fr{background:var(--red)}.fast .fg{background:var(--green)}.fast .fy{background:var(--yellow)}.fast .fc{background:var(--cyan)}.fast .fm{background:var(--magenta)}
-.pick{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;color:var(--white);white-space:pre;
+.pick{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;color:var(--white);white-space:pre-wrap;
   line-height:1.1;padding:.2em 0;cursor:pointer;overflow:hidden}
 .pick:hover,.pick:focus-visible{background:var(--blue);outline:none}
 .pick.sel{color:var(--yellow)}
@@ -51,8 +52,18 @@ const dd=d=>String(d.getDate()).padStart(2,"0");
 const ln=(t,c="w",x="")=>`<div class="ln ${c} ${x}">${esc(String(t).padEnd(W))}</div>`;
 const band=(t,c="band")=>`<div class="ln ${c}">${esc((" "+t).padEnd(W))}</div>`;
 const dh=(t)=>`<div class="dh band"><span>${esc((" "+t).slice(0,W).padEnd(W/2))}</span></div>`;
-const pick=(a,v,t,sel)=>`<button class="pick${sel?" sel":""}" data-a="${a}" data-v="${esc(v)}">${esc(String(t).slice(0,W).padEnd(W))}</button>`;
+const pick=(a,v,t,sel)=>`<button class="pick${sel?" sel":""}" data-a="${a}" data-v="${esc(v)}">${esc(String(t))}</button>`;
 const res=r=>r.f>r.a?"W":r.f<r.a?"L":"D";
+// Full league name (with sponsor) comes from the competition field in the feed.
+const lname=L=>{if(!L)return "";
+  const c=(L.fixtures||[]).concat(L.results||[]).map(o=>o.competition||o.Competition).find(x=>x);
+  return String(c||L.name||"").replace(/&amp;/g,"&").replace(/&#39;/g,"'").replace(/&quot;/g,'"').trim();};
+// Word-wrap text to a width, so long names run on to a second line instead of being cut off.
+function wrapText(t,w){const out=[];let line="";
+  String(t).split(/\s+/).forEach(word=>{if(!word)return;
+    if((line+" "+word).trim().length>w){if(line)out.push(line);line=word;}else line=(line+" "+word).trim();});
+  if(line)out.push(line);return out.length?out:[""];}
+const lines=(t,c="w",w=W)=>wrapText(t,w).map(x=>ln(x,c)).join("");
 // Shorten a team name only as far as needed to fit n characters.
 const ABBR=[[/\s+U\d{1,2}\b/g,""],[/\s+(AFC|FC)\b/g,""],[/\bJUNIORS\b/g,"JNRS"],[/\bJUNIOR\b/g,"JNR"],
   [/\s+20\d\d\b/g,""],[/\bATHLETIC\b/g,"ATH"],[/\bLOUGHBOROUGH\b/g,"LBORO"],[/\bHARBOROUGH\b/g,"HBORO"],
@@ -140,7 +151,7 @@ function parseFeed(raw,us){
 function compute(){
   const L=RAW.leagues[STATE.league];
   DATA=L?parseFeed(L,STATE.team):{results:[],league:[],fixtures:[],table:[],teams:[]};
-  DATA.leagueName=(L&&L.name)||"";
+  DATA.leagueName=lname(L);
   DATA.updated=RAW.updated;
 }
 
@@ -176,9 +187,9 @@ function page(p){
          `<div class="ln c">${esc("LOUGHBOROUGH".padEnd(27))}</div>`+
          `<div class="ln c">${esc("LIONS AFC".padEnd(27))}</div>`+
          `<div class="ln w">${esc("EST 2021".padEnd(27))}</div><div class="ln"> </div>`+
-         `<div class="ln y">${esc(LN.slice(0,27).padEnd(27))}</div></div></div>`;
+         wrapText(LN,27).map(x=>`<div class="ln y">${esc(x.padEnd(27))}</div>`).join("")+`</div></div>`;
     } else {
-      h+=dh(T)+ln("")+ln(LN,"c")+ln("")+ln("");
+      h+=dh(T)+ln("")+lines(LN,"c")+ln("")+ln("");
     }
     if(f){
       h+=band("NEXT MATCH","band blink")+
@@ -204,7 +215,7 @@ function page(p){
     });
   }
   if(p==102){
-    h+=dh("RESULTS")+ln(LN,"c")+ln("");
+    h+=dh("RESULTS")+lines(LN,"c")+ln("");
     if(!DATA.league.length) h+=ln("NO RESULTS YET","w");
     const key=d=>d.yr*10000+d.mon*100+d.day;
     const days={};
@@ -212,39 +223,36 @@ function page(p){
     Object.keys(days).sort((a,b)=>b-a).forEach(k=>{
       const rows=days[k], d=rows[0].date;
       const dow=DOW[new Date(d.yr,d.mon-1,d.day).getDay()];
-      h+=band(`${dow} ${String(d.day).padStart(2,"0")} ${MON[d.mon-1]} ${d.yr}`);
+      h+=ln(`${dow} ${String(d.day).padStart(2,"0")} ${MON[d.mon-1]} ${d.yr}`,"c");
       rows.sort((a,b)=>(b.own?1:0)-(a.own?1:0)||U(a.home).localeCompare(U(b.home)))
         .forEach(r=>{
-          const c=r.own?"hl":"w";
-          h+=ln(short(r.home,37).padEnd(37)+rj(r.hs,3),c);
-          h+=ln(short(r.away,37).padEnd(37)+rj(r.as,3),c);
-          h+=ln("");
+          h+=ln(short(r.home,16).padEnd(16)+" "+rj(r.hs,2)+"-"+String(r.as).padEnd(2)+" "+short(r.away,16),r.own?"y":"w");
         });
+      h+=ln("");
     });
   }
   if(p==103){
-    h+=dh("LEAGUE TABLE")+ln(LN,"c")+ln("");
+    h+=dh("LEAGUE TABLE")+lines(LN,"c")+ln("");
     const hasGd=!(DATA.table[0]&&DATA.table[0].noGd);
-    h+=band("POS TEAM / P W D L"+(hasGd?" GD":"")+" PTS");
     const rows=DATA.table.slice().sort((a,b)=>b.pts-a.pts||((b.gf||0)-(b.ga||0))-((a.gf||0)-(a.ga||0))||(b.gf||0)-(a.gf||0));
     if(!rows.length) h+=ln("TABLE NOT AVAILABLE YET","w");
     rows.forEach((t,i)=>{
-      const c=t.own?"hl":"w", c2=t.own?"hl":"c";
-      h+=ln(rj(i+1,2)+" "+short(t.n,W-3),c);
-      let s="   P"+rj(t.p,2)+"  W"+rj(t.w,2)+"  D"+rj(t.d,2)+"  L"+rj(t.l,2);
-      if(hasGd){const gd=(t.gf||0)-(t.ga||0);s+="  GD"+rj((gd>0?"+":"")+gd,3);}
-      s+="  PTS"+rj(t.pts,3);
-      h+=ln(s,c2);
+      h+=ln(rj(i+1,2)+" "+short(t.n,W-3),t.own?"y":"w");
+      let s="   P"+t.p;
+      if(hasGd){const gd=(t.gf||0)-(t.ga||0);s+="  GD "+(gd>0?"+":"")+gd;}
+      s+="  PTS "+t.pts;
+      h+=ln(s,t.own?"y":"dim");
+      h+=ln("");
     });
   }
   if(p==110){
     h+=dh("CHOOSE A LEAGUE")+ln("");
-    ids.forEach(id=>{h+=pick("league",id,U(RAW.leagues[id].name||id),id==STATE.league);});
+    ids.forEach(id=>{h+=pick("league",id,U(lname(RAW.leagues[id])||id),id==STATE.league);});
   }
   if(p==111){
     const L=RAW.leagues[STATE.pickLeague]||{};
     const teams=parseFeed(L,"").teams;
-    h+=dh("CHOOSE A TEAM")+ln(U(L.name||""),"c")+ln("");
+    h+=dh("CHOOSE A TEAM")+lines(U(lname(L)),"c")+ln("");
     if(!teams.length) h+=ln("NO TEAMS FOUND YET","w");
     teams.forEach(n=>{
       const sel=STATE.pickLeague==STATE.league&&U(n)==U(STATE.team);
