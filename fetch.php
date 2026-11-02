@@ -203,6 +203,13 @@ foreach ($leagues as $lg) {
 }
 $got = fetchAll($urls, (int)(getenv("MAX_PARALLEL") ?: 4));
 
+// If nothing at all came back, the data service is down: leave data.json
+// exactly as it is (including its "updated" time) instead of pretending.
+if (count(array_filter($got, fn($v) => $v !== null)) === 0) {
+    echo "No data came back from the service - leaving data.json unchanged.\n";
+    exit(0);
+}
+
 $out = [];
 foreach ($leagues as $lg) {
     $id = $lg['id'];
