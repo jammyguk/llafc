@@ -92,7 +92,7 @@ const DOW=["SUN","MON","TUE","WED","THU","FRI","SAT"], MON=["JAN","FEB","MAR","A
 const dd=d=>String(d.getDate()).padStart(2,"0");
 const ln=(t,c="w",x="")=>`<div class="ln ${c} ${x}">${esc(String(t).padEnd(W))}</div>`;
 const band=(t,c="band")=>`<div class="ln ${c}">${esc((" "+t).padEnd(W))}</div>`;
-const dh=(t)=>`<div class="dh band"><span>${esc((" "+t).slice(0,W).padEnd(W/2))}</span></div>`;
+const dh=(t)=>`<div class="dh band"><span>${esc((String(t).length>=W?String(t):" "+t).slice(0,W).padEnd(W/2))}</span></div>`;
 const morebtn=(a,v,t)=>`<button class="pick more" data-a="${a}" data-v="${esc(v)}">${esc(t)}</button>`;
 const pick=(a,v,t,sel)=>`<button class="pick${sel?" sel":""}" data-a="${a}" data-v="${esc(v)}">${esc(String(t))}</button>`;
 const res=r=>{let x=r.f-r.a;if(!x&&r.pf!==undefined)x=r.pf-r.pa;return x>0?"W":x<0?"L":"D";};
@@ -511,7 +511,8 @@ function page(p){
       wrapText(U(nm),W-1).forEach(x=>{h+=band(x);});
       rs.forEach(x=>{
         const r=res(x);
-        h+=ln(`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]}  ${r} ${x.f}-${x.a}  ${short(x.opp,22)}${x.pf!==undefined?" PENS":""}`,r=="W"?"g":r=="L"?"r":"y");
+        const pre=`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]}  ${r} ${x.f}-${x.a}  `, pn=x.pf!==undefined?" PENS":"";
+        h+=ln(pre+short(x.opp,W-pre.length-pn.length)+pn,r=="W"?"g":r=="L"?"r":"y");
       });
       fx.forEach(x=>{
         h+=ln(`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]}  ${x.home?"HOME":"AWAY"} ${short(x.opp,24)}`,"w");
