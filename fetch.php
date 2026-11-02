@@ -99,46 +99,58 @@ $leagues = [
     ],
 ];
 
-// Asks for every page at the same time (instead of one after another).
-// Pages that fail are asked for again, together, up to $tries times.
+// Asks for pages several at a time (not one after another, and not all 28 at
+// once, which the free service cannot cope with). $parallel = how many at once.
+// Pages that fail are asked for again, up to $tries times.
 // Returns [key => decoded JSON, or null if it never worked].
-function fetchAll(array $urls, $tries = 3) {
+function fetchBatch(array $batch) {
+    $mh = curl_multi_init();
+    $handles = [];
+    foreach ($batch as $key => $url) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_CONNECTTIMEOUT => 30,
+            CURLOPT_TIMEOUT        => 90,
+            CURLOPT_HTTPHEADER     => ['Accept: application/json', 'User-Agent: Mozilla/5.0'],
+        ]);
+        curl_multi_add_handle($mh, $ch);
+        $handles[$key] = $ch;
+    }
+    do {
+        $status = curl_multi_exec($mh, $running);
+        if ($running) {
+            curl_multi_select($mh, 1.0);
+        }
+    } while ($running && $status === CURLM_OK);
+    $out = [];
+    foreach ($handles as $key => $ch) {
+        $raw  = curl_multi_getcontent($ch);
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $secs = round(curl_getinfo($ch, CURLINFO_TOTAL_TIME));
+        curl_multi_remove_handle($mh, $ch);
+        $json = ($code === 200 && is_string($raw)) ? json_decode($raw, true) : null;
+        echo "  $key -> HTTP $code, {$secs}s" . (is_array($json) ? " ok" : " FAILED") . "\n";
+        $out[$key] = is_array($json) ? $json : null;
+    }
+    curl_multi_close($mh);
+    return $out;
+}
+
+function fetchAll(array $urls, $parallel = 4, $tries = 3) {
     $got = [];
     $pending = $urls;
     for ($round = 1; $round <= $tries && $pending; $round++) {
-        echo "Round $round: asking for " . count($pending) . " pages at once\n";
-        $mh = curl_multi_init();
-        $handles = [];
-        foreach ($pending as $key => $url) {
-            $ch = curl_init($url);
-            curl_setopt_array($ch, [
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_CONNECTTIMEOUT => 20,
-                CURLOPT_TIMEOUT        => 120,
-                CURLOPT_HTTPHEADER     => ['Accept: application/json', 'User-Agent: Mozilla/5.0'],
-            ]);
-            curl_multi_add_handle($mh, $ch);
-            $handles[$key] = $ch;
-        }
-        do {
-            $status = curl_multi_exec($mh, $running);
-            if ($running) {
-                curl_multi_select($mh, 1.0);
-            }
-        } while ($running && $status === CURLM_OK);
-        foreach ($handles as $key => $ch) {
-            $raw  = curl_multi_getcontent($ch);
-            $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            curl_multi_remove_handle($mh, $ch);
-            $json = ($code === 200 && is_string($raw)) ? json_decode($raw, true) : null;
-            echo "  $key -> HTTP $code" . (is_array($json) ? " ok" : " FAILED") . "\n";
-            if (is_array($json)) {
-                $got[$key] = $json;
-                unset($pending[$key]);
+        echo "Round $round: " . count($pending) . " pages, $parallel at a time\n";
+        foreach (array_chunk($pending, $parallel, true) as $batch) {
+            foreach (fetchBatch($batch) as $key => $json) {
+                if ($json !== null) {
+                    $got[$key] = $json;
+                    unset($pending[$key]);
+                }
             }
         }
-        curl_multi_close($mh);
         if ($pending && $round < $tries) {
             sleep(5);
         }
@@ -189,7 +201,7 @@ foreach ($leagues as $lg) {
     $urls['fx:' . $lg['id']] = "$base/Fixtures/$d/season/$s";
     $urls['rs:' . $lg['id']] = "$base/Results/$d/season/$s";
 }
-$got = fetchAll($urls);
+$got = fetchAll($urls, (int)(getenv("MAX_PARALLEL") ?: 4));
 
 $out = [];
 foreach ($leagues as $lg) {
@@ -205,6 +217,12 @@ foreach ($leagues as $lg) {
 
     if (!empty($results)) {
         $entry['results'] = $results;
+    } elseif (!empty($oldLeagues[$id]['results'])) {
+        // feed gave nothing this time: keep the last good results
+        $entry['results'] = $oldLeagues[$id]['results'];
+        if (isset($oldLeagues[$id]['table'])) {
+            $entry['table'] = $oldLeagues[$id]['table'];
+        }
     } elseif (isset($fallback[$id])) {
         $entry['results'] = $fallback[$id]['results'];
         $entry['table']   = $fallback[$id]['table'];
