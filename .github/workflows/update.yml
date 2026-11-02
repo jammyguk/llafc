@@ -1,8 +1,11 @@
 name: Update data
 on:
   schedule:
-    - cron: '0 7 * * *'
-    - cron: '0 8-18 * * 6,0'
+    # Sundays: every 15 minutes from 10am UK time (runs from 09:00 UTC; the first
+    # hour is skipped in winter by the check below) until the evening.
+    - cron: '*/15 9-19 * * 0'
+    # Every other time: every 3 hours.
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 concurrency:
   group: update-data
@@ -13,14 +16,33 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      - name: Decide whether to run now
+        id: gate
+        env:
+          SCHED: ${{ github.event.schedule }}
+        run: |
+          dow=$(TZ=Europe/London date +%u)    # 7 = Sunday
+          hour=$(TZ=Europe/London date +%-H)
+          run=true
+          # the 15-minute runs only start at 10am UK time
+          if [ "$SCHED" = '*/15 9-19 * * 0' ] && [ "$hour" -lt 10 ]; then run=false; fi
+          # the 3-hourly runs step aside while the 15-minute runs are going
+          if [ "$SCHED" = '0 */3 * * *' ] && [ "$dow" = 7 ] && [ "$hour" -ge 10 ] && [ "$hour" -le 20 ]; then run=false; fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+          echo "UK day=$dow hour=$hour run=$run"
       - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'true'
       - uses: shivammathur/setup-php@v2
+        if: steps.gate.outputs.run == 'true'
         with:
           php-version: '8.2'
-      - run: composer require jadgray/full-time-api
+          extensions: curl
       - run: php fetch.php
-      - run: |
+        if: steps.gate.outputs.run == 'true'
+      - name: Save data.json
+        if: steps.gate.outputs.run == 'true'
+        run: |
           git config user.name "data-bot"
           git config user.email "bot@users.noreply.github.com"
           git add data.json
-          git diff --staged --quiet || (git commit -m "Update data" && git push)
+          git diff --staged --quiet || (git commit -m "Update data" && git pull --rebase origin main && git push)

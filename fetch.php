@@ -1,6 +1,6 @@
 <?php
 $season = '503728397';
-$base = 'https://faapi.jwhsolutions.co.uk/api';
+$base = getenv('API_BASE') ?: 'https://faapi.jwhsolutions.co.uk/api';
 
 // ---------------------------------------------------------------
 // LEAGUES. One block per league. The site finds every team in a
@@ -99,28 +99,54 @@ $leagues = [
     ],
 ];
 
-function fetchJson($url, $tries = 3) {
-    for ($i = 1; $i <= $tries; $i++) {
-        $ctx = stream_context_create([
-            'http' => [
-                'method' => 'GET',
-                'header' => "Accept: application/json\r\nUser-Agent: Mozilla/5.0\r\n",
-                'timeout' => 90,
-                'ignore_errors' => true,
-            ],
-        ]);
-        $raw = @file_get_contents($url, false, $ctx);
-        $status = $http_response_header[0] ?? 'no response';
-        echo "Try $i: $url -> $status\n";
-        if ($raw !== false && strpos($status, '200') !== false) {
-            $json = json_decode($raw, true);
+// Asks for every page at the same time (instead of one after another).
+// Pages that fail are asked for again, together, up to $tries times.
+// Returns [key => decoded JSON, or null if it never worked].
+function fetchAll(array $urls, $tries = 3) {
+    $got = [];
+    $pending = $urls;
+    for ($round = 1; $round <= $tries && $pending; $round++) {
+        echo "Round $round: asking for " . count($pending) . " pages at once\n";
+        $mh = curl_multi_init();
+        $handles = [];
+        foreach ($pending as $key => $url) {
+            $ch = curl_init($url);
+            curl_setopt_array($ch, [
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_CONNECTTIMEOUT => 20,
+                CURLOPT_TIMEOUT        => 120,
+                CURLOPT_HTTPHEADER     => ['Accept: application/json', 'User-Agent: Mozilla/5.0'],
+            ]);
+            curl_multi_add_handle($mh, $ch);
+            $handles[$key] = $ch;
+        }
+        do {
+            $status = curl_multi_exec($mh, $running);
+            if ($running) {
+                curl_multi_select($mh, 1.0);
+            }
+        } while ($running && $status === CURLM_OK);
+        foreach ($handles as $key => $ch) {
+            $raw  = curl_multi_getcontent($ch);
+            $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_multi_remove_handle($mh, $ch);
+            $json = ($code === 200 && is_string($raw)) ? json_decode($raw, true) : null;
+            echo "  $key -> HTTP $code" . (is_array($json) ? " ok" : " FAILED") . "\n";
             if (is_array($json)) {
-                return $json;
+                $got[$key] = $json;
+                unset($pending[$key]);
             }
         }
-        sleep(5);
+        curl_multi_close($mh);
+        if ($pending && $round < $tries) {
+            sleep(5);
+        }
     }
-    return null;
+    foreach ($pending as $key => $url) {
+        $got[$key] = null;
+    }
+    return $got;
 }
 
 // Manual fallback for the U12 Reds league, used only if the Results
@@ -155,14 +181,22 @@ if (file_exists('data.json')) {
 }
 $oldLeagues = $old['leagues'] ?? [];
 
+// Ask for every league's fixtures and results in one go.
+$urls = [];
+foreach ($leagues as $lg) {
+    $s = $lg['season'] ?? $season;
+    $d = $lg['division'];
+    $urls['fx:' . $lg['id']] = "$base/Fixtures/$d/season/$s";
+    $urls['rs:' . $lg['id']] = "$base/Results/$d/season/$s";
+}
+$got = fetchAll($urls);
+
 $out = [];
 foreach ($leagues as $lg) {
     $id = $lg['id'];
-    $s  = $lg['season'] ?? $season;
-    $d  = $lg['division'];
 
-    $fixtures = fetchJson("$base/Fixtures/$d/season/$s");
-    $results  = fetchJson("$base/Results/$d/season/$s");
+    $fixtures = $got['fx:' . $id] ?? null;
+    $results  = $got['rs:' . $id] ?? null;
 
     $entry = [
         'name'     => $lg['name'],
