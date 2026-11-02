@@ -110,6 +110,6 @@ jobs:
             git commit -m "Update data"
             git pull --rebase origin main
             git push
-            # Only after a successful save: send Lions match alerts (a failure here never fails the run).
-            php notify.php /tmp/old.json data.json || true
+            # Match alerts are switched off for now. To turn them back on, uncomment the next line (notify.php is kept).
+            # php notify.php /tmp/old.json data.json || true
           fi
