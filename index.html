@@ -58,6 +58,11 @@ const res=r=>r.f>r.a?"W":r.f<r.a?"L":"D";
 const lname=L=>{if(!L)return "";
   const c=(L.fixtures||[]).concat(L.results||[]).map(o=>o.competition||o.Competition).find(x=>x);
   return String(c||L.name||"").replace(/&amp;/g,"&").replace(/&#39;/g,"'").replace(/&quot;/g,'"').trim();};
+// Standard short league name, e.g. "U12 DIV 2", worked out from the league id or the full name.
+const lshort=(id,L)=>{
+  const m=/^u(\d+)-div(\d+)$/i.exec(id)||/\bU(\d+)\s+DIV(?:ISION)?\s*(\d+)/i.exec(lname(L));
+  return m?`U${m[1]} DIV ${m[2]}`:U(lname(L)||id);};
+const lorder=(id,L)=>{const m=/^U(\d+) DIV (\d+)$/.exec(lshort(id,L));return m?(+m[1])*1000+(+m[2]):1e9;};
 // Word-wrap text to a width, so long names run on to a second line instead of being cut off.
 function wrapText(t,w){const out=[];let line="";
   String(t).split(/\s+/).forEach(word=>{if(!word)return;
@@ -234,20 +239,20 @@ function page(p){
   if(p==103){
     h+=dh("LEAGUE TABLE")+lines(LN,"c")+ln("");
     const hasGd=!(DATA.table[0]&&DATA.table[0].noGd);
+    const nw=hasGd?17:21;
+    h+=`<div class="ln band">${esc((rj("PO",2)+" "+"TEAM".padEnd(nw)+" "+rj("P",2)+" "+rj("W",2)+" "+rj("D",2)+" "+rj("L",2)+(hasGd?" "+rj("GD",3):"")+" "+rj("PTS",3)).padEnd(W))}</div>`;
     const rows=DATA.table.slice().sort((a,b)=>b.pts-a.pts||((b.gf||0)-(b.ga||0))-((a.gf||0)-(a.ga||0))||(b.gf||0)-(a.gf||0));
     if(!rows.length) h+=ln("TABLE NOT AVAILABLE YET","w");
     rows.forEach((t,i)=>{
-      h+=ln(rj(i+1,2)+" "+short(t.n,W-3),t.own?"y":"w");
-      let s="   P"+t.p;
-      if(hasGd){const gd=(t.gf||0)-(t.ga||0);s+="  GD "+(gd>0?"+":"")+gd;}
-      s+="  PTS "+t.pts;
-      h+=ln(s,t.own?"y":"dim");
-      h+=ln("");
+      let s=`${rj(i+1,2)} ${short(t.n,nw).padEnd(nw)} ${rj(t.p,2)} ${rj(t.w,2)} ${rj(t.d,2)} ${rj(t.l,2)}`;
+      if(hasGd){const gd=(t.gf||0)-(t.ga||0);s+=` ${rj((gd>0?"+":"")+gd,3)}`;}
+      s+=` ${rj(t.pts,3)}`;
+      h+=ln(s.slice(0,W),t.own?"hl":"w");
     });
   }
   if(p==110){
     h+=dh("CHOOSE A LEAGUE")+ln("");
-    ids.forEach(id=>{h+=pick("league",id,U(lname(RAW.leagues[id])||id),id==STATE.league);});
+    ids.slice().sort((a,b)=>lorder(a,RAW.leagues[a])-lorder(b,RAW.leagues[b])).forEach(id=>{h+=pick("league",id,lshort(id,RAW.leagues[id]),id==STATE.league);});
   }
   if(p==111){
     const L=RAW.leagues[STATE.pickLeague]||{};
