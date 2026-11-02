@@ -99,56 +99,68 @@ $leagues = [
     ],
 ];
 
-// Asks for pages several at a time (not one after another, and not all 28 at
-// once, which the free service cannot cope with). $parallel = how many at once.
-// Pages that fail are asked for again, up to $tries times.
+// Asks for pages several at a time: a rolling queue that starts the next page
+// as soon as one finishes. $parallel = how many at once. Pages that fail are
+// asked for again, up to $tries times.
 // Returns [key => decoded JSON, or null if it never worked].
-function fetchBatch(array $batch) {
+function fetchPool(array $urls, $parallel) {
     $mh = curl_multi_init();
-    $handles = [];
-    foreach ($batch as $key => $url) {
+    $queue = $urls;
+    $active = [];
+    $out = [];
+    $add = function () use (&$queue, &$active, $mh) {
+        $key = array_key_first($queue);
+        if ($key === null) {
+            return false;
+        }
+        $url = $queue[$key];
+        unset($queue[$key]);
         $ch = curl_init($url);
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_CONNECTTIMEOUT => 30,
-            CURLOPT_TIMEOUT        => 90,
+            CURLOPT_TIMEOUT        => 150,
             CURLOPT_HTTPHEADER     => ['Accept: application/json', 'User-Agent: Mozilla/5.0'],
         ]);
         curl_multi_add_handle($mh, $ch);
-        $handles[$key] = $ch;
+        $active[spl_object_id($ch)] = $key;
+        return true;
+    };
+    while (count($active) < $parallel && $add()) {
     }
     do {
-        $status = curl_multi_exec($mh, $running);
-        if ($running) {
+        curl_multi_exec($mh, $running);
+        while (($info = curl_multi_info_read($mh)) !== false) {
+            $ch  = $info['handle'];
+            $key = $active[spl_object_id($ch)];
+            $raw  = curl_multi_getcontent($ch);
+            $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $secs = round(curl_getinfo($ch, CURLINFO_TOTAL_TIME));
+            $json = ($code === 200 && is_string($raw)) ? json_decode($raw, true) : null;
+            echo "  $key -> HTTP $code, {$secs}s" . (is_array($json) ? " ok" : " FAILED") . "\n";
+            $out[$key] = is_array($json) ? $json : null;
+            curl_multi_remove_handle($mh, $ch);
+            unset($active[spl_object_id($ch)]);
+            $add();
+        }
+        if (!empty($active)) {
             curl_multi_select($mh, 1.0);
         }
-    } while ($running && $status === CURLM_OK);
-    $out = [];
-    foreach ($handles as $key => $ch) {
-        $raw  = curl_multi_getcontent($ch);
-        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $secs = round(curl_getinfo($ch, CURLINFO_TOTAL_TIME));
-        curl_multi_remove_handle($mh, $ch);
-        $json = ($code === 200 && is_string($raw)) ? json_decode($raw, true) : null;
-        echo "  $key -> HTTP $code, {$secs}s" . (is_array($json) ? " ok" : " FAILED") . "\n";
-        $out[$key] = is_array($json) ? $json : null;
-    }
+    } while (!empty($active));
     curl_multi_close($mh);
     return $out;
 }
 
-function fetchAll(array $urls, $parallel = 4, $tries = 3) {
+function fetchAll(array $urls, $parallel = 6, $tries = 3) {
     $got = [];
     $pending = $urls;
     for ($round = 1; $round <= $tries && $pending; $round++) {
         echo "Round $round: " . count($pending) . " pages, $parallel at a time\n";
-        foreach (array_chunk($pending, $parallel, true) as $batch) {
-            foreach (fetchBatch($batch) as $key => $json) {
-                if ($json !== null) {
-                    $got[$key] = $json;
-                    unset($pending[$key]);
-                }
+        foreach (fetchPool($pending, $parallel) as $key => $json) {
+            if ($json !== null) {
+                $got[$key] = $json;
+                unset($pending[$key]);
             }
         }
         if ($pending && $round < $tries) {
@@ -201,7 +213,7 @@ foreach ($leagues as $lg) {
     $urls['fx:' . $lg['id']] = "$base/Fixtures/$d/season/$s";
     $urls['rs:' . $lg['id']] = "$base/Results/$d/season/$s";
 }
-$got = fetchAll($urls, (int)(getenv("MAX_PARALLEL") ?: 4));
+$got = fetchAll($urls, (int)(getenv("MAX_PARALLEL") ?: 6));
 
 // If nothing at all came back, the data service is down: leave data.json
 // exactly as it is (including its "updated" time) instead of pretending.

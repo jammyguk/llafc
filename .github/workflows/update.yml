@@ -72,7 +72,7 @@ jobs:
       - name: Fetch the data
         env:
           API_BASE: http://127.0.0.1:5069/api
-          MAX_PARALLEL: '14'
+          MAX_PARALLEL: '6'
         run: php fetch.php
       - uses: actions/upload-artifact@v4
         with:
