@@ -63,6 +63,11 @@ const lshort=(id,L)=>{
   const m=/^u(\d+)-div(\d+)$/i.exec(id)||/\bU(\d+)\s+DIV(?:ISION)?\s*(\d+)/i.exec(lname(L));
   return m?`U${m[1]} DIV ${m[2]}`:U(lname(L)||id);};
 const lorder=(id,L)=>{const m=/^U(\d+) DIV (\d+)$/.exec(lshort(id,L));return m?(+m[1])*1000+(+m[2]):1e9;};
+// Table page title: "U12 DIV 1 - D&J MOBILE CATERING LTD" (just "U12 DIV 2" when there is no sponsor).
+const ltitle=(id,L)=>{
+  const full=U(lname(L)), short=lshort(id,L);
+  const rest=full.replace(/^U\d+\s+DIV(?:ISION)?\s*\d+\s*[-:]?\s*/,"").trim();
+  return (rest&&rest!==full)?short+" - "+rest:short;};
 // Word-wrap text to a width, so long names run on to a second line instead of being cut off.
 function wrapText(t,w){const out=[];let line="";
   String(t).split(/\s+/).forEach(word=>{if(!word)return;
@@ -237,7 +242,7 @@ function page(p){
     });
   }
   if(p==103){
-    h+=dh("LEAGUE TABLE")+lines(LN,"c")+ln("");
+    h+=dh("LEAGUE TABLE")+lines(ltitle(STATE.league,RAW.leagues[STATE.league]),"c")+ln("");
     const hasGd=!(DATA.table[0]&&DATA.table[0].noGd);
     const nw=hasGd?17:21;
     h+=`<div class="ln band">${esc((rj("PO",2)+" "+"TEAM".padEnd(nw)+" "+rj("P",2)+" "+rj("W",2)+" "+rj("D",2)+" "+rj("L",2)+(hasGd?" "+rj("GD",3):"")+" "+rj("PTS",3)).padEnd(W))}</div>`;
