@@ -44,6 +44,8 @@ body{margin:0;min-height:100%;background:#000;color:var(--white);display:flex;ju
 .pick{display:block;width:100%;text-align:left;background:none;border:0;font:inherit;color:var(--white);white-space:pre;
   line-height:1.1;padding:.2em 0;cursor:pointer;overflow:hidden}
 .pick:hover,.pick:focus-visible{background:var(--blue);outline:none}
+.sq{display:block;width:100%;box-sizing:border-box;background:#000;color:var(--yellow);border:0;border-bottom:2px solid var(--cyan);border-radius:0;font:inherit;caret-color:#fff;text-transform:uppercase;padding:.1em 0;margin:0 0 .4em;outline:none;-webkit-appearance:none}
+.sq::placeholder{color:#0aa;opacity:1}.sq::-webkit-search-cancel-button{display:none}
 .mb{display:inline-block;width:3ch;height:1em;object-fit:contain;vertical-align:top;image-rendering:pixelated}
 .pick.sel{color:var(--yellow)}
 .pick.more{color:var(--cyan);padding:.1em 0}
@@ -129,7 +131,7 @@ function short(s,n){let t=U(s).trim();
     if(k<0)return t.slice(0,n);w[k]=w[k].slice(0,-1);t=w.join(" ");}
   return t;}
 
-let STATE={league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false};
+let STATE={q:"",league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false};
 let RAW={leagues:{},updated:null};
 let DATA={results:[],league:[],fixtures:[],table:[],teams:[],leagueName:"",updated:null};
 let cur=100;
@@ -307,6 +309,42 @@ function head(p){
   return `<div class="ln" id="hd"><span class="w">P${p} </span><span class="y">LIONSTEXT ${p} </span><span class="w">${DOW[n.getDay()]} ${dd(n)} ${MON[n.getMonth()]} </span><span class="c">${t[0]}:${t[1]}/${t[2]}</span></div>`;
 }
 
+// ---- Team search (all leagues) ----
+let LISTFN=null, ALLTEAMS=null;
+const teamBtn=(a,v,n,sel,tail)=>{
+  const bi=U(n).includes("LOUGHBOROUGH LIONS")?LOGO:badgeFor(n);
+  return `<button class="pick${sel?" sel":""}" data-a="${a}" data-v="${esc(v)}">${esc(sel?"> ":"  ")}${bi?`<img class="mb" alt="" src="${bi}">`:"   "}${esc(" "+short(n,W-6))}`+(tail?`\n<span class="c">${esc("      "+tail)}</span>`:"")+`</button>`;
+};
+const norm=t=>U(t).replace(/&AMP;/g,"&").replace(/[^A-Z0-9 ]+/g," ").replace(/\s+/g," ").trim();
+function allTeams(){
+  if(ALLTEAMS)return ALLTEAMS;
+  ALLTEAMS=[];
+  Object.keys(RAW.leagues).sort((a,b)=>lorder(a,RAW.leagues[a])-lorder(b,RAW.leagues[b])).forEach(id=>{
+    const L=RAW.leagues[id];parseFeed(L,"").teams.forEach(n=>ALLTEAMS.push({id,n,lg:lshort(id,L),key:norm(n+" "+lshort(id,L))}));});
+  return ALLTEAMS;
+}
+function searchBox(){
+  return `<input class="sq" id="sq" type="search" value="${esc(STATE.q||"")}" placeholder=" TYPE TO SEARCH ALL TEAMS" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search all teams">`;
+}
+function searchList(q){
+  const words=norm(q).split(" ").filter(Boolean);
+  if(!words.length)return LISTFN?LISTFN():"";
+  const hits=allTeams().filter(t=>words.every(w=>t.key.includes(w)||(w.length>3&&w.endsWith("S")&&t.key.includes(w.slice(0,-1)))));
+  if(!hits.length)return ln("")+ln(" NO TEAMS MATCH THAT SEARCH","w");
+  let o=hits.slice(0,12).map(t=>teamBtn("steam",t.id+"\u0001"+t.n,t.n,t.id==STATE.league&&U(t.n)==U(STATE.team),t.lg)).join("");
+  if(hits.length>12)o+=ln("")+ln(" "+(hits.length-12)+" MORE - TYPE MORE LETTERS","c");
+  return o;
+}
+function bindPicks(root){
+  root.querySelectorAll("button[data-a]").forEach(b=>b.onclick=()=>{
+    const a=b.dataset.a,v=b.dataset.v;
+    if(a=="league"){STATE.q="";STATE.pickLeague=v;page(111);}
+    else if(a=="leagues"){STATE.q="";page(110);}
+    else if(a=="team"){STATE.q="";STATE.league=STATE.pickLeague;STATE.team=v;STATE.exp={};STATE.all=false;save();compute();page(100);}
+    else if(a=="steam"){const [id,t]=v.split("\u0001");STATE.q="";STATE.league=id;STATE.pickLeague=id;STATE.team=t;STATE.exp={};STATE.all=false;save();compute();page(100);}
+    else if(a=="more"){STATE.exp[v]=!STATE.exp[v];page(102);}
+  });
+}
 function page(p){
   const ids=Object.keys(RAW.leagues);
   if(p==110&&ids.length==1){STATE.pickLeague=ids[0];p=111;}
@@ -428,19 +466,24 @@ function page(p){
     if(!shown.length)h+=ln("NOT IN ANY CUP YET","w");
   }
   if(p==110){
-    h+=dh("CHOOSE A LEAGUE")+ln("");
-    ids.slice().sort((a,b)=>lorder(a,RAW.leagues[a])-lorder(b,RAW.leagues[b])).forEach(id=>{h+=pick("league",id,lshort(id,RAW.leagues[id]),id==STATE.league);});
+    h+=dh("CHOOSE A LEAGUE")+ln("")+searchBox();
+    const leaguesHtml=()=>ids.slice().sort((a,b)=>lorder(a,RAW.leagues[a])-lorder(b,RAW.leagues[b])).map(id=>pick("league",id,lshort(id,RAW.leagues[id]),id==STATE.league)).join("");
+    LISTFN=()=>leaguesHtml();
+    h+=`<div id="sres">${STATE.q?searchList(STATE.q):leaguesHtml()}</div>`;
   }
   if(p==111){
     const L=RAW.leagues[STATE.pickLeague]||{};
     const teams=parseFeed(L,"").teams;
-    h+=dh("CHOOSE A TEAM")+lines(U(lname(L)),"c")+ln("");
-    if(!teams.length) h+=ln("NO TEAMS FOUND YET","w");
-    teams.forEach(n=>{
-      const sel=STATE.pickLeague==STATE.league&&U(n)==U(STATE.team);
-      const bi=U(n).includes("LOUGHBOROUGH LIONS")?LOGO:badgeFor(n);
-      h+=`<button class="pick${sel?" sel":""}" data-a="team" data-v="${esc(n)}">${esc(sel?"> ":"  ")}${bi?`<img class="mb" alt="" src="${bi}">`:"   "}${esc(" "+short(n,W-6))}</button>`;
-    });
+    h+=dh("CHOOSE A TEAM")+lines(U(lname(L)),"c")+ln("")+searchBox();
+    const teamsHtml=()=>{let o="";
+      if(!teams.length) o+=ln("NO TEAMS FOUND YET","w");
+      teams.forEach(n=>{
+        const sel=STATE.pickLeague==STATE.league&&U(n)==U(STATE.team);
+        o+=teamBtn("team",n,n,sel);
+      });
+      return o;};
+    LISTFN=teamsHtml;
+    h+=`<div id="sres">${STATE.q?searchList(STATE.q):teamsHtml()}</div>`;
     if(ids.length>1) h+=ln("")+pick("leagues","","  << ALL LEAGUES",false);
   }
   h+=ln("")+ln(DATA.updated?("UPDATED "+U(DATA.updated)).slice(0,W):STATE.note,"m");
@@ -450,17 +493,15 @@ function page(p){
      `<button class="${c}" data-p="${n}" ${(n==p||(n==110&&p>=110))?'aria-current="page"':""}>${l}</button>`).join("")+`</nav>`;
   tv.innerHTML=h; cur=p;
   tv.querySelectorAll("button[data-p]").forEach(b=>b.onclick=()=>page(+b.dataset.p));
-  tv.querySelectorAll("button[data-a]").forEach(b=>b.onclick=()=>{
-    const a=b.dataset.a,v=b.dataset.v;
-    if(a=="league"){STATE.pickLeague=v;page(111);}
-    else if(a=="leagues"){page(110);}
-    else if(a=="team"){STATE.league=STATE.pickLeague;STATE.team=v;STATE.exp={};STATE.all=false;save();compute();page(100);}
-    else if(a=="more"){STATE.exp[v]=!STATE.exp[v];page(102);}
-  });
+  bindPicks(tv);
+  const sq=document.getElementById("sq");
+  if(sq)sq.addEventListener("input",()=>{
+    STATE.q=sq.value;const box=document.getElementById("sres");
+    box.innerHTML=STATE.q.trim()?searchList(STATE.q):(LISTFN?LISTFN():"");bindPicks(box);});
 }
 
 setInterval(()=>{const o=document.getElementById("hd");if(o)o.outerHTML=head(cur);},1000);
-document.addEventListener("keydown",e=>{const k={"1":100,"2":101,"3":102,"4":103,"5":110,"6":104}[e.key];if(k)page(k);});
+document.addEventListener("keydown",e=>{if(e.target&&e.target.tagName==="INPUT")return;const k={"1":100,"2":101,"3":102,"4":103,"5":110,"6":104}[e.key];if(k)page(k);});
 
 load();
 fetch("data.json?_="+Date.now())
