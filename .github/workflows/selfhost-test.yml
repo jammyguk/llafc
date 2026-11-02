@@ -1,0 +1,40 @@
+name: Self-host test
+on: workflow_dispatch
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: jwhughes-work/FullTimeAPI
+          ref: master
+          path: api
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - name: Build
+        run: |
+          date +"%T build start"
+          cd api && dotnet build -c Release 2>&1 | tail -5
+          date +"%T build done"
+      - name: Install Chromium
+        run: |
+          pwsh api/FullTimeAPI/bin/Release/net9.0/playwright.ps1 install --with-deps chromium 2>&1 | tail -3
+          date +"%T chromium done"
+      - name: Start API
+        run: |
+          cd api
+          nohup dotnet run --no-build -c Release --project FullTimeAPI --urls http://127.0.0.1:5069 > ../api.log 2>&1 &
+          for i in $(seq 1 60); do curl -s -o /dev/null http://127.0.0.1:5069/swagger/index.html && break; sleep 2; done
+          date +"%T api up"
+      - name: Call it
+        run: |
+          for e in Fixtures Results; do
+            s=$(date +%s)
+            code=$(curl -s -m 170 -w "%{http_code}" -o out_$e.json http://127.0.0.1:5069/api/$e/862501863/season/503728397)
+            echo "RESULT $e http=$code took=$(( $(date +%s)-s ))s bytes=$(wc -c < out_$e.json)"
+            head -c 300 out_$e.json; echo
+          done
+      - name: API log
+        if: always()
+        run: tail -60 api.log || true
