@@ -1,5 +1,6 @@
 <?php
-// Sends match alerts for Loughborough Lions teams by comparing the old and new data.json.
+// Sends full-time score alerts for Loughborough Lions teams by comparing the old and new data.json.
+// Fixture changes are deliberately not alerted: coaches handle those.
 // Usage: php notify.php old.json new.json   (set DRY=1 to print instead of send)
 // Each team has its own ntfy topic: lionstext-<team name as a slug>. Parents subscribe from the site.
 $old = json_decode(@file_get_contents($argv[1] ?? ''), true);
@@ -30,22 +31,6 @@ foreach ($new['leagues'] as $id => $L) {
             if (!$isLions($team)) continue;
             $res = $f > $ag ? 'Win' : ($f < $ag ? 'Defeat' : 'Draw');
             $add($team, "Full time: $res", "$h $hs-$as $a", $f > $ag ? 'white_check_mark' : ($f < $ag ? 'x' : 'handshake'));
-        }
-    }
-    // 2. Fixtures that moved, or disappeared without a result
-    $newFx = []; foreach ($L['fixtures'] ?? [] as $f) $newFx[$pair($f) . '|' . ($f['competition'] ?? '')] = $f;
-    $newRes = []; foreach ($L['results'] ?? [] as $r) $newRes[$pair($r)] = 1;
-    foreach ($O['fixtures'] ?? [] as $f) {
-        $k = $pair($f) . '|' . ($f['competition'] ?? '');
-        $h = $clean($f['homeTeam']); $a = $clean($f['awayTeam']);
-        $when = $f['fixtureDateTime'] ?? '';
-        if (isset($newFx[$k])) {
-            $nw = $newFx[$k]['fixtureDateTime'] ?? '';
-            if ($nw !== $when) foreach ([$h, $a] as $team) if ($isLions($team))
-                $add($team, 'Fixture changed', "$h v $a is now $nw (was $when)", 'calendar');
-        } elseif (!isset($newRes[$pair($f)])) {
-            foreach ([$h, $a] as $team) if ($isLions($team))
-                $add($team, 'Fixture removed', "$h v $a ($when) is no longer listed. Check with your manager.", 'warning');
         }
     }
 }
