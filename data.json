@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-02 14:10:32 UTC",
+    "updated": "2026-11-03 00:45:51 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -4725,13 +4725,6 @@
             "name": "U12 Division 12",
             "fixtures": [
                 {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "AFC Barwell U12 Raptors",
-                    "awayTeam": "Lutterworth Town Juniors U12 AFC",
-                    "location": "AFC BARWELL",
-                    "competition": "Under 12 Division 12"
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Loughborough Dynamo Junior U12 Ambers",
                     "awayTeam": "Anstey Nomads U12 47's",
@@ -4852,15 +4845,6 @@
                 }
             ],
             "results": [
-                {
-                    "fixtureDateTime": "01\/11\/26 12:30",
-                    "homeTeam": "AFC Barwell U12 Raptors",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "Lutterworth Town Juniors U12 AFC",
-                    "division": "Under 12 Division 12"
-                },
                 {
                     "fixtureDateTime": "01\/11\/26 12:30",
                     "homeTeam": "Glen Villa Juniors U12 Jaguars",
@@ -5065,13 +5049,6 @@
             "name": "U12 Division 13",
             "fixtures": [
                 {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Birstall United U12 Lions",
-                    "awayTeam": "Croft Juniors 2013 U12 Royals",
-                    "location": "BIRSTALL UNITED FOOTBALL CLUB",
-                    "competition": "Under 12 Division 13"
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Croft Juniors 2013 U12 Royals",
                     "awayTeam": "Karma Leicester F.C. U12 Blue",
@@ -5234,15 +5211,6 @@
                     "homeScore": "2",
                     "awayScore": "0",
                     "awayTeam": "Glenfield United FC U12 Foxes",
-                    "division": "Under 12 Division 13"
-                },
-                {
-                    "fixtureDateTime": "01\/11\/26 10:30",
-                    "homeTeam": "Birstall United U12 Lions",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "Croft Juniors 2013 U12 Royals",
                     "division": "Under 12 Division 13"
                 },
                 {
