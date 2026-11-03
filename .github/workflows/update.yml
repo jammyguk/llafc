@@ -5,8 +5,8 @@ on:
     - cron: '*/5 9-15 * * 0'
     # Sundays 4pm-8pm UK time: scan every 15 minutes.
     - cron: '*/15 15-19 * * 0'
-    # Every other time: every 3 hours.
-    - cron: '0 */3 * * *'
+    # Every other time: every 30 minutes from 7am to 10pm UK time, then every 3 hours overnight.
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 concurrency:
   group: update-data
@@ -30,7 +30,11 @@ jobs:
           case "$SCHED" in
             '*/5 9-15 * * 0')    { [ "$dow" = 7 ] && [ "$hour" -ge 10 ] && [ "$hour" -le 15 ]; } || run=false ;;
             '*/15 15-19 * * 0')  { [ "$dow" = 7 ] && [ "$hour" -ge 16 ] && [ "$hour" -le 19 ]; } || run=false ;;
-            '0 */3 * * *')       { [ "$dow" = 7 ] && [ "$hour" -ge 10 ] && [ "$hour" -le 19 ]; } && run=false ;;
+            '*/30 * * * *')
+              if [ "$dow" = 7 ] && [ "$hour" -ge 10 ] && [ "$hour" -le 19 ]; then run=false        # Sunday match window has its own schedules
+              elif [ "$hour" -ge 7 ] && [ "$hour" -le 21 ]; then run=true                         # daytime: every 30 minutes
+              else { [ $((hour % 3)) = 0 ] && [ "$(date +%-M)" -lt 20 ]; } || run=false; fi       # overnight: about every 3 hours
+              ;;
           esac
           echo "run=$run" >> "$GITHUB_OUTPUT"
           echo "UK day=$dow hour=$hour schedule=[$SCHED] run=$run"
@@ -110,6 +114,6 @@ jobs:
             git commit -m "Update data"
             git pull --rebase origin main
             git push
-            # Match alerts are switched off for now. To turn them back on, uncomment the next line (notify.php is kept).
-            # php notify.php /tmp/old.json data.json || true
+            # Private Div 1 alerts (ntfy). Safe to fail: never blocks the data update.
+            php notify.php /tmp/old.json data.json || true
           fi

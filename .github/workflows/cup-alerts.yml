@@ -1,0 +1,24 @@
+name: Cup alerts
+# When cups.json is updated, send a private alert for any cup game involving a Div 1 team.
+on:
+  push:
+    branches: [main]
+    paths: ['cups.json']
+permissions:
+  contents: read
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: curl
+      - name: Send alerts
+        run: |
+          git show HEAD^:cups.json > /tmp/old-cups.json || exit 0
+          php notify.php data.json data.json /tmp/old-cups.json cups.json || true

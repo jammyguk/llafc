@@ -1,49 +1,86 @@
 <?php
-// Sends full-time score alerts for Loughborough Lions teams by comparing the old and new data.json.
-// Fixture changes are deliberately not alerted: coaches handle those.
-// Usage: php notify.php old.json new.json   (set DRY=1 to print instead of send)
-// Each team has its own ntfy topic: lionstext-<team name as a slug>. Parents subscribe from the site.
-$old = json_decode(@file_get_contents($argv[1] ?? ''), true);
-$new = json_decode(@file_get_contents($argv[2] ?? ''), true);
-if (!$old || !$new) { echo "No old or new data, nothing to compare.\n"; exit(0); }
+// Sends private alerts (to one ntfy topic) when anything changes in Div 1, or when a Div 1 team's cup game changes.
+//   Div 1 league: new results, postponements, new / moved / removed fixtures.
+//   Cups: new or changed cup results and fixtures involving a Div 1 team.
+// Usage: php notify.php old-data.json new-data.json [old-cups.json new-cups.json]   (DRY=1 prints instead of sending)
+$TOPIC = getenv('NTFY_TOPIC') ?: 'lionstext-div1-3665cd8c9f';
+$DIV = 'u12-div1';
+$j = fn($f) => json_decode(@file_get_contents($f ?? ''), true);
+$old = $j($argv[1] ?? ''); $new = $j($argv[2] ?? '');
+$oc = isset($argv[3]) ? $j($argv[3]) : null; $nc = isset($argv[4]) ? $j($argv[4]) : null;
 $dry = getenv('DRY') === '1';
 $clean = fn($s) => trim(html_entity_decode((string)$s, ENT_QUOTES));
-$slug  = fn($s) => trim(preg_replace('/[^a-z0-9]+/', '-', strtolower($clean($s))), '-');
-$isLions = fn($s) => stripos($clean($s), 'Loughborough Lions') === 0;
-$key = fn($o) => $clean($o['homeTeam']) . '|' . $clean($o['awayTeam']) . '|' . substr($o['fixtureDateTime'] ?? '', 0, 8);
-$pair = fn($o) => $clean($o['homeTeam']) . '|' . $clean($o['awayTeam']);
+$pair = fn($h, $a) => $clean($h) . ' v ' . $clean($a);
+$msgs = [];   // [title, body, tags]
+$isNum = fn($v) => $v !== null && $v !== '' && ctype_digit((string)$v);
 
-$msgs = [];  // topic => list of [title, body, tags]
-$add = function ($team, $title, $body, $tags) use (&$msgs, $slug) { $msgs['lionstext-' . $slug($team)][] = [$title, $body, $tags]; };
-
-foreach ($new['leagues'] as $id => $L) {
-    $O = $old['leagues'][$id] ?? null;
-    if (!$O) continue;  // a league seen for the first time never alerts
-    // 1. New results
-    $oldRes = [];
-    foreach ($O['results'] ?? [] as $r) $oldRes[$key($r)] = 1;
-    foreach ($L['results'] ?? [] as $r) {
-        if (isset($oldRes[$key($r)])) continue;
-        if (!isset($r['homeScore']) || $r['homeScore'] === '' || !isset($r['awayScore']) || $r['awayScore'] === '') continue;
+// ---- Div 1 league ----
+$O = $old['leagues'][$DIV] ?? null; $N = $new['leagues'][$DIV] ?? null;
+$div1Teams = [];
+if ($N) {
+    foreach (($N['fixtures'] ?? []) as $f) { $div1Teams[$clean($f['homeTeam'])] = 1; $div1Teams[$clean($f['awayTeam'])] = 1; }
+    foreach (($N['results'] ?? []) as $r) { $div1Teams[$clean($r['homeTeam'])] = 1; $div1Teams[$clean($r['awayTeam'])] = 1; }
+}
+if ($O && $N) {
+    $k = fn($o) => $pair($o['homeTeam'], $o['awayTeam']) . '|' . substr($o['fixtureDateTime'] ?? '', 0, 8);
+    $oldRes = []; foreach (($O['results'] ?? []) as $r) $oldRes[$k($r)] = 1;
+    foreach (($N['results'] ?? []) as $r) {
+        if (isset($oldRes[$k($r)])) continue;
         $h = $clean($r['homeTeam']); $a = $clean($r['awayTeam']);
-        $hs = (int)$r['homeScore']; $as = (int)$r['awayScore'];
-        foreach ([[$h, $hs, $as, $a], [$a, $as, $hs, $h]] as [$team, $f, $ag, $opp]) {
-            if (!$isLions($team)) continue;
-            $res = $f > $ag ? 'Win' : ($f < $ag ? 'Defeat' : 'Draw');
-            $add($team, "Full time: $res", "$h $hs-$as $a", $f > $ag ? 'white_check_mark' : ($f < $ag ? 'x' : 'handshake'));
+        if (stripos(($r['score'] ?? '') . ($r['homeScore'] ?? ''), 'postponed') !== false)
+            $msgs[] = ['Div 1: postponed', "$h v $a (" . substr($r['fixtureDateTime'] ?? '', 0, 8) . ") is postponed", 'warning'];
+        elseif ($isNum($r['homeScore'] ?? null) && $isNum($r['awayScore'] ?? null))
+            $msgs[] = ['Div 1: full time', "$h {$r['homeScore']}-{$r['awayScore']} $a", 'soccer'];
+    }
+    // fixtures by pairing, so a changed date / time / pitch shows as a change and not as add + remove
+    $byPair = function ($list) use ($pair) { $m = []; foreach ($list as $f) $m[$pair($f['homeTeam'], $f['awayTeam'])][] = $f; return $m; };
+    $of = $byPair($O['fixtures'] ?? []); $nf = $byPair($N['fixtures'] ?? []);
+    $when = fn($f) => ($f['fixtureDateTime'] ?? '?') . (($f['location'] ?? '') !== '' ? ' at ' . $clean($f['location']) : '');
+    foreach ($nf as $p => $list) {
+        foreach ($list as $i => $f) {
+            $o = $of[$p][$i] ?? null;
+            if (!$o) { $msgs[] = ['Div 1: new fixture', "$p - " . $when($f), 'calendar']; continue; }
+            if ($when($o) !== $when($f) && empty($f['removed']))
+                $msgs[] = ['Div 1: fixture changed', "$p\nWas: " . $when($o) . "\nNow: " . $when($f), 'calendar'];
+            if (!empty($f['removed']) && empty($o['removed']))
+                $msgs[] = ['Div 1: fixture removed', "$p (" . ($f['fixtureDateTime'] ?? '') . ") has gone from Full-Time - check with the coach", 'warning'];
+        }
+    }
+    $newResPairs = []; foreach (($N['results'] ?? []) as $r) $newResPairs[$pair($r['homeTeam'], $r['awayTeam'])] = 1;
+    foreach ($of as $p => $list) if (!isset($nf[$p]) && !isset($newResPairs[$p]))
+        $msgs[] = ['Div 1: fixture removed', "$p (" . ($list[0]['fixtureDateTime'] ?? '') . ") has gone from Full-Time", 'warning'];
+}
+
+// ---- Cups (only games with a Div 1 team) ----
+if ($oc && $nc && $div1Teams) {
+    $involved = fn($o) => isset($div1Teams[$clean($o['home'] ?? '')]) || isset($div1Teams[$clean($o['away'] ?? '')]);
+    foreach (($nc['cups'] ?? []) as $cup) {
+        $oldCup = null; foreach (($oc['cups'] ?? []) as $c) if (($c['name'] ?? '') === ($cup['name'] ?? '')) $oldCup = $c;
+        if (!$oldCup) continue;
+        $ck = fn($o) => $pair($o['home'] ?? '', $o['away'] ?? '');
+        $oldR = []; foreach (($oldCup['results'] ?? []) as $r) $oldR[$ck($r)] = 1;
+        foreach (($cup['results'] ?? []) as $r) if ($involved($r) && !isset($oldR[$ck($r)]))
+            $msgs[] = ['Cup: full time', $clean($r['home']) . " {$r['hs']}-{$r['as']} " . $clean($r['away']) . "\n" . $cup['name'], 'trophy'];
+        $oldF = []; foreach (($oldCup['fixtures'] ?? []) as $f) $oldF[$ck($f)] = $f;
+        foreach (($cup['fixtures'] ?? []) as $f) {
+            if (!$involved($f)) continue;
+            $o = $oldF[$ck($f)] ?? null; $w = fn($x) => ($x['date'] ?? '?') . (($x['venue'] ?? '') !== '' ? ' at ' . $clean($x['venue']) : '');
+            if (!$o) $msgs[] = ['Cup: new fixture', $ck($f) . ' - ' . $w($f) . "\n" . $cup['name'], 'trophy'];
+            elseif ($w($o) !== $w($f)) $msgs[] = ['Cup: fixture changed', $ck($f) . "\nWas: " . $w($o) . "\nNow: " . $w($f) . "\n" . $cup['name'], 'trophy'];
         }
     }
 }
+
 $sent = 0;
-foreach ($msgs as $topic => $list) foreach ($list as [$title, $body, $tags]) {
-    echo "$topic | $title | $body\n";
+foreach ($msgs as [$title, $body, $tags]) {
+    echo "$title | " . str_replace("\n", ' / ', $body) . "\n";
     if ($dry) continue;
-    $ch = curl_init("https://ntfy.sh/$topic");
+    $ch = curl_init("https://ntfy.sh/$TOPIC");
     curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_POSTFIELDS => $body, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20,
         CURLOPT_HTTPHEADER => ["Title: $title", "Tags: $tags", "Click: https://jammyguk.github.io/LLAFC/"]]);
     curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
     if ($code >= 200 && $code < 300) $sent++; else echo "  (send failed: HTTP $code)\n";
     usleep(300000);
 }
-echo $dry ? "Dry run.\n" : "Sent $sent alerts.\n";
+echo $dry ? "Dry run: " . count($msgs) . " alerts.\n" : "Sent $sent alerts.\n";
 exit(0);

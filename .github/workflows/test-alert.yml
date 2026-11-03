@@ -1,0 +1,19 @@
+name: Test alert
+# Sends a sample alert to the private Div 1 channel whenever test-alert.txt is pushed (the file's text is the message).
+on:
+  push:
+    branches: [main]
+    paths: ['test-alert.txt']
+permissions:
+  contents: read
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Send sample
+        run: |
+          T=$(grep -o "lionstext-div1-[a-f0-9]*" notify.php | head -1)
+          curl -sS -m 20 -X POST -H "Title: Div 1: full time" -H "Tags: soccer" -H "Click: https://jammyguk.github.io/LLAFC/" --data-binary @test-alert.txt "https://ntfy.sh/$T" -w "\nHTTP %{http_code}\n"
