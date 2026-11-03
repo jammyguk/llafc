@@ -133,7 +133,7 @@ function short(s,n){let t=U(s).trim();
 
 let STATE={q:"",cx:{},league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false};
 let RAW={leagues:{},updated:null};
-let DATA={results:[],league:[],fixtures:[],table:[],teams:[],leagueName:"",updated:null};
+let DATA={results:[],league:[],fixtures:[],table:[],teams:[],leagueFx:[],leagueName:"",updated:null};
 let cur=100;
 let CUPS=[];
 let VEO=[];
@@ -216,7 +216,11 @@ function parseFeed(raw,us){
   table.forEach(t=>{if(t.n)names[t.n]=1;});
   const teams=Object.keys(names).sort((a,b)=>U(a).localeCompare(U(b)));
 
-  return {fixtures,results,league,table,teams};
+  const leagueFx=fx.filter(f=>ts(f.date)>=today.getTime()).map(f=>({date:f.date,t:f.time,home:f.home,away:f.away,
+    own:teamMatches(f.home)||teamMatches(f.away),st:status(f)}))
+    .sort((a,b)=>ts(a.date)-ts(b.date)||String(a.t||"").localeCompare(String(b.t||""))||U(a.home).localeCompare(U(b.home)));
+
+  return {fixtures,results,league,table,teams,leagueFx};
 }
 
 // Cup games come from cups.json (kept by hand, as the feed cannot read cups).
@@ -350,6 +354,7 @@ function bindPicks(root){
     else if(a=="team"){STATE.q="";STATE.league=STATE.pickLeague;STATE.team=v;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="steam"){const [id,t]=v.split("\u0001");STATE.q="";STATE.league=id;STATE.pickLeague=id;STATE.team=t;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="more"){STATE.exp[v]=!STATE.exp[v];page(102);}
+    else if(a=="fxall"){STATE.all=!STATE.all;page(101);}
     else if(a=="cx"){STATE.cx[v]=!STATE.cx[v];page(104);}
   });
 }
@@ -451,6 +456,20 @@ function page(p){
   }
   if(p==101){
     h+=dh("FIXTURES")+ln(T,"c")+ln("");
+    h+=morebtn("fxall","",STATE.all?"  SHOW JUST MY TEAM":"  SHOW ALL FIXTURES IN THE LEAGUE")+ln("");
+    if(STATE.all){
+      if(!DATA.leagueFx.length) h+=ln("NO FIXTURES SCHEDULED YET","w");
+      const dk=d=>d.yr*10000+d.mon*100+d.day; let last=null;
+      DATA.leagueFx.forEach(x=>{
+        if(dk(x.date)!==last){if(last!==null)h+=ln("");last=dk(x.date);
+          h+=ln(`${DOW[new Date(x.date.yr,x.date.mon-1,x.date.day).getDay()]} ${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]} ${x.date.yr}`,"c");}
+        h+=ln(String(x.t||"").padEnd(5)+" "+short(x.home,15).padEnd(15)+" V "+short(x.away,15),x.own?"y":"w");
+        if(x.st)h+=ln("      "+(x.st=="POSTPONED"?"POSTPONED - NEW DATE TO BE CONFIRMED":"REMOVED - CHECK WITH COACH"),"m");
+      });
+      const cf=DATA.fixtures.filter(x=>x.cup);
+      if(cf.length){h+=ln("")+ln("YOUR CUP GAMES","c");
+        cf.forEach(x=>{h+=ln(`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]} ${x.t||""} ${x.home?"HOME":"AWAY"}`,"y")+lines(short(x.opp,W-2),"w")+lines(U(x.cup),"c");});}
+    } else {
     if(!DATA.fixtures.length) h+=ln("NO FIXTURES SCHEDULED YET","w");
     DATA.fixtures.forEach(x=>{
       h+=ln(`${DOW[new Date(x.date.yr,x.date.mon-1,x.date.day).getDay()]} ${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]}  ${x.t||""}  ${x.home?"HOME":"AWAY"}${x.cup?"  CUP":""}`,"y");
@@ -459,6 +478,7 @@ function page(p){
       h+=`<div class="ln w">${bi?`<img class="mb" alt="" src="${bi}">`:"   "}${esc((" "+short(x.opp,W-4)).padEnd(W-3))}</div>`;
       if(x.cup)h+=lines(U(x.cup),"c");
     });
+    }
   }
   if(p==102){
     h+=dh("RESULTS")+lines(LN,"c")+ln("");
