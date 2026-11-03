@@ -248,6 +248,23 @@ foreach ($leagues as $lg) {
     } else {
         $entry['results'] = $oldLeagues[$id]['results'] ?? [];
     }
+    // A fixture that vanishes from the feed within a week of kick-off (and has not become a result or moved to a
+    // new date) is kept and flagged "removed", so the site can warn people to check with their coach.
+    if ($fixtures !== null && !empty($oldLeagues[$id]['fixtures'])) {
+        $pairOf = fn($o) => trim(html_entity_decode((string)($o['homeTeam'] ?? ''))) . '|' . trim(html_entity_decode((string)($o['awayTeam'] ?? '')));
+        $present = [];
+        foreach (array_merge($entry['fixtures'], $entry['results']) as $o) $present[$pairOf($o)] = true;
+        $tz = new DateTimeZone('Europe/London');
+        $today = new DateTime('today', $tz);
+        $limit = (clone $today)->modify('+7 days');
+        foreach ($oldLeagues[$id]['fixtures'] as $o) {
+            if (isset($present[$pairOf($o)])) continue;
+            $d = DateTime::createFromFormat('d/m/y H:i', $o['fixtureDateTime'] ?? '', $tz);
+            if (!$d || $d < $today || $d > $limit) continue;
+            $o['removed'] = true;
+            $entry['fixtures'][] = $o;
+        }
+    }
     $out[$id] = $entry;
 }
 

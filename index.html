@@ -161,14 +161,21 @@ function parseFeed(raw,us){
     let as=pk(o,["awayScore","awayGoals","AwayScore"]);
     if(hs===undefined&&sc){hs=sc[1];as=sc[2];}
     return {home:clean(pk(o,["homeTeam","home","Home"])),away:clean(pk(o,["awayTeam","away","Away"])),
-            date,time,hs:hs===undefined?NaN:+hs,as:as===undefined?NaN:+as};
+            date,time,removed:!!o.removed,hs:hs===undefined?NaN:+hs,as:as===undefined?NaN:+as};
   };
   const fx=(raw.fixtures||[]).map(norm).filter(x=>x.date);
   const rs=(raw.results||[]).map(norm).filter(x=>x.date);
   const today=new Date();today.setHours(0,0,0,0);
 
+  // Full-Time lists a postponed game in its results as "Postponed"; the fixture carries on being listed alongside it.
+  const ppd={};
+  (raw.results||[]).forEach(o=>{if(/postponed/i.test(String(o.score||"")+String(o.homeScore||""))){
+    const q=norm(o);if(q.date)ppd[clean(q.home)+"|"+clean(q.away)+"|"+q.date.day+"/"+q.date.mon+"/"+q.date.yr]=1;}});
+  const rm=new Set((raw.fixtures||[]).filter(o=>o.removed).map(o=>clean(o.homeTeam)+"|"+clean(o.awayTeam)+"|"+String(o.fixtureDateTime||"").slice(0,8)));
+  const status=f=>{const k=clean(f.home)+"|"+clean(f.away)+"|"+f.date.day+"/"+f.date.mon+"/"+f.date.yr;
+    return ppd[k]?"POSTPONED":(f.removed?"REMOVED":"");};
   const fixtures=fx.filter(f=>(teamMatches(f.home)||teamMatches(f.away))&&ts(f.date)>=today.getTime())
-    .map(f=>({date:f.date,t:f.time,opp:teamMatches(f.home)?f.away:f.home,home:teamMatches(f.home)}))
+    .map(f=>({date:f.date,t:f.time,opp:teamMatches(f.home)?f.away:f.home,home:teamMatches(f.home),st:status(f)}))
     .sort((a,b)=>ts(a.date)-ts(b.date));
 
   const scored=rs.filter(r=>!isNaN(r.hs)&&!isNaN(r.as));
@@ -430,7 +437,7 @@ function page(p){
     if(f){
       h+=band("NEXT MATCH","band blink")+
          ln(`${String(f.date.day).padStart(2,"0")} ${MON[f.date.mon-1]}  ${f.t||""} KO  ${f.home?"HOME":"AWAY"}`,"y")+
-         ln(short(f.opp,W),"w")+(f.cup?lines("CUP - "+U(f.cup),"c"):"")+ln("");
+         ln(short(f.opp,W),"w")+(f.cup?lines("CUP - "+U(f.cup),"c"):"")+(f.st?ln(f.st=="POSTPONED"?"POSTPONED - NEW DATE TO BE CONFIRMED":"REMOVED - CHECK WITH YOUR COACH","m"):"")+ln("");
     } else {
       h+=band("NEXT MATCH")+ln("NO FIXTURES FOUND YET","w")+ln("");
     }
@@ -447,6 +454,7 @@ function page(p){
     if(!DATA.fixtures.length) h+=ln("NO FIXTURES SCHEDULED YET","w");
     DATA.fixtures.forEach(x=>{
       h+=ln(`${DOW[new Date(x.date.yr,x.date.mon-1,x.date.day).getDay()]} ${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]}  ${x.t||""}  ${x.home?"HOME":"AWAY"}${x.cup?"  CUP":""}`,"y");
+      if(x.st)h+=ln(x.st=="POSTPONED"?"POSTPONED - NEW DATE TO BE CONFIRMED":"REMOVED - CHECK WITH YOUR COACH","m");
       const bi=U(x.opp).includes("LOUGHBOROUGH LIONS")?LOGO:badgeFor(x.opp);
       h+=`<div class="ln w">${bi?`<img class="mb" alt="" src="${bi}">`:"   "}${esc((" "+short(x.opp,W-4)).padEnd(W-3))}</div>`;
       if(x.cup)h+=lines(U(x.cup),"c");
