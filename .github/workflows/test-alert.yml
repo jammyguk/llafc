@@ -16,7 +16,7 @@ jobs:
       - name: Send sample
         run: |
           T=$(grep -o "lionstext-div1-[a-f0-9]*" notify.php | head -1)
-          curl -sS -m 20 -X POST -H "Title: Div 1: full time" -H "Tags: soccer" -H "Click: https://jammyguk.github.io/LLAFC/" --data-binary @test-alert.txt "https://ntfy.sh/$T" -w "\nHTTP %{http_code}\n"
+          curl -sS -m 20 -X POST -H "Title: Div 1: full time" -H "Tags: soccer" -H "Click: https://jammyguk.github.io/LLAFC/" -H "Icon: https://jammyguk.github.io/LLAFC/icon-192.png" --data-binary @test-alert.txt "https://ntfy.sh/$T" -w "\nHTTP %{http_code}\n"
       - name: Check the channel holds the message
         run: |
           T=$(grep -o "lionstext-div1-[a-f0-9]*" notify.php | head -1)
