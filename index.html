@@ -307,10 +307,13 @@ function save(){
   try{localStorage.setItem("lionstext",JSON.stringify({league:STATE.league,team:STATE.team}));}catch(e){}
   try{history.replaceState(null,"","#"+encodeURIComponent(STATE.league)+"|"+encodeURIComponent(STATE.team));}catch(e){}
 }
+function getFav(){try{const f=JSON.parse(localStorage.getItem("lionstext-fav"));return f&&f.league&&f.team?f:null;}catch(e){return null;}}
+function setFav(f){try{if(f)localStorage.setItem("lionstext-fav",JSON.stringify(f));else localStorage.removeItem("lionstext-fav");}catch(e){}}
 function load(){
   let s=null;
   try{if(location.hash.length>1){const a=location.hash.slice(1).split("|");
       if(a[0]&&a[1])s={league:decodeURIComponent(a[0]),team:decodeURIComponent(a[1])};}}catch(e){}
+  if(!s)s=getFav();
   if(!s){try{s=JSON.parse(localStorage.getItem("lionstext"));}catch(e){}}
   if(s&&s.league&&s.team){STATE.league=s.league;STATE.team=s.team;}
 }
@@ -352,6 +355,8 @@ function bindPicks(root){
     if(a=="league"){STATE.q="";STATE.pickLeague=v;page(111);}
     else if(a=="leagues"){STATE.q="";page(110);}
     else if(a=="age"){STATE.age=v;page(110);}
+    else if(a=="fav"){const f=getFav();setFav(f&&f.league==STATE.league&&U(f.team)==U(STATE.team)?null:{league:STATE.league,team:STATE.team});page(100);}
+    else if(a=="gofav"){const f=getFav();if(f&&RAW.leagues[f.league]){STATE.league=f.league;STATE.team=f.team;STATE.exp={};STATE.all=false;save();compute();page(100);}}
     else if(a=="team"){STATE.q="";STATE.league=STATE.pickLeague;STATE.team=v;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="steam"){const [id,t]=v.split("\u0001");STATE.q="";STATE.league=id;STATE.pickLeague=id;STATE.team=t;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="more"){STATE.exp[v]=!STATE.exp[v];page(102);}
@@ -454,7 +459,10 @@ function page(p){
     } else {
       h+=ln("NO RESULTS YET","w");
     }
-    h+=ln("")+ln(" PRESS TEAMS TO CHANGE TEAM","c");
+    h+=ln("")+ln(" PRESS TEAMS TO CHANGE TEAM","c")+ln("");
+    const fav=getFav(), isFav=fav&&fav.league==STATE.league&&U(fav.team)==U(STATE.team);
+    h+=morebtn("fav","",isFav?"  * MY TEAM - TAP TO REMOVE":"  * SET AS MY TEAM (OPENS HERE)");
+    if(fav&&!isFav&&RAW.leagues[fav.league]) h+=morebtn("gofav","","  GO TO MY TEAM: "+short(fav.team,W-20));
   }
   if(p==101){
     h+=dh("FIXTURES")+ln(T,"c")+ln("");
