@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-04 20:05:13 UTC",
+    "updated": "2026-11-04 20:51:29 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -6708,6 +6708,13 @@
                     "homeTeam": "Community Football Academy U13",
                     "awayTeam": "Royce Rangers U13 Avengers",
                     "location": "JUDGEMEADOW COMMUNITY COLLEGE",
+                    "competition": "Under 13 Division 4"
+                },
+                {
+                    "fixtureDateTime": "15\/11\/26 10:30",
+                    "homeTeam": "Loughborough Lions AFC U13 Reds",
+                    "awayTeam": "FC Burbage U13 Panthers",
+                    "location": "Charnwood College LE11 4SQ",
                     "competition": "Under 13 Division 4"
                 },
                 {
