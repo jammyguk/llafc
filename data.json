@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-04 14:57:24 UTC",
+    "updated": "2026-11-04 16:55:50 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -500,6 +500,13 @@
                 },
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Mountsorrel Juniors U12 Shadowcats",
+                    "awayTeam": "Quorn U12 Jaguars",
+                    "location": "Halstead Rd Playing Fields Mountsorrel LE12 7HD",
+                    "competition": "U12 Div2 The Black Horse Aylestone"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Narborough Foxes U12 Reds",
                     "awayTeam": "Oadby Owls U12 Juniors",
                     "location": "BROCKINGTON COLLEGE",
@@ -524,13 +531,6 @@
                     "homeTeam": "Kirby Muxloe U12 Kings",
                     "awayTeam": "Anstey Nomads U12 23's",
                     "location": "KIRBY MUXLOE RECREATION GROUND",
-                    "competition": "U12 Div2 The Black Horse Aylestone"
-                },
-                {
-                    "fixtureDateTime": "22\/11\/26 12:30",
-                    "homeTeam": "Mountsorrel Juniors U12 Shadowcats",
-                    "awayTeam": "Quorn U12 Jaguars",
-                    "location": "Halstead Rd Playing Fields Mountsorrel LE12 7HD",
                     "competition": "U12 Div2 The Black Horse Aylestone"
                 },
                 {
