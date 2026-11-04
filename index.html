@@ -131,7 +131,7 @@ function short(s,n){let t=U(s).trim();
     if(k<0)return t.slice(0,n);w[k]=w[k].slice(0,-1);t=w.join(" ");}
   return t;}
 
-let STATE={q:"",cx:{},league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false,tv:"full"};
+let STATE={q:"",cx:{},league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false,tv:"full",age:""};
 let RAW={leagues:{},updated:null};
 let DATA={results:[],league:[],fixtures:[],table:[],teams:[],leagueFx:[],leagueName:"",updated:null};
 let cur=100;
@@ -351,6 +351,7 @@ function bindPicks(root){
     const a=b.dataset.a,v=b.dataset.v;
     if(a=="league"){STATE.q="";STATE.pickLeague=v;page(111);}
     else if(a=="leagues"){STATE.q="";page(110);}
+    else if(a=="age"){STATE.age=v;page(110);}
     else if(a=="team"){STATE.q="";STATE.league=STATE.pickLeague;STATE.team=v;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="steam"){const [id,t]=v.split("\u0001");STATE.q="";STATE.league=id;STATE.pickLeague=id;STATE.team=t;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="more"){STATE.exp[v]=!STATE.exp[v];page(102);}
@@ -587,7 +588,11 @@ function page(p){
   }
   if(p==110){
     h+=dh("CHOOSE A LEAGUE")+ln("")+searchBox();
-    const leaguesHtml=()=>ids.slice().sort((a,b)=>lorder(a,RAW.leagues[a])-lorder(b,RAW.leagues[b])).map(id=>pick("league",id,lshort(id,RAW.leagues[id]),id==STATE.league)).join("");
+    const ageOf=id=>{const m=/^U(\d+)/.exec(lshort(id,RAW.leagues[id]));return m?"U"+m[1]:"";};
+    const ages=[...new Set(ids.map(ageOf).filter(Boolean))].sort();
+    const age=ages.includes(STATE.age)?STATE.age:(ages.includes(ageOf(STATE.league))?ageOf(STATE.league):ages[0]);
+    if(ages.length>1&&!STATE.q) h+=`<div class="agebar">${ages.map(a=>pick("age",a,"  "+a+" LEAGUES",a==age)).join("")}</div>`;
+    const leaguesHtml=()=>ids.filter(id=>ages.length<2||ageOf(id)==age).sort((a,b)=>lorder(a,RAW.leagues[a])-lorder(b,RAW.leagues[b])).map(id=>pick("league",id,lshort(id,RAW.leagues[id]),id==STATE.league)).join("");
     LISTFN=()=>leaguesHtml();
     h+=`<div id="sres">${STATE.q?searchList(STATE.q):leaguesHtml()}</div>`;
   }

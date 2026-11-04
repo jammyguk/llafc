@@ -97,6 +97,72 @@ $leagues = [
         'division' => '466409266',
         'season'   => '503728397',
     ],
+    [
+        'id'       => 'u13-div1',
+        'name'     => 'U13 Division 1',
+        'division' => '139618346',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u13-div2',
+        'name'     => 'U13 Division 2',
+        'division' => '758036469',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u13-div3',
+        'name'     => 'U13 Division 3',
+        'division' => '355148868',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u13-div4',
+        'name'     => 'U13 Division 4',
+        'division' => '544497155',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u13-div5',
+        'name'     => 'U13 Division 5',
+        'division' => '325154908',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u13-div6',
+        'name'     => 'U13 Division 6',
+        'division' => '949209317',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u13-div7',
+        'name'     => 'U13 Division 7',
+        'division' => '981440381',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u13-div8',
+        'name'     => 'U13 Division 8',
+        'division' => '765927049',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u13-div9',
+        'name'     => 'U13 Division 9',
+        'division' => '91712480',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u13-div10',
+        'name'     => 'U13 Division 10',
+        'division' => '338880800',
+        'season'   => '503728397',
+    ],
+    [
+        'id'       => 'u13-div11',
+        'name'     => 'U13 Division 11',
+        'division' => '791943314',
+        'season'   => '503728397',
+    ],
 ];
 
 // Asks for pages several at a time: a rolling queue that starts the next page
