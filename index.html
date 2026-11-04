@@ -131,7 +131,7 @@ function short(s,n){let t=U(s).trim();
     if(k<0)return t.slice(0,n);w[k]=w[k].slice(0,-1);t=w.join(" ");}
   return t;}
 
-let STATE={q:"",cx:{},league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false};
+let STATE={q:"",cx:{},league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false,form:false};
 let RAW={leagues:{},updated:null};
 let DATA={results:[],league:[],fixtures:[],table:[],teams:[],leagueFx:[],leagueName:"",updated:null};
 let cur=100;
@@ -355,6 +355,7 @@ function bindPicks(root){
     else if(a=="steam"){const [id,t]=v.split("\u0001");STATE.q="";STATE.league=id;STATE.pickLeague=id;STATE.team=t;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="more"){STATE.exp[v]=!STATE.exp[v];page(102);}
     else if(a=="fxall"){STATE.all=!STATE.all;page(101);}
+    else if(a=="form"){STATE.form=!STATE.form;page(103);}
     else if(a=="cx"){STATE.cx[v]=!STATE.cx[v];page(104);}
   });
 }
@@ -515,6 +516,22 @@ function page(p){
   }
   if(p==103){
     h+=dh("LEAGUE TABLE")+lines(ltitle(STATE.league,RAW.leagues[STATE.league]),"c")+ln("");
+    h+=morebtn("form","",STATE.form?"  SHOW FULL TABLE":"  SHOW RECENT FORM")+ln("");
+    if(STATE.form){
+      const fnw=20;
+      h+=`<div class="ln band">${esc((rj("PO",2)+" "+"TEAM".padEnd(fnw)+" "+rj("P",2)+" "+"  FORM   "+" "+rj("PTS",3)).padEnd(W))}</div>`;
+      const frows=DATA.table.slice().sort((a,b)=>b.pts-a.pts||((b.gf||0)-(b.ga||0))-((a.gf||0)-(a.ga||0))||(b.gf||0)-(a.gf||0));
+      if(!frows.length) h+=ln("TABLE NOT AVAILABLE YET","w");
+      frows.forEach((t,i)=>{
+        const tn=U(t.n);
+        const last=DATA.league.filter(r=>U(r.home)==tn||U(r.away)==tn).slice().sort((a,b)=>(a.date.yr*10000+a.date.mon*100+a.date.day)-(b.date.yr*10000+b.date.mon*100+b.date.day)).slice(-5);
+        const L=last.map(r=>{const f=U(r.home)==tn?r.hs:r.as,a=U(r.home)==tn?r.as:r.hs;return f>a?["W","g"]:f<a?["L","r"]:["D","y"];});
+        while(L.length<5)L.unshift([".","w"]);
+        const form=L.map(([c,k])=>`<span class="${k}">${c}</span>`).join(" ");
+        h+=`<div class="ln ${t.own?"y":"w"}">${esc(`${rj(i+1,2)} ${short(t.n,fnw).padEnd(fnw)} ${rj(t.p,2)} `)}${form}${esc(` ${rj(t.pts,3)}`.padEnd(W-(2+1+fnw+1+2+1+9)))}</div>`;
+      });
+      h+=ln("")+ln("LAST 5 LEAGUE GAMES - LATEST ON RIGHT","c");
+    } else {
     const hasGd=!(DATA.table[0]&&DATA.table[0].noGd);
     const nw=hasGd?17:21;
     h+=`<div class="ln band">${esc((rj("PO",2)+" "+"TEAM".padEnd(nw)+" "+rj("P",2)+" "+rj("W",2)+" "+rj("D",2)+" "+rj("L",2)+(hasGd?" "+rj("GD",3):"")+" "+rj("PTS",3)).padEnd(W))}</div>`;
@@ -526,6 +543,7 @@ function page(p){
       s+=` ${rj(t.pts,3)}`;
       h+=ln(s.slice(0,W),t.own?"y":"w");
     });
+    }
   }
   if(p==104){
     h+=dh("CUPS")+ln(T,"c")+ln("");
