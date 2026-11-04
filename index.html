@@ -307,6 +307,11 @@ function save(){
   try{localStorage.setItem("lionstext",JSON.stringify({league:STATE.league,team:STATE.team}));}catch(e){}
   try{history.replaceState(null,"","#"+encodeURIComponent(STATE.league)+"|"+encodeURIComponent(STATE.team));}catch(e){}
 }
+// One-off notice for people who installed the app from the old github.io address. Dismissible; stops by itself after 31 Dec 2026.
+function showMoved(){
+  try{if(/github\.io$/i.test(location.hostname)||new Date()>new Date(2026,11,31,23,59))return false;
+    return !localStorage.getItem("lionstext-moved");}catch(e){return false;}
+}
 function getFav(){try{const f=JSON.parse(localStorage.getItem("lionstext-fav"));return f&&f.league&&f.team?f:null;}catch(e){return null;}}
 function setFav(f){try{if(f)localStorage.setItem("lionstext-fav",JSON.stringify(f));else localStorage.removeItem("lionstext-fav");}catch(e){}}
 function load(){
@@ -355,6 +360,7 @@ function bindPicks(root){
     if(a=="league"){STATE.q="";STATE.pickLeague=v;page(111);}
     else if(a=="leagues"){STATE.q="";page(110);}
     else if(a=="age"){STATE.age=v;page(110);}
+    else if(a=="moved"){try{localStorage.setItem("lionstext-moved","1");}catch(e){}page(100);}
     else if(a=="fav"){const f=getFav();setFav(f&&f.league==STATE.league&&U(f.team)==U(STATE.team)?null:{league:STATE.league,team:STATE.team});page(100);}
     else if(a=="gofav"){const f=getFav();if(f&&RAW.leagues[f.league]){STATE.league=f.league;STATE.team=f.team;STATE.exp={};STATE.all=false;save();compute();page(100);}}
     else if(a=="team"){STATE.q="";STATE.league=STATE.pickLeague;STATE.team=v;STATE.exp={};STATE.all=false;save();compute();page(100);}
@@ -429,6 +435,7 @@ function page(p){
   const isLions=T.includes("LOUGHBOROUGH LIONS");
   let h=head(p);
   if(p==100){
+    if(showMoved()) h+=lines("NEW ADDRESS: LIONSTEXT.CO.UK","m")+lines("INSTALLED THE APP FROM THE OLD LINK? DELETE IT AND ADD IT AGAIN FROM THIS ADDRESS.","w")+morebtn("moved","","  OK - HIDE THIS")+ln("");
     const f=DATA.fixtures[0];
     if(isLions){
       h+=dh(T)+ln("");
