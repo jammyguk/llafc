@@ -619,7 +619,11 @@ function page(p){
     h+=`<div id="sres">${STATE.q?searchList(STATE.q):teamsHtml()}</div>`;
     if(ids.length>1) h+=ln("")+pick("leagues","","  << ALL LEAGUES",false);
   }
-  h+=ln("")+ln(DATA.updated?("UPDATED "+U(DATA.updated)).slice(0,W):STATE.note,"m");
+  const updTxt=u=>{const d=new Date(String(u).replace(" UTC","Z").replace(" ","T"));
+    if(isNaN(d))return U(u);
+    const hm=String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0"), n=new Date();
+    return d.toDateString()==n.toDateString()?hm:String(d.getDate()).padStart(2,"0")+" "+MON[d.getMonth()]+" "+hm;};
+  h+=ln("")+ln(DATA.updated?("UPDATED "+updTxt(DATA.updated)).slice(0,W):STATE.note,"m");
   const keys=[["fr",100,"HOME"],["fg",101,"FIXTURES"],["fy",102,"RESULTS"],["fc",103,"TABLE"],["fm",110,"TEAMS"]];
   if(CUPS.length)keys.splice(4,0,["fw",104,"CUP"]);
   h+=`<nav class="fast${keys.length>5?" six":""}" style="grid-template-columns:repeat(${keys.length},1fr)" aria-label="Pages">`+keys.map(([c,n,l])=>
