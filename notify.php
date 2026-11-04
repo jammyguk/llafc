@@ -77,7 +77,7 @@ foreach ($msgs as [$title, $body, $tags]) {
     if ($dry) continue;
     $ch = curl_init("https://ntfy.sh/$TOPIC");
     curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_POSTFIELDS => $body, CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20,
-        CURLOPT_HTTPHEADER => ["Title: $title", "Tags: $tags", "Click: https://jammyguk.github.io/LLAFC/", "Icon: https://jammyguk.github.io/LLAFC/icon-192.png"]]);
+        CURLOPT_HTTPHEADER => ["Title: $title", "Tags: $tags", "Click: https://lionstext.co.uk/", "Icon: https://lionstext.co.uk/icon-192.png"]]);
     curl_exec($ch); $code = curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
     if ($code >= 200 && $code < 300) $sent++; else echo "  (send failed: HTTP $code)\n";
     usleep(300000);
