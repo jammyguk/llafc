@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-04 16:55:50 UTC",
+    "updated": "2026-11-04 18:55:21 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -7270,9 +7270,9 @@
                 {
                     "fixtureDateTime": "01\/11\/26 12:30",
                     "homeTeam": "Studs Junior U13",
-                    "score": "1 - 4",
-                    "homeScore": "1",
-                    "awayScore": "4",
+                    "score": "4 - 1",
+                    "homeScore": "4",
+                    "awayScore": "1",
                     "awayTeam": "Borough Alliance Junior U13 Falcons",
                     "division": "Under 13 Division 5"
                 },
