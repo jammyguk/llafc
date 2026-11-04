@@ -131,7 +131,7 @@ function short(s,n){let t=U(s).trim();
     if(k<0)return t.slice(0,n);w[k]=w[k].slice(0,-1);t=w.join(" ");}
   return t;}
 
-let STATE={q:"",cx:{},league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false,form:false};
+let STATE={q:"",cx:{},league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false,tv:"full"};
 let RAW={leagues:{},updated:null};
 let DATA={results:[],league:[],fixtures:[],table:[],teams:[],leagueFx:[],leagueName:"",updated:null};
 let cur=100;
@@ -355,7 +355,7 @@ function bindPicks(root){
     else if(a=="steam"){const [id,t]=v.split("\u0001");STATE.q="";STATE.league=id;STATE.pickLeague=id;STATE.team=t;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="more"){STATE.exp[v]=!STATE.exp[v];page(102);}
     else if(a=="fxall"){STATE.all=!STATE.all;page(101);}
-    else if(a=="form"){STATE.form=!STATE.form;page(103);}
+    else if(a=="tv"){STATE.tv=v;page(103);}
     else if(a=="cx"){STATE.cx[v]=!STATE.cx[v];page(104);}
   });
 }
@@ -516,8 +516,10 @@ function page(p){
   }
   if(p==103){
     h+=dh("LEAGUE TABLE")+lines(ltitle(STATE.league,RAW.leagues[STATE.league]),"c")+ln("");
-    h+=morebtn("form","",STATE.form?"  SHOW FULL TABLE":"  SHOW RECENT FORM")+ln("");
-    if(STATE.form){
+    const TVL={full:"FULL TABLE",form:"RECENT FORM",split:"HOME / AWAY SPLIT"};
+    Object.keys(TVL).filter(k=>k!=STATE.tv).forEach(k=>{h+=morebtn("tv",k,"  SHOW "+TVL[k]);});
+    h+=ln("");
+    if(STATE.tv=="form"){
       const fnw=20;
       h+=`<div class="ln band">${esc((rj("PO",2)+" "+"TEAM".padEnd(fnw)+" "+rj("P",2)+" "+"  FORM   "+" "+rj("PTS",3)).padEnd(W))}</div>`;
       const frows=DATA.table.slice().sort((a,b)=>b.pts-a.pts||((b.gf||0)-(b.ga||0))-((a.gf||0)-(a.ga||0))||(b.gf||0)-(a.gf||0));
@@ -531,6 +533,20 @@ function page(p){
         h+=`<div class="ln ${t.own?"y":"w"}">${esc(`${rj(i+1,2)} ${short(t.n,fnw).padEnd(fnw)} ${rj(t.p,2)} `)}${form}${esc(` ${rj(t.pts,3)}`.padEnd(W-(2+1+fnw+1+2+1+9)))}</div>`;
       });
       h+=ln("")+ln("LAST 5 LEAGUE GAMES - LATEST ON RIGHT","c");
+    } else if(STATE.tv=="split"){
+      const snw=17;
+      h+=`<div class="ln band">${esc((rj("PO",2)+" "+"TEAM".padEnd(snw)+" "+"  HOME   "+" "+"  AWAY   ").padEnd(W))}</div>`;
+      const srows=DATA.table.slice().sort((a,b)=>b.pts-a.pts||((b.gf||0)-(b.ga||0))-((a.gf||0)-(a.ga||0))||(b.gf||0)-(a.gf||0));
+      if(!srows.length) h+=ln("TABLE NOT AVAILABLE YET","w");
+      srows.forEach((t,i)=>{
+        const tn=U(t.n), H={w:0,d:0,l:0}, A={w:0,d:0,l:0};
+        DATA.league.forEach(r=>{
+          if(U(r.home)==tn){if(r.hs>r.as)H.w++;else if(r.hs<r.as)H.l++;else H.d++;}
+          else if(U(r.away)==tn){if(r.as>r.hs)A.w++;else if(r.as<r.hs)A.l++;else A.d++;}});
+        const blk=o=>rj(o.w+"-"+o.d+"-"+o.l,6)+rj(o.w*3+o.d,3);
+        h+=ln(`${rj(i+1,2)} ${short(t.n,snw).padEnd(snw)} ${blk(H)} ${blk(A)}`.slice(0,W),t.own?"y":"w");
+      });
+      h+=ln("")+ln("W-D-L AND POINTS, HOME THEN AWAY","c");
     } else {
     const hasGd=!(DATA.table[0]&&DATA.table[0].noGd);
     const nw=hasGd?17:21;
