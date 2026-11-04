@@ -361,10 +361,10 @@ function bindPicks(root){
     else if(a=="leagues"){STATE.q="";page(110);}
     else if(a=="age"){STATE.age=v;page(110);}
     else if(a=="moved"){try{localStorage.setItem("lionstext-moved","1");}catch(e){}page(100);}
-    else if(a=="fav"){const f=getFav();setFav(f&&f.league==STATE.league&&U(f.team)==U(STATE.team)?null:{league:STATE.league,team:STATE.team});page(100);}
+    else if(a=="fav"){track("favourite/toggle","favourite",true);const f=getFav();setFav(f&&f.league==STATE.league&&U(f.team)==U(STATE.team)?null:{league:STATE.league,team:STATE.team});page(100);}
     else if(a=="gofav"){const f=getFav();if(f&&RAW.leagues[f.league]){STATE.league=f.league;STATE.team=f.team;STATE.exp={};STATE.all=false;save();compute();page(100);}}
-    else if(a=="team"){STATE.q="";STATE.league=STATE.pickLeague;STATE.team=v;STATE.exp={};STATE.all=false;save();compute();page(100);}
-    else if(a=="steam"){const [id,t]=v.split("\u0001");STATE.q="";STATE.league=id;STATE.pickLeague=id;STATE.team=t;STATE.exp={};STATE.all=false;save();compute();page(100);}
+    else if(a=="team"){track("team/"+STATE.pickLeague+"/"+v,v,true);STATE.q="";STATE.league=STATE.pickLeague;STATE.team=v;STATE.exp={};STATE.all=false;save();compute();page(100);}
+    else if(a=="steam"){const [id,t]=v.split("\u0001");track("team/"+id+"/"+t,t,true);STATE.q="";STATE.league=id;STATE.pickLeague=id;STATE.team=t;STATE.exp={};STATE.all=false;save();compute();page(100);}
     else if(a=="more"){STATE.exp[v]=!STATE.exp[v];page(102);}
     else if(a=="fxall"){STATE.all=!STATE.all;page(101);}
     else if(a=="tv"){STATE.tv=v;page(103);}
@@ -427,7 +427,18 @@ function cupRoad(c,nm,us){
   o+=ln("BRACKET SHOWN FROM THE QUARTER-FINALS","c")+ln("");
   return o;
 }
+// ---- Anonymous visit counting (GoatCounter: no cookies, no personal data; the dashboard is private) ----
+let LASTP=null;
+function track(path,title,ev,tries){
+  try{
+    if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path,title,event:!!ev});return;}
+    if((tries||0)<20)setTimeout(()=>track(path,title,ev,(tries||0)+1),500);
+  }catch(e){}
+}
+const PNAMES={100:"home",101:"fixtures",102:"results",103:"table",104:"cups",110:"leagues",111:"teams"};
+function trackPage(p){if(p===LASTP)return;LASTP=p;track("/"+(PNAMES[p]||("p"+p)),(PNAMES[p]||"page")+" page",false);}
 function page(p){
+  trackPage(p);
   const ids=Object.keys(RAW.leagues);
   if(p==110&&ids.length==1){STATE.pickLeague=ids[0];p=111;}
   if(p==111&&!STATE.pickLeague)STATE.pickLeague=STATE.league;
@@ -668,5 +679,8 @@ fetch("data.json?_="+Date.now())
 
 page(100);
 </script>
+<script>window.goatcounter={no_onload:true};</script>
+<script data-goatcounter="https://lionstext.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>try{if((window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone)track("app-opened","installed app opened",true);}catch(e){}</script>
 </body>
 </html>
