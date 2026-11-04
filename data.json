@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-04 18:55:21 UTC",
+    "updated": "2026-11-04 20:05:13 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -64,41 +64,6 @@
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Croft Juniors 2013 U12 Blues",
                     "awayTeam": "Melton Town U12 Tigers",
-                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
-                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 10:30",
-                    "homeTeam": "Harborough Town Juniors U12 Reds Sunday",
-                    "awayTeam": "Whetstone Athletic U12 Lions",
-                    "location": "Harborough Town Juniors U12 Reds Sunday",
-                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 10:30",
-                    "homeTeam": "Loughborough Lions AFC U12 Reds",
-                    "awayTeam": "Studs Junior U12",
-                    "location": "Charnwood College LE11 4SQ",
-                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 12:30",
-                    "homeTeam": "Beaumont Park U12 Jaguars",
-                    "awayTeam": "Harborough Town Juniors U12 ETP Sunday",
-                    "location": "BEAUMONT LEYS SCHOOL",
-                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 12:30",
-                    "homeTeam": "Beaumont Park U12 Panthers",
-                    "awayTeam": "Melton Town U12 Tigers",
-                    "location": "SOUTH CHARNWOOD HIGH SCHOOL",
-                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 12:30",
-                    "homeTeam": "Croft Juniors 2013 U12 Blues",
-                    "awayTeam": "Heather Juniors U12 Lions",
                     "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
                     "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd"
                 },
@@ -542,30 +507,9 @@
                 },
                 {
                     "fixtureDateTime": "06\/12\/26 12:30",
-                    "homeTeam": "Coalville Town Ravens U12 Raptors",
-                    "awayTeam": "Beaumont Park U12 Pumas",
-                    "location": "Coalville Town Ravens U12 Raptors",
-                    "competition": "U12 Div2 The Black Horse Aylestone"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 12:30",
                     "homeTeam": "Kirby Muxloe U12 Kings",
                     "awayTeam": "Barrow Town U12 Hawks",
                     "location": "KIRBY MUXLOE RECREATION GROUND",
-                    "competition": "U12 Div2 The Black Horse Aylestone"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 12:30",
-                    "homeTeam": "Mountsorrel Juniors U12 Shadowcats",
-                    "awayTeam": "Oadby Owls U12 Juniors",
-                    "location": "Halstead Rd Playing Fields Mountsorrel LE12 7HD",
-                    "competition": "U12 Div2 The Black Horse Aylestone"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 14:00",
-                    "homeTeam": "Iannis FC U12",
-                    "awayTeam": "Anstey Nomads U12 23's",
-                    "location": "THE GROVE COMMUNITY HUB",
                     "competition": "U12 Div2 The Black Horse Aylestone"
                 },
                 {
@@ -1005,29 +949,8 @@
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Whetstone Athletic U12 Jaguars",
-                    "awayTeam": "Community Football Academy U12 Foxes",
-                    "location": "ELIZABETH PARK",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3"
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Whetstone Athletic U12 Jaguars",
                     "awayTeam": "East Goscote United U12 Boys",
                     "location": "ELIZABETH PARK",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3"
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Wigston Willow U12 Panthers",
-                    "awayTeam": "Ingles U12 Reds",
-                    "location": "WIGSTON ACADEMY",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3"
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 13:00",
-                    "homeTeam": "Royce Rangers U12 Raptors",
-                    "awayTeam": "East Goscote United U12 Boys",
-                    "location": "ROYCE RANGERS FC",
                     "competition": "U12 ESF26 - The Ultimate Tour Div 3"
                 },
                 {
@@ -1074,20 +997,6 @@
                 },
                 {
                     "fixtureDateTime": "06\/12\/26 10:30",
-                    "homeTeam": "Carib Sport &amp; Social Football Club U12 S",
-                    "awayTeam": "FC Burbage U12 Lions",
-                    "location": "VICTORIA PARK (LEICESTER)",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 10:30",
-                    "homeTeam": "Hinckley Town Juniors U12 Hurricanes",
-                    "awayTeam": "Ingles U12 Reds",
-                    "location": "CLARENDON PARK",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 10:30",
                     "homeTeam": "Leicester Nirvana Juniors U12 Reds",
                     "awayTeam": "Royce Rangers U12 Raptors",
                     "location": "HAMILTON PARK",
@@ -1098,20 +1007,6 @@
                     "homeTeam": "Sporting Markfield U12 Tigers",
                     "awayTeam": "Community Football Academy U12 Foxes",
                     "location": "SOUTH CHARNWOOD HIGH SCHOOL",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 10:30",
-                    "homeTeam": "Wigston Willow U12 Panthers",
-                    "awayTeam": "East Goscote United U12 Boys",
-                    "location": "WIGSTON ACADEMY",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 14:00",
-                    "homeTeam": "Harborough Town Juniors U12 Rangers",
-                    "awayTeam": "Whetstone Athletic U12 Jaguars",
-                    "location": "Harborough Town Juniors U12 Rangers",
                     "competition": "U12 ESF26 - The Ultimate Tour Div 3"
                 },
                 {
@@ -1190,6 +1085,30 @@
                     "awayTeam": "East Goscote United U12 Boys",
                     "location": "Harborough Town Juniors U12 Rangers",
                     "competition": "U12 ESF26 - The Ultimate Tour Div 3"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Whetstone Athletic U12 Jaguars",
+                    "awayTeam": "Community Football Academy U12 Foxes",
+                    "location": "ELIZABETH PARK",
+                    "competition": "U12 ESF26 - The Ultimate Tour Div 3",
+                    "removed": true
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Wigston Willow U12 Panthers",
+                    "awayTeam": "Ingles U12 Reds",
+                    "location": "WIGSTON ACADEMY",
+                    "competition": "U12 ESF26 - The Ultimate Tour Div 3",
+                    "removed": true
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 13:00",
+                    "homeTeam": "Royce Rangers U12 Raptors",
+                    "awayTeam": "East Goscote United U12 Boys",
+                    "location": "ROYCE RANGERS FC",
+                    "competition": "U12 ESF26 - The Ultimate Tour Div 3",
+                    "removed": true
                 }
             ],
             "results": [
