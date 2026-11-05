@@ -38,7 +38,20 @@ button{font:inherit;color:inherit}
 .hero .t{margin:10px 0 2px;font-size:44px}
 .hero .m{font-weight:800;font-stretch:110%;font-size:19px;text-transform:uppercase;max-width:70%;overflow-wrap:anywhere}
 .hero .s{margin-top:6px;font-size:14px;font-weight:600;max-width:70%}
-.hero .cd{margin-top:12px;display:inline-flex;gap:6px;align-items:center;padding:6px 12px;border-radius:999px;background:#FFFFFF;font-size:13px;font-weight:800}
+.hero .cd{display:inline-flex;gap:6px;align-items:center;white-space:nowrap;flex:none;padding:6px 12px;border-radius:999px;background:#FFFFFF;font-size:13px;font-weight:800}
+.hero .hhead{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:72%}
+.hero .count{font-size:13px;font-weight:800}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;max-width:72%;margin-top:4px;scroll-behavior:smooth}
+.slides::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;min-width:0}
+.slide .team{font-size:24px;margin-top:2px}
+.hero .slide .m,.hero .slide .s{max-width:none}
+.hfoot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;max-width:72%}
+.dots{display:flex;gap:4px}
+.dots button{width:24px;height:24px;padding:0;border:0;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.dots button::after{content:"";width:8px;height:8px;border-radius:50%;background:rgba(14,14,14,.3);transition:width .25s ease,background-color .25s ease}
+.dots button[aria-current="true"]::after{width:20px;border-radius:999px;background:#0E0E0E}
+@media (min-width:700px){.slide .team{font-size:30px}}
 .day{margin:22px 0 10px;display:flex;align-items:center;gap:10px}
 .day h2{margin:0;font-size:20px;white-space:nowrap}
 .day span{flex:1;height:3px;background:repeating-linear-gradient(90deg,#0E0E0E 0 10px,transparent 10px 16px)}
@@ -210,16 +223,42 @@ function chips() {
 }
 function mine(list) { return S.team === 'all' ? list : list.filter((x) => x.team === S.team); }
 const JUNIOR = '<div class="empty">Results and league tables are shown from U12 upwards. Younger age groups just have fixtures.</div>';
+let heroTimer = null, heroPause = 0;
 function hero() {
-  const f = mine(M.fixtures).filter((x) => !x.off)[0], el = document.getElementById('hero');
+  const el = document.getElementById('hero');
+  if (heroTimer) { clearInterval(heroTimer); heroTimer = null; }
+  const list = mine(M.fixtures).filter((x) => !x.off), f = list[0];
   if (!f) { el.innerHTML = '<div class="stripes" aria-hidden="true"></div><span class="k">Next up</span><div class="t x">No games</div><div class="m">Check back soon</div>'; return; }
+  const same = list.filter((x) => x.when.getTime() === f.when.getTime());
   const days = Math.round((new Date(f.when).setHours(0, 0, 0, 0) - new Date().setHours(0, 0, 0, 0)) / 864e5);
   const when = days <= 0 ? 'Today' : days === 1 ? 'Tomorrow' : 'In ' + days + ' days';
-  el.innerHTML = '<div class="stripes" aria-hidden="true"></div><span class="k">Next up · ' + esc(f.team) + '</span>' +
+  const n = same.length;
+  el.innerHTML = '<div class="stripes" aria-hidden="true"></div>' +
+    '<div class="hhead"><span class="k">Next up · ' + esc(dayLabel(f.when)) + '</span>' + (n > 1 ? '<span class="count" id="hcount">1 / ' + n + '</span>' : '') + '</div>' +
     '<div class="t x">' + esc(hm(f.when)) + '</div>' +
-    '<div class="m">' + (f.ha === 'H' ? 'Home' : 'Away') + ' v ' + esc(f.opp) + '</div>' +
-    '<div class="s">' + esc(dayLabel(f.when)) + ' · ' + esc(f.comp) + ' · ' + esc(f.venue) + '</div>' +
-    '<span class="cd">' + esc(when) + '</span>';
+    '<div class="slides" id="slides" aria-roledescription="carousel" aria-label="Games kicking off at ' + esc(hm(f.when)) + '">' +
+    same.map((g, i) => '<div class="slide" role="group" aria-roledescription="slide" aria-label="' + (i + 1) + ' of ' + n + '">' +
+      '<div class="team x">' + esc(g.team) + '</div>' +
+      '<div class="m">' + (g.ha === 'H' ? 'Home' : 'Away') + ' v ' + esc(g.opp) + '</div>' +
+      '<div class="s">' + esc(g.comp) + ' · ' + esc(g.venue) + '</div></div>').join('') +
+    '</div>' +
+    '<div class="hfoot"><span class="cd">' + esc(when) + '</span>' +
+    (n > 1 ? '<span class="dots">' + same.map((g, i) => '<button type="button" data-slide="' + i + '" aria-label="Show ' + esc(g.team) + '"' + (i === 0 ? ' aria-current="true"' : '') + '></button>').join('') + '</span>' : '') + '</div>';
+  if (n < 2) return;
+  const track = document.getElementById('slides');
+  const mark = () => {
+    const i = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+    const c = document.getElementById('hcount'); if (c) c.textContent = (i + 1) + ' / ' + n;
+    el.querySelectorAll('.dots button').forEach((d, j) => d.setAttribute('aria-current', j === i ? 'true' : 'false'));
+  };
+  track.addEventListener('scroll', () => { clearTimeout(track._t); track._t = setTimeout(mark, 60); }, { passive: true });
+  ['pointerdown', 'touchstart', 'wheel'].forEach((ev) => track.addEventListener(ev, () => { heroPause = Date.now() + 10000; }, { passive: true }));
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduced) heroTimer = setInterval(() => {
+    if (Date.now() < heroPause || document.hidden) return;
+    const i = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+    track.scrollTo({ left: ((i + 1) % n) * track.clientWidth });
+  }, 3800);
 }
 function byDay(list, render) {
   if (!list.length) return '<div class="empty">Nothing to show here yet.</div>';
@@ -262,7 +301,9 @@ function cups() {
 }
 function render() {
   if (!M) return;
-  chips(); hero();
+  chips();
+  const hk = S.team + '|' + (DATA && DATA.updated);
+  if (hk !== render.hk) { render.hk = hk; hero(); }
   document.querySelectorAll('.tab').forEach((b) => b.setAttribute('aria-selected', b.dataset.v === S.view));
   const v = document.getElementById('view');
   v.innerHTML = S.view === 'fixtures' ? byDay(mine(M.fixtures), fxCard)
@@ -272,7 +313,8 @@ function render() {
 document.addEventListener('click', (e) => {
   const c = e.target.closest('.chip'); if (c) { S.team = c.dataset.t; try { localStorage.setItem('lions-matchday-team', S.team); } catch (er) {} render(); return; }
   const t = e.target.closest('.tab'); if (t) { S.view = t.dataset.v; try { history.replaceState(null, '', '#' + S.view); } catch (er) {} render(); return; }
-  const o = e.target.closest('[data-open]'); if (o) { const n = o.dataset.open; S.open[n] = !S.open[n]; render(); }
+  const o = e.target.closest('[data-open]'); if (o) { const n = o.dataset.open; S.open[n] = !S.open[n]; render(); return; }
+  const d = e.target.closest('[data-slide]'); if (d) { const tr = document.getElementById('slides'); heroPause = Date.now() + 10000; tr.scrollTo({ left: (+d.dataset.slide) * tr.clientWidth }); }
 });
 window.addEventListener('scroll', () => { const s = document.querySelector('.hero .stripes'); if (s) s.style.backgroundPosition = (window.pageYOffset * 0.4).toFixed(1) + 'px 0'; }, { passive: true });
 const h0 = (location.hash || '').slice(1); if (['fixtures', 'results', 'tables', 'cups'].indexOf(h0) >= 0) S.view = h0;
