@@ -46,7 +46,9 @@ a{color:#0E0E0E}
 .ll-rail{scrollbar-width:none}
 .ll-rail::-webkit-scrollbar{display:none}
 .ll-anim .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,.84,.3,1),transform .8s cubic-bezier(.16,.84,.3,1)}
+.ll-anim .rv.rv-s{transform:scale(.94)}
 .ll-anim .rv.in{opacity:1;transform:none}
+@media (min-width: 900px){#den figure{margin:0 !important;border-radius:28px !important}.ll-swipe{display:none}}
 .ll-anim .ll-pop{opacity:0;transform:scale(.8) rotate(-8deg);animation:llPop .9s .1s cubic-bezier(.2,.9,.3,1.25) forwards}
 .ll-anim .ll-in{opacity:0;transform:translateY(18px);animation:llIn .8s .35s cubic-bezier(.16,.84,.3,1) forwards}
 .ll-anim .ll-in.d2{animation-delay:.5s}
@@ -54,8 +56,16 @@ a{color:#0E0E0E}
 @keyframes llPop{to{opacity:1;transform:none}}
 .ll-anim .ll-pop.ll-float{animation:llPop .9s .1s cubic-bezier(.2,.9,.3,1.25) forwards,llFloat 6s 1.2s ease-in-out infinite}
 @keyframes llFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.ll-intro-hint{display:none}
+.ll-anim .ll-intro-card{overflow:clip !important}
+.ll-anim .ll-intro-pin{height:calc(100vh - 72px + 70vh);height:calc(100svh - 72px + 70svh)}
+.ll-anim .ll-intro-stage{position:sticky !important;top:62px;height:calc(100vh - 80px);height:calc(100svh - 80px);padding-top:12px !important;padding-bottom:12px !important}
+.ll-anim [data-crest]{will-change:transform}
+.ll-anim .ll-intro-copy{opacity:0;will-change:opacity,transform}
+.ll-anim .ll-intro-hint{display:flex;position:absolute;left:50%;bottom:16px;flex-direction:column;align-items:center;gap:2px;font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;transform:translateX(-50%);animation:llBob 1.6s ease-in-out infinite}
+@keyframes llBob{50%{transform:translate(-50%,6px)}}
 @keyframes llIn{to{opacity:1;transform:none}}
-@media (prefers-reduced-motion: reduce){.ll-marquee{animation:none}.ll-tile{transition:none}.ll-float{animation:none !important}}
+@media (prefers-reduced-motion: reduce){.ll-marquee{animation:none}.ll-tile{transition:none}.ll-float{animation:none !important}.ll-intro-hint{animation:none}}
 
 body{margin:0;background:#FFFFFF}
 a{color:#0E0E0E}
@@ -126,17 +136,22 @@ button{font:inherit}
 <div style="background: #FFFFFF; color: #0E0E0E; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.5">
 
 <!-- Hero: crest first -->
-<section style="padding: 12px 16px 0">
-<div style="max-width: 1240px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 28px; background: {{accent}}">
-<div style="position: relative; z-index: 2; padding: 40px 24px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
-<div data-crest="1" style="position: relative; z-index: 3; transform-origin: 50% 60%">
-<img class="ll-pop ll-float" src="{{$crest}}" alt="Loughborough Lions AFC crest" style="display: block; width: clamp(168px, 24vw, 240px); height: auto; aspect-ratio: 128 / 139; filter: drop-shadow(0 18px 30px rgba(0,0,0,0.3))">
+<section data-intro="1" style="padding: 12px 16px 0">
+<div class="ll-intro-card" style="max-width: 1240px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 28px; background: {{accent}}">
+<div class="ll-intro-pin">
+<div class="ll-intro-stage" style="position: relative; z-index: 2; padding: 40px 24px 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 18px; box-sizing: border-box">
+<div data-crest="1" style="position: relative; z-index: 3; transform-origin: 50% 50%">
+<img class="ll-pop ll-float" src="{{$crest}}" alt="Loughborough Lions AFC crest" style="display: block; width: clamp(176px, 20vw, 220px); height: auto; aspect-ratio: 128 / 139; filter: drop-shadow(0 18px 30px rgba(0,0,0,0.3))">
 </div>
-<h1 class="ll-in" style="margin: 6px 0 0; display: flex; flex-direction: column; align-items: center; gap: 4px; font-weight: 900; font-stretch: 125%; font-size: clamp(40px, 10vw, 84px); line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase"><span style="font-size: 0.46em; letter-spacing: 0.02em">Loughborough</span>Lions AFC</h1>
-<p class="ll-in d2" style="margin: 0; max-width: 28em; font-size: 18px; font-weight: 500">Play. Develop. Succeed. Grassroots football for girls and boys in Loughborough since 2021.</p>
-<div class="ll-in d3" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 4px">
+<div class="ll-intro-copy" style="display: flex; flex-direction: column; align-items: center; gap: 18px">
+<h1 style="margin: 6px 0 0; display: flex; flex-direction: column; align-items: center; gap: 4px; font-weight: 900; font-stretch: 125%; font-size: clamp(40px, 10vw, 84px); line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase"><span style="font-size: 0.46em; letter-spacing: 0.02em">Loughborough</span>Lions AFC</h1>
+<p style="margin: 0; max-width: 28em; font-size: 18px; font-weight: 500">Play. Develop. Succeed. Grassroots football for girls and boys in Loughborough since 2021.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 4px">
 <a data-go="club" role="link" tabindex="0" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; min-width: 168px; padding: 0 24px; border-radius: 999px; background: #0E0E0E; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 16px; box-sizing: border-box">Join the Lions</a>
 <a data-go="teams" role="link" tabindex="0" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; min-width: 168px; padding: 0 24px; border-radius: 999px; border: 2px solid #0E0E0E; color: #0E0E0E; text-decoration: none; font-weight: 700; font-size: 16px; box-sizing: border-box">Find your team</a>
+</div>
+</div>
+<span class="ll-intro-hint" aria-hidden="true">Scroll<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
 </div>
 </div>
 <div style="position: relative; height: clamp(230px, 30vw, 380px)">
@@ -159,6 +174,7 @@ button{font:inherit}
 <span style="font-weight: 900; font-stretch: 125%; font-size: 38px; line-height: 1; letter-spacing: -0.03em">{{g.time}}</span>
 <span style="font-weight: 800; font-stretch: 110%; font-size: 16px; text-transform: uppercase">{{g.team}}</span>
 <span style="font-size: 15px; line-height: 1.35">v {{g.opp}}</span>
+<span style="font-size: 13px; font-weight: 700; color: #3F3D39">{{g.comp}}</span>
 <span style="margin-top: auto; padding-top: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase">{{g.where}}</span>
 </div>
 </sc-for>
@@ -167,14 +183,32 @@ button{font:inherit}
 </div>
 </section>
 
+<!-- The Lions Den: map first -->
+<section id="den" style="padding: 56px 20px 0">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px">
+<div class="rv" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 10px 16px">
+<h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: clamp(32px, 5.4vw, 60px); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase">The Lions Den</h2>
+<span style="padding: 4px 12px; border-radius: 999px; background: #0E0E0E; color: {{accent}}; font-size: 13px; font-weight: 700; text-transform: uppercase; white-space: nowrap">Charnwood College · LE11 4SQ</span>
+</div>
+<figure class="rv rv-s" style="position: relative; margin: 0 -20px; border-radius: 0; overflow: hidden; background: #0E0E0E">
+<div class="ll-rail" style="overflow-x: auto; overscroll-behavior-x: contain">
+<img src="{{$denmap}}" alt="Aerial map of Charnwood College: 9v9 pitches 8 to 11, 11v11 pitches 4 to 7, the 3G pitches by the car park, both entrances off Thorpe Hill, parking, disabled parking and toilets" style="display: block; height: clamp(300px, 48vw, 646px); width: auto; max-width: none; aspect-ratio: 844 / 440">
+</div>
+<span class="ll-swipe" aria-hidden="true" style="position: absolute; right: 12px; bottom: 12px; padding: 6px 12px; border-radius: 999px; background: #0E0E0E; color: {{accent}}; font-size: 12px; font-weight: 700; text-transform: uppercase; pointer-events: none">Swipe to explore →</span>
+</figure>
+<div class="rv" style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="padding: 8px 14px; border-radius: 999px; background: {{accent}}; font-size: 14px; font-weight: 700">11v11 · pitches 4–7</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: {{accent}}; font-size: 14px; font-weight: 700">9v9 · pitches 8–11</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #F3F2EE; font-size: 14px; font-weight: 700">3G by the car park</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #F3F2EE; font-size: 14px; font-weight: 700">Parking &amp; toilets</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #0E0E0E; color: #FFFFFF; font-size: 14px; font-weight: 700">No smoking, vaping, alcohol or pets</span>
+</div>
+</div>
+</section>
+
 <!-- Tiles -->
 <section style="padding: 48px 20px 0">
 <div class="rv-group" style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr)); gap: 12px">
-<div id="den" class="ll-tile" style="border-radius: 24px; background: #F3F2EE; padding: 16px 16px 20px; display: flex; flex-direction: column; gap: 10px">
-<img src="{{$denmap}}" alt="Aerial map of Charnwood College: 9v9 pitches 8 to 11, 11v11 pitches 4 to 7, the 3G pitches by the car park, entrances, parking and toilets" style="display: block; width: 100%; aspect-ratio: 844 / 440; object-fit: cover; border-radius: 14px">
-<h3 style="margin: 6px 4px 0; font-weight: 900; font-stretch: 125%; font-size: 26px; line-height: 1; letter-spacing: -0.02em; text-transform: uppercase">The Lions Den</h3>
-<p style="margin: 0 4px; font-size: 15px; color: #3F3D39">Charnwood College, Thorpe Hill, LE11 4SQ. No smoking, vaping, alcohol or pets on site.</p>
-</div>
 <a data-go="shop" role="link" tabindex="0" class="ll-tile" style="border-radius: 24px; background: #0E0E0E; color: #FFFFFF; padding: 16px 16px 20px; display: flex; flex-direction: column; gap: 10px; text-decoration: none">
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
 <img src="{{$kithome}}" alt="Home kit: yellow and black stripes, black shorts" style="display: block; width: 100%; aspect-ratio: 234 / 198; object-fit: contain; background: #FDD305; border-radius: 14px">
@@ -309,16 +343,27 @@ button{font:inherit}
 </div>
 </article>
 
-<!-- Team cards -->
-<div class="ll-teamgrid rv-group" style="flex: 999 1 560px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); gap: 10px; align-content: start">
-<sc-for list="{{cards}}" as="c" hint-placeholder-count="17">
-<button type="button" class="ll-team" onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-height: 112px; padding: 16px; border-radius: 18px; border: 2px solid {{c.bd}}; background: {{c.bg}}; color: #0E0E0E; text-align: left; cursor: pointer; box-sizing: border-box">
+<!-- Team cards, grouped by age -->
+<div class="rv-group" style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<sc-for list="{{groups}}" as="gp" hint-placeholder-count="9">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 12px">
+<h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: 24px; line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; white-space: nowrap">{{gp.label}}</h2>
+<span aria-hidden="true" style="flex: 1; height: 3px; background: repeating-linear-gradient(90deg, #0E0E0E 0 10px, transparent 10px 16px)"></span>
+<span style="font-size: 13px; font-weight: 700; color: #5C5A55; white-space: nowrap">{{gp.countLabel}}</span>
+</div>
+<div class="ll-teamgrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr)); gap: 10px">
+<sc-for list="{{gp.cards}}" as="c" hint-placeholder-count="2">
+<button type="button" class="ll-team" onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" aria-label="{{c.name}}" style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-height: 92px; padding: 14px 16px; border-radius: 18px; border: 2px solid {{c.bd}}; background: {{c.bg}}; color: #0E0E0E; text-align: left; cursor: pointer; box-sizing: border-box">
 <span aria-hidden="true" style="width: 34px; height: 8px; border-radius: 4px; background: repeating-linear-gradient(90deg, {{c.colour}} 0 6px, #0E0E0E 6px 12px)"></span>
-<span class="ll-tname" style="font-weight: 900; font-stretch: 125%; font-size: 22px; line-height: 1; letter-spacing: -0.02em; text-transform: uppercase">{{c.name}}</span>
+<span class="ll-tname" style="font-weight: 900; font-stretch: 125%; font-size: 22px; line-height: 1; letter-spacing: -0.02em; text-transform: uppercase">{{c.short}}</span>
 <sc-if value="{{c.isRecruiting}}" hint-placeholder-val="{{ false }}">
 <span style="margin-top: auto; padding: 2px 9px; border-radius: 999px; background: #0E0E0E; color: {{accent}}; font-size: 12px; font-weight: 700; text-transform: uppercase">{{c.tag}}</span>
 </sc-if>
 </button>
+</sc-for>
+</div>
+</div>
 </sc-for>
 </div>
 
@@ -521,13 +566,77 @@ button{font:inherit}
 <div style="background: #FFFFFF; color: #0E0E0E; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.5">
 
 <!-- Title -->
+<sc-if value="{{noItem}}" hint-placeholder-val="{{ true }}">
 <section style="padding: 40px 20px 18px">
 <div class="rv" style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px">
 <h1 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: clamp(44px, 8vw, 104px); line-height: 0.88; letter-spacing: -0.035em; text-transform: uppercase">Club shop</h1>
 <span style="max-width: 24em; font-size: 15px; color: #3F3D39">Official Lions kit and leisurewear, made to order by Sports Advocate in Loughborough.</span>
 </div>
 </section>
+</sc-if>
 
+<!-- Product page -->
+<sc-if value="{{hasItem}}" hint-placeholder-val="{{ false }}">
+<section style="padding: 20px 20px 56px">
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px">
+<nav aria-label="Breadcrumb" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; font-weight: 600">
+<button type="button" onClick="{{ back }}" style="display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid #D6D3CB; background: #FFFFFF; color: #0E0E0E; cursor: pointer; font-weight: 700; font-size: 14px">← All products</button>
+<span style="color: #5C5A55">{{item.catLabel}}</span>
+</nav>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 24px 48px; align-items: start">
+<div class="rv" style="position: relative; aspect-ratio: 1 / 1; border-radius: 28px; background: {{accent}}; display: flex; align-items: center; justify-content: center; overflow: hidden">
+<span data-stripe="0.25" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 18%; background: repeating-linear-gradient(90deg, #0E0E0E 0 22px, transparent 22px 48px)"></span>
+<svg class="ll-prod-icon" aria-hidden="true" width="56%" viewBox="0 0 64 64" fill="none" stroke="#0E0E0E" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" style="position: relative"><path d="{{item.icon}}"></path></svg>
+<img src="{{$crest}}" alt="" aria-hidden="true" style="position: absolute; right: 18px; top: 18px; width: 56px; height: 61px">
+</div>
+<div class="rv" style="display: flex; flex-direction: column; gap: 16px">
+<h1 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: clamp(36px, 6vw, 64px); line-height: 0.92; letter-spacing: -0.03em; text-transform: uppercase">{{item.name}}</h1>
+<span style="font-weight: 800; font-size: 26px">{{item.price}}</span>
+<sc-if value="{{item.initials}}" hint-placeholder-val="{{ false }}">
+<span style="align-self: flex-start; padding: 4px 12px; border-radius: 999px; background: #0E0E0E; color: {{accent}}; font-size: 13px; font-weight: 700; text-transform: uppercase">Personalise with initials</span>
+</sc-if>
+<sc-if value="{{item.hasMaterial}}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-size: 16px; color: #3F3D39">{{item.material}}</p></sc-if>
+<sc-if value="{{item.hasStyles}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #5C5A55">Styles</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><sc-for list="{{item.styleList}}" as="o" hint-placeholder-count="3"><span style="padding: 6px 12px; border-radius: 999px; background: #F3F2EE; font-size: 14px; font-weight: 600">{{o.v}}</span></sc-for></div>
+</div>
+</sc-if>
+<sc-if value="{{item.hasColours}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #5C5A55">Colours</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><sc-for list="{{item.colourList}}" as="o" hint-placeholder-count="2"><span style="padding: 6px 12px; border-radius: 999px; background: #F3F2EE; font-size: 14px; font-weight: 600">{{o.v}}</span></sc-for></div>
+</div>
+</sc-if>
+<sc-if value="{{item.hasSizes}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #5C5A55">Sizes</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><sc-for list="{{item.sizeList}}" as="o" hint-placeholder-count="8"><span style="min-width: 44px; padding: 6px 10px; border-radius: 10px; border: 1px solid #D6D3CB; text-align: center; font-size: 14px; font-weight: 600; box-sizing: border-box">{{o.v}}</span></sc-for></div>
+</div>
+</sc-if>
+<sc-if value="{{item.noOptions}}" hint-placeholder-val="{{ true }}">
+<p style="margin: 0; font-size: 16px; color: #3F3D39">Junior and adult sizes. Pick your size and any personalisation when you order.</p>
+</sc-if>
+<a href="{{item.url}}" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 28px; border-radius: 999px; background: #0E0E0E; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 17px">Order at Sports Advocate ↗</a>
+<span style="font-size: 14px; color: #5C5A55">Opens the Lions range at Sports Advocate, our kit partner. Choose this item there to pick your size and pay securely.</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 12px">
+<h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: 26px; line-height: 1; text-transform: uppercase">More Lions gear</h2>
+<div class="ll-shopgrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 12px">
+<sc-for list="{{related}}" as="p" hint-placeholder-count="4">
+<button type="button" class="ll-prod" onClick="{{ p.open }}" aria-label="{{p.name}}, {{p.price}}" style="display: flex; flex-direction: column; padding: 0; border: 0; border-radius: 22px; background: #F3F2EE; color: #0E0E0E; text-align: left; cursor: pointer; overflow: hidden">
+<span style="position: relative; width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; background: {{accent}}"><svg class="ll-prod-icon" aria-hidden="true" width="50%" viewBox="0 0 64 64" fill="none" stroke="#0E0E0E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="{{p.icon}}"></path></svg></span>
+<span style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 2px"><span class="ll-pname" style="font-weight: 800; font-stretch: 110%; font-size: 17px; line-height: 1.15; text-transform: uppercase">{{p.name}}</span><span style="font-size: 14px; font-weight: 600; color: #3F3D39">{{p.price}}</span></span>
+</button>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{noItem}}" hint-placeholder-val="{{ true }}">
 <!-- Products -->
 <section style="padding: 0 20px 56px">
 <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px">
@@ -538,8 +647,8 @@ button{font:inherit}
 </div>
 <div class="ll-shopgrid rv-group" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 12px">
 <sc-for list="{{shown}}" as="p" hint-placeholder-count="16">
-<a href="{{p.url}}" class="ll-prod" aria-label="Order {{p.name}}, {{p.price}}" style="display: flex; flex-direction: column; border-radius: 22px; background: #F3F2EE; color: #0E0E0E; text-decoration: none; overflow: hidden">
-<span style="position: relative; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; background: {{accent}}">
+<button type="button" class="ll-prod" onClick="{{ p.open }}" aria-label="{{p.name}}, {{p.price}}" style="display: flex; flex-direction: column; padding: 0; border: 0; border-radius: 22px; background: #F3F2EE; color: #0E0E0E; text-align: left; cursor: pointer; overflow: hidden">
+<span style="position: relative; width: 100%; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; background: {{accent}}">
 <svg class="ll-prod-icon" aria-hidden="true" width="50%" viewBox="0 0 64 64" fill="none" stroke="#0E0E0E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="{{p.icon}}"></path></svg>
 <img src="{{$crest}}" alt="" aria-hidden="true" style="position: absolute; right: 10px; bottom: 10px; width: 28px; height: 30px">
 <sc-if value="{{p.initials}}" hint-placeholder-val="{{ false }}">
@@ -550,12 +659,14 @@ button{font:inherit}
 <span class="ll-pname" style="font-weight: 800; font-stretch: 110%; font-size: 18px; line-height: 1.15; text-transform: uppercase">{{p.name}}</span>
 <span style="font-size: 15px; font-weight: 600; color: #3F3D39">{{p.price}}</span>
 </span>
-</a>
+</button>
 </sc-for>
 </div>
-<p class="rv" style="margin: 4px 0 0; font-size: 14px; color: #5C5A55">Tap an item to choose size, colour and initials, then pay securely with Sports Advocate. Try sizes in store at Unit C, Little Moor Lane, LE11 1SF · <a href="tel:+441509212120">01509 212120</a>.</p>
+<p class="rv" style="margin: 4px 0 0; font-size: 14px; color: #5C5A55">Tap an item for details. Orders are made and paid for securely with Sports Advocate, our kit partner. Try sizes in store at Unit C, Little Moor Lane, LE11 1SF · <a href="tel:+441509212120">01509 212120</a>.</p>
 </div>
 </section>
+
+</sc-if>
 
 <!-- Footer -->
 <footer style="background: #0E0E0E; color: #FFFFFF">
@@ -673,11 +784,21 @@ function scrollFx() {
       const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return;
       el.style.backgroundPosition = (y * (parseFloat(el.getAttribute('data-stripe')) || 0.3)).toFixed(1) + 'px 0';
     });
-    const crest = document.querySelector('#app [data-crest]');
-    if (crest) {
-      const k = Math.min(1, Math.max(0, y / (vh * 0.65)));
-      crest.style.transform = 'translate3d(0,' + (-y * 0.12).toFixed(1) + 'px,0) scale(' + (1 - k * 0.32).toFixed(3) + ') rotate(' + (-k * 14).toFixed(2) + 'deg)';
-      crest.style.opacity = (1 - k * 0.55).toFixed(3);
+    const intro = document.querySelector('#app [data-intro]');
+    if (intro) {
+      const pin = intro.querySelector('.ll-intro-pin'), stage = intro.querySelector('.ll-intro-stage');
+      const crest = intro.querySelector('[data-crest]'), copy = intro.querySelector('.ll-intro-copy'), hint = intro.querySelector('.ll-intro-hint');
+      const travel = Math.max(1, pin.offsetHeight - stage.offsetHeight);
+      const p = Math.min(1, Math.max(0, y / travel)), e = 1 - Math.pow(1 - p, 3);
+      const w = crest.offsetWidth || 1, h = crest.offsetHeight || 1, sh = stage.clientHeight;
+      const s0 = Math.max(1, Math.min(window.innerWidth * 0.84, sh * 0.8 * (w / h)) / w);
+      const dy = sh / 2 - (crest.offsetTop + h / 2);
+      crest.style.transform = 'translate3d(0,' + (dy * (1 - e)).toFixed(1) + 'px,0) scale(' + (s0 + (1 - s0) * e).toFixed(3) + ') rotate(' + (-7 * Math.sin(Math.PI * p)).toFixed(2) + 'deg)';
+      const c = Math.min(1, Math.max(0, (p - 0.35) / 0.65));
+      copy.style.opacity = c.toFixed(3);
+      copy.style.transform = 'translate3d(0,' + (40 * (1 - c)).toFixed(1) + 'px,0)';
+      copy.style.pointerEvents = c < 0.6 ? 'none' : '';
+      if (hint) hint.style.opacity = Math.max(0, 1 - p * 5).toFixed(3);
     }
     const hero = document.querySelector('#app [data-fade]');
     if (hero) { const k = Math.min(1, y / (vh * 0.9)); hero.style.opacity = (1 - k * 0.8).toFixed(3); hero.style.transform = 'translate3d(0,' + (y * 0.16).toFixed(1) + 'px,0)'; }
@@ -733,7 +854,7 @@ PAGES['home'] = class extends DCLogic {
   renderVals() {
     const accent = this.props.accent ?? '#FDD305';
     const LIVE = {"updated":"4 Nov 2026","weekendDate":"Sunday 8 November","weekend":[{"date":"Sun 8 Nov","time":"11:05","comp":"U12 Division 1","home":"Lions U12 Reds","away":"Beaumont Park Jaguars","opp":"Beaumont Park Jaguars","ha":"H","venue":"The Lions Den, Charnwood College","team":"U12 Reds","ts":"2026-11-08T11:05:00"},{"date":"Sun 8 Nov","time":"11:05","comp":"U12 Division 9","home":"Lions U12 Yellows","away":"AFC Andrews Ants","opp":"AFC Andrews Ants","ha":"H","venue":"The Lions Den, Charnwood College","team":"U12 Yellows","ts":"2026-11-08T11:05:00"},{"date":"Sun 8 Nov","time":"11:05","comp":"U12 Division 8","home":"Aylestone Park 94","away":"Lions U12 Bronzes","opp":"Aylestone Park 94","ha":"A","venue":"Aylestone Park","team":"U12 Bronzes","ts":"2026-11-08T11:05:00"},{"date":"Sun 8 Nov","time":"11:05","comp":"U13 Division 4","home":"FC Burbage Panthers","away":"Lions U13 Reds","opp":"FC Burbage Panthers","ha":"A","venue":"Rugby Road Recreation Ground","team":"U13 Reds","ts":"2026-11-08T11:05:00"},{"date":"Sun 8 Nov","time":"11:05","comp":"U13 Division 11","home":"AFC Barwell Rhinos","away":"Lions U13 Silvers","opp":"AFC Barwell Rhinos","ha":"A","venue":"AFC Barwell","team":"U13 Silvers","ts":"2026-11-08T11:05:00"},{"date":"Sun 8 Nov","time":"13:00","comp":"U12 Division 12","home":"Glen Villa Jaguars","away":"Lions U12 Golds","opp":"Glen Villa Jaguars","ha":"A","venue":"Great Glen Recreation Ground","team":"U12 Golds","ts":"2026-11-08T13:00:00"},{"date":"Sun 8 Nov","time":"13:00","comp":"U12 Division 13","home":"Thurlaston Magpies Falcons","away":"Lions U12 Silvers","opp":"Thurlaston Magpies Falcons","ha":"A","venue":"Thurlaston Football Club","team":"U12 Silvers","ts":"2026-11-08T13:00:00"}],"teams":{"U12 Reds":{"division":"U12 Division 1","upcoming":[{"date":"Sun 8 Nov","time":"11:05","comp":"U12 Division 1","home":"Lions U12 Reds","away":"Beaumont Park Jaguars","opp":"Beaumont Park Jaguars","ha":"H","venue":"The Lions Den, Charnwood College","team":"U12 Reds","ts":"2026-11-08T11:05:00"},{"date":"Sun 15 Nov","time":"10:30","comp":"League Cup","home":"Lions U12 Reds","away":"Heather Lions","opp":"Heather Lions","ha":"H","venue":"The Lions Den, Charnwood College","team":"U12 Reds","ts":"2026-11-15T10:30:00"},{"date":"Sun 22 Nov","time":"10:30","comp":"U12 Division 1","home":"Lions U12 Reds","away":"Heather Lions","opp":"Heather Lions","ha":"H","venue":"The Lions Den, Charnwood College","team":"U12 Reds","ts":"2026-11-22T10:30:00"}]},"U12 Bronzes":{"division":"U12 Division 8","upcoming":[{"date":"Sun 8 Nov","time":"11:05","comp":"U12 Division 8","home":"Aylestone Park 94","away":"Lions U12 Bronzes","opp":"Aylestone Park 94","ha":"A","venue":"Aylestone Park","team":"U12 Bronzes","ts":"2026-11-08T11:05:00"},{"date":"Sun 22 Nov","time":"10:30","comp":"U12 Division 8","home":"AFC Market Bosworth Wolves","away":"Lions U12 Bronzes","opp":"AFC Market Bosworth Wolves","ha":"A","venue":"Alans Way Sports Field","team":"U12 Bronzes","ts":"2026-11-22T10:30:00"},{"date":"Sun 13 Dec","time":"12:30","comp":"U12 Division 8","home":"Coalville Town Ravens Rooks","away":"Lions U12 Bronzes","opp":"Coalville Town Ravens Rooks","ha":"A","venue":"Scotland Playing Fields","team":"U12 Bronzes","ts":"2026-12-13T12:30:00"}]},"U12 Yellows":{"division":"U12 Division 9","upcoming":[{"date":"Sun 8 Nov","time":"11:05","comp":"U12 Division 9","home":"Lions U12 Yellows","away":"AFC Andrews Ants","opp":"AFC Andrews Ants","ha":"H","venue":"The Lions Den, Charnwood College","team":"U12 Yellows","ts":"2026-11-08T11:05:00"},{"date":"Sun 22 Nov","time":"10:30","comp":"U12 Division 9","home":"Lions U12 Yellows","away":"Thompsons United Blazes","opp":"Thompsons United Blazes","ha":"H","venue":"The Lions Den, Charnwood College","team":"U12 Yellows","ts":"2026-11-22T10:30:00"},{"date":"Sun 6 Dec","time":"10:30","comp":"U12 Division 9","home":"Lions U12 Yellows","away":"Leicester United Football Club Reds","opp":"Leicester United Football Club Reds","ha":"H","venue":"The Lions Den, Charnwood College","team":"U12 Yellows","ts":"2026-12-06T10:30:00"}]},"U12 Golds":{"division":"U12 Division 12","upcoming":[{"date":"Sun 8 Nov","time":"13:00","comp":"U12 Division 12","home":"Glen Villa Jaguars","away":"Lions U12 Golds","opp":"Glen Villa Jaguars","ha":"A","venue":"Great Glen Recreation Ground","team":"U12 Golds","ts":"2026-11-08T13:00:00"},{"date":"Sun 22 Nov","time":"10:30","comp":"U12 Division 12","home":"Lutterworth Town AFC","away":"Lions U12 Golds","opp":"Lutterworth Town AFC","ha":"A","venue":"Moorbarns Lane","team":"U12 Golds","ts":"2026-11-22T10:30:00"},{"date":"Sun 13 Dec","time":"12:30","comp":"U12 Division 12","home":"Rothley Imps Renegades","away":"Lions U12 Golds","opp":"Rothley Imps Renegades","ha":"A","venue":"Rothley Sports & Social Club","team":"U12 Golds","ts":"2026-12-13T12:30:00"}]},"U12 Silvers":{"division":"U12 Division 13","upcoming":[{"date":"Sun 8 Nov","time":"13:00","comp":"U12 Division 13","home":"Thurlaston Magpies Falcons","away":"Lions U12 Silvers","opp":"Thurlaston Magpies Falcons","ha":"A","venue":"Thurlaston Football Club","team":"U12 Silvers","ts":"2026-11-08T13:00:00"},{"date":"Sun 22 Nov","time":"12:30","comp":"U12 Division 13","home":"Amanah All Stars","away":"Lions U12 Silvers","opp":"Amanah All Stars","ha":"A","venue":"Chetwynd Junior School","team":"U12 Silvers","ts":"2026-11-22T12:30:00"},{"date":"Sun 6 Dec","time":"10:30","comp":"U12 Division 13","home":"Lions U12 Silvers","away":"Karma Leicester F.C. Blue","opp":"Karma Leicester F.C. Blue","ha":"H","venue":"The Lions Den, Charnwood College","team":"U12 Silvers","ts":"2026-12-06T10:30:00"}]},"U13 Reds":{"division":"U13 Division 4","upcoming":[{"date":"Sun 8 Nov","time":"11:05","comp":"U13 Division 4","home":"FC Burbage Panthers","away":"Lions U13 Reds","opp":"FC Burbage Panthers","ha":"A","venue":"Rugby Road Recreation Ground","team":"U13 Reds","ts":"2026-11-08T11:05:00"},{"date":"Sun 22 Nov","time":"10:30","comp":"U13 Division 4","home":"Wigston Willow Hurricanes","away":"Lions U13 Reds","opp":"Wigston Willow Hurricanes","ha":"A","venue":"Wigston Academy","team":"U13 Reds","ts":"2026-11-22T10:30:00"},{"date":"Sun 6 Dec","time":"10:30","comp":"U13 Division 4","home":"Kibworth Town Cobras","away":"Lions U13 Reds","opp":"Kibworth Town Cobras","ha":"A","venue":"Kibworth Mead Academy","team":"U13 Reds","ts":"2026-12-06T10:30:00"}]},"U13 Silvers":{"division":"U13 Division 11","upcoming":[{"date":"Sun 8 Nov","time":"11:05","comp":"U13 Division 11","home":"AFC Barwell Rhinos","away":"Lions U13 Silvers","opp":"AFC Barwell Rhinos","ha":"A","venue":"AFC Barwell","team":"U13 Silvers","ts":"2026-11-08T11:05:00"},{"date":"Sun 22 Nov","time":"10:30","comp":"U13 Division 11","home":"Beaumont Town 2012 Panthers","away":"Lions U13 Silvers","opp":"Beaumont Town 2012 Panthers","ha":"A","venue":"Mowmacre Hill Primary School","team":"U13 Silvers","ts":"2026-11-22T10:30:00"},{"date":"Sun 6 Dec","time":"10:30","comp":"U13 Division 11","home":"Royce Rangers Spartans","away":"Lions U13 Silvers","opp":"Royce Rangers Spartans","ha":"A","venue":"Royce Rangers Fc","team":"U13 Silvers","ts":"2026-12-06T10:30:00"}]}}};
-    const SHOP = [{"id":"p0","name":"Training Shirt","price":"£13.00 – £16.00","cat":"kit","catLabel":"Kit & training","icon":"M22 8L12 12L4 24L12 30L16 26V56H48V26L52 30L60 24L52 12L42 8C40 13 36 15 32 15C28 15 24 13 22 8Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":true},{"id":"p1","name":"Shorts","price":"£5.60 – £6.30","cat":"kit","catLabel":"Kit & training","icon":"M12 12H52L56 50H37L32 28L27 50H8ZM12 18H52","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p2","name":"Socks","price":"£5.75","cat":"kit","catLabel":"Kit & training","icon":"M24 6H38V38L48 46C52 50 49 57 43 57H28C23 57 21 52 23 48L24 44ZM24 14H38","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p3","name":"Tracksuit Pants","price":"£14.70 – £18.20","cat":"kit","catLabel":"Kit & training","icon":"M20 6H44L48 58H36L32 22L28 58H16ZM20 12H44","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p4","name":"Midlayer","price":"£20.00 – £23.00","cat":"kit","catLabel":"Kit & training","icon":"M23 8L12 12L6 50L13 51L17 28V56H47V28L51 51L58 50L52 12L41 8L32 12ZM32 12V30","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p5","name":"Club Hoodie","price":"£20.00 – £22.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/loughborough-lions-afc-club-hoodie/","initials":true,"featured":true},{"id":"p6","name":"Lions Head Hoodie","price":"£20.00 – £22.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p7","name":"Camo Hoodie","price":"£24.00 – £28.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p8","name":"Windbreaker Jacket","price":"£18.00 – £20.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6L10 12L6 54L14 55L16 30V60H48V30L50 55L58 54L54 12L42 6L32 14ZM32 14V60","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p9","name":"Bench Jacket","price":"£42.00 – £54.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6L10 12L6 54L14 55L16 30V60H48V30L50 55L58 54L54 12L42 6L32 14ZM32 14V60","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":true},{"id":"p10","name":"Gilet","price":"£39.00 – £42.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6C22 14 18 20 14 22V58H50V22C46 20 42 14 42 6L32 14ZM32 14V58","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p11","name":"Boot Bag","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 14H50L46 58H18ZM14 14L32 26L50 14","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/loughborough-lions-afc-boot-bag/","initials":true,"featured":true},{"id":"p12","name":"6 Panel Cap","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M10 40C10 22 22 14 32 14C42 14 50 22 50 40ZM50 40C56 40 60 42 60 45H34M32 14V10","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p13","name":"Cuffed Beanie Hat","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 40C14 24 22 16 32 16C42 16 50 24 50 40ZM12 40H52V50H12Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p14","name":"Neck Warmer","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 16C14 10 50 10 50 16C50 22 14 22 14 16ZM14 16V48C14 54 50 54 50 48V16","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p15","name":"Player Gloves","price":"£11.00","cat":"acc","catLabel":"Accessories","icon":"M20 58V32L15 20C14 16 19 14 21 17L24 25V11C24 7 29 7 29 11V24V8C29 4 34 4 34 8V24V10C34 6 39 6 39 10V26V17C39 13 44 13 44 17V38C44 46 40 50 40 58Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false}];
+    const SHOP = [{"id":"p0","slug":"training-shirt","name":"Training Shirt","price":"£13.00 – £16.00","cat":"kit","catLabel":"Kit & training","icon":"M22 8L12 12L4 24L12 30L16 26V56H48V26L52 30L60 24L52 12L42 8C40 13 36 15 32 15C28 15 24 13 22 8Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":true},{"id":"p1","slug":"shorts","name":"Shorts","price":"£5.60 – £6.30","cat":"kit","catLabel":"Kit & training","icon":"M12 12H52L56 50H37L32 28L27 50H8ZM12 18H52","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p2","slug":"socks","name":"Socks","price":"£5.75","cat":"kit","catLabel":"Kit & training","icon":"M24 6H38V38L48 46C52 50 49 57 43 57H28C23 57 21 52 23 48L24 44ZM24 14H38","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p3","slug":"tracksuit-pants","name":"Tracksuit Pants","price":"£14.70 – £18.20","cat":"kit","catLabel":"Kit & training","icon":"M20 6H44L48 58H36L32 22L28 58H16ZM20 12H44","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p4","slug":"midlayer","name":"Midlayer","price":"£20.00 – £23.00","cat":"kit","catLabel":"Kit & training","icon":"M23 8L12 12L6 50L13 51L17 28V56H47V28L51 51L58 50L52 12L41 8L32 12ZM32 12V30","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p5","slug":"club-hoodie","name":"Club Hoodie","price":"£20.00 – £22.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","material":"80% ringspun cotton, 20% polyester","colours":["Heather Grey","Jet Black"],"styles":["Unisex","Ladies","Kids"],"sizes":["1/2 yrs","3/4 yrs","5/6 yrs","7/8 yrs","9/11 yrs","12/13 yrs","XS","S","M","L","XL","XXL","3XL","4XL","5XL"],"initials":true,"featured":true},{"id":"p6","slug":"lions-head-hoodie","name":"Lions Head Hoodie","price":"£20.00 – £22.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p7","slug":"camo-hoodie","name":"Camo Hoodie","price":"£24.00 – £28.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p8","slug":"windbreaker-jacket","name":"Windbreaker Jacket","price":"£18.00 – £20.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6L10 12L6 54L14 55L16 30V60H48V30L50 55L58 54L54 12L42 6L32 14ZM32 14V60","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p9","slug":"bench-jacket","name":"Bench Jacket","price":"£42.00 – £54.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6L10 12L6 54L14 55L16 30V60H48V30L50 55L58 54L54 12L42 6L32 14ZM32 14V60","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":true},{"id":"p10","slug":"gilet","name":"Gilet","price":"£39.00 – £42.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6C22 14 18 20 14 22V58H50V22C46 20 42 14 42 6L32 14ZM32 14V58","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p11","slug":"boot-bag","name":"Boot Bag","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 14H50L46 58H18ZM14 14L32 26L50 14","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":true,"featured":true},{"id":"p12","slug":"6-panel-cap","name":"6 Panel Cap","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M10 40C10 22 22 14 32 14C42 14 50 22 50 40ZM50 40C56 40 60 42 60 45H34M32 14V10","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p13","slug":"cuffed-beanie-hat","name":"Cuffed Beanie Hat","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 40C14 24 22 16 32 16C42 16 50 24 50 40ZM12 40H52V50H12Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p14","slug":"neck-warmer","name":"Neck Warmer","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 16C14 10 50 10 50 16C50 22 14 22 14 16ZM14 16V48C14 54 50 54 50 48V16","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p15","slug":"player-gloves","name":"Player Gloves","price":"£11.00","cat":"acc","catLabel":"Accessories","icon":"M20 58V32L15 20C14 16 19 14 21 17L24 25V11C24 7 29 7 29 11V24V8C29 4 34 4 34 8V24V10C34 6 39 6 39 10V26V17C39 13 44 13 44 17V38C44 46 40 50 40 58Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false}];
     const weekend = LIVE.weekend.map((g) => Object.assign({}, g, {
       bg: g.ha === 'H' ? accent : '#F3F2EE',
       where: g.ha === 'H' ? 'Home · Lions Den' : 'Away · ' + g.venue }));
@@ -785,13 +906,8 @@ PAGES['teams'] = class extends DCLogic {
       });
     };
     const filterDefs = [
-      { id: 'all', label: 'All' },
-      { id: 'recruiting', label: 'Places available' },
-      { id: 'girls', label: 'Girls' },
-      { id: 'mini', label: 'Mini Academy – U9' },
-      { id: 'mid', label: 'U10 – U11' },
-      { id: 'u12', label: 'U12' },
-      { id: 'older', label: 'U13 & U16' }
+      { id: 'all', label: 'All teams' },
+      { id: 'recruiting', label: 'Places available' }
     ];
     const f = this.state.filter;
     const filters = filterDefs.map((d) => {
@@ -807,8 +923,19 @@ PAGES['teams'] = class extends DCLogic {
         on: on ? 'true' : 'false', bg: on ? accent : '#F3F2EE', bd: on ? '#0E0E0E' : 'transparent',
         pick: () => { this.jump = true; this.setState({ selected: t.id }); } };
     });
+    const ageOf = (t) => t.id === 'wildcats' ? 'Girls 5–11' : t.id === 'mini' ? 'Mini Academy' : (t.name.match(/^U\d+/) || [t.name])[0];
+    const ageOrder = [];
+    const byAge = {};
+    cards.forEach((c, i) => {
+      const t = shown[i], age = ageOf(t);
+      if (!byAge[age]) { byAge[age] = []; ageOrder.push(age); }
+      const shortName = /^U\d+\s+\S/.test(t.name) ? t.name.replace(/^U\d+\s+/, '') : t.name;
+      byAge[age].push(Object.assign({}, c, { short: shortName }));
+    });
+    const groups = ageOrder.map((age) => ({ label: age, cards: byAge[age],
+      countLabel: byAge[age].length === 1 ? '1 team' : byAge[age].length + ' teams' }));
     const sel = full(SQUADS.find((t) => t.id === selId) || SQUADS[0]);
-    return { accent, filters, cards, sel, teamCount: SQUADS.length };
+    return { accent, filters, groups, sel, teamCount: SQUADS.length };
   }
 }
 
@@ -843,11 +970,18 @@ PAGES['club'] = class extends DCLogic {
 PAGES['shop'] = class extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { cat: 'all' };
+    this.state = { cat: 'all', item: null };
+  }
+  componentDidUpdate() {
+    if (!this.jump) return;
+    this.jump = false;
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
   renderVals() {
     const accent = this.props.accent ?? '#FDD305';
-    const SHOP = [{"id":"p0","name":"Training Shirt","price":"£13.00 – £16.00","cat":"kit","catLabel":"Kit & training","icon":"M22 8L12 12L4 24L12 30L16 26V56H48V26L52 30L60 24L52 12L42 8C40 13 36 15 32 15C28 15 24 13 22 8Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":true},{"id":"p1","name":"Shorts","price":"£5.60 – £6.30","cat":"kit","catLabel":"Kit & training","icon":"M12 12H52L56 50H37L32 28L27 50H8ZM12 18H52","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p2","name":"Socks","price":"£5.75","cat":"kit","catLabel":"Kit & training","icon":"M24 6H38V38L48 46C52 50 49 57 43 57H28C23 57 21 52 23 48L24 44ZM24 14H38","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p3","name":"Tracksuit Pants","price":"£14.70 – £18.20","cat":"kit","catLabel":"Kit & training","icon":"M20 6H44L48 58H36L32 22L28 58H16ZM20 12H44","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p4","name":"Midlayer","price":"£20.00 – £23.00","cat":"kit","catLabel":"Kit & training","icon":"M23 8L12 12L6 50L13 51L17 28V56H47V28L51 51L58 50L52 12L41 8L32 12ZM32 12V30","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p5","name":"Club Hoodie","price":"£20.00 – £22.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/loughborough-lions-afc-club-hoodie/","initials":true,"featured":true},{"id":"p6","name":"Lions Head Hoodie","price":"£20.00 – £22.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p7","name":"Camo Hoodie","price":"£24.00 – £28.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p8","name":"Windbreaker Jacket","price":"£18.00 – £20.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6L10 12L6 54L14 55L16 30V60H48V30L50 55L58 54L54 12L42 6L32 14ZM32 14V60","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p9","name":"Bench Jacket","price":"£42.00 – £54.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6L10 12L6 54L14 55L16 30V60H48V30L50 55L58 54L54 12L42 6L32 14ZM32 14V60","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":true},{"id":"p10","name":"Gilet","price":"£39.00 – £42.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6C22 14 18 20 14 22V58H50V22C46 20 42 14 42 6L32 14ZM32 14V58","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p11","name":"Boot Bag","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 14H50L46 58H18ZM14 14L32 26L50 14","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/loughborough-lions-afc-boot-bag/","initials":true,"featured":true},{"id":"p12","name":"6 Panel Cap","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M10 40C10 22 22 14 32 14C42 14 50 22 50 40ZM50 40C56 40 60 42 60 45H34M32 14V10","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p13","name":"Cuffed Beanie Hat","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 40C14 24 22 16 32 16C42 16 50 24 50 40ZM12 40H52V50H12Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p14","name":"Neck Warmer","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 16C14 10 50 10 50 16C50 22 14 22 14 16ZM14 16V48C14 54 50 54 50 48V16","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p15","name":"Player Gloves","price":"£11.00","cat":"acc","catLabel":"Accessories","icon":"M20 58V32L15 20C14 16 19 14 21 17L24 25V11C24 7 29 7 29 11V24V8C29 4 34 4 34 8V24V10C34 6 39 6 39 10V26V17C39 13 44 13 44 17V38C44 46 40 50 40 58Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false}];
+    const SHOP = [{"id":"p0","slug":"training-shirt","name":"Training Shirt","price":"£13.00 – £16.00","cat":"kit","catLabel":"Kit & training","icon":"M22 8L12 12L4 24L12 30L16 26V56H48V26L52 30L60 24L52 12L42 8C40 13 36 15 32 15C28 15 24 13 22 8Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":true},{"id":"p1","slug":"shorts","name":"Shorts","price":"£5.60 – £6.30","cat":"kit","catLabel":"Kit & training","icon":"M12 12H52L56 50H37L32 28L27 50H8ZM12 18H52","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p2","slug":"socks","name":"Socks","price":"£5.75","cat":"kit","catLabel":"Kit & training","icon":"M24 6H38V38L48 46C52 50 49 57 43 57H28C23 57 21 52 23 48L24 44ZM24 14H38","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p3","slug":"tracksuit-pants","name":"Tracksuit Pants","price":"£14.70 – £18.20","cat":"kit","catLabel":"Kit & training","icon":"M20 6H44L48 58H36L32 22L28 58H16ZM20 12H44","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p4","slug":"midlayer","name":"Midlayer","price":"£20.00 – £23.00","cat":"kit","catLabel":"Kit & training","icon":"M23 8L12 12L6 50L13 51L17 28V56H47V28L51 51L58 50L52 12L41 8L32 12ZM32 12V30","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p5","slug":"club-hoodie","name":"Club Hoodie","price":"£20.00 – £22.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","material":"80% ringspun cotton, 20% polyester","colours":["Heather Grey","Jet Black"],"styles":["Unisex","Ladies","Kids"],"sizes":["1/2 yrs","3/4 yrs","5/6 yrs","7/8 yrs","9/11 yrs","12/13 yrs","XS","S","M","L","XL","XXL","3XL","4XL","5XL"],"initials":true,"featured":true},{"id":"p6","slug":"lions-head-hoodie","name":"Lions Head Hoodie","price":"£20.00 – £22.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p7","slug":"camo-hoodie","name":"Camo Hoodie","price":"£24.00 – £28.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M24 12C24 4 40 4 40 12L52 15L58 50L51 51L48 30V58H16V30L13 51L6 50L12 15ZM26 13C28 21 36 21 38 13M22 42H42L40 52H24Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p8","slug":"windbreaker-jacket","name":"Windbreaker Jacket","price":"£18.00 – £20.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6L10 12L6 54L14 55L16 30V60H48V30L50 55L58 54L54 12L42 6L32 14ZM32 14V60","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p9","slug":"bench-jacket","name":"Bench Jacket","price":"£42.00 – £54.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6L10 12L6 54L14 55L16 30V60H48V30L50 55L58 54L54 12L42 6L32 14ZM32 14V60","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":true},{"id":"p10","slug":"gilet","name":"Gilet","price":"£39.00 – £42.00","cat":"leisure","catLabel":"Hoodies & jackets","icon":"M22 6C22 14 18 20 14 22V58H50V22C46 20 42 14 42 6L32 14ZM32 14V58","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p11","slug":"boot-bag","name":"Boot Bag","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 14H50L46 58H18ZM14 14L32 26L50 14","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":true,"featured":true},{"id":"p12","slug":"6-panel-cap","name":"6 Panel Cap","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M10 40C10 22 22 14 32 14C42 14 50 22 50 40ZM50 40C56 40 60 42 60 45H34M32 14V10","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p13","slug":"cuffed-beanie-hat","name":"Cuffed Beanie Hat","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 40C14 24 22 16 32 16C42 16 50 24 50 40ZM12 40H52V50H12Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p14","slug":"neck-warmer","name":"Neck Warmer","price":"£10.00","cat":"acc","catLabel":"Accessories","icon":"M14 16C14 10 50 10 50 16C50 22 14 22 14 16ZM14 16V48C14 54 50 54 50 48V16","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false},{"id":"p15","slug":"player-gloves","name":"Player Gloves","price":"£11.00","cat":"acc","catLabel":"Accessories","icon":"M20 58V32L15 20C14 16 19 14 21 17L24 25V11C24 7 29 7 29 11V24V8C29 4 34 4 34 8V24V10C34 6 39 6 39 10V26V17C39 13 44 13 44 17V38C44 46 40 50 40 58Z","url":"https://sportsadvocate.co.uk/club-shop/loughborough-lions-afc/","initials":false,"featured":false}];
+    const open = (p) => () => { this.jump = true; this.setState({ item: p.slug }); };
+    const withOpen = (p) => Object.assign({}, p, { open: open(p) });
     const defs = [{ id: 'all', label: 'All' }, { id: 'kit', label: 'Kit & training' }, { id: 'leisure', label: 'Hoodies & jackets' }, { id: 'acc', label: 'Accessories' }];
     const cat = this.state.cat;
     const filters = defs.map((d) => {
@@ -855,8 +989,16 @@ PAGES['shop'] = class extends DCLogic {
       return { label: d.label, pressed: on ? 'true' : 'false', bg: on ? '#0E0E0E' : '#FFFFFF', fg: on ? accent : '#0E0E0E', bd: on ? '#0E0E0E' : '#D6D3CB',
         pick: () => this.setState({ cat: d.id }) };
     });
-    const shown = SHOP.filter((p) => cat === 'all' || p.cat === cat);
-    return { accent, filters, shown };
+    const shown = SHOP.filter((p) => cat === 'all' || p.cat === cat).map(withOpen);
+    const found = SHOP.find((p) => p.slug === this.state.item) || null;
+    const list = (a) => (a || []).map((v) => ({ v }));
+    const item = found ? Object.assign({}, found, {
+      hasMaterial: !!found.material, hasStyles: !!found.styles, hasColours: !!found.colours, hasSizes: !!found.sizes,
+      noOptions: !found.sizes, styleList: list(found.styles), colourList: list(found.colours), sizeList: list(found.sizes)
+    }) : { name: '', price: '', catLabel: '', icon: '', url: '', styleList: [], colourList: [], sizeList: [] };
+    const related = found ? SHOP.filter((p) => p.slug !== found.slug && p.cat === found.cat).concat(SHOP.filter((p) => p.cat !== found.cat)).slice(0, 4).map(withOpen) : [];
+    return { accent, filters, shown, item, related, hasItem: !!found, noItem: !found,
+      back: () => { this.jump = true; this.setState({ item: null }); } };
   }
 }
 
