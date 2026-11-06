@@ -187,7 +187,7 @@ function model() {
       [f.homeTeam, f.awayTeam].forEach((t) => {
         if (!isLions(t)) return;
         const home = f.homeTeam === t;
-        fixtures.push({ when: parseDate(f.fixtureDateTime), team: lteam(t), comp: dn, opp: short(home ? f.awayTeam : f.homeTeam), ha: home ? 'H' : 'A', venue: venue(f.location, home), off: !!f.removed });
+        fixtures.push({ when: parseDate(f.fixtureDateTime), team: lteam(t), comp: dn, opp: short(home ? f.awayTeam : f.homeTeam), ha: home ? 'H' : 'A', venue: venue(f.location, home), off: !!f.removed || /postpone|cancel|abandon|void/i.test(f.status || ''), offLabel: /cancel|abandon|void/i.test(f.status || '') && !/postpone/i.test(f.status || '') ? 'Called off' : 'Postponed' });
       });
     });
     const rows = Object.values(T).map((r) => Object.assign(r, { pts: r.w * 3 + r.d, gd: r.gf - r.ga }))
@@ -276,7 +276,7 @@ function byDay(list, render) {
 const fxCard = (f, i) => '<div class="card in' + (f.ha === 'H' ? ' h' : '') + '" style="animation-delay:' + Math.min(i, 8) * 40 + 'ms">' +
   '<span class="tm">' + esc(hm(f.when)) + '</span>' +
   '<span class="who"><b>' + esc(f.team) + '</b><span>v ' + esc(f.opp) + '</span><small>' + esc(f.comp) + ' · ' + esc(f.venue) + '</small></span>' +
-  '<span class="tag' + (f.off ? ' pp' : '') + '">' + (f.off ? 'Postponed' : f.ha === 'H' ? 'Home' : 'Away') + '</span></div>';
+  '<span class="tag' + (f.off ? ' pp' : '') + '">' + (f.off ? (f.offLabel || 'Postponed') : f.ha === 'H' ? 'Home' : 'Away') + '</span></div>';
 const resCard = (r, i) => {
   const H = '<span class="' + (r.us === 'h' ? 'us' : '') + '">' + esc(r.home) + '</span>', A = '<span class="' + (r.us === 'a' ? 'us' : '') + '">' + esc(r.away) + '</span>';
   const sc = r.ok ? '<span class="sc">' + r.hs + '–' + r.as + '</span>' : '<span class="sc">–</span>';
