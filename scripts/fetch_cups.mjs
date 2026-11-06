@@ -59,12 +59,18 @@ const mk = () => browser.newContext({ userAgent: ua, locale: 'en-GB', timezoneId
 const shared = await mk();
 const pf = await load(shared, 'fixtures', '.fixtures-table');
 const F = pf ? await pf.evaluate(extract) : null;
-const pr = await load(shared, 'results', '.datetime-col');
-const R = pr ? await pr.evaluate(extract) : null;
 await browser.close();
-if (!F || !R) { console.log('Could not load Full-Time pages - cups.json left unchanged'); process.exit(0); }
-console.log(`cup fixtures ${F.fixtures.length}, cup results ${R.results.length}`);
-if (R.results.length < 20) { console.log('Too few cup results - cups.json left unchanged'); process.exit(0); }
+// Results page is stricter: give it a brand-new browser. If it still refuses, keep the results we already have.
+const browser2 = await chromium.launch({ channel: 'chromium', args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled'] });
+const ctx2 = await browser2.newContext({ userAgent: ua, locale: 'en-GB', timezoneId: 'Europe/London', viewport: { width: 1920, height: 1080 } });
+const pr = await load(ctx2, 'results', '.datetime-col');
+const R = pr ? await pr.evaluate(extract) : null;
+await browser2.close();
+if (!F) { console.log('Could not load Full-Time fixtures - cups.json left unchanged'); process.exit(0); }
+console.log(`cup fixtures ${F.fixtures.length}, cup results ${R ? R.results.length : 'unavailable (keeping existing)'}`);
+if (F.fixtures.length < 5) { console.log('Too few cup fixtures - cups.json left unchanged'); process.exit(0); }
+if (R && R.results.length < 20) { console.log('Too few cup results - ignoring them'); }
+const haveR = R && R.results.length >= 20;
 
 const nice = s => s.replace(/^U12 /, 'U12 ').replace(/\w\S*/g, w => /^(u\d+|fc|afc)$/i.test(w) ? w.toUpperCase() : w[0].toUpperCase() + w.slice(1).toLowerCase())
   .replace(/Sunday Youth/, 'Sunday Youth');
@@ -81,7 +87,7 @@ for (const f of F.fixtures) {
   if (/postpone|cancel|abandon/i.test(f.notes)) o.status = f.notes;
   c.fixtures.push(o);
 }
-for (const r of R.results) {
+for (const r of (haveR ? R.results : [])) {
   const m = r.score.match(/^(\d+) - (\d+)/);
   if (!m) continue;                       // walkovers have no score
   const o = { date: r.date.slice(0, 8), home: r.home, away: r.away, hs: +m[1], as: +m[2] };
@@ -94,9 +100,11 @@ const cups = Object.values(by).map(c => {
   const prev = oldBy[c.name.toLowerCase()] || oldBy[nice(c.name).toLowerCase()];
   const out = { name: nice(c.name).replace(/^Under 12 /i, 'U12 ').replace(/^Under 13 /i, 'U13 ') };
   if (prev && prev.bracket) out.bracket = prev.bracket;   // hand-kept knockout draws survive
-  out.fixtures = c.fixtures; out.results = c.results;
+  out.fixtures = c.fixtures;
+  out.results = haveR ? c.results : (prev ? prev.results || [] : []);
   return out;
 });
+if (!haveR) for (const o of old.cups || []) if (!cups.some(c => c.name.toLowerCase() === o.name.toLowerCase())) cups.push({ ...o, fixtures: [] });
 cups.sort((a, b) => a.name.localeCompare(b.name));
 const stamp = new Date().toLocaleString('en-GB', { timeZone: 'Europe/London', day: 'numeric', month: 'short', year: '2-digit' }).toUpperCase();
 const next = { updated: stamp, cups };
