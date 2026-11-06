@@ -38,7 +38,8 @@ async function load(ctx, p, ready) {
     if (resp && resp.status() === 403) {
       const apex = await ctx.newPage();
       try {
-        await apex.goto('https://fulltime.thefa.com', { waitUntil: 'networkidle', timeout: 30000 });
+        const ar = await apex.goto('https://fulltime.thefa.com', { waitUntil: 'networkidle', timeout: 30000 });
+        console.log(`apex: status ${ar && ar.status()} title "${await apex.title()}" url ${apex.url()} banner ${await apex.locator('#onetrust-accept-btn-handler').count()}`);
         await apex.locator('#onetrust-accept-btn-handler').click({ timeout: 8000 });
         console.log('accepted cookies');
       } catch (e) { console.log('cookie step failed', String(e).slice(0, 120)); }
