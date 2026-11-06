@@ -42,6 +42,9 @@ if ($O && $N) {
             if (!$o) { $msgs[] = ['Div 1: new fixture', "$p - " . $when($f), 'calendar']; continue; }
             if ($when($o) !== $when($f) && empty($f['removed']))
                 $msgs[] = ['Div 1: fixture changed', "$p\nWas: " . $when($o) . "\nNow: " . $when($f), 'calendar'];
+            $fs = strtolower((string)($f['status'] ?? '')); $os = strtolower((string)($o['status'] ?? ''));
+            if ($fs !== $os && preg_match('/postpone|cancel|abandon/', $fs))
+                $msgs[] = ['Div 1: ' . (strpos($fs, 'postpone') !== false ? 'postponed' : 'cancelled'), "$p (" . ($f['fixtureDateTime'] ?? '') . ") - " . $f['status'], 'warning'];
             if (!empty($f['removed']) && empty($o['removed']))
                 $msgs[] = ['Div 1: fixture removed', "$p (" . ($f['fixtureDateTime'] ?? '') . ") has gone from Full-Time - check with the coach", 'warning'];
         }

@@ -65,7 +65,15 @@ jobs:
           php-version: '8.2'
           extensions: curl
       - name: Build the API
-        run: cd api && dotnet build -c Release 2>&1 | tail -3
+        run: |
+          # Small patch: also read each fixture's "Status / Notes" column (Postponed etc.).
+          # If the patched build ever fails, fall back to the untouched original.
+          python3 scripts/patch_api.py api
+          cd api
+          if ! dotnet build -c Release > ../build.log 2>&1; then
+            tail -20 ../build.log; echo "Patched build failed - using the original"
+            git checkout -- . && dotnet build -c Release 2>&1 | tail -3
+          else tail -3 ../build.log; fi
       - name: Install its browser
         run: pwsh api/FullTimeAPI/bin/Release/net9.0/playwright.ps1 install --with-deps chromium 2>&1 | tail -2
       - name: Start the API
