@@ -378,7 +378,7 @@ button{font:inherit}
 </div>
 <sc-for list="{{gp.cards}}" as="c" hint-placeholder-count="2">
 <button type="button" class="ll-team" onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" aria-label="{{c.name}}" style="display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 8px 12px; border-radius: 12px; border: 2px solid {{c.bd}}; background: {{c.rowbg}}; color: #0E0E0E; text-align: left; cursor: pointer; box-sizing: border-box; width: 100%">
-<span aria-hidden="true" style="flex: none; width: 22px; height: 22px; border-radius: 50%; background: repeating-linear-gradient(90deg, {{c.colour}} 0 5px, #0E0E0E 5px 10px); box-shadow: inset 0 0 0 1.5px #0E0E0E"></span>
+<span aria-hidden="true" style="flex: none; width: 24px; height: 24px; box-sizing: border-box; border-radius: 50%; border: 3px solid {{c.colour}}; background: repeating-linear-gradient(90deg, {{accent}} 0 4px, #0E0E0E 4px 8px); box-shadow: 0 0 0 1px #0E0E0E"></span>
 <span style="flex: 1; font-weight: 800; font-size: 16px; line-height: 1.2">{{c.short}}</span>
 <sc-if value="{{c.isRecruiting}}" hint-placeholder-val="{{ false }}">
 <span style="flex: none; padding: 2px 8px; border-radius: 999px; background: #0E0E0E; color: {{accent}}; font-size: 11px; font-weight: 700; text-transform: uppercase">{{c.tag}}</span>
@@ -394,7 +394,7 @@ button{font:inherit}
 <div style="position: relative; aspect-ratio: 2 / 1; background: repeating-linear-gradient(135deg, #E8E6E0 0 12px, #EFEDE8 12px 24px); display: flex; align-items: center; justify-content: center; color: #5C5A55; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em">
 <sc-if value="{{sel.hasPhoto}}" hint-placeholder-val="{{ false }}"><img loading="lazy" decoding="async" src="{{sel.photo}}" alt="{{sel.photoAlt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></sc-if>
 <sc-if value="{{sel.noPhoto}}" hint-placeholder-val="{{ true }}"><span>Team photo</span></sc-if>
-<span aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: repeating-linear-gradient(90deg, {{sel.colour}} 0 22px, #0E0E0E 22px 44px)"></span>
+<span aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 16px; background: linear-gradient(to bottom, transparent 0 10px, {{sel.colour}} 10px 16px), repeating-linear-gradient(90deg, {{accent}} 0 22px, #0E0E0E 22px 44px)"></span>
 </div>
 <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-direction: column; gap: 4px">
