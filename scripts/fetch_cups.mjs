@@ -61,8 +61,14 @@ const F = pf ? await pf.evaluate(extract) : null;
 // Results: fetch from inside the already-cleared fixtures tab (same session, same site).
 let R = null;
 if (pf) {
-  const html = await pf.evaluate(async u => { const r = await fetch(u); return r.status === 200 ? r.text() : 'STATUS ' + r.status; }, url('results'));
-  console.log('results via fetch:', html.length > 200 ? html.length + ' chars' : html);
+  let html = '';
+  for (const n of [5000, 1500, 1000, 500]) {
+    const u = url('results').replace('itemsPerPage=5000', 'itemsPerPage=' + n);
+    html = await pf.evaluate(async u => { const r = await fetch(u); return r.status === 200 ? r.text() : 'STATUS ' + r.status; }, u);
+    console.log('results via fetch, itemsPerPage ' + n + ':', html.length > 200 ? html.length + ' chars' : html);
+    if (html.length > 200) break;
+    await pf.waitForTimeout(2000);
+  }
   if (html.length > 200) {
     const pr = await shared.newPage();
     await pr.setContent(html, { waitUntil: 'domcontentloaded' });
