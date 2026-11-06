@@ -472,9 +472,10 @@ function page(p){
     } else {
       h+=band("NEXT MATCH")+ln("NO FIXTURES FOUND YET","w")+ln("");
     }
-    h+=band("LAST "+DATA.results.length+" RESULTS");
+    const lastN=DATA.results.slice(0,6);
+    h+=band("LAST "+lastN.length+" RESULTS");
     if(DATA.results.length){
-      h+=`<div class="ln">`+DATA.results.slice(0,8).map(x=>`<span class="${res(x)=="W"?"g":res(x)=="L"?"r":"y"}">${res(x)} </span>`).join("")+`</div>`;
+      h+=`<div class="ln">`+lastN.map(x=>`<span class="${res(x)=="W"?"g":res(x)=="L"?"r":"y"}">${res(x)} </span>`).join("")+`</div>`;
     } else {
       h+=ln("NO RESULTS YET","w");
     }
