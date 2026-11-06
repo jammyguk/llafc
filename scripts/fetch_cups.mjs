@@ -27,17 +27,19 @@ const extract = () => {
 
 async function load(page, p, ready) {
   for (let i = 0; i < 3; i++) {
-    await page.goto(url(p), { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
-    for (let k = 0; k < 20 && /just a moment/i.test(await page.title()); k++) await page.waitForTimeout(1500);
+    const resp = await page.goto(url(p), { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(e => { console.log('goto error', String(e).slice(0, 120)); return null; });
+    for (let k = 0; k < 30 && /just a moment/i.test(await page.title()); k++) await page.waitForTimeout(2000);
+    console.log(`try ${i} ${p}: status ${resp && resp.status()} title "${await page.title()}" tables ${await page.locator('table').count()}`);
     const btn = page.locator('#onetrust-accept-btn-handler');
-    if (await btn.count()) { await btn.first().click().catch(() => {}); await page.reload({ waitUntil: 'domcontentloaded' }).catch(() => {}); }
+    if (await btn.count()) { console.log('accepting cookies'); await btn.first().click().catch(() => {}); await page.reload({ waitUntil: 'domcontentloaded' }).catch(() => {}); }
     if (await page.locator(ready).count().catch(() => 0)) return true;
+    console.log((await page.content()).replace(/\s+/g, ' ').slice(0, 300));
     await page.waitForTimeout(3000);
   }
   return false;
 }
 
-const browser = await chromium.launch();
+const browser = await chromium.launch({ args: ['--disable-blink-features=AutomationControlled'] });
 const ctx = await browser.newContext({ userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36' });
 const page = await ctx.newPage();
 const okF = await load(page, 'fixtures', '.fixtures-table');
