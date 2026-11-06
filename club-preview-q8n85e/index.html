@@ -957,7 +957,7 @@ function scrollFx() {
       const s0 = Math.max(1, Math.min(window.innerWidth * 0.84, sh * 0.8 * (W / H)) / W);
       // On short screens (e.g. iPhone Display Zoom) the crest ends smaller so the buttons still fit
       const motto = intro.querySelector('.ll-intro-motto');
-      const other = (motto ? motto.offsetHeight : 0) + copy.offsetHeight + 36 + 24 + 8;
+      const other = (motto ? motto.offsetHeight : 0) + copy.offsetHeight + 36 + 24 + 28;
       const f = Math.min(1, Math.max(0.4, (sh - other) / H));
       const key = W.toFixed(1) + '|' + s0.toFixed(3) + '|' + f.toFixed(3);
       if (crest.dataset.k !== key) {
