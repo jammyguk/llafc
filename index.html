@@ -237,7 +237,7 @@ function addCups(){
       const p=pdate(f.date);if(!p)return;
       const h=U(f.home)==us, a=U(f.away)==us;
       if(!(h||a)||tsd(p.date)<today.getTime())return;
-      DATA.fixtures.push({date:p.date,t:p.time,opp:h?f.away:f.home,home:h,cup:nm});
+      DATA.fixtures.push({date:p.date,t:p.time,opp:h?f.away:f.home,home:h,cup:nm,st:/postpone/i.test(f.status||"")?"POSTPONED":/cancel|abandon/i.test(f.status||"")?"CANCELLED":""});
     });
     (c.results||[]).forEach(r=>{
       const p=pdate(r.date);if(!p)return;
@@ -448,7 +448,7 @@ function page(p){
   let h=head(p);
   if(p==100){
     if(showMoved()) h+=lines("NEW ADDRESS: LIONSTEXT.CO.UK","m")+lines("INSTALLED THE APP FROM THE OLD LINK? DELETE IT AND ADD IT AGAIN FROM THIS ADDRESS.","w")+morebtn("moved","","  OK - HIDE THIS")+ln("");
-    const f=DATA.fixtures[0];
+    const f=DATA.fixtures.find(x=>x.st!="POSTPONED"&&x.st!="CANCELLED")||null;
     if(isLions){
       h+=dh(T)+ln("");
       h+=`<div class="rowlogo"><img class="logo" alt="Loughborough Lions AFC crest" src="${LOGO}"><div>`+
@@ -599,13 +599,25 @@ function page(p){
       if(!rs.length&&!fx.length&&!c.bracket)return;
       shown.push(nm);
       wrapText(U(nm),W-1).forEach(x=>{h+=band(x);});
+      const nx=fx.find(x=>x.st!="POSTPONED"&&x.st!="CANCELLED");
+      if(nx){
+        h+=ln("NEXT GAME","m")+
+           ln(`${String(nx.date.day).padStart(2,"0")} ${MON[nx.date.mon-1]}  ${nx.t||""} KO  ${nx.home?"HOME":"AWAY"}`,"y")+
+           lines("V "+U(nx.opp),"y")+ln("");
+      } else if(fx.length){
+        h+=ln("NEXT GAME","m")+ln("NO DATE YET - SEE BELOW","w")+ln("");
+      } else if(rs.length||c.bracket){
+        h+=ln("NEXT GAME","m")+ln("NOTHING FIXED YET","w")+ln("");
+      }
       rs.forEach(x=>{
         const r=res(x);
         const pre=`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]}  ${r} ${x.f}-${x.a}  `, pn=x.pf!==undefined?" PENS":"";
         h+=ln(pre+short(x.opp,W-pre.length-pn.length)+pn,r=="W"?"g":r=="L"?"r":"y");
       });
-      fx.forEach(x=>{
+      fx.filter(x=>x!==nx).forEach(x=>{
         h+=ln(`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]}  ${x.home?"HOME":"AWAY"} ${short(x.opp,24)}`,"w");
+
+        if(x.st)h+=ln("      "+stText(x.st,1),"m");
       });
       h+=ln("");
       if(c.bracket)h+=bracketHtml(c,us);
