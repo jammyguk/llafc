@@ -82,7 +82,7 @@ body{margin:0;background:#FFFFFF}
 a{color:#0E0E0E}
 button{font:inherit}
 .ll-team{transition:transform .25s cubic-bezier(.16,.84,.3,1),background-color .2s ease}
-.ll-team:hover{transform:translateY(-3px)}
+.ll-team:hover{transform:translateX(3px)}
 .ll-anim .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,.84,.3,1),transform .8s cubic-bezier(.16,.84,.3,1)}
 .ll-anim .rv.in{opacity:1;transform:none}
 @media (max-width: 640px){.ll-teamgrid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important}.ll-teamgrid .ll-tname{font-size:19px !important}}
@@ -175,17 +175,17 @@ button{font:inherit}
 </div>
 <div id="welcome" style="position: relative; padding: clamp(44px, 6vw, 76px) clamp(12px, 4.5%, 64px) clamp(28px, 4vw, 56px)">
 <div data-stripe="0.35" aria-hidden="true" style="position: absolute; inset: 0; background: repeating-linear-gradient(90deg, #0E0E0E 0 22px, transparent 22px 50px)"></div>
-<article class="rv" style="position: relative; max-width: 820px; margin: 0 auto; box-sizing: border-box; background: #FFFFFF; border-radius: 26px; padding: clamp(46px, 6vw, 64px) clamp(22px, 5vw, 56px) clamp(28px, 4vw, 44px); box-shadow: 0 16px 40px rgba(0,0,0,0.22)">
-<span aria-hidden="true" style="position: absolute; top: -30px; left: clamp(22px, 5vw, 64px); width: 64px; height: 64px; border-radius: 50%; background: #0E0E0E; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,0.25)"><svg width="30" height="30" viewBox="0 0 32 32" fill="{{accent}}"><path d="M4 26V17.5C4 10.6 7.6 6.3 13.6 4.6l1.3 3.3c-3.4 1.3-5.1 3.6-5.3 6.6H14V26H4zm14 0V17.5c0-6.9 3.6-11.2 9.6-12.9l1.3 3.3c-3.4 1.3-5.1 3.6-5.3 6.6H28V26H18z"/></svg></span>
-<h2 style="margin: 0 0 14px; display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6862"><span aria-hidden="true" style="width: 26px; height: 3px; border-radius: 2px; background: {{accent}}"></span>Welcome to Loughborough Lions AFC</h2>
-<p style="margin: 0; max-width: 17em; font-weight: 900; font-stretch: 112%; font-size: clamp(27px, 4.4vw, 50px); line-height: 1.02; letter-spacing: -0.025em; color: #0E0E0E">More than a game. A community where <span style="background: linear-gradient(transparent 56%, {{accent}} 56%, {{accent}} 94%, transparent 94%); padding: 0 0.06em">everyone</span> gets to play.</p>
+<article class="rv" style="position: relative; max-width: 820px; margin: 0 auto; box-sizing: border-box; background: #FFFFFF; border-radius: 26px; padding: clamp(46px, 6vw, 64px) clamp(22px, 5vw, 56px) clamp(28px, 4vw, 44px); text-align: center; display: flex; flex-direction: column; align-items: center; box-shadow: 0 16px 40px rgba(0,0,0,0.22)">
+<span aria-hidden="true" style="position: absolute; top: -32px; left: 50%; margin-left: -32px; width: 64px; height: 64px; border-radius: 50%; background: #0E0E0E; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,0.25)"><svg width="30" height="30" viewBox="0 0 32 32" fill="{{accent}}"><path d="M4 26V17.5C4 10.6 7.6 6.3 13.6 4.6l1.3 3.3c-3.4 1.3-5.1 3.6-5.3 6.6H14V26H4zm14 0V17.5c0-6.9 3.6-11.2 9.6-12.9l1.3 3.3c-3.4 1.3-5.1 3.6-5.3 6.6H28V26H18z"/></svg></span>
+<h2 style="margin: 0 0 14px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #6B6862"><span aria-hidden="true" style="width: 26px; height: 3px; border-radius: 2px; background: {{accent}}"></span>Welcome to Loughborough Lions AFC<span aria-hidden="true" style="width: 26px; height: 3px; border-radius: 2px; background: {{accent}}"></span></h2>
+<p style="margin: 0 auto; max-width: 17em; text-wrap: balance; font-weight: 900; font-stretch: 112%; font-size: clamp(27px, 4.4vw, 50px); line-height: 1.02; letter-spacing: -0.025em; color: #0E0E0E">More than a game. A community where <span style="background: linear-gradient(transparent 56%, {{accent}} 56%, {{accent}} 94%, transparent 94%); padding: 0 0.06em">everyone</span> gets to play.</p>
 <div aria-hidden="true" style="width: 64px; height: 8px; margin: clamp(18px, 2.6vw, 26px) 0; background: repeating-linear-gradient(90deg, {{accent}} 0 8px, #0E0E0E 8px 16px)"></div>
-<p style="margin: 0 0 12px; max-width: 36em; font-size: 17px; line-height: 1.6; color: #3F3D39">Since 2021, Loughborough Lions AFC has given local children a friendly, inclusive place to enjoy football, whatever their age or ability. Our qualified coaches keep it fun, with <strong style="color: #0E0E0E">Play, Develop, Succeed</strong> at the heart of everything we do.</p>
-<p style="margin: 0 0 12px; max-width: 36em; font-size: 17px; line-height: 1.6; color: #3F3D39">From the Mini Academy upwards, our players grow, compete and make friends for life, backed by local partners, volunteers and family events that make the club a real hub for football lovers.</p>
+<p style="margin: 0 0 12px; max-width: 34em; font-size: 17px; line-height: 1.6; color: #3F3D39">Since 2021, Loughborough Lions AFC has given local children a friendly, inclusive place to enjoy football, whatever their age or ability. Our qualified coaches keep it fun, with <strong style="color: #0E0E0E">Play, Develop, Succeed</strong> at the heart of everything we do.</p>
+<p style="margin: 0 0 12px; max-width: 34em; font-size: 17px; line-height: 1.6; color: #3F3D39">From the Mini Academy upwards, our players grow, compete and make friends for life, backed by local partners, volunteers and family events that make the club a real hub for football lovers.</p>
 <p style="margin: 0; font-size: 17px; line-height: 1.5; font-weight: 700; color: #0E0E0E">Player, coach or supporter, you’ll find passion, pride and purpose at the Lions.</p>
-<div style="display: flex; align-items: center; gap: 12px; margin-top: clamp(20px, 2.6vw, 26px); padding-top: 18px; border-top: 1px solid #E7E5DF">
+<div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: clamp(20px, 2.6vw, 26px); padding-top: 18px; border-top: 1px solid #E7E5DF; align-self: stretch">
 <img loading="lazy" decoding="async" src="{{$crest}}" alt="" style="width: 38px; height: auto; aspect-ratio: 128 / 139">
-<span style="display: flex; flex-direction: column; line-height: 1.25"><strong style="font-size: 15px; color: #0E0E0E">Loughborough Lions AFC</strong><span style="font-size: 13.5px; color: #6B6862">Est. 2021 · Charnwood College, Loughborough</span></span>
+<span style="display: flex; flex-direction: column; line-height: 1.25; text-align: left"><strong style="font-size: 15px; color: #0E0E0E">Loughborough Lions AFC</strong><span style="font-size: 13.5px; color: #6B6862">Est. 2021 · Charnwood College, Loughborough</span></span>
 </div>
 </article>
 </div>
@@ -365,7 +365,29 @@ button{font:inherit}
 <button type="button" onClick="{{ f.pick }}" aria-pressed="{{ f.pressed }}" style="flex: none; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid {{f.bd}}; background: {{f.bg}}; color: {{f.fg}}; cursor: pointer; font-weight: 700; font-size: 15px; white-space: nowrap">{{f.label}}</button>
 </sc-for>
 </div>
-<div style="display: flex; flex-wrap: wrap; flex-direction: row-reverse; align-items: flex-start; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px">
+
+
+<!-- Team cards, grouped by age -->
+<div class="rv-group" style="flex: 999 1 560px; min-width: 0; columns: 3 230px; column-gap: 12px">
+<sc-for list="{{groups}}" as="gp" hint-placeholder-count="9">
+<section style="break-inside: avoid; margin: 0 0 12px; border-radius: 20px; background: #F3F2EE; padding: 14px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 2px 4px 4px">
+<h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: 20px; line-height: 1; letter-spacing: -0.01em; text-transform: uppercase">{{gp.label}}</h2>
+<span style="font-size: 13px; font-weight: 600; color: #6B6862; white-space: nowrap">{{gp.countLabel}}</span>
+</div>
+<sc-for list="{{gp.cards}}" as="c" hint-placeholder-count="2">
+<button type="button" class="ll-team" onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" aria-label="{{c.name}}" style="display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 8px 12px; border-radius: 12px; border: 2px solid {{c.bd}}; background: {{c.rowbg}}; color: #0E0E0E; text-align: left; cursor: pointer; box-sizing: border-box; width: 100%">
+<span aria-hidden="true" style="flex: none; width: 22px; height: 22px; border-radius: 50%; background: repeating-linear-gradient(90deg, {{c.colour}} 0 5px, #0E0E0E 5px 10px); box-shadow: inset 0 0 0 1.5px #0E0E0E"></span>
+<span style="flex: 1; font-weight: 800; font-size: 16px; line-height: 1.2">{{c.short}}</span>
+<sc-if value="{{c.isRecruiting}}" hint-placeholder-val="{{ false }}">
+<span style="flex: none; padding: 2px 8px; border-radius: 999px; background: #0E0E0E; color: {{accent}}; font-size: 11px; font-weight: 700; text-transform: uppercase">{{c.tag}}</span>
+</sc-if>
+</button>
+</sc-for>
+</section>
+</sc-for>
+</div>
 
 <!-- Selected team -->
 <article id="team-panel" aria-live="polite" style="flex: 1 1 420px; min-width: 0; border-radius: 24px; background: #F3F2EE; overflow: hidden; scroll-margin-top: 16px">
@@ -422,30 +444,6 @@ button{font:inherit}
 <a data-go="club" role="link" tabindex="0" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: #0E0E0E; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 15px">{{sel.cta}}</a>
 </div>
 </article>
-
-<!-- Team cards, grouped by age -->
-<div class="rv-group" style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
-<sc-for list="{{groups}}" as="gp" hint-placeholder-count="9">
-<div style="display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; align-items: center; gap: 12px">
-<h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: 24px; line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; white-space: nowrap">{{gp.label}}</h2>
-<span aria-hidden="true" style="flex: 1; height: 3px; background: repeating-linear-gradient(90deg, #0E0E0E 0 10px, transparent 10px 16px)"></span>
-<span style="font-size: 13px; font-weight: 700; color: #5C5A55; white-space: nowrap">{{gp.countLabel}}</span>
-</div>
-<div class="ll-teamgrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr)); gap: 10px">
-<sc-for list="{{gp.cards}}" as="c" hint-placeholder-count="2">
-<button type="button" class="ll-team" onClick="{{ c.pick }}" aria-pressed="{{ c.on }}" aria-label="{{c.name}}" style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-height: 92px; padding: 14px 16px; border-radius: 18px; border: 2px solid {{c.bd}}; background: {{c.bg}}; color: #0E0E0E; text-align: left; cursor: pointer; box-sizing: border-box">
-<span aria-hidden="true" style="width: 34px; height: 8px; border-radius: 4px; background: repeating-linear-gradient(90deg, {{c.colour}} 0 6px, #0E0E0E 6px 12px)"></span>
-<span class="ll-tname" style="font-weight: 900; font-stretch: 125%; font-size: 22px; line-height: 1; letter-spacing: -0.02em; text-transform: uppercase">{{c.short}}</span>
-<sc-if value="{{c.isRecruiting}}" hint-placeholder-val="{{ false }}">
-<span style="margin-top: auto; padding: 2px 9px; border-radius: 999px; background: #0E0E0E; color: {{accent}}; font-size: 12px; font-weight: 700; text-transform: uppercase">{{c.tag}}</span>
-</sc-if>
-</button>
-</sc-for>
-</div>
-</div>
-</sc-for>
-</div>
 
 </div>
 </div>
@@ -1106,7 +1104,7 @@ PAGES['teams'] = class extends DCLogic {
     const cards = shown.map((t) => {
       const on = t.id === selId;
       return { name: t.name, colour: t.colour, tag: t.tag || '', isRecruiting: t.recruiting === true,
-        on: on ? 'true' : 'false', bg: on ? accent : '#F3F2EE', bd: on ? '#0E0E0E' : 'transparent',
+        on: on ? 'true' : 'false', bg: on ? accent : '#F3F2EE', rowbg: on ? accent : '#FFFFFF', bd: on ? '#0E0E0E' : 'transparent',
         pick: () => { this.jump = true; this.setState({ selected: t.id }); } };
     });
     const ageOf = (t) => t.id === 'mini' ? 'Mini Academy' : (t.name.match(/^U\d+/) || [t.name])[0];
