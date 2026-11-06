@@ -95,9 +95,38 @@ jobs:
         if: failure()
         run: tail -40 api.log || true
 
+  # Reads every U12/U13 cup (fixtures and results) from FullTime into cups.json.
+  # Separate job so a problem here can never stop the league data updating.
+  cups:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1.49.1 2>&1 | tail -2
+          npx playwright install --with-deps chromium 2>&1 | tail -2
+      - name: Read the cups
+        run: node scripts/fetch_cups.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cups
+          path: cups.json
+          retention-days: 1
+
   # Saves data.json into the repo. Runs none of the downloaded code.
   save:
-    needs: fetch
+    needs: [fetch, cups]
+    if: ${{ always() && needs.fetch.result == 'success' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -111,13 +140,20 @@ jobs:
         with:
           name: data
           path: new
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: cups
+          path: newcups
       - name: Commit data.json
         run: |
           cp data.json /tmp/old.json
           cp new/data.json data.json
+          # Cups are optional: only take the file if it parses as JSON with a cups list.
+          if [ -f newcups/cups.json ] && php -r 'exit(is_array(json_decode(file_get_contents("newcups/cups.json"),true)["cups"]??null)?0:1);'; then cp newcups/cups.json cups.json; fi
           git config user.name "data-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data.json
+          git add data.json cups.json
           if ! git diff --staged --quiet; then
             git commit -m "Update data"
             git pull --rebase origin main
