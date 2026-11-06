@@ -58,8 +58,17 @@ const mk = () => browser.newContext({ userAgent: ua, locale: 'en-GB', timezoneId
 const shared = await mk();
 const pf = await load(shared, 'fixtures', '.fixtures-table');
 const F = pf ? await pf.evaluate(extract) : null;
-const pr = await load(shared, 'results', '.datetime-col');
-const R = pr ? await pr.evaluate(extract) : null;
+// Results: fetch from inside the already-cleared fixtures tab (same session, same site).
+let R = null;
+if (pf) {
+  const html = await pf.evaluate(async u => { const r = await fetch(u); return r.status === 200 ? r.text() : 'STATUS ' + r.status; }, url('results'));
+  console.log('results via fetch:', html.length > 200 ? html.length + ' chars' : html);
+  if (html.length > 200) {
+    const pr = await shared.newPage();
+    await pr.setContent(html, { waitUntil: 'domcontentloaded' });
+    R = await pr.evaluate(extract);
+  }
+}
 await browser.close();
 if (!F || !R) { console.log('Could not load Full-Time pages - cups.json left unchanged'); process.exit(0); }
 console.log(`cup fixtures ${F.fixtures.length}, cup results ${R.results.length}`);
