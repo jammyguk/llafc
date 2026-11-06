@@ -25,27 +25,40 @@ const extract = () => {
   return { fixtures, results, rows: document.querySelectorAll('tr').length };
 };
 
-async function load(page, p, ready) {
+// Same recipe the data tool uses to get past Full-Time's Cloudflare check:
+// real Chromium in "new" headless mode, open the page (403), accept the cookie banner on the
+// home page in a separate tab, then RELOAD the first tab.
+async function load(ctx, p, ready) {
+  const page = await ctx.newPage();
+  await page.addInitScript("Object.defineProperty(navigator, 'webdriver', { get: () => undefined });");
+  await page.route('**/*', r => ['image', 'stylesheet', 'font', 'media'].includes(r.request().resourceType()) ? r.abort() : r.continue());
   for (let i = 0; i < 3; i++) {
-    const resp = await page.goto(url(p), { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(e => { console.log('goto error', String(e).slice(0, 120)); return null; });
-    for (let k = 0; k < 30 && /just a moment/i.test(await page.title()); k++) await page.waitForTimeout(2000);
-    console.log(`try ${i} ${p}: status ${resp && resp.status()} title "${await page.title()}" tables ${await page.locator('table').count()}`);
-    const btn = page.locator('#onetrust-accept-btn-handler');
-    if (await btn.count()) { console.log('accepting cookies'); await btn.first().click().catch(() => {}); await page.reload({ waitUntil: 'domcontentloaded' }).catch(() => {}); }
-    if (await page.locator(ready).count().catch(() => 0)) return true;
-    console.log((await page.content()).replace(/\s+/g, ' ').slice(0, 300));
+    let resp = await page.goto(url(p), { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(e => { console.log('goto error', String(e).slice(0, 120)); return null; });
+    console.log(`try ${i} ${p}: status ${resp && resp.status()}`);
+    if (resp && resp.status() === 403) {
+      const apex = await ctx.newPage();
+      try {
+        await apex.goto('https://fulltime.thefa.com', { waitUntil: 'networkidle', timeout: 30000 });
+        await apex.locator('#onetrust-accept-btn-handler').click({ timeout: 8000 });
+        console.log('accepted cookies');
+      } catch (e) { console.log('cookie step failed', String(e).slice(0, 120)); }
+      await apex.close();
+      resp = await page.reload({ waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => null);
+      console.log(`after reload: status ${resp && resp.status()}`);
+    }
+    if (await page.locator(ready).count().catch(() => 0)) return page;
     await page.waitForTimeout(3000);
   }
-  return false;
+  return null;
 }
 
-const browser = await chromium.launch({ args: ['--disable-blink-features=AutomationControlled'] });
-const ctx = await browser.newContext({ userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36' });
-const page = await ctx.newPage();
-const okF = await load(page, 'fixtures', '.fixtures-table');
-const F = okF ? await page.evaluate(extract) : null;
-const okR = await load(page, 'results', '.datetime-col');
-const R = okR ? await page.evaluate(extract) : null;
+const browser = await chromium.launch({ channel: 'chromium', args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled'] });
+const ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+const mk = () => browser.newContext({ userAgent: ua, locale: 'en-GB', timezoneId: 'Europe/London', viewport: { width: 1920, height: 1080 } });
+const pf = await load(await mk(), 'fixtures', '.fixtures-table');
+const F = pf ? await pf.evaluate(extract) : null;
+const pr = await load(await mk(), 'results', '.datetime-col');
+const R = pr ? await pr.evaluate(extract) : null;
 await browser.close();
 if (!F || !R) { console.log('Could not load Full-Time pages - cups.json left unchanged'); process.exit(0); }
 console.log(`cup fixtures ${F.fixtures.length}, cup results ${R.results.length}`);
