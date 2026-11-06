@@ -562,16 +562,28 @@ button{font:inherit}
 
 <!-- Documents + complaints -->
 <section style="padding: 0 20px 64px">
-<div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 12px">
+<div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 12px; align-items: start">
 <div id="documents" class="rv" style="border-radius: 24px; background: #F3F2EE; padding: 22px; display: flex; flex-direction: column; gap: 6px">
 <h2 style="margin: 0 0 8px; font-weight: 900; font-stretch: 125%; font-size: 26px; line-height: 1; text-transform: uppercase">Club documents</h2>
 <sc-for list="{{docs}}" as="d" hint-placeholder-count="4">
 <a href="{{d.url}}" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 0 14px; border-radius: 14px; background: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 16px">{{d.title}}<span aria-hidden="true">↗</span></a>
 </sc-for>
 </div>
-<div id="complaints" class="rv" style="border-radius: 24px; background: #F3F2EE; padding: 22px; display: flex; flex-direction: column; gap: 10px">
-<h2 style="margin: 0 0 4px; font-weight: 900; font-stretch: 125%; font-size: 26px; line-height: 1; text-transform: uppercase">Raising a concern</h2>
-<p style="margin: 0; font-size: 16px; color: #3F3D39">Speak to us by email, phone or in person and we’ll explain the next step under our club policies. Safeguarding or welfare concerns go straight to Hannah Burton, our Club Welfare Officer.</p>
+<div id="complaints" class="rv" style="border-radius: 24px; background: #F3F2EE; padding: 22px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: 26px; line-height: 1; text-transform: uppercase">Complaints procedure</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.4; font-weight: 700; color: #0E0E0E">We want the Lions to be the best club it can be for everyone involved, and that starts with listening.</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3F3D39">If something isn’t right, or there’s an issue you’d like to raise, please get in touch. Email us, give us a call or speak to us in person, and we’ll explain the next steps in line with our club policies. As an open and transparent club, we’re committed to making every member’s experience a positive one.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="mailto:enquiriesloughboroughlionsafc@outlook.com" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; font-size: 14.5px; font-weight: 700; text-decoration: none; background: #0E0E0E; color: #FFFFFF">Email us</a>
+<a href="tel:+447306219207" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; font-size: 14.5px; font-weight: 700; text-decoration: none; background: {{accent}}; color: #0E0E0E">Call 07306 219207</a>
+<span style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; font-size: 14.5px; font-weight: 700; text-decoration: none; background: #FFFFFF; color: #0E0E0E">Or speak to us at the Lions Den</span>
+</div>
+<div style="position: relative; overflow: hidden; margin-top: 4px; border-radius: 18px; background: #0E0E0E; color: #FFFFFF; padding: 18px 18px 18px 28px; display: flex; flex-direction: column; gap: 6px">
+<span aria-hidden="true" style="position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: repeating-linear-gradient(180deg, {{accent}} 0 10px, #0E0E0E 10px 18px)"></span>
+<strong style="font-weight: 900; font-stretch: 125%; font-size: 17px; text-transform: uppercase; color: {{accent}}">Safeguarding or welfare?</strong>
+<span style="font-size: 15px; line-height: 1.55; color: #D9D6CF">Please contact our Club Welfare Officer, Hannah Burton, on <a href="tel:+447730886462" style="color: #FFFFFF; font-weight: 700">07730 886462</a> or at <a href="mailto:welfareloughboroughlionsafc@outlook.com" style="color: #FFFFFF; font-weight: 700; overflow-wrap: anywhere">welfareloughboroughlionsafc@outlook.com</a>.</span>
+<a data-go="safeguarding" role="link" tabindex="0" style="align-self: flex-start; margin-top: 2px; color: {{accent}}; font-size: 14.5px; font-weight: 700">All safeguarding contacts →</a>
+</div>
 </div>
 </div>
 </section>
