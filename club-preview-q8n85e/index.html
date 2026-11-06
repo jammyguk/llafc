@@ -469,22 +469,31 @@ button{font:inherit}
 
 <!-- Stories -->
 <section style="padding: 0 20px 64px">
-<div class="rv-group" style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: 12px">
-<article style="position: relative; border-radius: 24px; background: {{accent}}; overflow: hidden; display: flex; flex-direction: column">
-<span data-stripe="0.2" aria-hidden="true" style="display: block; height: 56px; background: repeating-linear-gradient(90deg, #0E0E0E 0 18px, transparent 18px 40px)"></span>
-<div style="padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1">
-<span style="align-self: flex-start; padding: 3px 10px; border-radius: 999px; background: #0E0E0E; color: {{accent}}; font-size: 12px; font-weight: 700; text-transform: uppercase">New</span>
-<h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: 30px; line-height: 0.98; letter-spacing: -0.02em; text-transform: uppercase">Lions Social Sessions</h2>
-<p style="margin: 0; font-size: 16px; font-weight: 500">Relaxed football for fitness, wellbeing and friendship. All abilities welcome.</p>
+<div class="rv-group" style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px">
+<article id="social" style="position: relative; border-radius: 24px; background: {{accent}}; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); align-items: center">
+<div style="position: relative; margin: 12px; aspect-ratio: 4 / 3; border-radius: 18px; border: 2px dashed #0E0E0E; background: repeating-linear-gradient(135deg, rgba(14,14,14,0.07) 0 12px, transparent 12px 24px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; color: #0E0E0E">
+<svg aria-hidden="true" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0E0E0E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"></path></svg>
+<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase">Photo · Coach Tanya</span>
+</div>
+<div style="padding: 8px clamp(22px, 3.4vw, 44px) clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span style="padding: 3px 10px; border-radius: 999px; background: #0E0E0E; color: {{accent}}; font-size: 12px; font-weight: 700; text-transform: uppercase">New</span>
+<span style="padding: 3px 10px; border-radius: 999px; background: #FFFFFF; color: #0E0E0E; font-size: 12px; font-weight: 700; text-transform: uppercase">Women’s football</span>
+</div>
+<h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: clamp(30px, 3.4vw, 44px); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase">Women’s Social Sessions</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; font-weight: 500">Relaxed football for women of every ability. Get active, look after your wellbeing and make new friends.</p>
+<p style="margin: 0; font-size: 15px; line-height: 1.5">Run by <strong>Tanya Weston Hodges</strong>, our first female coach.</p>
 <span style="padding: 8px 12px; border: 1px dashed #0E0E0E; font-size: 14px; font-weight: 600">[Add day, time, venue and price]</span>
-<a href="tel:+447901814777" style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 999px; background: #0E0E0E; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 15px">Call Tanya · 07901 814777</a>
+<a href="tel:+447901814777" style="margin-top: 6px; align-self: flex-start; display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 999px; background: #0E0E0E; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 15px">Call Tanya · 07901 814777</a>
 </div>
 </article>
 
-<article style="border-radius: 24px; background: #0E0E0E; color: #FFFFFF; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<article style="border-radius: 24px; background: #0E0E0E; color: #FFFFFF; padding: clamp(22px, 3vw, 32px) clamp(22px, 3.4vw, 44px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 8px">
 <h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: 30px; line-height: 0.98; letter-spacing: -0.02em; text-transform: uppercase">Volunteer with us</h2>
 <p style="margin: 0; font-size: 16px; color: #CFCDC7">Every coach and helper at the Lions is a volunteer. Got a few hours? Get in touch.</p>
-<div style="margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; padding-top: 8px">
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
 <a data-go="club" role="link" tabindex="0" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: {{accent}}; color: #0E0E0E; text-decoration: none; font-weight: 700; font-size: 15px">Get involved</a>
 <a href="https://m.facebook.com/loughboroughlionsAFC/" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px">Facebook</a>
 <a href="https://instagram.com/loughboroughlionsafc" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px">Instagram</a>
@@ -542,7 +551,7 @@ button{font:inherit}
 <label for="ll-topic" style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase">About</label>
 <select id="ll-topic" name="topic" style="min-height: 50px; padding: 0 12px; border-radius: 12px; border: 1px solid #D6D3CB; background: #FFFFFF; color: #0E0E0E; box-sizing: border-box">
 <option>Joining a team</option>
-<option>Lions Social Sessions</option>
+<option>Women’s Social Sessions</option>
 <option>Volunteering or coaching</option>
 <option>Sponsorship</option>
 <option>Something else</option>
