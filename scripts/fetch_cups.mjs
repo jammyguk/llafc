@@ -55,9 +55,10 @@ async function load(ctx, p, ready) {
 const browser = await chromium.launch({ channel: 'chromium', args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled'] });
 const ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
 const mk = () => browser.newContext({ userAgent: ua, locale: 'en-GB', timezoneId: 'Europe/London', viewport: { width: 1920, height: 1080 } });
-const pf = await load(await mk(), 'fixtures', '.fixtures-table');
+const shared = await mk();
+const pf = await load(shared, 'fixtures', '.fixtures-table');
 const F = pf ? await pf.evaluate(extract) : null;
-const pr = await load(await mk(), 'results', '.datetime-col');
+const pr = await load(shared, 'results', '.datetime-col');
 const R = pr ? await pr.evaluate(extract) : null;
 await browser.close();
 if (!F || !R) { console.log('Could not load Full-Time pages - cups.json left unchanged'); process.exit(0); }
