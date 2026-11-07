@@ -2133,12 +2133,6 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Glen Villa Juniors U12 Panthers",
-     "away": "Karma Leicester F.C. U12",
-     "venue": "Great Glen Recreation Ground LE8 9FA"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Hinckley Town Juniors U12 Warriors",
      "away": "Community Football Academy U12",
      "venue": "CLARENDON PARK"
@@ -2184,6 +2178,12 @@
      "home": "Wigston Willow U12 Pumas",
      "away": "Harborough Town Juniors U12 2012",
      "venue": "WIGSTON ACADEMY"
+    },
+    {
+     "date": "15/11/26 12:30",
+     "home": "Glen Villa Juniors U12 Panthers",
+     "away": "Karma Leicester F.C. U12",
+     "venue": "Great Glen Recreation Ground LE8 9FA"
     }
    ],
    "results": []
