@@ -1,5 +1,5 @@
 {
- "updated": "6 NOV 26",
+ "updated": "7 NOV 26",
  "cups": [
   {
    "name": "Soar Valley Press Sunday Youth U12 County Cup",
@@ -102,6 +102,572 @@
     }
    ],
    "results": [
+    {
+     "date": "13/09/26",
+     "home": "Cosby United Youth & Junior U12 Sharks",
+     "away": "Quorn U12 Wildcats",
+     "hs": 13,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Iannis FC U12 Reds",
+     "away": "North Kilworth Junior & Youth U12 Tigers",
+     "hs": 2,
+     "as": 6
+    },
+    {
+     "date": "13/09/26",
+     "home": "Thurlaston Magpies Junior U12 Raptors",
+     "away": "Dunton & Broughton United Jnrs U12 Jagua",
+     "hs": 12,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "AFC Barwell U12 Raptors",
+     "away": "Oadby Owls U12 Falcons",
+     "hs": 12,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Anstey Nomads U12 22's",
+     "away": "Narborough Foxes U12",
+     "hs": 7,
+     "as": 4
+    },
+    {
+     "date": "13/09/26",
+     "home": "Anstey Nomads U12 Reds",
+     "away": "Harborough Town Juniors U12 2016",
+     "hs": 4,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Borough Alliance Junior U12 Pumas",
+     "away": "Stoke Golding U12 Dragons",
+     "hs": 5,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "Community Football Academy U12 Shubaan",
+     "away": "Borough Alliance Junior U12 Wolves",
+     "hs": 4,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "Croft Juniors 2013 U12 Cobalts",
+     "away": "Castle Donington U12 Tigers",
+     "hs": 1,
+     "as": 10
+    },
+    {
+     "date": "13/09/26",
+     "home": "Croft Juniors 2013 U12 Diamonds",
+     "away": "Loughborough Lions AFC U12 Golds",
+     "hs": 2,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Leicester Nirvana Juniors U12 Greens",
+     "away": "Loughborough Dynamo Junior U12 Blues",
+     "hs": 12,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Melton Foxes FC U12 Foxes",
+     "away": "Leicester United Football Club U12 Reds",
+     "hs": 1,
+     "as": 5
+    },
+    {
+     "date": "13/09/26",
+     "home": "Royce Rangers U12 Rhinos",
+     "away": "Sileby Juniors U12 Stingrays",
+     "hs": 4,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Saffron Dynamo U12 Phoenix",
+     "away": "AFC Barwell U12 Dragons",
+     "hs": 6,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Thompsons United U12 Blazes",
+     "away": "Hinckley RFC U12 Tigers",
+     "hs": 2,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "Thurlaston Magpies Junior U12 Falcons",
+     "away": "Melton Foxes FC U12 Lions",
+     "hs": 1,
+     "as": 4
+    },
+    {
+     "date": "13/09/26",
+     "home": "Whetstone Athletic U12 Tigers",
+     "away": "Oadby Owls U12 Eagles",
+     "hs": 1,
+     "as": 2
+    },
+    {
+     "date": "13/09/26",
+     "home": "Castle Donington U12 Lions",
+     "away": "Thurmaston Magpies Junior U12 Lightning",
+     "hs": 4,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "AFC Andrews U12 Foxes",
+     "away": "Fleckney Athletic Junior U12 Foxes",
+     "hs": 1,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "AFC Market Bosworth Juniors U12 Wolves",
+     "away": "FC Burbage U12 Jaguars",
+     "hs": 5,
+     "as": 2
+    },
+    {
+     "date": "13/09/26",
+     "home": "Anstey Nomads U12 Swifts",
+     "away": "Coalville Town Ravens U12 Rooks",
+     "hs": 6,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Asfordby U12 Foxes",
+     "away": "Coalville Town Ravens U12 Ruffs",
+     "hs": 2,
+     "as": 5
+    },
+    {
+     "date": "13/09/26",
+     "home": "Beaumont Park U12 Tigers",
+     "away": "Lutterworth Athletic Youth U12 Thunder",
+     "hs": 2,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "Beaumont Town 2012 U12 Pumas",
+     "away": "Hinckley Borough FC U12 Boys",
+     "hs": 3,
+     "as": 6
+    },
+    {
+     "date": "13/09/26",
+     "home": "Castle Donington U12 Panthers",
+     "away": "Allexton & New Parks Junior U12 Hawks",
+     "hs": 1,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "Coalville Town Ravens U12 Robins",
+     "away": "Loughborough Lions AFC U12 Yellows",
+     "hs": 1,
+     "as": 5
+    },
+    {
+     "date": "13/09/26",
+     "home": "Community Football Academy U12",
+     "away": "Loughborough Dynamo Junior U12 Golds",
+     "hs": 5,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Croft Juniors 2013 U12 Royals",
+     "away": "Hinckley Town Juniors U12 Warriors",
+     "hs": 0,
+     "as": 11
+    },
+    {
+     "date": "13/09/26",
+     "home": "Glen Villa Juniors U12 Panthers",
+     "away": "Kirby Muxloe U12 Knights",
+     "hs": 11,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "Highfield Rangers J&Y U12 Tigers",
+     "away": "Mountsorrel Juniors U12 Tigers",
+     "hs": 3,
+     "as": 2
+    },
+    {
+     "date": "13/09/26",
+     "home": "Hinckley Town Juniors U12 Dragons",
+     "away": "Shepshed Dynamo Youth & Junior U12 Viper",
+     "hs": 2,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Ibstock United Juniors U12 Tigers",
+     "away": "Ibstock United Juniors U12 Lions",
+     "hs": 7,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Karma Leicester F.C. U12",
+     "away": "Hinckley RFC U12 Hornets",
+     "hs": 1,
+     "as": 1,
+     "pens": [
+      4,
+      2
+     ]
+    },
+    {
+     "date": "13/09/26",
+     "home": "Kibworth Town U12 Falcons",
+     "away": "AFC Andrews U12 Ants",
+     "hs": 3,
+     "as": 8
+    },
+    {
+     "date": "13/09/26",
+     "home": "Leicester St Andrews Junior U12 Corinthi",
+     "away": "Glenfield United FC U12 Foxes",
+     "hs": 8,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Loughborough Lions AFC U12 Bronzes",
+     "away": "Sileby Juniors U12 Sparrow Hawks",
+     "hs": 4,
+     "as": 2
+    },
+    {
+     "date": "13/09/26",
+     "home": "Loughborough Lions AFC U12 Silvers",
+     "away": "Loughborough Dynamo Junior U12 Ambers",
+     "hs": 0,
+     "as": 13
+    },
+    {
+     "date": "13/09/26",
+     "home": "Lutterworth Town Juniors U12 AFC",
+     "away": "Birstall United U12 Lions",
+     "hs": 2,
+     "as": 10
+    },
+    {
+     "date": "13/09/26",
+     "home": "Market Bosworth Town Juniors U12",
+     "away": "Barrow Town U12 Eagles",
+     "hs": 2,
+     "as": 11
+    },
+    {
+     "date": "13/09/26",
+     "home": "Oadby Owls U12 Tawnys",
+     "away": "Anstey Nomads U12 47's",
+     "hs": 3,
+     "as": 3,
+     "pens": [
+      6,
+      7
+     ]
+    },
+    {
+     "date": "13/09/26",
+     "home": "Queniborough Athletic Juniors FC U12",
+     "away": "Shepshed Dynamo Youth & Junior U12 Cobra",
+     "hs": 11,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Quorn U12 Panthers",
+     "away": "Groby Juniors U12 Spartans",
+     "hs": 3,
+     "as": 4
+    },
+    {
+     "date": "13/09/26",
+     "home": "Riverside United Junior U12 Seahawks",
+     "away": "Hathern Juniors U12 Falcons",
+     "hs": 3,
+     "as": 3,
+     "pens": [
+      4,
+      2
+     ]
+    },
+    {
+     "date": "13/09/26",
+     "home": "Rothley Imps Junior U12 Renegades",
+     "away": "Aylestone Park Youth U12 94",
+     "hs": 1,
+     "as": 4
+    },
+    {
+     "date": "13/09/26",
+     "home": "Royce Rangers U12 Raiders",
+     "away": "Mowbray Rangers U12 Jaguars",
+     "hs": 6,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Sporting Markfield U12 Foxes",
+     "away": "Stoneygate Lions U12 Blues",
+     "hs": 1,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "Stoke Golding U12 Swords",
+     "away": "Glen Villa Juniors U12 Jaguars",
+     "hs": 11,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Thurmaston Magpies Junior U12 Storm",
+     "away": "Coalville Town Ravens U12 Redwings",
+     "hs": 0,
+     "as": 7
+    },
+    {
+     "date": "13/09/26",
+     "home": "Wigston Willow U12 Pumas",
+     "away": "Birstall United U12 Bears",
+     "hs": 1,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Cosby United Youth & Junior U12 Sharks",
+     "away": "Melton Foxes FC U12 Lions",
+     "hs": 4,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Thurlaston Magpies Junior U12 Raptors",
+     "away": "Sileby Juniors U12 Snow Leopards",
+     "hs": 0,
+     "as": 0,
+     "pens": [
+      5,
+      6
+     ]
+    },
+    {
+     "date": "04/10/26",
+     "home": "AFC Barwell U12 Raptors",
+     "away": "Kegworth Imps U12",
+     "hs": 0,
+     "as": 6
+    },
+    {
+     "date": "04/10/26",
+     "home": "Allexton & New Parks Junior U12 Hawks",
+     "away": "Stoke Golding U12 Swords",
+     "hs": 3,
+     "as": 1
+    },
+    {
+     "date": "04/10/26",
+     "home": "Anstey Nomads U12 22's",
+     "away": "Barrow Town U12 Eagles",
+     "hs": 0,
+     "as": 11
+    },
+    {
+     "date": "04/10/26",
+     "home": "Coalville Town Ravens U12 Redwings",
+     "away": "North Kilworth Junior & Youth U12 Tigers",
+     "hs": 1,
+     "as": 4
+    },
+    {
+     "date": "04/10/26",
+     "home": "Harborough Town Juniors U12 2012",
+     "away": "Community Football Academy U12 Shubaan",
+     "hs": 11,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Leicester Nirvana Juniors U12 Greens",
+     "away": "Anstey Nomads U12 47's",
+     "hs": 4,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Leicester United Football Club U12 Reds",
+     "away": "Anstey Nomads U12 24's",
+     "hs": 0,
+     "as": 4
+    },
+    {
+     "date": "04/10/26",
+     "home": "Oadby Owls U12 Eagles",
+     "away": "Dunton & Broughton United Jnrs U12 Tiger",
+     "hs": 2,
+     "as": 0
+    },
+    {
+     "date": "04/10/26",
+     "home": "Royce Rangers U12 Rhinos",
+     "away": "Coalville Town Ravens U12 Ruffs",
+     "hs": 1,
+     "as": 9
+    },
+    {
+     "date": "04/10/26",
+     "home": "Saffron Dynamo U12 Phoenix",
+     "away": "Coalville Town Ravens U12 Ravens",
+     "hs": 2,
+     "as": 0
+    },
+    {
+     "date": "04/10/26",
+     "home": "AFC Market Bosworth Juniors U12 Wolves",
+     "away": "Anstey Nomads U12 Swifts",
+     "hs": 0,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Birstall United U12 Bears",
+     "away": "Riverside United Junior U12 Seahawks",
+     "hs": 10,
+     "as": 0
+    },
+    {
+     "date": "04/10/26",
+     "home": "Fleckney Athletic Junior U12 Foxes",
+     "away": "Castle Donington U12 Lions",
+     "hs": 0,
+     "as": 9
+    },
+    {
+     "date": "04/10/26",
+     "home": "Groby Juniors U12 Gladiators",
+     "away": "Anstey Nomads U12 Reds",
+     "hs": 2,
+     "as": 17
+    },
+    {
+     "date": "04/10/26",
+     "home": "Groby Juniors U12 Spartans",
+     "away": "Aylestone Park Youth U12 94",
+     "hs": 5,
+     "as": 1
+    },
+    {
+     "date": "04/10/26",
+     "home": "Highfield Rangers J&Y U12 Tigers",
+     "away": "Uppingham Town U12",
+     "hs": 1,
+     "as": 1,
+     "pens": [
+      1,
+      3
+     ]
+    },
+    {
+     "date": "04/10/26",
+     "home": "Hinckley Town Juniors U12 Dragons",
+     "away": "Ingles U12 Reds",
+     "hs": 0,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Hinckley Town Juniors U12 Warriors",
+     "away": "Birstall United U12 Lions",
+     "hs": 4,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Houghton Rangers Junior U12 Foxes",
+     "away": "Loughborough Dynamo Junior U12 Ambers",
+     "hs": 3,
+     "as": 2
+    },
+    {
+     "date": "04/10/26",
+     "home": "Ibstock United Juniors U12 Tigers",
+     "away": "AFC Andrews U12 Ants",
+     "hs": 3,
+     "as": 5
+    },
+    {
+     "date": "04/10/26",
+     "home": "Kirby Muxloe U12 88's",
+     "away": "Borough Alliance Junior U12 Pumas",
+     "hs": 11,
+     "as": 1
+    },
+    {
+     "date": "04/10/26",
+     "home": "Leicester St Andrews Junior U12 Corinthi",
+     "away": "Bottesford U12 White",
+     "hs": 1,
+     "as": 11
+    },
+    {
+     "date": "04/10/26",
+     "home": "Loughborough Lions AFC U12 Bronzes",
+     "away": "Hinckley Borough FC U12 Boys",
+     "hs": 5,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Loughborough Lions AFC U12 Yellows",
+     "away": "Whetstone Athletic U12 Panthers",
+     "hs": 4,
+     "as": 11
+    },
+    {
+     "date": "04/10/26",
+     "home": "Lutterworth Athletic Youth U12 Thunder",
+     "away": "Hinckley RFC U12 Tigers",
+     "hs": 0,
+     "as": 13
+    },
+    {
+     "date": "04/10/26",
+     "home": "Queniborough Athletic Juniors FC U12",
+     "away": "Glen Villa Juniors U12 Panthers",
+     "hs": 0,
+     "as": 5
+    },
+    {
+     "date": "04/10/26",
+     "home": "Stoneygate Lions U12 Blues",
+     "away": "Castle Donington U12 Tigers",
+     "hs": 9,
+     "as": 0
+    },
     {
      "date": "01/11/26",
      "home": "Beaumont Park U12 Jaguars",
@@ -221,7 +787,7 @@
     {
      "date": "01/11/26",
      "home": "Groby Juniors U12 Spartans",
-     "away": "Barrow Town U11 Eagles",
+     "away": "Barrow Town U12 Eagles",
      "hs": 3,
      "as": 3,
      "pens": [
@@ -291,7 +857,7 @@
     },
     {
      "date": "01/11/26",
-     "home": "Narborough Foxes U12 Narborough Foxes re",
+     "home": "Narborough Foxes U12 Reds",
      "away": "Kegworth Imps U12",
      "hs": 3,
      "as": 4
@@ -337,94 +903,6 @@
      "away": "Whetstone Athletic U12 Panthers",
      "hs": 5,
      "as": 3
-    },
-    {
-     "date": "04/10/26",
-     "home": "Cosby United Youth & Junior U12 Sharks",
-     "away": "Melton Foxes FC U12 Lions",
-     "hs": 4,
-     "as": 3
-    },
-    {
-     "date": "04/10/26",
-     "home": "Thurlaston Magpies Junior U12 Raptors",
-     "away": "Sileby Juniors U12 Snow Leopards",
-     "hs": 0,
-     "as": 0,
-     "pens": [
-      5,
-      6
-     ]
-    },
-    {
-     "date": "04/10/26",
-     "home": "AFC Barwell U12 Raptors",
-     "away": "Kegworth Imps U12",
-     "hs": 0,
-     "as": 6
-    },
-    {
-     "date": "04/10/26",
-     "home": "Allexton & New Parks Junior U12 Hawks",
-     "away": "Stoke Golding U12 Swords",
-     "hs": 3,
-     "as": 1
-    },
-    {
-     "date": "04/10/26",
-     "home": "Anstey Nomads U12 22's",
-     "away": "Barrow Town U11 Eagles",
-     "hs": 0,
-     "as": 11
-    },
-    {
-     "date": "04/10/26",
-     "home": "Coalville Town Ravens U12 Redwings",
-     "away": "North Kilworth Junior & Youth U12 Tigers",
-     "hs": 1,
-     "as": 4
-    },
-    {
-     "date": "04/10/26",
-     "home": "Harborough Town Juniors U12 2012",
-     "away": "Community Football Academy U12 Shubaan",
-     "hs": 11,
-     "as": 3
-    },
-    {
-     "date": "04/10/26",
-     "home": "Leicester Nirvana Juniors U12 Greens",
-     "away": "Anstey Nomads U12 47's",
-     "hs": 4,
-     "as": 3
-    },
-    {
-     "date": "04/10/26",
-     "home": "Leicester United Football Club U12 Reds",
-     "away": "Anstey Nomads U12 24's",
-     "hs": 0,
-     "as": 4
-    },
-    {
-     "date": "04/10/26",
-     "home": "Oadby Owls U12 Eagles",
-     "away": "Dunton & Broughton United Juniors U12 Ti",
-     "hs": 2,
-     "as": 0
-    },
-    {
-     "date": "04/10/26",
-     "home": "Royce Rangers U12 Rhinos",
-     "away": "Coalville Town Ravens U12 Ruffs",
-     "hs": 1,
-     "as": 9
-    },
-    {
-     "date": "04/10/26",
-     "home": "Saffron Dynamo U12 Phoenix",
-     "away": "Coalville Town Ravens U12 Ravens",
-     "hs": 2,
-     "as": 0
     }
    ]
   },
@@ -474,7 +952,742 @@
      "venue": "BEAUMONT PARK"
     }
    ],
-   "results": []
+   "results": [
+    {
+     "date": "13/09/26",
+     "home": "AFC Andrews U13 Cobras",
+     "away": "Highfield Rangers J&Y U13 Jaguars",
+     "hs": 5,
+     "as": 4
+    },
+    {
+     "date": "13/09/26",
+     "home": "AFC Andrews U13 Lions",
+     "away": "Oadby Owls U13 Juniors",
+     "hs": 3,
+     "as": 9
+    },
+    {
+     "date": "13/09/26",
+     "home": "Asfordby U13 Tigers",
+     "away": "Loughborough Lions AFC U13 Silvers",
+     "hs": 10,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Coalville Town Ravens U13 Redwings",
+     "away": "Rothley Imps Junior U13 Rockets",
+     "hs": 0,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "Community Football Academy U13 Shubaan",
+     "away": "FC Burbage U13 Panthers",
+     "hs": 1,
+     "as": 1,
+     "pens": [
+      1,
+      0
+     ]
+    },
+    {
+     "date": "13/09/26",
+     "home": "Harborough Town Juniors U13 2022",
+     "away": "Glen Villa Juniors U13",
+     "hs": 4,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "Houghton Rangers Junior U13",
+     "away": "Oadby Owls U13 Hawks",
+     "hs": 0,
+     "as": 6
+    },
+    {
+     "date": "13/09/26",
+     "home": "Narborough Foxes U13 Blues",
+     "away": "Coalville Town Ravens U13 Roosters",
+     "hs": 0,
+     "as": 0,
+     "pens": [
+      1,
+      3
+     ]
+    },
+    {
+     "date": "13/09/26",
+     "home": "Narborough Foxes U13 White",
+     "away": "Oadby Owls U13 Tawnys",
+     "hs": 2,
+     "as": 7
+    },
+    {
+     "date": "13/09/26",
+     "home": "Oadby Owls U13 Greys",
+     "away": "Beaumont Town 2012 U13 Panthers",
+     "hs": 11,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "AFC Barwell U13 Rhinos",
+     "away": "Melton Foxes FC U13 Pumas",
+     "hs": 4,
+     "as": 4,
+     "pens": [
+      2,
+      4
+     ]
+    },
+    {
+     "date": "13/09/26",
+     "home": "Allexton & New Parks Junior U13 Hawks",
+     "away": "Melton Town U13",
+     "hs": 0,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "Anstey Nomads U13 Swift Boys",
+     "away": "Anstey Nomads U13 78's",
+     "hs": 0,
+     "as": 5
+    },
+    {
+     "date": "13/09/26",
+     "home": "Barrow Town U13 Falcons",
+     "away": "Royce Rangers U13 Spartans",
+     "hs": 15,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Borough Alliance Junior U13 Bears",
+     "away": "Community Football Academy U13 Kickstart",
+     "hs": 0,
+     "as": 2
+    },
+    {
+     "date": "13/09/26",
+     "home": "Coalville Town Ravens U13 Ruffs",
+     "away": "Beaumont Park U13 Lions",
+     "hs": 0,
+     "as": 17
+    },
+    {
+     "date": "13/09/26",
+     "home": "Coalville Town Ravens U13 Spartans",
+     "away": "Marlborough Rovers U13",
+     "hs": 7,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Countesthorpe C.F. U13",
+     "away": "Wigston Willow U13 Jaguars",
+     "hs": 3,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Croft Juniors 2013 U13 Diamonds",
+     "away": "AFC Barwell U13 Arrows",
+     "hs": 1,
+     "as": 1,
+     "pens": [
+      3,
+      4
+     ]
+    },
+    {
+     "date": "13/09/26",
+     "home": "Croft Juniors 2013 U13 Royals",
+     "away": "Narborough Foxes U13 Orange",
+     "hs": 2,
+     "as": 5
+    },
+    {
+     "date": "13/09/26",
+     "home": "Desford FC U13 Blues",
+     "away": "Kirby Muxloe U13 Kings",
+     "hs": 0,
+     "as": 2
+    },
+    {
+     "date": "13/09/26",
+     "home": "Dunton & Broughton United Jnrs U13 Panth",
+     "away": "Thompsons United U13 Sparks",
+     "hs": 3,
+     "as": 2
+    },
+    {
+     "date": "13/09/26",
+     "home": "Fleckney Athletic Junior U13 Fire",
+     "away": "Wigston Willow U13 Spitfires",
+     "hs": 0,
+     "as": 10
+    },
+    {
+     "date": "13/09/26",
+     "home": "Friar Lane & Epworth Juniors & Youth U13",
+     "away": "Harborough Town Juniors U13 2012",
+     "hs": 0,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "Glenfield United FC U13 Hawks",
+     "away": "Whetstone Athletic U13 Jaguars",
+     "hs": 3,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "GNG Juniors U13 Tigers",
+     "away": "Coalville Town Ravens U13 Robins",
+     "hs": 6,
+     "as": 2
+    },
+    {
+     "date": "13/09/26",
+     "home": "Groby Juniors U13 Spartans",
+     "away": "Kibworth Town U13 Cobras",
+     "hs": 1,
+     "as": 1,
+     "pens": [
+      5,
+      6
+     ]
+    },
+    {
+     "date": "13/09/26",
+     "home": "Groby Juniors U13 Titans",
+     "away": "Allexton & New Parks Junior U13 Eagles",
+     "hs": 2,
+     "as": 2,
+     "pens": [
+      1,
+      2
+     ]
+    },
+    {
+     "date": "13/09/26",
+     "home": "Harborough Town Juniors U13 94",
+     "away": "Studs Junior U13",
+     "hs": 3,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Harborough Town Juniors U13 ETP Sunday",
+     "away": "Melton Foxes FC U13 Foxes",
+     "hs": 6,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Heather Juniors U13 Hurricanes",
+     "away": "Birstall United U13 Wolves",
+     "hs": 3,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Hinckley Borough FC U13 Youth",
+     "away": "Melton Town U13 Panthers",
+     "hs": 1,
+     "as": 5
+    },
+    {
+     "date": "13/09/26",
+     "home": "Kegworth Imps U13",
+     "away": "Loughborough Dynamo Junior U13 Ambers",
+     "hs": 2,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Kirby Muxloe U13 Knights",
+     "away": "Royce Rangers U13 Avengers",
+     "hs": 4,
+     "as": 7
+    },
+    {
+     "date": "13/09/26",
+     "home": "Loughborough Phoenix FC U13 Juniors",
+     "away": "Fleckney Athletic Junior U13 Foxes",
+     "hs": 6,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Lutterworth Athletic Youth U13 Lightning",
+     "away": "Ibstock United Juniors U13 Lions",
+     "hs": 6,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Lutterworth Dynamos FC U13",
+     "away": "Borough Alliance Junior U13 Falcons",
+     "hs": 2,
+     "as": 17
+    },
+    {
+     "date": "13/09/26",
+     "home": "Market Bosworth Town Juniors U13 Knights",
+     "away": "Hinckley RFC U13 Panthers",
+     "hs": 1,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Melton Foxes FC U13 United",
+     "away": "AFC Andrews U13 Warriors",
+     "hs": 1,
+     "as": 0
+    },
+    {
+     "date": "13/09/26",
+     "home": "Mountsorrel Juniors U13 Tigers",
+     "away": "Blaby & Whetstone U13 Blues",
+     "hs": 0,
+     "as": 9
+    },
+    {
+     "date": "13/09/26",
+     "home": "Mowbray Rangers U13 Lions",
+     "away": "Birstall United U13 Foxes",
+     "hs": 1,
+     "as": 3
+    },
+    {
+     "date": "13/09/26",
+     "home": "North Kilworth Junior & Youth U13 Lions",
+     "away": "Thurmaston Magpies Junior U13 Storm",
+     "hs": 3,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Oadby Owls U13 Falcons",
+     "away": "Hinckley AFC U13 Phoenix",
+     "hs": 3,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Riverside United Junior U13 Eagles",
+     "away": "Thurlaston Magpies Junior U13 Magpies",
+     "hs": 4,
+     "as": 12
+    },
+    {
+     "date": "13/09/26",
+     "home": "Rothley Imps Junior U13 Raptors",
+     "away": "Coalville Town Ravens U13 Rooks",
+     "hs": 0,
+     "as": 11
+    },
+    {
+     "date": "13/09/26",
+     "home": "Saffron Dynamo U13 Thunderbolts",
+     "away": "Loughborough Lions AFC U13 Reds",
+     "hs": 4,
+     "as": 7
+    },
+    {
+     "date": "13/09/26",
+     "home": "Shepshed Dynamo Youth & Junior U13 Cobra",
+     "away": "Hinckley Borough FC U13 Colts",
+     "hs": 2,
+     "as": 1
+    },
+    {
+     "date": "13/09/26",
+     "home": "Shepshed Dynamo Youth & Junior U13 Viper",
+     "away": "Whetstone Athletic U13 Lions",
+     "hs": 2,
+     "as": 2,
+     "pens": [
+      2,
+      4
+     ]
+    },
+    {
+     "date": "13/09/26",
+     "home": "Thompsons United U13 Blazes",
+     "away": "Community Football Academy U13",
+     "hs": 3,
+     "as": 9
+    },
+    {
+     "date": "13/09/26",
+     "home": "Thurlaston Magpies Junior U13 Eagles",
+     "away": "Anstey Nomads U13 47's",
+     "hs": 1,
+     "as": 4
+    },
+    {
+     "date": "13/09/26",
+     "home": "Wigston Willow U13 Typhoons",
+     "away": "Thurnby Rangers U13 Youth",
+     "hs": 3,
+     "as": 4
+    },
+    {
+     "date": "04/10/26",
+     "home": "Melton Foxes FC U13 Pumas",
+     "away": "Melton Town U13 Panthers",
+     "hs": 1,
+     "as": 12
+    },
+    {
+     "date": "04/10/26",
+     "home": "AFC Andrews U13 Cobras",
+     "away": "Rothley Imps Junior U13 Rockets",
+     "hs": 2,
+     "as": 0
+    },
+    {
+     "date": "04/10/26",
+     "home": "Allexton & New Parks Junior U13 Eagles",
+     "away": "Ashby Ivanhoe U13",
+     "hs": 0,
+     "as": 12
+    },
+    {
+     "date": "04/10/26",
+     "home": "Aylestone Park Youth U13 94",
+     "away": "Blaby & Whetstone U13 Blues",
+     "hs": 3,
+     "as": 1
+    },
+    {
+     "date": "04/10/26",
+     "home": "Borough Alliance Junior U13 Falcons",
+     "away": "Oadby Owls U13 Tawnys",
+     "hs": 1,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Coalville Town Ravens U13 Ravens",
+     "away": "Allexton & New Parks Junior U13 Magpies",
+     "hs": 1,
+     "as": 1,
+     "pens": [
+      8,
+      9
+     ]
+    },
+    {
+     "date": "04/10/26",
+     "home": "Community Football Academy U13",
+     "away": "Loughborough Lions AFC U13 Reds",
+     "hs": 5,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Community Football Academy U13 Kickstart",
+     "away": "Beaumont Park U13 Pumas",
+     "hs": 0,
+     "as": 4
+    },
+    {
+     "date": "04/10/26",
+     "home": "Harborough Town Juniors U13 2012",
+     "away": "Anstey Nomads U13 Reds",
+     "hs": 0,
+     "as": 15
+    },
+    {
+     "date": "04/10/26",
+     "home": "Kirby Muxloe U13 Kings",
+     "away": "Birstall United U13 Foxes",
+     "hs": 1,
+     "as": 1,
+     "pens": [
+      3,
+      2
+     ]
+    },
+    {
+     "date": "04/10/26",
+     "home": "Narborough Foxes U13 Orange",
+     "away": "Whetstone Athletic U13 Lions",
+     "hs": 7,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Oadby Owls U13 Falcons",
+     "away": "Harborough Town Juniors U13 2022",
+     "hs": 0,
+     "as": 8
+    },
+    {
+     "date": "04/10/26",
+     "home": "Oadby Owls U13 Greys",
+     "away": "Lutterworth Athletic Youth U13 Lightning",
+     "hs": 2,
+     "as": 5
+    },
+    {
+     "date": "04/10/26",
+     "home": "Aylestone Park Youth U13 Youth",
+     "away": "Leicester Nirvana Juniors U13 Reds",
+     "hs": 2,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "Barrow Town U13 Falcons",
+     "away": "Coalville Town Ravens U13 Rooks",
+     "hs": 1,
+     "as": 2
+    },
+    {
+     "date": "04/10/26",
+     "home": "Coalville Town Ravens U13 Roosters",
+     "away": "Beaumont Park U13 Lions",
+     "hs": 1,
+     "as": 13
+    },
+    {
+     "date": "04/10/26",
+     "home": "Community Football Academy U13 Shubaan",
+     "away": "Thurnby Rangers U13 Youth",
+     "hs": 8,
+     "as": 1
+    },
+    {
+     "date": "04/10/26",
+     "home": "Dunton & Broughton United Jnrs U13 Puma",
+     "away": "Anstey Nomads U13 78's",
+     "hs": 5,
+     "as": 3
+    },
+    {
+     "date": "04/10/26",
+     "home": "East Goscote United U13 Boys",
+     "away": "Dunton & Broughton United Jnrs U13 Panth",
+     "hs": 18,
+     "as": 0
+    },
+    {
+     "date": "04/10/26",
+     "home": "Harborough Town Juniors U13 94",
+     "away": "Countesthorpe C.F. U13",
+     "hs": 9,
+     "as": 0
+    },
+    {
+     "date": "04/10/26",
+     "home": "Heather Juniors U13 Jaguars",
+     "away": "Shepshed Dynamo Youth & Junior U13 Cobra",
+     "hs": 2,
+     "as": 0
+    },
+    {
+     "date": "04/10/26",
+     "home": "Kegworth Imps U13",
+     "away": "Wigston Willow U13 Hurricanes",
+     "hs": 1,
+     "as": 5
+    },
+    {
+     "date": "04/10/26",
+     "home": "Kibworth Town U13 Cobras",
+     "away": "Coalville Town Ravens U13 Spartans",
+     "hs": 2,
+     "as": 8
+    },
+    {
+     "date": "04/10/26",
+     "home": "Loughborough Phoenix FC U13 Juniors",
+     "away": "Melton Foxes FC U13 United",
+     "hs": 2,
+     "as": 0
+    },
+    {
+     "date": "04/10/26",
+     "home": "Melton Town U13",
+     "away": "Harborough Town Juniors U13 ETP Sunday",
+     "hs": 2,
+     "as": 4
+    },
+    {
+     "date": "04/10/26",
+     "home": "North Kilworth Junior & Youth U13 Lions",
+     "away": "AFC Barwell U13 Arrows",
+     "hs": 3,
+     "as": 3,
+     "pens": [
+      3,
+      5
+     ]
+    },
+    {
+     "date": "04/10/26",
+     "home": "Oadby Owls U13 Hawks",
+     "away": "Glenfield United FC U13 Hawks",
+     "hs": 1,
+     "as": 5
+    },
+    {
+     "date": "04/10/26",
+     "home": "Royce Rangers U13 Avengers",
+     "away": "Asfordby U13 Tigers",
+     "hs": 8,
+     "as": 1
+    },
+    {
+     "date": "04/10/26",
+     "home": "Saffron Dynamo U13 Sparks",
+     "away": "GNG Juniors U13 Tigers",
+     "hs": 17,
+     "as": 0
+    },
+    {
+     "date": "04/10/26",
+     "home": "Thurlaston Magpies Junior U13 Magpies",
+     "away": "Anstey Nomads U13 47's",
+     "hs": 8,
+     "as": 0
+    },
+    {
+     "date": "04/10/26",
+     "home": "Wigston Willow U13 Spitfires",
+     "away": "Market Bosworth Town Juniors U13 Knights",
+     "hs": 1,
+     "as": 1,
+     "pens": [
+      2,
+      4
+     ]
+    },
+    {
+     "date": "01/11/26",
+     "home": "AFC Andrews U13 Cobras",
+     "away": "Community Football Academy U13",
+     "hs": 2,
+     "as": 6
+    },
+    {
+     "date": "01/11/26",
+     "home": "AFC Barwell U13 Arrows",
+     "away": "Dunton & Broughton United Jnrs U13 Puma",
+     "hs": 0,
+     "as": 8
+    },
+    {
+     "date": "01/11/26",
+     "home": "Aylestone Park Youth U13 94",
+     "away": "Narborough Foxes U13 Orange",
+     "hs": 17,
+     "as": 0
+    },
+    {
+     "date": "01/11/26",
+     "home": "Beaumont Park U13 Pumas",
+     "away": "Oadby Owls U13 Tawnys",
+     "hs": 10,
+     "as": 0
+    },
+    {
+     "date": "01/11/26",
+     "home": "Coalville Town Ravens U13 Rooks",
+     "away": "Lutterworth Athletic Youth U13 Lightning",
+     "hs": 1,
+     "as": 6
+    },
+    {
+     "date": "01/11/26",
+     "home": "Loughborough Phoenix FC U13 Juniors",
+     "away": "Harborough Town Juniors U13 2022",
+     "hs": 1,
+     "as": 1,
+     "pens": [
+      2,
+      3
+     ]
+    },
+    {
+     "date": "01/11/26",
+     "home": "Allexton & New Parks Junior U13 Magpies",
+     "away": "Coalville Town Ravens U13 Spartans",
+     "hs": 6,
+     "as": 3
+    },
+    {
+     "date": "01/11/26",
+     "home": "Ashby Ivanhoe U13",
+     "away": "Anstey Nomads U13 Reds",
+     "hs": 2,
+     "as": 3
+    },
+    {
+     "date": "01/11/26",
+     "home": "Community Football Academy U13 Shubaan",
+     "away": "Harborough Town Juniors U13 94",
+     "hs": 2,
+     "as": 3
+    },
+    {
+     "date": "01/11/26",
+     "home": "East Goscote United U13 Boys",
+     "away": "Saffron Dynamo U13 Sparks",
+     "hs": 0,
+     "as": 4
+    },
+    {
+     "date": "01/11/26",
+     "home": "Glenfield United FC U13 Hawks",
+     "away": "Royce Rangers U13 Avengers",
+     "hs": 4,
+     "as": 0
+    },
+    {
+     "date": "01/11/26",
+     "home": "Harborough Town Juniors U13 ETP Sunday",
+     "away": "Wigston Willow U13 Hurricanes",
+     "hs": 15,
+     "as": 3
+    },
+    {
+     "date": "01/11/26",
+     "home": "Heather Juniors U13 Jaguars",
+     "away": "Oadby Owls U13 Juniors",
+     "hs": 2,
+     "as": 0
+    },
+    {
+     "date": "01/11/26",
+     "home": "Leicester Nirvana Juniors U13 Reds",
+     "away": "Melton Town U13 Panthers",
+     "hs": 1,
+     "as": 1
+    },
+    {
+     "date": "01/11/26",
+     "home": "Market Bosworth Town Juniors U13 Knights",
+     "away": "Beaumont Park U13 Lions",
+     "hs": 2,
+     "as": 6
+    },
+    {
+     "date": "01/11/26",
+     "home": "Thurlaston Magpies Junior U13 Magpies",
+     "away": "Kirby Muxloe U13 Kings",
+     "hs": 1,
+     "as": 4
+    }
+   ]
   },
   {
    "name": "U12 Chairmans Cup",
@@ -570,7 +1783,54 @@
      "venue": "Sileby Memorial Park LE12 7TP"
     }
    ],
-   "results": []
+   "results": [
+    {
+     "date": "01/11/26",
+     "home": "Croft Juniors 2013 U12 Cobalts",
+     "away": "Narborough Foxes U12",
+     "hs": 0,
+     "as": 5
+    },
+    {
+     "date": "01/11/26",
+     "home": "Harborough Town Juniors U12 2022",
+     "away": "Iannis FC U12 Reds",
+     "hs": 1,
+     "as": 1,
+     "pens": [
+      2,
+      3
+     ]
+    },
+    {
+     "date": "01/11/26",
+     "home": "Oadby Owls U12 Falcons",
+     "away": "Quorn U12 Wildcats",
+     "hs": 3,
+     "as": 8
+    },
+    {
+     "date": "01/11/26",
+     "home": "Loughborough Lions AFC U12 Silvers",
+     "away": "Thurlaston Magpies Junior U12 Falcons",
+     "hs": 0,
+     "as": 4
+    },
+    {
+     "date": "01/11/26",
+     "home": "Riverside United Junior U12 Seahawks",
+     "away": "Karma Leicester F.C. U12 Blue",
+     "hs": 4,
+     "as": 1
+    },
+    {
+     "date": "01/11/26",
+     "home": "Shepshed Dynamo Youth & Junior U12 Cobra",
+     "away": "Sileby Juniors U12 Stingrays",
+     "hs": 1,
+     "as": 5
+    }
+   ]
   },
   {
    "name": "U12 Duncan Warner League Cup",
@@ -774,7 +2034,57 @@
      "venue": "THURLASTON FOOTBALL CLUB"
     }
    ],
-   "results": []
+   "results": [
+    {
+     "date": "01/11/26",
+     "home": "Anstey Nomads U12 22's",
+     "away": "Groby Juniors U12 Gladiators",
+     "hs": 4,
+     "as": 2
+    },
+    {
+     "date": "01/11/26",
+     "home": "Croft Juniors 2013 U12 Diamonds",
+     "away": "Leicester St Andrews Junior U12 Corinthi",
+     "hs": 1,
+     "as": 3
+    },
+    {
+     "date": "01/11/26",
+     "home": "Loughborough Lions AFC U12 Yellows",
+     "away": "Stoke Golding U12 Swords",
+     "hs": 1,
+     "as": 4
+    },
+    {
+     "date": "01/11/26",
+     "home": "Sileby Juniors U12 Sparrow Hawks",
+     "away": "Loughborough Dynamo Junior U12 Golds",
+     "hs": 4,
+     "as": 1
+    },
+    {
+     "date": "01/11/26",
+     "home": "Ibstock United Juniors U12 Tigers",
+     "away": "Coalville Town Ravens U12 Robins",
+     "hs": 9,
+     "as": 2
+    },
+    {
+     "date": "01/11/26",
+     "home": "Kirby Muxloe U12 Knights",
+     "away": "Market Bosworth Town Juniors U12",
+     "hs": 1,
+     "as": 5
+    },
+    {
+     "date": "01/11/26",
+     "home": "Leicester United Football Club U12 Reds",
+     "away": "Kibworth Town U12 Falcons",
+     "hs": 10,
+     "as": 2
+    }
+   ]
   },
   {
    "name": "U12 League Cup",
@@ -978,7 +2288,47 @@
      "venue": "JUBILEE PARK (THURMASTON)"
     }
    ],
-   "results": []
+   "results": [
+    {
+     "date": "01/11/26",
+     "home": "Heather Juniors U13 Hurricanes",
+     "away": "Anstey Nomads U13 47's",
+     "hs": 2,
+     "as": 2,
+     "pens": [
+      1,
+      3
+     ]
+    },
+    {
+     "date": "01/11/26",
+     "home": "Croft Juniors 2013 U13 Diamonds",
+     "away": "Coalville Town Ravens U13 Robins",
+     "hs": 1,
+     "as": 2
+    },
+    {
+     "date": "01/11/26",
+     "home": "Groby Juniors U13 Spartans",
+     "away": "Asfordby U13 Tigers",
+     "hs": 1,
+     "as": 0
+    },
+    {
+     "date": "01/11/26",
+     "home": "Hinckley AFC U13 Phoenix",
+     "away": "Groby Juniors U13 Titans",
+     "hs": 2,
+     "as": 3
+    },
+    {
+     "date": "01/11/26",
+     "home": "Thurmaston Magpies Junior U13 Storm",
+     "away": "GNG Juniors U13 Tigers",
+     "hs": 7,
+     "as": 0
+    }
+   ]
   },
   {
    "name": "U13 Martin Dexter Cup",
@@ -1080,7 +2430,47 @@
      "venue": "JUDGEMEADOW COMMUNITY COLLEGE"
     }
    ],
-   "results": []
+   "results": [
+    {
+     "date": "01/11/26",
+     "home": "Community Football Academy U13 Kickstart",
+     "away": "Coalville Town Ravens U13 Ravens",
+     "hs": 1,
+     "as": 7
+    },
+    {
+     "date": "01/11/26",
+     "home": "Loughborough Lions AFC U13 Reds",
+     "away": "Anstey Nomads U13 78's",
+     "hs": 2,
+     "as": 3
+    },
+    {
+     "date": "01/11/26",
+     "home": "AFC Andrews U13 Warriors",
+     "away": "North Kilworth Junior & Youth U13 Lions",
+     "hs": 1,
+     "as": 3
+    },
+    {
+     "date": "01/11/26",
+     "home": "Aylestone Park Youth U13 Youth",
+     "away": "Allexton & New Parks Junior U13 Hawks",
+     "hs": 2,
+     "as": 3
+    },
+    {
+     "date": "01/11/26",
+     "home": "Barrow Town U13 Falcons",
+     "away": "Hinckley Borough FC U13 Youth",
+     "hs": 3,
+     "as": 3,
+     "pens": [
+      2,
+      4
+     ]
+    }
+   ]
   },
   {
    "name": "U13 Presidents Cup",
@@ -1176,7 +2566,72 @@
      "venue": "Mars Sports Ground, Saxby Rd, Melton, LE13 1BP."
     }
    ],
-   "results": []
+   "results": [
+    {
+     "date": "01/11/26",
+     "home": "Melton Foxes FC U13 Pumas",
+     "away": "Lutterworth Dynamos FC U13",
+     "hs": 10,
+     "as": 0
+    },
+    {
+     "date": "01/11/26",
+     "home": "Birstall United U13 Wolves",
+     "away": "Rothley Imps Junior U13 Raptors",
+     "hs": 3,
+     "as": 5
+    },
+    {
+     "date": "01/11/26",
+     "home": "Mountsorrel Juniors U13 Tigers",
+     "away": "AFC Barwell U13 Rhinos",
+     "hs": 2,
+     "as": 1
+    },
+    {
+     "date": "01/11/26",
+     "home": "Ambleside Junior U13 Nomads",
+     "away": "Royce Rangers U13 Spartans",
+     "hs": 4,
+     "as": 4,
+     "pens": [
+      2,
+      4
+     ]
+    },
+    {
+     "date": "01/11/26",
+     "home": "Coalville Town Ravens U13 Ruffs",
+     "away": "Fleckney Athletic Junior U13 Foxes",
+     "hs": 1,
+     "as": 8
+    },
+    {
+     "date": "01/11/26",
+     "home": "Croft Juniors 2013 U13 Royals",
+     "away": "Riverside United Junior U13 Eagles",
+     "hs": 2,
+     "as": 2,
+     "pens": [
+      4,
+      3
+     ]
+    },
+    {
+     "date": "01/11/26",
+     "home": "Fleckney Athletic Junior U13 Fire",
+     "away": "Beaumont Town 2012 U13 Panthers",
+     "hs": 1,
+     "as": 2
+    },
+    {
+     "date": "01/11/26",
+     "home": "Loughborough Lions AFC U13 Silvers",
+     "away": "Narborough Foxes U13 Blues",
+     "hs": 1,
+     "as": 3
+    }
+   ]
   }
  ]
 }
