@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-08 13:06:11 UTC",
+    "updated": "2026-11-08 13:10:44 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -8450,14 +8450,6 @@
                     "status": "Postponed Match Notes: 14 days GNG"
                 },
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Hinckley AFC U13 Phoenix",
-                    "awayTeam": "Coalville Town Ravens U13 Robins",
-                    "location": "HEATH LANE ACADEMY",
-                    "competition": "Under 13 Division 7",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Melton Foxes FC U13 Foxes",
                     "awayTeam": "Kegworth Imps U13",
@@ -8644,6 +8636,15 @@
                     "homeScore": "Postponed P",
                     "awayScore": "P",
                     "awayTeam": "Houghton Rangers Junior U13",
+                    "division": "Under 13 Division 7"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Hinckley AFC U13 Phoenix",
+                    "score": "1 - 6",
+                    "homeScore": "1",
+                    "awayScore": "6",
+                    "awayTeam": "Coalville Town Ravens U13 Robins",
                     "division": "Under 13 Division 7"
                 },
                 {
@@ -10418,14 +10419,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Beaumont Town 2012 U13 Panthers",
-                    "awayTeam": "Ambleside Junior U13 Nomads",
-                    "location": "MOWMACRE HILL PRIMARY SCHOOL",
-                    "competition": "Under 13 Division 11",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Lutterworth Dynamos FC U13",
                     "awayTeam": "Birstall United U13 Wolves",
                     "location": "COVENTRY ROAD RECREATION GROUND",
@@ -10649,6 +10642,15 @@
                     "homeScore": "5",
                     "awayScore": "1",
                     "awayTeam": "Loughborough Lions AFC U13 Silvers",
+                    "division": "Under 13 Division 11"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Beaumont Town 2012 U13 Panthers",
+                    "score": "5 - 4 (HT 4-1)",
+                    "homeScore": "5",
+                    "awayScore": "4",
+                    "awayTeam": "Ambleside Junior U13 Nomads",
                     "division": "Under 13 Division 11"
                 },
                 {
