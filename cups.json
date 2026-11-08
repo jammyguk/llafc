@@ -1836,12 +1836,6 @@
    "name": "U12 Duncan Warner League Cup",
    "fixtures": [
     {
-     "date": "08/11/26 11:05",
-     "home": "Ingles U12 Reds",
-     "away": "Wigston Willow U12 Panthers",
-     "venue": "LITTLE HAW LANE PLAYING FIELDS"
-    },
-    {
      "date": "08/11/26 13:00",
      "home": "Royce Rangers U12 Raptors",
      "away": "Community Football Academy U12 Foxes",
@@ -1876,6 +1870,12 @@
      "home": "Hinckley Town Juniors U12 Hurricanes",
      "away": "Narborough Foxes U12 Reds",
      "venue": "CLARENDON PARK"
+    },
+    {
+     "date": "15/11/26 10:30",
+     "home": "Ingles U12 Reds",
+     "away": "Whetstone Athletic U12 Lions",
+     "venue": "LITTLE HAW LANE PLAYING FIELDS"
     },
     {
      "date": "15/11/26 10:30",
@@ -1938,12 +1938,6 @@
    "name": "U12 Foxes Cup",
    "fixtures": [
     {
-     "date": "08/11/26 11:05",
-     "home": "Loughborough Lions AFC U12 Bronzes",
-     "away": "Beaumont Park U12 Tigers",
-     "venue": "Charnwood College LE11 4SQ"
-    },
-    {
      "date": "15/11/26 10:30",
      "home": "AFC Barwell U12 Dragons",
      "away": "Stoke Golding U12 Swords",
@@ -1954,6 +1948,12 @@
      "home": "Asfordby U12 Foxes",
      "away": "Aylestone Park Youth U12 94",
      "venue": "ASFORDBY ACRES"
+    },
+    {
+     "date": "15/11/26 10:30",
+     "home": "Beaumont Park U12 Tigers",
+     "away": "Leicester United Football Club U12 Reds",
+     "venue": "BEAUMONT PARK"
     },
     {
      "date": "15/11/26 10:30",

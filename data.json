@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-08 13:10:44 UTC",
+    "updated": "2026-11-08 13:25:57 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -1175,7 +1175,7 @@
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Sporting Markfield U12 Tigers",
-                    "score": "4 - 0",
+                    "score": "4 - 0 (HT 1-0)",
                     "homeScore": "4",
                     "awayScore": "0",
                     "awayTeam": "FC Burbage U12 Lions",
@@ -3552,7 +3552,7 @@
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "FC Burbage U12 Jaguars",
-                    "score": "2 - 3",
+                    "score": "2 - 3 (HT 2-2)",
                     "homeScore": "2",
                     "awayScore": "3",
                     "awayTeam": "Coalville Town Ravens U12 Rooks",
@@ -4014,9 +4014,9 @@
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Loughborough Lions AFC U12 Yellows",
-                    "score": "7 - 1",
-                    "homeScore": "7",
-                    "awayScore": "1",
+                    "score": "1 - 7",
+                    "homeScore": "1",
+                    "awayScore": "7",
                     "awayTeam": "AFC Andrews U12 Ants",
                     "division": "Under 12 Division 9"
                 },
@@ -4669,14 +4669,6 @@
                     "status": ""
                 },
                 {
-                    "fixtureDateTime": "08\/11\/26 13:00",
-                    "homeTeam": "Coalville Town Ravens U12 Redwings",
-                    "awayTeam": "Hathern Juniors U12 Falcons",
-                    "location": "THE NEWBRIDGE SCHOOL",
-                    "competition": "Under 12 Division 11",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Coalville Town Ravens U12 Ruffs",
                     "awayTeam": "Royce Rangers U12 Rhinos",
@@ -4790,6 +4782,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 13:00",
+                    "homeTeam": "Coalville Town Ravens U12 Redwings",
+                    "score": "7 - 1",
+                    "homeScore": "7",
+                    "awayScore": "1",
+                    "awayTeam": "Hathern Juniors U12 Falcons",
+                    "division": "Under 12 Division 11"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Ibstock United Juniors U12 Lions",
@@ -5762,14 +5763,6 @@
             "name": "U12 Division 14",
             "fixtures": [
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Quorn U12 Wildcats",
-                    "awayTeam": "Sileby Juniors U12 Stingrays",
-                    "location": "FARLEY WAY STADIUM",
-                    "competition": "Under 12 Division 14",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 14:30",
                     "homeTeam": "Iannis FC U12 Reds",
                     "awayTeam": "Riverside United Junior U12 Seahawks",
@@ -5922,6 +5915,15 @@
                     "homeScore": "3",
                     "awayScore": "1",
                     "awayTeam": "Croft Juniors 2013 U12 Cobalts",
+                    "division": "Under 12 Division 14"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Quorn U12 Wildcats",
+                    "score": "3 - 8",
+                    "homeScore": "3",
+                    "awayScore": "8",
+                    "awayTeam": "Sileby Juniors U12 Stingrays",
                     "division": "Under 12 Division 14"
                 },
                 {
@@ -8160,7 +8162,7 @@
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Thompsons United U13 Sparks",
-                    "score": "4 - 1",
+                    "score": "4 - 1 (HT 2-1)",
                     "homeScore": "4",
                     "awayScore": "1",
                     "awayTeam": "Coalville Town Ravens U13 Redwings",
@@ -9409,14 +9411,6 @@
             "name": "U13 Division 9",
             "fixtures": [
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Weddington Sports U13 Wolves",
-                    "awayTeam": "Narborough Foxes U13 Orange",
-                    "location": "Etone School Playing Fields CV11 6YA",
-                    "competition": "Under 13 Division 9",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Allexton &amp; New Parks Junior U13 Eagles",
                     "awayTeam": "Melton Foxes FC U13 United",
@@ -9652,6 +9646,15 @@
                     "homeScore": "1",
                     "awayScore": "1",
                     "awayTeam": "Harborough Town Juniors U13 2012",
+                    "division": "Under 13 Division 9"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Weddington Sports U13 Wolves",
+                    "score": "4 - 4",
+                    "homeScore": "4",
+                    "awayScore": "4",
+                    "awayTeam": "Narborough Foxes U13 Orange",
                     "division": "Under 13 Division 9"
                 },
                 {
