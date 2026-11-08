@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-08 13:53:34 UTC",
+    "updated": "2026-11-08 14:16:52 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -2045,14 +2045,6 @@
                     "status": ""
                 },
                 {
-                    "fixtureDateTime": "08\/11\/26 13:00",
-                    "homeTeam": "Oadby Owls U12 Eagles",
-                    "awayTeam": "Karma Leicester F.C. U12",
-                    "location": "Beauchamp College 3G LE2 5TP",
-                    "competition": "U12 Industrial Laundry Equipment Div 5",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Anstey Nomads U12 Swifts",
                     "awayTeam": "Wigston Willow U12 Pumas",
@@ -2214,6 +2206,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 13:00",
+                    "homeTeam": "Oadby Owls U12 Eagles",
+                    "score": "2 - 3",
+                    "homeScore": "2",
+                    "awayScore": "3",
+                    "awayTeam": "Karma Leicester F.C. U12",
+                    "division": "U12 Industrial Laundry Equipment Div 5"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Anstey Nomads U12 Swifts",
@@ -4462,8 +4463,8 @@
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Groby Juniors U12 Gladiators",
-                    "score": "1 - 3 (HT 0-2)",
-                    "homeScore": "1",
+                    "score": "2 - 3 (HT 0-2)",
+                    "homeScore": "2",
                     "awayScore": "3",
                     "awayTeam": "Sileby Juniors U12 Sparrow Hawks",
                     "division": "Under 12 Division 10"
@@ -5332,14 +5333,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Croft Juniors 2013 U12 Royals",
-                    "awayTeam": "Karma Leicester F.C. U12 Blue",
-                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
-                    "competition": "Under 12 Division 13",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Hinckley Borough FC U12 Boys",
                     "awayTeam": "Glenfield United FC U12 Foxes",
                     "location": "WEAVERS SPRINGS PARK",
@@ -5508,6 +5501,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Croft Juniors 2013 U12 Royals",
+                    "score": "3 - 3",
+                    "homeScore": "3",
+                    "awayScore": "3",
+                    "awayTeam": "Karma Leicester F.C. U12 Blue",
+                    "division": "Under 12 Division 13"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Hinckley Borough FC U12 Boys",
@@ -6800,14 +6802,6 @@
                     "status": "Postponed"
                 },
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Leicester Nirvana Juniors U13 Reds",
-                    "awayTeam": "Oadby Owls U13 Tawnys",
-                    "location": "HAMILTON PARK",
-                    "competition": "U13s MG Digital Div 3",
-                    "status": "Match Notes: 1pm due no pitch at 11.05"
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Allexton &amp; New Parks Junior U13 Hawks",
                     "awayTeam": "Aylestone Park Youth U13 Youth",
@@ -6986,6 +6980,15 @@
                     "homeScore": "2",
                     "awayScore": "1",
                     "awayTeam": "Market Bosworth Town Juniors U13 Knights",
+                    "division": "U13s MG Digital Div 3"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Leicester Nirvana Juniors U13 Reds",
+                    "score": "2 - 1",
+                    "homeScore": "2",
+                    "awayScore": "1",
+                    "awayTeam": "Oadby Owls U13 Tawnys",
                     "division": "U13s MG Digital Div 3"
                 },
                 {
@@ -9424,14 +9427,6 @@
                     "status": "Postponed Match Notes: 14 days MELTON"
                 },
                 {
-                    "fixtureDateTime": "08\/11\/26 13:00",
-                    "homeTeam": "Oadby Owls U13 Falcons",
-                    "awayTeam": "Wigston Willow U13 Typhoons",
-                    "location": "Beauchamp College 3G LE2 5TP",
-                    "competition": "Under 13 Division 9",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Allexton &amp; New Parks Junior U13 Eagles",
                     "awayTeam": "FC Burbage U13 Leopards",
@@ -9624,6 +9619,15 @@
                     "homeScore": "Postponed P",
                     "awayScore": "P",
                     "awayTeam": "Melton Foxes FC U13 United",
+                    "division": "Under 13 Division 9"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 13:00",
+                    "homeTeam": "Oadby Owls U13 Falcons",
+                    "score": "1 - 1 (HT 1-0)",
+                    "homeScore": "1",
+                    "awayScore": "1",
+                    "awayTeam": "Wigston Willow U13 Typhoons",
                     "division": "Under 13 Division 9"
                 },
                 {
