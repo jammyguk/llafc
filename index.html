@@ -141,7 +141,7 @@ function short(s,n){let t=U(s).trim();
 
 let STATE={q:"",cx:{},league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false,tv:"full",age:""};
 let RAW={leagues:{},updated:null};
-let LOADED=null;
+let LOADED=null, CHECKED=null;
 let DATA={results:[],league:[],fixtures:[],table:[],teams:[],leagueFx:[],leagueName:"",updated:null};
 let cur=100;
 let CUPS=[];
@@ -667,7 +667,7 @@ function page(p){
   h+=ln("");
   if(DATA.updated){
     h+=ln(("LAST FULL-TIME UPDATE "+updTxt(DATA.updated)).slice(0,W),"m");
-    if(LOADED)h+=ln(("LAST REFRESHED "+updTxt(LOADED.toISOString())).slice(0,W),"m");
+    if(CHECKED)h+=ln(("LAST REFRESHED FROM FA "+updTxt(CHECKED)).slice(0,W),"m");
   } else h+=ln(STATE.note,"m");
   const keys=[["fr",100,"HOME"],["fg",101,"FIXTURES"],["fy",102,"RESULTS"],["fc",103,"TABLE"],["fm",110,"TEAMS"]];
   if(CUPS.length)keys.splice(4,0,["fw",104,"CUP"]);
@@ -699,7 +699,8 @@ function refreshData(first){
     RAW=raw;
     if(!RAW.leagues[STATE.league]){STATE.league=DEFAULT.league;STATE.team=DEFAULT.team;}
     if(!RAW.leagues[STATE.league]){const k=Object.keys(RAW.leagues)[0];if(k)STATE.league=k;}
-    return fetch("cups.json?_="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null).then(c=>{
+    return fetch("checked.json?_="+Date.now()).then(r=>r.ok?r.json():null).then(c=>{CHECKED=(c&&c.checked)||null;}).catch(()=>{})
+      .then(()=>fetch("cups.json?_="+Date.now())).then(r=>r.ok?r.json():null).catch(()=>null).then(c=>{
       CUPS=(c&&c.cups)||[];
       return fetch("veo.json?_="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null).then(v=>{
         VEO=(v&&v.links)||[];LOADED=new Date();compute();page(first?100:cur);});});

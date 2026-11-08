@@ -153,10 +153,14 @@ jobs:
           git config user.name "data-bot"
           git config user.email "bot@users.noreply.github.com"
           git add data.json cups.json
+          changed=0; git diff --staged --quiet || changed=1
+          # Record when Full-Time was last checked (shown on the site as "last refreshed").
+          echo "{\"checked\":\"$(date -u '+%Y-%m-%d %H:%M:%S') UTC\"}" > checked.json
+          git add checked.json
           if ! git diff --staged --quiet; then
-            git commit -m "Update data"
+            git commit -m "$([ $changed = 1 ] && echo 'Update data' || echo 'Checked Full-Time, no changes')"
             git pull --rebase origin main
             git push
             # Private Div 1 alerts (ntfy). Safe to fail: never blocks the data update.
-            php notify.php /tmp/old.json data.json || true
+            [ $changed = 1 ] && { php notify.php /tmp/old.json data.json || true; }
           fi

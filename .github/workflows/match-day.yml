@@ -92,18 +92,19 @@ jobs:
               cp cups.json /tmp/cups.before 2>/dev/null
               ( cp scripts/fetch_cups.mjs /tmp/cupsrun/ && timeout 240 node /tmp/cupsrun/fetch_cups.mjs 2>&1 | grep -E "cup |cups|Could|Too few|No change" ) || true
             fi
-            if ! git diff --quiet data.json cups.json; then
-              cp data.json /tmp/new.json; cp cups.json /tmp/newcups.json
-              ok=0
-              for k in 1 2 3; do
-                git fetch -q origin main && git reset -q --hard origin/main && \
-                cp /tmp/new.json data.json && cp /tmp/newcups.json cups.json && \
-                git add data.json cups.json && { git diff --staged --quiet || git commit -q -m "Update data"; } && git push -q origin main && { ok=1; break; }
-                sleep 5
-              done
-              echo "saved=$ok"
-              [ $ok = 1 ] && php notify.php /tmp/old.json data.json || true
-            else echo "no change"; fi
+            changed=0; git diff --quiet data.json cups.json || changed=1
+            cp data.json /tmp/new.json; cp cups.json /tmp/newcups.json
+            ok=0
+            for k in 1 2 3; do
+              git fetch -q origin main && git reset -q --hard origin/main && \
+              cp /tmp/new.json data.json && cp /tmp/newcups.json cups.json && \
+              echo "{\"checked\":\"$(date -u '+%Y-%m-%d %H:%M:%S') UTC\"}" > checked.json && \
+              git add data.json cups.json checked.json && \
+              git commit -q -m "$([ $changed = 1 ] && echo 'Update data' || echo 'Checked Full-Time, no changes')" && git push -q origin main && { ok=1; break; }
+              sleep 5
+            done
+            echo "changed=$changed saved=$ok"
+            [ $changed = 1 ] && [ $ok = 1 ] && { php notify.php /tmp/old.json data.json || true; }
             used=$(( $(date +%s) - t0 )); [ $used -lt 300 ] && sleep $(( 300 - used ))
           done
       - name: API log
