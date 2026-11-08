@@ -1,0 +1,17 @@
+name: Cups test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: |
+          npm install --no-save --no-package-lock playwright@1.49.1 2>&1 | tail -1
+          npx playwright install --with-deps chromium 2>&1 | tail -1
+      - run: node scripts/fetch_cups.mjs | grep -vE "^<!DOCTYPE" | cut -c1-220

@@ -53,19 +53,23 @@ async function load(ctx, p, ready) {
   return null;
 }
 
-const browser = await chromium.launch({ channel: 'chromium', args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled'] });
+// Full-Time seems to let only the first request from a fresh visitor through, so each page gets
+// its own brand-new browser, with a pause in between.
 const ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
-const mk = () => browser.newContext({ userAgent: ua, locale: 'en-GB', timezoneId: 'Europe/London', viewport: { width: 1920, height: 1080 } });
-const shared = await mk();
-const pf = await load(shared, 'fixtures', '.fixtures-table');
-const F = pf ? await pf.evaluate(extract) : null;
-await browser.close();
-// Results page is stricter: give it a brand-new browser. If it still refuses, keep the results we already have.
-const browser2 = await chromium.launch({ channel: 'chromium', args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled'] });
-const ctx2 = await browser2.newContext({ userAgent: ua, locale: 'en-GB', timezoneId: 'Europe/London', viewport: { width: 1920, height: 1080 } });
-const pr = await load(ctx2, 'results', '.datetime-col');
-const R = pr ? await pr.evaluate(extract) : null;
-await browser2.close();
+async function grab(kind) {
+  const browser = await chromium.launch({ channel: 'chromium', args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-blink-features=AutomationControlled'] });
+  try {
+    const ctx = await browser.newContext({ userAgent: ua, locale: 'en-GB', timezoneId: 'Europe/London', viewport: { width: 1920, height: 1080 } });
+    const pg = await load(ctx, kind, kind === 'fixtures' ? '.fixtures-table' : '.datetime-col');
+    return pg ? await pg.evaluate(extract) : null;
+  } finally { await browser.close(); }
+}
+const gap = +(process.env.CUPS_GAP || 60);
+let F = null, R = null;
+for (const kind of (process.env.CUPS_ORDER || 'results,fixtures').split(',')) {
+  if (kind === 'fixtures') F = await grab('fixtures'); else R = await grab('results');
+  if (!F || !R) { if (kind === 'results' || !F) console.log(`pause ${gap}s`); await new Promise(r => setTimeout(r, gap * 1000)); }
+}
 if (!F) { console.log('Could not load Full-Time fixtures - cups.json left unchanged'); process.exit(0); }
 console.log(`cup fixtures ${F.fixtures.length}, cup results ${R ? R.results.length : 'unavailable (keeping existing)'}`);
 if (F.fixtures.length < 5) { console.log('Too few cup fixtures - cups.json left unchanged'); process.exit(0); }
