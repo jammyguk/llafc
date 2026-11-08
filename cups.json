@@ -1836,12 +1836,6 @@
    "name": "U12 Duncan Warner League Cup",
    "fixtures": [
     {
-     "date": "08/11/26 13:00",
-     "home": "Royce Rangers U12 Raptors",
-     "away": "Community Football Academy U12 Foxes",
-     "venue": "ROYCE RANGERS FC"
-    },
-    {
      "date": "15/11/26 10:30",
      "home": "Beaumont Park U12 Pumas",
      "away": "Carib Sport & Social Football Club U12 S",
@@ -1876,6 +1870,12 @@
      "home": "Ingles U12 Reds",
      "away": "Whetstone Athletic U12 Lions",
      "venue": "LITTLE HAW LANE PLAYING FIELDS"
+    },
+    {
+     "date": "15/11/26 10:30",
+     "home": "Kirby Muxloe U12 Kings",
+     "away": "Royce Rangers U12 Raptors",
+     "venue": "KIRBY MUXLOE RECREATION GROUND"
     },
     {
      "date": "15/11/26 10:30",
