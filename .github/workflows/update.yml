@@ -31,8 +31,7 @@ jobs:
             '*/5 9-15 * * 0')    { [ "$dow" = 7 ] && [ "$hour" -ge 10 ] && [ "$hour" -le 15 ]; } || run=false ;;
             '*/15 15-19 * * 0')  { [ "$dow" = 7 ] && [ "$hour" -ge 16 ] && [ "$hour" -le 19 ]; } || run=false ;;
             '*/30 * * * *')
-              if [ "$dow" = 7 ] && [ "$hour" -ge 10 ] && [ "$hour" -le 19 ]; then run=false        # Sunday match window has its own schedules
-              elif [ "$hour" -ge 7 ] && [ "$hour" -le 21 ]; then run=true                         # daytime: every 30 minutes
+              if [ "$hour" -ge 7 ] && [ "$hour" -le 21 ]; then run=true                         # daytime: every 30 minutes
               else { [ $((hour % 3)) = 0 ] && [ "$(date +%-M)" -lt 20 ]; } || run=false; fi       # overnight: about every 3 hours
               ;;
           esac
