@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-08 17:48:15 UTC",
+    "updated": "2026-11-08 19:57:49 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -4281,14 +4281,6 @@
                 },
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Coalville Town Ravens U12 Robins",
-                    "awayTeam": "Sileby Juniors U12 Sparrow Hawks",
-                    "location": "Scotland Playing Fields LE67 3SJ",
-                    "competition": "Under 12 Division 10",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Dunton &amp; Broughton United Jnrs U12 Jagua",
                     "awayTeam": "Ibstock United Juniors U12 Tigers",
                     "location": "BROUGHTON ASTLEY LEISURE CENTRE",
@@ -4320,6 +4312,22 @@
                     "status": "Postponed"
                 },
                 {
+                    "fixtureDateTime": "29\/11\/26 12:30",
+                    "homeTeam": "Sileby Juniors U12 Sparrow Hawks",
+                    "awayTeam": "Coalville Town Ravens U12 Robins",
+                    "location": "SILEBY MEMORIAL PARK",
+                    "competition": "Under 12 Division 10",
+                    "status": ""
+                },
+                {
+                    "fixtureDateTime": "06\/12\/26 10:30",
+                    "homeTeam": "Coalville Town Ravens U12 Robins",
+                    "awayTeam": "Sileby Juniors U12 Sparrow Hawks",
+                    "location": "Scotland Playing Fields LE67 3SJ",
+                    "competition": "Under 12 Division 10",
+                    "status": ""
+                },
+                {
                     "fixtureDateTime": "06\/12\/26 10:30",
                     "homeTeam": "Dunton &amp; Broughton United Jnrs U12 Jagua",
                     "awayTeam": "Groby Juniors U12 Gladiators",
@@ -4348,14 +4356,6 @@
                     "homeTeam": "Kibworth Town U12 Falcons",
                     "awayTeam": "Beaumont Park U12 Tigers",
                     "location": "Birds Barn, Fleckney Road LE8 0HJ",
-                    "competition": "Under 12 Division 10",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 12:30",
-                    "homeTeam": "Sileby Juniors U12 Sparrow Hawks",
-                    "awayTeam": "Coalville Town Ravens U12 Robins",
-                    "location": "SILEBY MEMORIAL PARK",
                     "competition": "Under 12 Division 10",
                     "status": ""
                 },
