@@ -141,6 +141,7 @@ function short(s,n){let t=U(s).trim();
 
 let STATE={q:"",cx:{},league:DEFAULT.league,team:DEFAULT.team,pickLeague:null,note:"LOADING...",exp:{},all:false,tv:"full",age:""};
 let RAW={leagues:{},updated:null};
+let LOADED=null;
 let DATA={results:[],league:[],fixtures:[],table:[],teams:[],leagueFx:[],leagueName:"",updated:null};
 let cur=100;
 let CUPS=[];
@@ -663,7 +664,11 @@ function page(p){
     if(isNaN(d))return U(u);
     const hm=String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0");
     return String(d.getDate()).padStart(2,"0")+" "+MON[d.getMonth()]+" "+hm;};
-  h+=ln("")+ln(DATA.updated?("UPDATED "+updTxt(DATA.updated)).slice(0,W):STATE.note,"m");
+  h+=ln("");
+  if(DATA.updated){
+    h+=ln(("LAST FULL-TIME UPDATE "+updTxt(DATA.updated)).slice(0,W),"m");
+    if(LOADED)h+=ln(("LAST REFRESHED "+updTxt(LOADED.toISOString())).slice(0,W),"m");
+  } else h+=ln(STATE.note,"m");
   const keys=[["fr",100,"HOME"],["fg",101,"FIXTURES"],["fy",102,"RESULTS"],["fc",103,"TABLE"],["fm",110,"TEAMS"]];
   if(CUPS.length)keys.splice(4,0,["fw",104,"CUP"]);
   h+=`<nav class="fast${keys.length>5?" six":""}" style="grid-template-columns:repeat(${keys.length},1fr)" aria-label="Pages">`+keys.map(([c,n,l])=>
@@ -697,7 +702,7 @@ function refreshData(first){
     return fetch("cups.json?_="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null).then(c=>{
       CUPS=(c&&c.cups)||[];
       return fetch("veo.json?_="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null).then(v=>{
-        VEO=(v&&v.links)||[];compute();page(first?100:cur);});});
+        VEO=(v&&v.links)||[];LOADED=new Date();compute();page(first?100:cur);});});
   })
   .catch(()=>{if(first){STATE.note="COULDN'T LOAD DATA.JSON";page(100);}});
 }
