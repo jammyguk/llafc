@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-08 17:12:10 UTC",
+    "updated": "2026-11-08 17:48:15 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -3381,14 +3381,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Aylestone Park Youth U12 94",
-                    "awayTeam": "Loughborough Lions AFC U12 Bronzes",
-                    "location": "AYLESTONE PARK",
-                    "competition": "Under 12 Division 8",
-                    "status": "Postponed"
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Thurmaston Magpies Junior U12 Lightning",
                     "awayTeam": "Loughborough Lions AFC U12 Bronzes",
                     "location": "JUBILEE PARK (THURMASTON)",
@@ -3538,6 +3530,15 @@
                     "location": "JUBILEE PARK (THURMASTON)",
                     "competition": "Under 12 Division 8",
                     "status": ""
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Aylestone Park Youth U12 94",
+                    "awayTeam": "Loughborough Lions AFC U12 Bronzes",
+                    "location": "AYLESTONE PARK",
+                    "competition": "Under 12 Division 8",
+                    "status": "Postponed",
+                    "removed": true
                 }
             ],
             "results": [
@@ -3548,15 +3549,6 @@
                     "homeScore": "2",
                     "awayScore": "3",
                     "awayTeam": "Harborough Town Juniors U12 2016",
-                    "division": "Under 12 Division 8"
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Aylestone Park Youth U12 94",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "Loughborough Lions AFC U12 Bronzes",
                     "division": "Under 12 Division 8"
                 },
                 {
@@ -4288,22 +4280,6 @@
                     "status": "Postponed"
                 },
                 {
-                    "fixtureDateTime": "08\/11\/26 13:00",
-                    "homeTeam": "Allexton &amp; New Parks Junior U12 Hawks",
-                    "awayTeam": "Beaumont Park U12 Tigers",
-                    "location": "THE HEREWOODE ACADEMY",
-                    "competition": "Under 12 Division 10",
-                    "status": "Postponed"
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 14:30",
-                    "homeTeam": "Kibworth Town U12 Falcons",
-                    "awayTeam": "Loughborough Dynamo Junior U12 Golds",
-                    "location": "Birds Barn, Fleckney Road LE8 0HJ",
-                    "competition": "Under 12 Division 10",
-                    "status": "Postponed"
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Coalville Town Ravens U12 Robins",
                     "awayTeam": "Sileby Juniors U12 Sparrow Hawks",
@@ -4430,18 +4406,27 @@
                     "location": "BROUGHTON ASTLEY LEISURE CENTRE",
                     "competition": "Under 12 Division 10",
                     "status": ""
-                }
-            ],
-            "results": [
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 13:00",
+                    "homeTeam": "Allexton &amp; New Parks Junior U12 Hawks",
+                    "awayTeam": "Beaumont Park U12 Tigers",
+                    "location": "THE HEREWOODE ACADEMY",
+                    "competition": "Under 12 Division 10",
+                    "status": "Postponed",
+                    "removed": true
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 14:30",
                     "homeTeam": "Kibworth Town U12 Falcons",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
                     "awayTeam": "Loughborough Dynamo Junior U12 Golds",
-                    "division": "Under 12 Division 10"
-                },
+                    "location": "Birds Barn, Fleckney Road LE8 0HJ",
+                    "competition": "Under 12 Division 10",
+                    "status": "Postponed",
+                    "removed": true
+                }
+            ],
+            "results": [
                 {
                     "fixtureDateTime": "08\/11\/26 14:30",
                     "homeTeam": "Kibworth Town U12 Falcons",
@@ -4449,15 +4434,6 @@
                     "homeScore": "1",
                     "awayScore": "8",
                     "awayTeam": "Allexton &amp; New Parks Junior U12 Hawks",
-                    "division": "Under 12 Division 10"
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 13:00",
-                    "homeTeam": "Allexton &amp; New Parks Junior U12 Hawks",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "Beaumont Park U12 Tigers",
                     "division": "Under 12 Division 10"
                 },
                 {
