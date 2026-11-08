@@ -54,6 +54,7 @@ body{margin:0;min-height:100%;background:#000;color:var(--white);display:flex;ju
 [hidden]{display:none!important}
 @media (prefers-reduced-motion:no-preference){.blink{animation:b 1s steps(1) infinite}@keyframes b{50%{opacity:0}}}
 #ptr{position:fixed;top:0;left:50%;width:56px;height:56px;margin-left:-28px;transform:translateY(-64px);opacity:0;z-index:60;pointer-events:none;perspective:300px}
+#tv.back{transition:top .25s ease}
 #ptr.back{transition:transform .25s ease,opacity .25s ease}
 #ptr img{width:100%;height:100%;display:block;filter:drop-shadow(0 0 6px rgba(0,0,0,.7))}
 #ptr.spin img{animation:ptrspin .9s linear infinite}
@@ -708,10 +709,11 @@ refreshData(true);
   el.innerHTML='<img alt="" src="'+LOGO+'">';document.body.appendChild(el);
   const img=el.firstChild;
   let y0=null,pull=0,busy=false;
-  const show=(d,spin)=>{el.style.opacity=d>4?"1":"0";el.style.transform="translateY("+(d-64)+"px)";
+  const tvEl=document.getElementById("tv");if(getComputedStyle(tvEl).position=="static")tvEl.style.position="relative";
+  const show=(d,spin)=>{tvEl.style.top=Math.max(0,d)+"px";el.style.opacity=d>4?"1":"0";el.style.transform="translateY("+(d-64)+"px)";
     if(!spin)img.style.transform="rotateY("+(d*5)+"deg)";};
-  const done=()=>{el.classList.remove("spin");el.classList.add("back");show(0);setTimeout(()=>el.classList.remove("back"),300);busy=false;};
-  const go=()=>{busy=true;el.classList.add("spin");img.style.transform="";show(70,true);
+  const done=()=>{el.classList.remove("spin");el.classList.add("back");tvEl.classList.add("back");show(0);setTimeout(()=>{el.classList.remove("back");tvEl.classList.remove("back");},300);busy=false;};
+  const go=()=>{busy=true;el.classList.add("spin");tvEl.classList.add("back");img.style.transform="";show(64,true);
     const t0=Date.now();
     refreshData(false).then(()=>{try{track("pull-refresh","pull to refresh",true);}catch(e){}})
       .then(()=>new Promise(r=>setTimeout(r,Math.max(0,900-(Date.now()-t0))))).then(done,done);};
@@ -725,7 +727,7 @@ refreshData(true);
     if(d<=0||window.scrollY>0){if(pull){pull=0;show(0);}return;}
     pull=Math.min(d*0.5,90);show(pull);},{passive:true});
   const end=()=>{if(y0===null)return;y0=null;
-    if(pull>=60)go();else{el.classList.add("back");show(0);setTimeout(()=>el.classList.remove("back"),300);}pull=0;};
+    if(pull>=60)go();else{el.classList.add("back");tvEl.classList.add("back");show(0);setTimeout(()=>{el.classList.remove("back");tvEl.classList.remove("back");},300);}pull=0;};
   document.addEventListener("touchend",end,{passive:true});
   document.addEventListener("touchcancel",end,{passive:true});
   // Coming back to the app after 2+ minutes away also refreshes it.
