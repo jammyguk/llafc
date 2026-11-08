@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-08 15:26:53 UTC",
+    "updated": "2026-11-08 15:55:18 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -4006,7 +4006,7 @@
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Kirby Muxloe U12 Knights",
-                    "score": "4 - 2",
+                    "score": "4 - 2 (HT 3-0)",
                     "homeScore": "4",
                     "awayScore": "2",
                     "awayTeam": "Leicester St Andrews Junior U12 Corinthi",
@@ -5496,7 +5496,7 @@
                 {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Amanah All Stars U12 Amanah All Stars",
-                    "score": "6 - 0",
+                    "score": "6 - 0 (HT 1-0)",
                     "homeScore": "6",
                     "awayScore": "0",
                     "awayTeam": "Beaumont Town 2012 U12 Pumas",
@@ -7363,7 +7363,7 @@
                 {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Community Football Academy U13",
-                    "score": "4 - 2",
+                    "score": "4 - 2 (HT 3-2)",
                     "homeScore": "4",
                     "awayScore": "2",
                     "awayTeam": "Royce Rangers U13 Avengers",
@@ -8169,9 +8169,9 @@
                 {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Whetstone Athletic U13 Jaguars",
-                    "score": "0 - 3 (HT 1-0)",
-                    "homeScore": "0",
-                    "awayScore": "3",
+                    "score": "3 - 0 (HT 1-0)",
+                    "homeScore": "3",
+                    "awayScore": "0",
                     "awayTeam": "Oadby Owls U13 Greys",
                     "division": "Under 13 Division 6"
                 },
@@ -8933,14 +8933,6 @@
             "name": "U13 Division 8",
             "fixtures": [
                 {
-                    "fixtureDateTime": "08\/11\/26 13:00",
-                    "homeTeam": "Harborough Town Juniors U13 2022",
-                    "awayTeam": "Whetstone Athletic U13 Lions",
-                    "location": "BOWDENS PARK (HARBOROUGH TOWN FC)",
-                    "competition": "Under 13 Division 8",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Shepshed Dynamo Youth &amp; Junior U13 Cobra",
                     "awayTeam": "Croft Juniors 2013 U13 Diamonds",
@@ -9125,6 +9117,15 @@
                     "homeScore": "2",
                     "awayScore": "4",
                     "awayTeam": "Groby Juniors U13 Spartans",
+                    "division": "Under 13 Division 8"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 13:00",
+                    "homeTeam": "Harborough Town Juniors U13 2022",
+                    "score": "6 - 4 (HT 3-2)",
+                    "homeScore": "6",
+                    "awayScore": "4",
+                    "awayTeam": "Whetstone Athletic U13 Lions",
                     "division": "Under 13 Division 8"
                 },
                 {
@@ -10663,7 +10664,7 @@
                 {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Mountsorrel Juniors U13 Tigers",
-                    "score": "11 - 0",
+                    "score": "11 - 0 (HT 5-0)",
                     "homeScore": "11",
                     "awayScore": "0",
                     "awayTeam": "Coalville Town Ravens U13 Ruffs",
