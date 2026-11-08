@@ -1,25 +1,9 @@
 {
-    "updated": "2026-11-08 12:40:12 UTC",
+    "updated": "2026-11-08 13:06:11 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
             "fixtures": [
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
-                    "awayTeam": "Whetstone Athletic U12 Lions",
-                    "location": "Harborough Town FC LE16 9HF",
-                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Studs Junior U12",
-                    "awayTeam": "Heather Juniors U12 Lions",
-                    "location": "WINSTANLEY COMMUNITY COLLEGE",
-                    "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd",
-                    "status": ""
-                },
                 {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Beaumont Park U12 Panthers",
@@ -152,11 +136,29 @@
             "results": [
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Harborough Town Juniors U12 ETP Sunday",
+                    "score": "2 - 4",
+                    "homeScore": "2",
+                    "awayScore": "4",
+                    "awayTeam": "Whetstone Athletic U12 Lions",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Loughborough Lions AFC U12 Reds",
                     "score": "5 - 0",
                     "homeScore": "5",
                     "awayScore": "0",
                     "awayTeam": "Beaumont Park U12 Jaguars",
+                    "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Studs Junior U12",
+                    "score": "2 - 2",
+                    "homeScore": "2",
+                    "awayScore": "2",
+                    "awayTeam": "Heather Juniors U12 Lions",
                     "division": "U12 Div 1 D&amp;J Mobile Catering Ltd"
                 },
                 {
@@ -984,22 +986,6 @@
                     "status": ""
                 },
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Leicester Nirvana Juniors U12 Reds",
-                    "awayTeam": "Hinckley Town Juniors U12 Hurricanes",
-                    "location": "HAMILTON PARK",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Whetstone Athletic U12 Jaguars",
-                    "awayTeam": "East Goscote United U12 Boys",
-                    "location": "ELIZABETH PARK",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Community Football Academy U12 Foxes",
                     "awayTeam": "FC Burbage U12 Lions",
@@ -1179,11 +1165,29 @@
             "results": [
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Leicester Nirvana Juniors U12 Reds",
+                    "score": "2 - 5 (HT 1-2)",
+                    "homeScore": "2",
+                    "awayScore": "5",
+                    "awayTeam": "Hinckley Town Juniors U12 Hurricanes",
+                    "division": "U12 ESF26 - The Ultimate Tour Div 3"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Sporting Markfield U12 Tigers",
                     "score": "4 - 0",
                     "homeScore": "4",
                     "awayScore": "0",
                     "awayTeam": "FC Burbage U12 Lions",
+                    "division": "U12 ESF26 - The Ultimate Tour Div 3"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Whetstone Athletic U12 Jaguars",
+                    "score": "8 - 2 (HT 6-1)",
+                    "homeScore": "8",
+                    "awayScore": "2",
+                    "awayTeam": "East Goscote United U12 Boys",
                     "division": "U12 ESF26 - The Ultimate Tour Div 3"
                 },
                 {
@@ -1517,22 +1521,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Houghton Rangers Junior U12 Foxes",
-                    "awayTeam": "Kirby Muxloe U12 88's",
-                    "location": "Houghton Playing Field LE7 9GR",
-                    "competition": "Under 12 Division 4 Cotton Counselling",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Kegworth Imps U12",
-                    "awayTeam": "Anstey Nomads U12 24's",
-                    "location": "Kegworth Imps JFC LE12 5HD",
-                    "competition": "Under 12 Division 4 Cotton Counselling",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Rothley Imps Junior U12 Warriors",
                     "awayTeam": "Coalville Town Ravens U12 Ravens",
                     "location": "ROTHLEY SPORTS &amp; SOCIAL CLUB",
@@ -1716,6 +1704,24 @@
                     "homeScore": "3",
                     "awayScore": "8",
                     "awayTeam": "Dunton &amp; Broughton United Jnrs U12 Tiger",
+                    "division": "Under 12 Division 4 Cotton Counselling"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Houghton Rangers Junior U12 Foxes",
+                    "score": "5 - 2 (HT 1-1)",
+                    "homeScore": "5",
+                    "awayScore": "2",
+                    "awayTeam": "Kirby Muxloe U12 88's",
+                    "division": "Under 12 Division 4 Cotton Counselling"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Kegworth Imps U12",
+                    "score": "2 - 5",
+                    "homeScore": "2",
+                    "awayScore": "5",
+                    "awayTeam": "Anstey Nomads U12 24's",
                     "division": "Under 12 Division 4 Cotton Counselling"
                 },
                 {
@@ -2447,22 +2453,6 @@
             "name": "U12 Division 6",
             "fixtures": [
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Birstall United U12 Bears",
-                    "awayTeam": "Glen Villa Juniors U12 Panthers",
-                    "location": "BIRSTALL UNITED FOOTBALL CLUB",
-                    "competition": "U12 A.B. WALLACE TROPHIES Div 6",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Community Football Academy U12",
-                    "awayTeam": "Barrow Town U12 Eagles",
-                    "location": "JUDGEMEADOW COMMUNITY COLLEGE",
-                    "competition": "U12 A.B. WALLACE TROPHIES Div 6",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Borough Alliance Junior U12 Wolves",
                     "awayTeam": "Anstey Nomads U12 Reds",
@@ -2632,6 +2622,24 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Birstall United U12 Bears",
+                    "score": "1 - 1",
+                    "homeScore": "1",
+                    "awayScore": "1",
+                    "awayTeam": "Glen Villa Juniors U12 Panthers",
+                    "division": "U12 A.B. WALLACE TROPHIES Div 6"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Community Football Academy U12",
+                    "score": "2 - 7",
+                    "homeScore": "2",
+                    "awayScore": "7",
+                    "awayTeam": "Barrow Town U12 Eagles",
+                    "division": "U12 A.B. WALLACE TROPHIES Div 6"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Hinckley Town Juniors U12 Warriors",
@@ -2935,14 +2943,6 @@
             "name": "U12 Division 7",
             "fixtures": [
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Melton Foxes FC U12 Lions",
-                    "awayTeam": "Whetstone Athletic U12 Tigers",
-                    "location": "MARS SPORTS GROUND",
-                    "competition": "Under 12 Division 7",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Community Football Academy U12 Shubaan",
                     "awayTeam": "AFC Barwell U12 Dragons",
@@ -3119,6 +3119,15 @@
                     "homeScore": "1",
                     "awayScore": "2",
                     "awayTeam": "Hinckley Town Juniors U12 Dragons",
+                    "division": "Under 12 Division 7"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Melton Foxes FC U12 Lions",
+                    "score": "4 - 1",
+                    "homeScore": "4",
+                    "awayScore": "1",
+                    "awayTeam": "Whetstone Athletic U12 Tigers",
                     "division": "Under 12 Division 7"
                 },
                 {
@@ -3824,14 +3833,6 @@
                     "status": ""
                 },
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Stoke Golding U12 Swords",
-                    "awayTeam": "Anstey Nomads U12 22's",
-                    "location": "REDMOOR ACADEMY",
-                    "competition": "Under 12 Division 9",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "AFC Andrews U12 Ants",
                     "awayTeam": "Anstey Nomads U12 22's",
@@ -4026,6 +4027,15 @@
                     "homeScore": "3",
                     "awayScore": "1",
                     "awayTeam": "Thompsons United U12 Blazes",
+                    "division": "Under 12 Division 9"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Stoke Golding U12 Swords",
+                    "score": "6 - 2",
+                    "homeScore": "6",
+                    "awayScore": "2",
+                    "awayTeam": "Anstey Nomads U12 22's",
                     "division": "Under 12 Division 9"
                 },
                 {
@@ -4267,14 +4277,6 @@
                     "status": "Postponed"
                 },
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Groby Juniors U12 Gladiators",
-                    "awayTeam": "Sileby Juniors U12 Sparrow Hawks",
-                    "location": "Groby Community College LE6 0FP",
-                    "competition": "Under 12 Division 10",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Allexton &amp; New Parks Junior U12 Hawks",
                     "awayTeam": "Beaumont Park U12 Tigers",
@@ -4453,6 +4455,15 @@
                     "homeScore": "Postponed P",
                     "awayScore": "P",
                     "awayTeam": "Croft Juniors 2013 U12 Diamonds",
+                    "division": "Under 12 Division 10"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Groby Juniors U12 Gladiators",
+                    "score": "1 - 3 (HT 0-2)",
+                    "homeScore": "1",
+                    "awayScore": "3",
+                    "awayTeam": "Sileby Juniors U12 Sparrow Hawks",
                     "division": "Under 12 Division 10"
                 },
                 {
@@ -4651,14 +4662,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Ibstock United Juniors U12 Lions",
-                    "awayTeam": "Melton Foxes FC U12 Foxes",
-                    "location": "ASHBY ROAD PLAYING FIELDS",
-                    "competition": "Under 12 Division 11",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Shepshed Dynamo Youth &amp; Junior U12 Viper",
                     "awayTeam": "Royce Rangers U12 Rhinos",
                     "location": "IVESHEAD SCHOOL",
@@ -4787,6 +4790,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Ibstock United Juniors U12 Lions",
+                    "score": "1 - 4 (HT 0-3)",
+                    "homeScore": "1",
+                    "awayScore": "4",
+                    "awayTeam": "Melton Foxes FC U12 Foxes",
+                    "division": "Under 12 Division 11"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Royce Rangers U12 Raiders",
@@ -6117,14 +6129,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "East Goscote United U13 Boys",
-                    "awayTeam": "Allexton &amp; New Parks Junior U13 Magpies",
-                    "location": "THE CEDARS ACADEMY",
-                    "competition": "Under 13 Div 1D&amp;J Mobile Catering Ltd",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Lutterworth Athletic Youth U13 Lightning",
                     "awayTeam": "Harborough Town Juniors U13 ETP Sunday",
                     "location": "LUTTERWORTH FOOTBALL ACADEMY",
@@ -6245,6 +6249,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "East Goscote United U13 Boys",
+                    "score": "0 - 1",
+                    "homeScore": "0",
+                    "awayScore": "1",
+                    "awayTeam": "Allexton &amp; New Parks Junior U13 Magpies",
+                    "division": "Under 13 Div 1D&amp;J Mobile Catering Ltd"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Saffron Dynamo U13 Sparks",
@@ -6449,22 +6462,6 @@
             "name": "U13 Division 2",
             "fixtures": [
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Harborough Town Juniors U13 94",
-                    "awayTeam": "Beaumont Park U13 Lions",
-                    "location": "Harborough Town FC LE16 9HF",
-                    "competition": "U13s Norths of Leicester Div 2",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Melton Town U13 Panthers",
-                    "awayTeam": "Dunton &amp; Broughton United Jnrs U13 Puma",
-                    "location": "MELTON SPORTS VILLAGE",
-                    "competition": "U13s Norths of Leicester Div 2",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Blaby &amp; Whetstone U13 Blues",
                     "awayTeam": "Community Football Academy U13 Kickstart",
@@ -6594,6 +6591,24 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Harborough Town Juniors U13 94",
+                    "score": "3 - 1",
+                    "homeScore": "3",
+                    "awayScore": "1",
+                    "awayTeam": "Beaumont Park U13 Lions",
+                    "division": "U13s Norths of Leicester Div 2"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Melton Town U13 Panthers",
+                    "score": "2 - 0",
+                    "homeScore": "2",
+                    "awayScore": "0",
+                    "awayTeam": "Dunton &amp; Broughton United Jnrs U13 Puma",
+                    "division": "U13s Norths of Leicester Div 2"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 12:30",
                     "homeTeam": "Community Football Academy U13 Kickstart",
@@ -6780,22 +6795,6 @@
                 },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Anstey Nomads U13 78's",
-                    "awayTeam": "North Kilworth Junior &amp; Youth U13 Lions",
-                    "location": "RATBY SPORTS CLUB",
-                    "competition": "U13s MG Digital Div 3",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Hinckley Borough FC U13 Youth",
-                    "awayTeam": "Market Bosworth Town Juniors U13 Knights",
-                    "location": "WEAVERS SPRINGS PARK",
-                    "competition": "U13s MG Digital Div 3",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Leicester Nirvana Juniors U13 Reds",
                     "awayTeam": "Oadby Owls U13 Tawnys",
                     "location": "HAMILTON PARK",
@@ -6963,6 +6962,24 @@
                     "homeScore": "Postponed P",
                     "awayScore": "P",
                     "awayTeam": "AFC Andrews U13 Warriors",
+                    "division": "U13s MG Digital Div 3"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Anstey Nomads U13 78's",
+                    "score": "8 - 0",
+                    "homeScore": "8",
+                    "awayScore": "0",
+                    "awayTeam": "North Kilworth Junior &amp; Youth U13 Lions",
+                    "division": "U13s MG Digital Div 3"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Hinckley Borough FC U13 Youth",
+                    "score": "2 - 1",
+                    "homeScore": "2",
+                    "awayScore": "1",
+                    "awayTeam": "Market Bosworth Town Juniors U13 Knights",
                     "division": "U13s MG Digital Div 3"
                 },
                 {
@@ -7151,14 +7168,6 @@
             "name": "U13 Division 4",
             "fixtures": [
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "FC Burbage U13 Panthers",
-                    "awayTeam": "Loughborough Lions AFC U13 Reds",
-                    "location": "RUGBY ROAD RECREATION GROUND",
-                    "competition": "Under 13 Division 4",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "AFC Andrews U13 Cobras",
                     "awayTeam": "Coalville Town Ravens U13 Spartans",
@@ -7336,6 +7345,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "FC Burbage U13 Panthers",
+                    "score": "2 - 2",
+                    "homeScore": "2",
+                    "awayScore": "2",
+                    "awayTeam": "Loughborough Lions AFC U13 Reds",
+                    "division": "Under 13 Division 4"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Kirby Muxloe U13 Kings",
@@ -7540,14 +7558,6 @@
             "name": "U13 Division 5",
             "fixtures": [
                 {
-                    "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Heather Juniors U13 Jaguars",
-                    "awayTeam": "Highfield Rangers J&amp;Y U13 Jaguars",
-                    "location": "HEATHER ST JOHNS FC (ST JOHNS PARK)",
-                    "competition": "Under 13 Division 5",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Birstall United U13 Foxes",
                     "awayTeam": "Kirby Muxloe U13 Knights",
@@ -7709,6 +7719,15 @@
                     "homeScore": "4",
                     "awayScore": "1",
                     "awayTeam": "Thurlaston Magpies Junior U13 Magpies",
+                    "division": "Under 13 Division 5"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Heather Juniors U13 Jaguars",
+                    "score": "3 - 2",
+                    "homeScore": "3",
+                    "awayScore": "2",
+                    "awayTeam": "Highfield Rangers J&amp;Y U13 Jaguars",
                     "division": "Under 13 Division 5"
                 },
                 {
@@ -9946,14 +9965,6 @@
                 },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "Friar Lane &amp; Epworth Juniors &amp; Youth U13",
-                    "awayTeam": "Narborough Foxes U13 White",
-                    "location": "Aylestone Recreation Ground LE2 6LU",
-                    "competition": "Under 13 Division 10",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Rothley Imps Junior U13 Raptors",
                     "awayTeam": "Wigston Youth U13",
                     "location": "ROTHLEY SPORTS &amp; SOCIAL CLUB",
@@ -10146,6 +10157,15 @@
                     "homeScore": "Postponed P",
                     "awayScore": "P",
                     "awayTeam": "Countesthorpe C.F. U13",
+                    "division": "Under 13 Division 10"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Friar Lane &amp; Epworth Juniors &amp; Youth U13",
+                    "score": "0 - 10 (HT 0-7)",
+                    "homeScore": "0",
+                    "awayScore": "10",
+                    "awayTeam": "Narborough Foxes U13 White",
                     "division": "Under 13 Division 10"
                 },
                 {
@@ -10398,14 +10418,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
-                    "homeTeam": "AFC Barwell U13 Rhinos",
-                    "awayTeam": "Loughborough Lions AFC U13 Silvers",
-                    "location": "AFC BARWELL",
-                    "competition": "Under 13 Division 11",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Beaumont Town 2012 U13 Panthers",
                     "awayTeam": "Ambleside Junior U13 Nomads",
                     "location": "MOWMACRE HILL PRIMARY SCHOOL",
@@ -10630,6 +10642,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "AFC Barwell U13 Rhinos",
+                    "score": "5 - 1",
+                    "homeScore": "5",
+                    "awayScore": "1",
+                    "awayTeam": "Loughborough Lions AFC U13 Silvers",
+                    "division": "Under 13 Division 11"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Lutterworth Dynamos FC U13",
