@@ -53,6 +53,13 @@ body{margin:0;min-height:100%;background:#000;color:var(--white);display:flex;ju
 .vlink:hover,.vlink:focus-visible{background:var(--blue);outline:none}
 [hidden]{display:none!important}
 @media (prefers-reduced-motion:no-preference){.blink{animation:b 1s steps(1) infinite}@keyframes b{50%{opacity:0}}}
+#ptr{position:fixed;top:0;left:50%;width:56px;height:56px;margin-left:-28px;transform:translateY(-64px);opacity:0;z-index:60;pointer-events:none;perspective:300px}
+#ptr.back{transition:transform .25s ease,opacity .25s ease}
+#ptr img{width:100%;height:100%;display:block;filter:drop-shadow(0 0 6px rgba(0,0,0,.7))}
+#ptr.spin img{animation:ptrspin .9s linear infinite}
+@keyframes ptrspin{to{transform:rotateY(360deg)}}
+@media (prefers-reduced-motion:reduce){#ptr.spin img{animation:none}}
+html{overscroll-behavior-y:contain}
 </style>
 </head>
 <body>
@@ -673,7 +680,9 @@ setInterval(()=>{const o=document.getElementById("hd");if(o)o.outerHTML=head(cur
 document.addEventListener("keydown",e=>{if(e.target&&e.target.tagName==="INPUT")return;const k={"1":100,"2":101,"3":102,"4":103,"5":110,"6":104}[e.key];if(k)page(k);});
 
 load();
-fetch("data.json?_="+Date.now())
+// Loads data.json, cups.json and veo.json. First load opens the home page; later loads (pull down, or coming back to the app) redraw the page you are on.
+function refreshData(first){
+  return fetch("data.json?_="+Date.now())
   .then(r=>r.json())
   .then(raw=>{
     // Older data.json files had a single league at the top level.
@@ -687,9 +696,44 @@ fetch("data.json?_="+Date.now())
     return fetch("cups.json?_="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null).then(c=>{
       CUPS=(c&&c.cups)||[];
       return fetch("veo.json?_="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null).then(v=>{
-        VEO=(v&&v.links)||[];compute();page(100);});});
+        VEO=(v&&v.links)||[];compute();page(first?100:cur);});});
   })
-  .catch(()=>{STATE.note="COULDN'T LOAD DATA.JSON";page(100);});
+  .catch(()=>{if(first){STATE.note="COULDN'T LOAD DATA.JSON";page(100);}});
+}
+refreshData(true);
+
+// Pull down from the top of the page to refresh (shows the spinning crest).
+(function(){
+  const el=document.createElement("div");el.id="ptr";el.setAttribute("aria-hidden","true");
+  el.innerHTML='<img alt="" src="'+LOGO+'">';document.body.appendChild(el);
+  const img=el.firstChild;
+  let y0=null,pull=0,busy=false;
+  const show=(d,spin)=>{el.style.opacity=d>4?"1":"0";el.style.transform="translateY("+(d-64)+"px)";
+    if(!spin)img.style.transform="rotateY("+(d*5)+"deg)";};
+  const done=()=>{el.classList.remove("spin");el.classList.add("back");show(0);setTimeout(()=>el.classList.remove("back"),300);busy=false;};
+  const go=()=>{busy=true;el.classList.add("spin");img.style.transform="";show(70,true);
+    const t0=Date.now();
+    refreshData(false).then(()=>{try{track("pull-refresh","pull to refresh",true);}catch(e){}})
+      .then(()=>new Promise(r=>setTimeout(r,Math.max(0,900-(Date.now()-t0))))).then(done,done);};
+  window.refreshNow=()=>{if(!busy)go();};
+  document.addEventListener("touchstart",e=>{
+    if(busy||e.touches.length!=1||window.scrollY>0||(e.target.closest&&e.target.closest("input,textarea")))return;
+    y0=e.touches[0].clientY;pull=0;},{passive:true});
+  document.addEventListener("touchmove",e=>{
+    if(y0===null)return;
+    const d=e.touches[0].clientY-y0;
+    if(d<=0||window.scrollY>0){if(pull){pull=0;show(0);}return;}
+    pull=Math.min(d*0.5,90);show(pull);},{passive:true});
+  const end=()=>{if(y0===null)return;y0=null;
+    if(pull>=60)go();else{el.classList.add("back");show(0);setTimeout(()=>el.classList.remove("back"),300);}pull=0;};
+  document.addEventListener("touchend",end,{passive:true});
+  document.addEventListener("touchcancel",end,{passive:true});
+  // Coming back to the app after 2+ minutes away also refreshes it.
+  let hidden=0;
+  document.addEventListener("visibilitychange",()=>{
+    if(document.hidden){hidden=Date.now();return;}
+    if(hidden&&Date.now()-hidden>120000&&!busy)go();});
+})();
 
 page(100);
 </script>
