@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-07 09:45:27 UTC",
+    "updated": "2026-11-08 07:59:20 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -3531,6 +3531,24 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Aylestone Park Youth U12 94",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Loughborough Lions AFC U12 Bronzes",
+                    "division": "Under 12 Division 8"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Thurmaston Magpies Junior U12 Lightning",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Loughborough Lions AFC U12 Bronzes",
+                    "division": "Under 12 Division 8"
+                },
+                {
                     "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "Mountsorrel Juniors U12 Tigers",
                     "score": "0 - 2",
@@ -4388,6 +4406,33 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 14:30",
+                    "homeTeam": "Kibworth Town U12 Falcons",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Loughborough Dynamo Junior U12 Golds",
+                    "division": "Under 12 Division 10"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 13:00",
+                    "homeTeam": "Allexton &amp; New Parks Junior U12 Hawks",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Beaumont Park U12 Tigers",
+                    "division": "Under 12 Division 10"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Coalville Town Ravens U12 Robins",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Croft Juniors 2013 U12 Diamonds",
+                    "division": "Under 12 Division 10"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Beaumont Park U12 Tigers",
@@ -5414,6 +5459,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Hinckley Borough FC U12 Boys",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Glenfield United FC U12 Foxes",
+                    "division": "Under 12 Division 13"
+                },
                 {
                     "fixtureDateTime": "01\/11\/26 10:30",
                     "homeTeam": "Beaumont Town 2012 U12 Pumas",
@@ -6687,7 +6741,7 @@
                     "awayTeam": "AFC Andrews U13 Warriors",
                     "location": "THE HEREWOODE ACADEMY",
                     "competition": "U13s MG Digital Div 3",
-                    "status": ""
+                    "status": "Postponed"
                 },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
@@ -6875,6 +6929,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Allexton &amp; New Parks Junior U13 Hawks",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "AFC Andrews U13 Warriors",
+                    "division": "U13s MG Digital Div 3"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 10:30",
                     "homeTeam": "Aylestone Park Youth U13 Youth",
@@ -8510,6 +8573,15 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "GNG Juniors U13 Tigers",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Houghton Rangers Junior U13",
+                    "division": "Under 13 Division 7"
+                },
+                {
                     "fixtureDateTime": "01\/11\/26 12:30",
                     "homeTeam": "Houghton Rangers Junior U13",
                     "score": "2 - 4",
@@ -9502,6 +9574,15 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "08\/11\/26 13:00",
+                    "homeTeam": "Allexton &amp; New Parks Junior U13 Eagles",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Melton Foxes FC U13 United",
+                    "division": "Under 13 Division 9"
+                },
+                {
                     "fixtureDateTime": "01\/11\/26 12:30",
                     "homeTeam": "Harborough Town Juniors U13 2012",
                     "score": "0 - 3 (HT 0-2)",
@@ -10006,6 +10087,24 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Fleckney Athletic Junior U13 Foxes",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Countesthorpe C.F. U13",
+                    "division": "Under 13 Division 10"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Rothley Imps Junior U13 Raptors",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Wigston Youth U13",
+                    "division": "Under 13 Division 10"
+                },
+                {
                     "fixtureDateTime": "01\/11\/26 12:30",
                     "homeTeam": "Countesthorpe C.F. U13",
                     "score": "3 - 1 (HT 0-1)",
@@ -10486,6 +10585,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 11:05",
+                    "homeTeam": "Lutterworth Dynamos FC U13",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Birstall United U13 Wolves",
+                    "division": "Under 13 Division 11"
+                },
                 {
                     "fixtureDateTime": "25\/10\/26 12:30",
                     "homeTeam": "Birstall United U13 Wolves",
