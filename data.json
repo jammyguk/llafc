@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-08 16:01:40 UTC",
+    "updated": "2026-11-08 16:36:47 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -2206,7 +2206,7 @@
                 {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Harborough Town Juniors U12 2012",
-                    "score": "2 - 1",
+                    "score": "2 - 1 (HT 2-0)",
                     "homeScore": "2",
                     "awayScore": "1",
                     "awayTeam": "Lutterworth Athletic Youth U12 Thunder",
@@ -4304,14 +4304,6 @@
                     "status": "Postponed"
                 },
                 {
-                    "fixtureDateTime": "08\/11\/26 14:30",
-                    "homeTeam": "Kibworth Town U12 Falcons",
-                    "awayTeam": "Allexton &amp; New Parks Junior U12 Hawks",
-                    "location": "Birds Barn, Fleckney Road LE8 0HJ",
-                    "competition": "Under 12 Division 10",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Coalville Town Ravens U12 Robins",
                     "awayTeam": "Sileby Juniors U12 Sparrow Hawks",
@@ -4448,6 +4440,15 @@
                     "homeScore": "Postponed P",
                     "awayScore": "P",
                     "awayTeam": "Loughborough Dynamo Junior U12 Golds",
+                    "division": "Under 12 Division 10"
+                },
+                {
+                    "fixtureDateTime": "08\/11\/26 14:30",
+                    "homeTeam": "Kibworth Town U12 Falcons",
+                    "score": "1 - 8 (HT 0-5)",
+                    "homeScore": "1",
+                    "awayScore": "8",
+                    "awayTeam": "Allexton &amp; New Parks Junior U12 Hawks",
                     "division": "Under 12 Division 10"
                 },
                 {
@@ -4815,9 +4816,9 @@
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Shepshed Dynamo Youth &amp; Junior U12 Viper",
-                    "score": "0 - 5",
-                    "homeScore": "0",
-                    "awayScore": "5",
+                    "score": "5 - 0",
+                    "homeScore": "5",
+                    "awayScore": "0",
                     "awayTeam": "Royce Rangers U12 Rhinos",
                     "division": "Under 12 Division 11"
                 },
@@ -5105,7 +5106,7 @@
                 {
                     "fixtureDateTime": "08\/11\/26 14:30",
                     "homeTeam": "Leicester Nirvana Juniors U12 Greens",
-                    "score": "1 - 0",
+                    "score": "1 - 0 (HT 1-0)",
                     "homeScore": "1",
                     "awayScore": "0",
                     "awayTeam": "Rothley Imps Junior U12 Renegades",
@@ -5780,14 +5781,6 @@
             "name": "U12 Division 14",
             "fixtures": [
                 {
-                    "fixtureDateTime": "08\/11\/26 14:30",
-                    "homeTeam": "Iannis FC U12 Reds",
-                    "awayTeam": "Riverside United Junior U12 Seahawks",
-                    "location": "THE GROVE COMMUNITY HUB",
-                    "competition": "Under 12 Division 14",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "15\/11\/26 10:30",
                     "homeTeam": "Shepshed Dynamo Youth &amp; Junior U12 Cobra",
                     "awayTeam": "Oadby Owls U12 Falcons",
@@ -5925,6 +5918,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 14:30",
+                    "homeTeam": "Iannis FC U12 Reds",
+                    "score": "3 - 1",
+                    "homeScore": "3",
+                    "awayScore": "1",
+                    "awayTeam": "Riverside United Junior U12 Seahawks",
+                    "division": "Under 12 Division 14"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Narborough Foxes U12",
@@ -6608,7 +6610,7 @@
                 {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Coalville Town Ravens U13 Rooks",
-                    "score": "1 - 2",
+                    "score": "1 - 2 (HT 1-1)",
                     "homeScore": "1",
                     "awayScore": "2",
                     "awayTeam": "Melton Town U13",
@@ -10462,14 +10464,6 @@
                     "status": "Postponed"
                 },
                 {
-                    "fixtureDateTime": "08\/11\/26 14:30",
-                    "homeTeam": "Melton Foxes FC U13 Pumas",
-                    "awayTeam": "Riverside United Junior U13 Eagles",
-                    "location": "Mars Sports Ground, Saxby Rd, Melton, LE13 1BP.",
-                    "competition": "Under 13 Division 11",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "AFC Barwell U13 Rhinos",
                     "awayTeam": "Coalville Town Ravens U13 Ruffs",
@@ -10663,6 +10657,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "08\/11\/26 14:30",
+                    "homeTeam": "Melton Foxes FC U13 Pumas",
+                    "score": "4 - 1",
+                    "homeScore": "4",
+                    "awayScore": "1",
+                    "awayTeam": "Riverside United Junior U13 Eagles",
+                    "division": "Under 13 Division 11"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Mountsorrel Juniors U13 Tigers",

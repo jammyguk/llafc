@@ -1845,7 +1845,8 @@
      "date": "15/11/26 10:30",
      "home": "East Goscote United U12 Boys",
      "away": "Beaumont Park U12 Panthers",
-     "venue": "WREAKE VALLEY ACADEMY"
+     "venue": "WREAKE VALLEY ACADEMY",
+     "status": "Postponed"
     },
     {
      "date": "15/11/26 10:30",
@@ -1932,7 +1933,22 @@
      "venue": "THE GROVE COMMUNITY HUB"
     }
    ],
-   "results": []
+   "results": [
+    {
+     "date": "08/11/26",
+     "home": "Royce Rangers U12 Raptors",
+     "away": "Community Football Academy U12 Foxes",
+     "hs": 4,
+     "as": 1
+    },
+    {
+     "date": "08/11/26",
+     "home": "Ingles U12 Reds",
+     "away": "Wigston Willow U12 Panthers",
+     "hs": 4,
+     "as": 3
+    }
+   ]
   },
   {
    "name": "U12 Foxes Cup",
@@ -2083,6 +2099,13 @@
      "home": "Loughborough Lions AFC U12 Bronzes",
      "away": "Beaumont Park U12 Tigers",
      "hs": 0,
+     "as": 2
+    },
+    {
+     "date": "15/11/26",
+     "home": "Mountsorrel Juniors U12 Tigers",
+     "away": "Thurmaston Magpies Junior U12 Lightning",
+     "hs": 1,
      "as": 2
     }
    ]
