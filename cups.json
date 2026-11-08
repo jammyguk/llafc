@@ -1997,6 +1997,12 @@
     },
     {
      "date": "15/11/26 10:30",
+     "home": "Mountsorrel Juniors U12 Tigers",
+     "away": "Thurmaston Magpies Junior U12 Lightning",
+     "venue": "HALSTEAD ROAD PLAYING FIELDS"
+    },
+    {
+     "date": "15/11/26 10:30",
      "home": "Oadby Owls U12 Tawnys",
      "away": "Allexton & New Parks Junior U12 Hawks",
      "venue": "BEAUCHAMP COLLEGE"
@@ -2099,13 +2105,6 @@
      "home": "Loughborough Lions AFC U12 Bronzes",
      "away": "Beaumont Park U12 Tigers",
      "hs": 0,
-     "as": 2
-    },
-    {
-     "date": "15/11/26",
-     "home": "Mountsorrel Juniors U12 Tigers",
-     "away": "Thurmaston Magpies Junior U12 Lightning",
-     "hs": 1,
      "as": 2
     }
    ]
