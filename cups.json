@@ -1,5 +1,5 @@
 {
- "updated": "8 NOV 26",
+ "updated": "9 NOV 26",
  "cups": [
   {
    "name": "Soar Valley Press Sunday Youth U12 County Cup",
@@ -1967,12 +1967,6 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Beaumont Park U12 Tigers",
-     "away": "Leicester United Football Club U12 Reds",
-     "venue": "BEAUMONT PARK"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Highfield Rangers J&Y U12 Tigers",
      "away": "FC Burbage U12 Jaguars",
      "venue": "HIGHFIELD RANGERS FC"
@@ -2039,15 +2033,21 @@
     },
     {
      "date": "15/11/26 12:30",
+     "home": "Thurlaston Magpies Junior U12 Raptors",
+     "away": "Melton Foxes FC U12 Lions",
+     "venue": "THURLASTON FOOTBALL CLUB"
+    },
+    {
+     "date": "15/11/26 12:30",
      "home": "Whetstone Athletic U12 Tigers",
      "away": "AFC Market Bosworth Juniors U12 Wolves",
      "venue": "ELIZABETH PARK"
     },
     {
      "date": "15/11/26 14:00",
-     "home": "Thurlaston Magpies Junior U12 Raptors",
-     "away": "Melton Foxes FC U12 Lions",
-     "venue": "THURLASTON FOOTBALL CLUB"
+     "home": "Beaumont Park U12 Tigers",
+     "away": "Leicester United Football Club U12 Reds",
+     "venue": "BEAUMONT PARK"
     }
    ],
    "results": [
