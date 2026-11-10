@@ -1874,12 +1874,6 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Kirby Muxloe U12 Kings",
-     "away": "Royce Rangers U12 Raptors",
-     "venue": "KIRBY MUXLOE RECREATION GROUND"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Leicester Nirvana Juniors U12 Reds",
      "away": "Harborough Town Juniors U12 94",
      "venue": "HAMILTON PARK"
@@ -1919,6 +1913,12 @@
      "home": "Croft Juniors 2013 U12 Blues",
      "away": "Oadby Owls U12 Juniors",
      "venue": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS"
+    },
+    {
+     "date": "15/11/26 12:30",
+     "home": "Kirby Muxloe U12 Kings",
+     "away": "Royce Rangers U12 Raptors",
+     "venue": "KIRBY MUXLOE SPORTS CLUB"
     },
     {
      "date": "15/11/26 14:00",

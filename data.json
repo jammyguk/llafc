@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-10 07:43:17 UTC",
+    "updated": "2026-11-10 16:22:08 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -2620,9 +2620,9 @@
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Hinckley Town Juniors U12 Warriors",
-                    "score": "0 - 2",
-                    "homeScore": "0",
-                    "awayScore": "2",
+                    "score": "2 - 0",
+                    "homeScore": "2",
+                    "awayScore": "0",
                     "awayTeam": "Fleckney Athletic Junior U12 Foxes",
                     "division": "U12 A.B. WALLACE TROPHIES Div 6"
                 },
