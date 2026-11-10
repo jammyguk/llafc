@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-09 16:04:43 UTC",
+    "updated": "2026-11-10 07:43:17 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -2446,14 +2446,6 @@
                 },
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Borough Alliance Junior U12 Wolves",
-                    "awayTeam": "Hinckley Town Juniors U12 Warriors",
-                    "location": "SYMINGTONS RECREATION GROUND",
-                    "competition": "U12 A.B. WALLACE TROPHIES Div 6",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Community Football Academy U12",
                     "awayTeam": "Fleckney Athletic Junior U12 Foxes",
                     "location": "JUDGEMEADOW COMMUNITY COLLEGE",
@@ -2473,6 +2465,14 @@
                     "homeTeam": "Stoneygate Lions U12 Blues",
                     "awayTeam": "Glen Villa Juniors U12 Panthers",
                     "location": "JUDGEMEADOW COMMUNITY COLLEGE",
+                    "competition": "U12 A.B. WALLACE TROPHIES Div 6",
+                    "status": ""
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 12:30",
+                    "homeTeam": "Borough Alliance Junior U12 Wolves",
+                    "awayTeam": "Hinckley Town Juniors U12 Warriors",
+                    "location": "SYMINGTONS RECREATION GROUND",
                     "competition": "U12 A.B. WALLACE TROPHIES Div 6",
                     "status": ""
                 },
@@ -4173,9 +4173,9 @@
                 {
                     "fixtureDateTime": "20\/09\/26 10:30",
                     "homeTeam": "Loughborough Lions AFC U12 Yellows",
-                    "score": "Abandoned A - A (HT 1-0)",
-                    "homeScore": "Abandoned A",
-                    "awayScore": "A",
+                    "score": "Void V - V (HT 1-0)",
+                    "homeScore": "Void V",
+                    "awayScore": "V",
                     "awayTeam": "Leicester St Andrews Junior U12 Corinthi",
                     "division": "Under 12 Division 9"
                 },
@@ -5335,6 +5335,14 @@
                     "awayTeam": "Hinckley RFC U12 Stars",
                     "location": "WEAVERS SPRINGS PARK",
                     "competition": "Under 12 Division 13",
+                    "status": "Postponed"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Hinckley Borough FC U12 Boys",
+                    "awayTeam": "Beaumont Town 2012 U12 Pumas",
+                    "location": "WEAVERS SPRINGS PARK",
+                    "competition": "Under 12 Division 13",
                     "status": ""
                 },
                 {
@@ -5343,7 +5351,7 @@
                     "awayTeam": "Beaumont Town 2012 U12 Pumas",
                     "location": "THURLASTON FOOTBALL CLUB",
                     "competition": "Under 12 Division 13",
-                    "status": ""
+                    "status": "Postponed"
                 },
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
@@ -5360,14 +5368,6 @@
                     "location": "BEAUMONT LEYS SCHOOL",
                     "competition": "Under 12 Division 13",
                     "status": "Postponed"
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 10:30",
-                    "homeTeam": "Hinckley Borough FC U12 Boys",
-                    "awayTeam": "Beaumont Town 2012 U12 Pumas",
-                    "location": "WEAVERS SPRINGS PARK",
-                    "competition": "Under 12 Division 13",
-                    "status": ""
                 },
                 {
                     "fixtureDateTime": "06\/12\/26 10:30",
@@ -5784,7 +5784,7 @@
             "name": "U12 Division 14",
             "fixtures": [
                 {
-                    "fixtureDateTime": "15\/11\/26 10:30",
+                    "fixtureDateTime": "15\/11\/26 12:30",
                     "homeTeam": "Shepshed Dynamo Youth &amp; Junior U12 Cobra",
                     "awayTeam": "Oadby Owls U12 Falcons",
                     "location": "IVESHEAD SCHOOL",
@@ -6891,7 +6891,7 @@
                     "awayTeam": "AFC Andrews U13 Warriors",
                     "location": "Beauchamp College 3G LE2 5TP",
                     "competition": "U13s MG Digital Div 3",
-                    "status": ""
+                    "status": "Postponed Match Notes: 14 days AFC Andrews"
                 },
                 {
                     "fixtureDateTime": "06\/12\/26 10:30",
@@ -7019,9 +7019,9 @@
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Anstey Nomads U13 78's",
-                    "score": "8 - 0",
-                    "homeScore": "8",
-                    "awayScore": "0",
+                    "score": "4 - 3",
+                    "homeScore": "4",
+                    "awayScore": "3",
                     "awayTeam": "North Kilworth Junior &amp; Youth U13 Lions",
                     "division": "U13s MG Digital Div 3"
                 },
@@ -10122,7 +10122,7 @@
                     "awayTeam": "Friar Lane &amp; Epworth Juniors &amp; Youth U13",
                     "location": "OAKFIELD PARK",
                     "competition": "Under 13 Division 10",
-                    "status": ""
+                    "status": "Postponed"
                 },
                 {
                     "fixtureDateTime": "13\/12\/26 10:30",

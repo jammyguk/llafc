@@ -1,5 +1,5 @@
 {
- "updated": "9 NOV 26",
+ "updated": "10 NOV 26",
  "cups": [
   {
    "name": "Soar Valley Press Sunday Youth U12 County Cup",
@@ -1724,12 +1724,6 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Hinckley RFC U12 Stars",
-     "away": "Thurlaston Magpies Junior U12 Falcons",
-     "venue": "Hinckley RFC U12 Stars"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Loughborough Lions AFC U12 Golds",
      "away": "Beaumont Town 2012 U12 Pumas",
      "venue": "Charnwood College LE11 4SQ"
@@ -1781,6 +1775,12 @@
      "home": "Sileby Juniors U12 Stingrays",
      "away": "Iannis FC U12 Reds",
      "venue": "Sileby Memorial Park LE12 7TP"
+    },
+    {
+     "date": "22/11/26 10:30",
+     "home": "Hinckley RFC U12 Stars",
+     "away": "Thurlaston Magpies Junior U12 Falcons",
+     "venue": "Hinckley RFC U12 Stars"
     }
    ],
    "results": [
@@ -2047,7 +2047,7 @@
      "date": "15/11/26 14:00",
      "home": "Beaumont Park U12 Tigers",
      "away": "Leicester United Football Club U12 Reds",
-     "venue": "BEAUMONT PARK"
+     "venue": "BEAUMONT LEYS SCHOOL"
     }
    ],
    "results": [
@@ -2402,7 +2402,7 @@
      "date": "15/11/26 10:30",
      "home": "Kibworth Town U13 Cobras",
      "away": "Aylestone Park Youth U13 94",
-     "venue": "BIRDS BARN"
+     "venue": "KIBWORTH MEAD ACADEMY"
     },
     {
      "date": "15/11/26 10:30",
