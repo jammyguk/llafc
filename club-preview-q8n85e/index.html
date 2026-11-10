@@ -345,8 +345,9 @@ button{font:inherit}
 <p style="margin: 0; font-size: 15px; line-height: 1.45">Enter your child’s date of birth to see their {{season}} age group. Nothing you enter leaves this page.</p>
 </div>
 <label style="flex: 0 1 220px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 700">Date of birth
-<input type="date" value="{{dob}}" min="2005-01-01" max="{{maxDob}}" onChange="{{ setDob }}" style="min-height: 48px; box-sizing: border-box; width: 100%; border-radius: 12px; border: 2px solid #0E0E0E; background: #FFFFFF; padding: 0 12px; font: inherit; font-size: 16px; font-weight: 600; color: #0E0E0E">
+<input type="date" value="{{dob}}" min="2005-01-01" max="{{maxDob}}" onBlur="{{ setDob }}" onKeyDown="{{ dobKey }}" style="min-height: 48px; box-sizing: border-box; width: 100%; border-radius: 12px; border: 2px solid #0E0E0E; background: #FFFFFF; padding: 0 12px; font: inherit; font-size: 16px; font-weight: 600; color: #0E0E0E">
 </label>
+<button type="button" onClick="{{ checkDob }}" style="flex: 0 0 auto; min-height: 48px; padding: 0 22px; border-radius: 999px; border: 0; background: #0E0E0E; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 700; cursor: pointer">Show age group</button>
 <sc-if value="{{hasAge}}" hint-placeholder-val="{{ false }}">
 <div role="status" style="flex: 1 1 100%; border-radius: 16px; background: #FFFFFF; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
 <strong style="font-weight: 900; font-stretch: 125%; font-size: 22px; line-height: 1.05; text-transform: uppercase">{{ageTitle}}</strong>
@@ -1132,7 +1133,11 @@ PAGES['teams'] = class extends DCLogic {
     const sy = now.getMonth() >= 5 ? now.getFullYear() : now.getFullYear() - 1;
     const season = sy + '/' + String(sy + 1).slice(2);
     const dob = this.state.dob || '';
-    const setDob = (e) => this.setState({ dob: e && e.target ? e.target.value : '' });
+    // Only read the date once the picker is closed (blur, Enter or the button): re-drawing the page
+    // while a phone's date wheel is open would close it after the first spin.
+    const setDob = (e) => { const v = e && e.target ? e.target.value : ''; if (v !== (this.state.dob || '')) this.setState({ dob: v }); };
+    const dobKey = (e) => { if (e && e.key === 'Enter') { e.preventDefault(); setDob(e); } };
+    const checkDob = (e) => { const box = e && e.target && e.target.closest ? e.target.closest('#age-check') : null; const inp = box ? box.querySelector('input[type=date]') : null; if (inp) setDob({ target: inp }); };
     let hasAge = false, ageTitle = '', ageNote = '', ageTeams = [], ageAsk = false;
     const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dob);
     if (m) {
@@ -1165,7 +1170,7 @@ PAGES['teams'] = class extends DCLogic {
     const pad = (n) => String(n).padStart(2, '0');
     const maxDob = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
     return { accent, filters, groups, sel, teamCount: SQUADS.length,
-      season, dob, setDob, maxDob, hasAge, ageTitle, ageNote, ageTeams, hasAgeTeams: ageTeams.length > 0, ageAsk };
+      season, dob, setDob, dobKey, checkDob, maxDob, hasAge, ageTitle, ageNote, ageTeams, hasAgeTeams: ageTeams.length > 0, ageAsk };
   }
 }
 
