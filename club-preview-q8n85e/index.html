@@ -23,7 +23,8 @@
 @font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(fonts/archivo-latin-wdth-normal.woff2) format('woff2-variations'),url(fonts/archivo-latin-wdth-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{overflow-x:clip}
-h1,h2,h3{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+.nw{white-space:nowrap}
+#app h1,#app h2,#app h3{overflow-wrap:normal;-webkit-hyphens:manual;hyphens:manual}
 @media (max-width:360px){#app h1[style*="clamp("]{font-size:min(44px,calc((100vw - 40px) / 9.5)) !important}#app h2[style*="clamp("],#app h2[style*="font-size: 40px"]{font-size:min(32px,calc((100vw - 80px) / 10)) !important}}
 @media (max-width:300px){#app [style*="white-space: nowrap"]{white-space:normal !important}html .ll-top-in{gap:10px;padding-left:12px;padding-right:12px}html .ll-brand b{display:none}html .ll-menu{padding:0 12px;flex:none}}
 [data-go]{cursor:pointer}
@@ -314,7 +315,7 @@ button{font:inherit}
 <a href="tel:+447306219207" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 999px; background: {{accent}}; color: #0E0E0E; text-decoration: none; font-weight: 700">John Mitchell · 07306 219207</a>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 14px; color: #BEBCB6">
-<a href="mailto:enquiriesloughboroughlionsafc@outlook.com" style="color: #FFFFFF; overflow-wrap: anywhere">enquiriesloughboroughlionsafc@outlook.com</a>
+<a href="mailto:enquiriesloughboroughlionsafc@outlook.com" style="color: #FFFFFF; overflow-wrap: normal">enquiriesloughboroughlionsafc<wbr>@outlook.com</a>
 <span>Welfare: Hannah Burton · <a href="tel:+447730886462" style="color: #FFFFFF">07730 886462</a></span>
 <a href="https://m.facebook.com/loughboroughlionsAFC/" style="color: #FFFFFF">Facebook</a>
 <a href="https://instagram.com/loughboroughlionsafc" style="color: #FFFFFF">Instagram</a>
@@ -492,12 +493,12 @@ button{font:inherit}
 <span style="padding: 4px 12px; border-radius: 999px; background: #0E0E0E; color: {{accent}}; font-size: 12.5px; font-weight: 700; text-transform: uppercase">Club news</span>
 <span style="padding: 4px 12px; border-radius: 999px; background: #FFFFFF; font-size: 12.5px; font-weight: 700; text-transform: uppercase">Partnership</span>
 </div>
-<h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: clamp(30px, 3.8vw, 50px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase">Five-year partnership with Charnwood College</h2>
-<p style="margin: 0; font-size: clamp(17px, 1.5vw, 19px); line-height: 1.5; font-weight: 600; color: #0E0E0E">Loughborough Lions AFC and Charnwood College have signed a new five-year agreement, making the college the home of all 16 Lions teams for matchdays and training.</p>
+<h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: clamp(30px, 3.8vw, 50px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase"><span class="nw">Five-year</span> partnership with Charnwood College</h2>
+<p style="margin: 0; font-size: clamp(17px, 1.5vw, 19px); line-height: 1.5; font-weight: 600; color: #0E0E0E">Loughborough Lions AFC and Charnwood College have signed a new <span class="nw">five-year</span> agreement, making the college the home of all 16 Lions teams for matchdays and training.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 8px">
-<div style="flex: 1 1 0; min-width: 0; border-radius: 16px; background: #FFFFFF; padding: 12px 12px 14px; display: flex; flex-direction: column; gap: 4px"><strong style="font-weight: 900; font-stretch: 125%; font-size: clamp(26px, 3vw, 34px); line-height: 1; letter-spacing: -0.02em">5</strong><span style="font-size: 13.5px; line-height: 1.3; font-weight: 600; color: #5C5A55">year agreement</span></div>
-<div style="flex: 1 1 0; min-width: 0; border-radius: 16px; background: #FFFFFF; padding: 12px 12px 14px; display: flex; flex-direction: column; gap: 4px"><strong style="font-weight: 900; font-stretch: 125%; font-size: clamp(26px, 3vw, 34px); line-height: 1; letter-spacing: -0.02em">16</strong><span style="font-size: 13.5px; line-height: 1.3; font-weight: 600; color: #5C5A55">teams, one home</span></div>
-<div style="flex: 1 1 0; min-width: 0; border-radius: 16px; background: #FFFFFF; padding: 12px 12px 14px; display: flex; flex-direction: column; gap: 4px"><strong style="font-weight: 900; font-stretch: 125%; font-size: clamp(26px, 3vw, 34px); line-height: 1; letter-spacing: -0.02em">3G</strong><span style="font-size: 13.5px; line-height: 1.3; font-weight: 600; color: #5C5A55">pitches on site</span></div>
+<div style="flex: 1 1 100px; min-width: 0; border-radius: 16px; background: #FFFFFF; padding: 12px 12px 14px; display: flex; flex-direction: column; gap: 4px"><strong style="font-weight: 900; font-stretch: 125%; font-size: clamp(26px, 3vw, 34px); line-height: 1; letter-spacing: -0.02em">5</strong><span style="font-size: 13.5px; line-height: 1.3; font-weight: 600; color: #5C5A55">year agreement</span></div>
+<div style="flex: 1 1 100px; min-width: 0; border-radius: 16px; background: #FFFFFF; padding: 12px 12px 14px; display: flex; flex-direction: column; gap: 4px"><strong style="font-weight: 900; font-stretch: 125%; font-size: clamp(26px, 3vw, 34px); line-height: 1; letter-spacing: -0.02em">16</strong><span style="font-size: 13.5px; line-height: 1.3; font-weight: 600; color: #5C5A55">teams, one home</span></div>
+<div style="flex: 1 1 100px; min-width: 0; border-radius: 16px; background: #FFFFFF; padding: 12px 12px 14px; display: flex; flex-direction: column; gap: 4px"><strong style="font-weight: 900; font-stretch: 125%; font-size: clamp(26px, 3vw, 34px); line-height: 1; letter-spacing: -0.02em">3G</strong><span style="font-size: 13.5px; line-height: 1.3; font-weight: 600; color: #5C5A55">pitches on site</span></div>
 </div>
 <p style="margin: 0; font-size: 16.5px; line-height: 1.65; color: #3F3D39">It’s a huge win for the club. The deal secures our future for the next five years, with excellent facilities and a permanent base, to be known as <strong style="color: #0E0E0E">the Lions Den</strong>.</p>
 </div>
@@ -505,12 +506,12 @@ button{font:inherit}
 <div style="grid-column: 1 / -1; padding: 0 clamp(16px, 3.4vw, 44px) clamp(16px, 3.4vw, 44px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 12px">
 <blockquote style="margin: 0; border-radius: 22px; background: #FFFFFF; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 14px">
 <svg width="26" height="26" viewBox="0 0 32 32" fill="{{accent}}" aria-hidden="true"><path d="M4 26V17.5C4 10.6 7.6 6.3 13.6 4.6l1.3 3.3c-3.4 1.3-5.1 3.6-5.3 6.6H14V26H4zm14 0V17.5c0-6.9 3.6-11.2 9.6-12.9l1.3 3.3c-3.4 1.3-5.1 3.6-5.3 6.6H28V26H18z"/></svg>
-<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #0E0E0E">This is great news for the club and gives us a permanent base to build on. We’ll have 3G pitches, ample parking, changing rooms, storage and a snack bar, so every player, coach and supporter, home or away, has top-class facilities that support our young players.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #0E0E0E">This is great news for the club and gives us a permanent base to build on. We’ll have 3G pitches, ample parking, changing rooms, storage and a snack bar, so every player, coach and supporter, home or away, has <span class="nw">top-class</span> facilities that support our young players.</p>
 <footer style="margin-top: auto; display: flex; align-items: center; gap: 16px; padding-top: 18px; border-top: 1px solid #E7E5DF"><img loading="lazy" decoding="async" src="{{$darren}}" alt="Darren Willoughby" style="flex: none; width: 72px; height: 72px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 6px {{accent}}"><span style="display: flex; flex-direction: column; line-height: 1.25"><strong style="font-size: 17px">Darren Willoughby</strong><span style="font-size: 14px; color: #5C5A55">Commercial &amp; Community Director</span></span></footer>
 </blockquote>
 <blockquote style="margin: 0; border-radius: 22px; background: #0E0E0E; color: #FFFFFF; padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 14px">
 <svg width="26" height="26" viewBox="0 0 32 32" fill="{{accent}}" aria-hidden="true"><path d="M4 26V17.5C4 10.6 7.6 6.3 13.6 4.6l1.3 3.3c-3.4 1.3-5.1 3.6-5.3 6.6H14V26H4zm14 0V17.5c0-6.9 3.6-11.2 9.6-12.9l1.3 3.3c-3.4 1.3-5.1 3.6-5.3 6.6H28V26H18z"/></svg>
-<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #EDEBE6">We’re delighted to have signed this deal with Charnwood College. It lets us keep supporting young footballers in Loughborough, with a pathway from the very start in our academy right through to our under-16s, and backs our aim of offering top-quality, affordable coaching to everyone, whatever their background or ability.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #EDEBE6">We’re delighted to have signed this deal with Charnwood College. It lets us keep supporting young footballers in Loughborough, with a pathway from the very start in our academy right through to our <span class="nw">under-16s</span>, and backs our aim of offering <span class="nw">top-quality</span>, affordable coaching to everyone, whatever their background or ability.</p>
 <footer style="margin-top: auto; display: flex; align-items: center; gap: 16px; padding-top: 18px; border-top: 1px solid #2A2A2A"><img loading="lazy" decoding="async" src="{{$john}}" alt="John Mitchell" style="flex: none; width: 72px; height: 72px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 3px #0E0E0E, 0 0 0 6px {{accent}}"><span style="display: flex; flex-direction: column; line-height: 1.25"><strong style="font-size: 17px">John Mitchell</strong><span style="font-size: 14px; color: #BEBCB6">Club Founder, Coach and Mentor</span></span></footer>
 </blockquote>
 </div>
@@ -629,7 +630,7 @@ button{font:inherit}
 <div style="border-radius: 24px; background: {{accent}}; padding: 24px; display: flex; flex-direction: column; gap: 6px">
 <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase">Call or text</span>
 <a href="tel:+447306219207" style="text-decoration: none; font-weight: 900; font-stretch: 125%; font-size: 34px; line-height: 1; letter-spacing: -0.02em">07306 219207</a>
-<a href="mailto:enquiriesloughboroughlionsafc@outlook.com" style="font-size: 14px; font-weight: 600; overflow-wrap: anywhere">enquiriesloughboroughlionsafc@outlook.com</a>
+<a href="mailto:enquiriesloughboroughlionsafc@outlook.com" style="font-size: 14px; font-weight: 600; overflow-wrap: normal">enquiriesloughboroughlionsafc<wbr>@outlook.com</a>
 </div>
 </aside>
 </div>
@@ -644,12 +645,12 @@ button{font:inherit}
 <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: {{accent}}">Club Welfare Officer</span>
 <span style="font-weight: 900; font-stretch: 125%; font-size: 26px; line-height: 1; text-transform: uppercase">Hannah Burton</span>
 <a href="tel:+447730886462" style="color: #FFFFFF; font-weight: 600">07730 886462</a>
-<a href="mailto:welfareloughboroughlionsafc@outlook.com" style="color: #FFFFFF; font-size: 14px; overflow-wrap: anywhere">welfareloughboroughlionsafc@outlook.com</a>
+<a href="mailto:welfareloughboroughlionsafc@outlook.com" style="color: #FFFFFF; font-size: 14px; overflow-wrap: normal">welfareloughboroughlionsafc<wbr>@outlook.com</a>
 </div>
 <div style="border-radius: 24px; background: #F3F2EE; padding: 22px; display: flex; flex-direction: column; gap: 6px">
 <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #5C5A55">County FA safeguarding</span>
 <span style="font-weight: 900; font-stretch: 125%; font-size: 22px; line-height: 1; text-transform: uppercase">Emma Haywood</span>
-<a href="mailto:safeguarding@leicestershirefa.com" style="font-size: 14px; font-weight: 600; overflow-wrap: anywhere">safeguarding@leicestershirefa.com</a>
+<a href="mailto:safeguarding@leicestershirefa.com" style="font-size: 14px; font-weight: 600; overflow-wrap: normal">safeguarding<wbr>@leicestershirefa.com</a>
 </div>
 <div style="border-radius: 24px; background: #F3F2EE; padding: 22px; display: flex; flex-direction: column; gap: 6px">
 <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #5C5A55">NSPCC · Emergency</span>
@@ -682,7 +683,7 @@ button{font:inherit}
 <div style="position: relative; overflow: hidden; margin-top: 4px; border-radius: 18px; background: #0E0E0E; color: #FFFFFF; padding: 18px 18px 18px 28px; display: flex; flex-direction: column; gap: 6px">
 <span aria-hidden="true" style="position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: repeating-linear-gradient(180deg, {{accent}} 0 10px, #0E0E0E 10px 18px)"></span>
 <strong style="font-weight: 900; font-stretch: 125%; font-size: 17px; text-transform: uppercase; color: {{accent}}">Safeguarding or welfare?</strong>
-<span style="font-size: 15px; line-height: 1.55; color: #D9D6CF">Please contact our Club Welfare Officer, Hannah Burton, on <a href="tel:+447730886462" style="color: #FFFFFF; font-weight: 700">07730 886462</a> or at <a href="mailto:welfareloughboroughlionsafc@outlook.com" style="color: #FFFFFF; font-weight: 700; overflow-wrap: anywhere">welfareloughboroughlionsafc@outlook.com</a>.</span>
+<span style="font-size: 15px; line-height: 1.55; color: #D9D6CF">Please contact our Club Welfare Officer, Hannah Burton, on <a href="tel:+447730886462" style="color: #FFFFFF; font-weight: 700">07730 886462</a> or at <a href="mailto:welfareloughboroughlionsafc@outlook.com" style="color: #FFFFFF; font-weight: 700; overflow-wrap: normal">welfareloughboroughlionsafc<wbr>@outlook.com</a>.</span>
 <a data-go="safeguarding" role="link" tabindex="0" style="align-self: flex-start; margin-top: 2px; color: {{accent}}; font-size: 14.5px; font-weight: 700">All safeguarding contacts →</a>
 </div>
 </div>
@@ -696,7 +697,7 @@ button{font:inherit}
 <h2 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: clamp(28px, 3.6vw, 40px); line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase">Privacy notice</h2>
 <span style="font-size: 13.5px; font-weight: 600; color: #6B6862">Last updated November 2026</span>
 </div>
-<p style="margin: 0; max-width: 46em; font-size: 16px; line-height: 1.6; color: #3F3D39">Loughborough Lions AFC is responsible for any personal information you give us through this website. Questions about your data? Email <a href="mailto:enquiriesloughboroughlionsafc@outlook.com" style="color: #0E0E0E; font-weight: 700; overflow-wrap: anywhere">enquiriesloughboroughlionsafc@outlook.com</a>.</p>
+<p style="margin: 0; max-width: 46em; font-size: 16px; line-height: 1.6; color: #3F3D39">Loughborough Lions AFC is responsible for any personal information you give us through this website. Questions about your data? Email <a href="mailto:enquiriesloughboroughlionsafc@outlook.com" style="color: #0E0E0E; font-weight: 700; overflow-wrap: normal">enquiriesloughboroughlionsafc<wbr>@outlook.com</a>.</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 10px">
 <div style="border-radius: 20px; background: #FFFFFF; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: 17px; line-height: 1.1; text-transform: uppercase">What we collect</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3F3D39">If you use the contact form, we receive your name, email address, phone number (if you give it) and your message. Please don’t include medical or other sensitive details about a child. We’ll ask for anything we need in person.</p></div>
 <div style="border-radius: 20px; background: #FFFFFF; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px"><h3 style="margin: 0; font-weight: 900; font-stretch: 125%; font-size: 17px; line-height: 1.1; text-transform: uppercase">Why, and for how long</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #3F3D39">We use your details only to reply to you and help with what you ask about, such as joining a team or a taster session. We keep them only as long as we need to deal with your enquiry, then delete them.</p></div>
@@ -901,7 +902,7 @@ function render(update) {
   Array.from(frag.childNodes).forEach((c) => out.push(...proc(c, scope)));
   document.getElementById('app').replaceChildren(...out);
   setupEffects(update);
-  fitMotto(); scrollFx();
+  fitMotto(); fitHeads(); scrollFx();
   if (update && typeof inst.componentDidUpdate === 'function') inst.componentDidUpdate();
 }
 const REDUCED = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -994,8 +995,45 @@ function fitMotto() {
   words.forEach((w, i) => { w.style.transform = keep[i]; });
   if (over > 1.005) row.style.fontSize = (parseFloat(getComputedStyle(row).fontSize) / over).toFixed(2) + 'px';
 }
+// Never split a word in a heading: if its longest word is wider than the space, shrink the heading to fit
+function fitHeads() {
+  // Long email addresses: shrink a little (not below 11px) so the part before the @ stays whole
+  document.querySelectorAll('#app a[href^="mailto:"]').forEach((a) => {
+    a.style.fontSize = a.dataset.fs0 === undefined ? (a.dataset.fs0 = a.style.fontSize || '') : a.dataset.fs0;
+    const t = a.firstChild; if (!t || t.nodeType !== 3) return;
+    const r = document.createRange(); r.setStart(t, 0); r.setEnd(t, t.data.length);
+    const box = (getComputedStyle(a).display === 'inline' ? a.parentElement : a).getBoundingClientRect().width, need = r.getBoundingClientRect().width;
+    a.style.overflowWrap = '';
+    if (need > box && box > 0) {
+      const fs = parseFloat(getComputedStyle(a).fontSize), want = fs * box / need * 0.97;
+      a.style.fontSize = Math.max(11, want).toFixed(2) + 'px';
+      if (want < 11) a.style.overflowWrap = 'anywhere'; // tiny screens only: better split than cut off
+    }
+  });
+  // Any other label whose longest word is wider than its box (narrow or zoomed phones): shrink it a little
+  // rather than let the word be cut off or split
+  document.querySelectorAll('#app span, #app strong, #app b, #app a, #app p, #app em, #app figcaption, #app label').forEach((el) => {
+    if (el.childElementCount || !el.textContent.trim() || el.closest('.ll-rail, .ll-marquee, svg, .ll-intro-motto')) return;
+    if (el.dataset.ff0 !== undefined) { el.style.removeProperty('font-size'); el.style.fontSize = el.dataset.ff0; }
+    if (!(el.scrollWidth > el.clientWidth + 1) || el.clientWidth === 0) return;
+    if (el.dataset.ff0 === undefined) el.dataset.ff0 = el.style.fontSize || '';
+    const fs = parseFloat(getComputedStyle(el).fontSize), want = fs * el.clientWidth / el.scrollWidth * 0.97;
+    el.style.setProperty('font-size', Math.max(11, want).toFixed(2) + 'px', 'important');
+  });
+  document.querySelectorAll('#app h1, #app h2, #app h3').forEach((h) => {
+    if (h.closest('.ll-intro-motto')) return;
+    if (h.dataset.fs0 === undefined) h.dataset.fs0 = h.style.fontSize || '';
+    h.style.fontSize = h.dataset.fs0;
+    for (let i = 0; i < 3; i++) {
+      const over = h.scrollWidth / Math.max(1, h.clientWidth);
+      if (!(over > 1.01)) break;
+      h.style.fontSize = (parseFloat(getComputedStyle(h).fontSize) / over * 0.98).toFixed(2) + 'px';
+    }
+  });
+}
 window.addEventListener('resize', fitMotto);
-if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fitMotto(); scrollFx(); });
+window.addEventListener('resize', fitHeads);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fitMotto(); fitHeads(); scrollFx(); });
 window.addEventListener('scroll', scrollFx, { passive: true });
 window.addEventListener('resize', scrollFx);
 const ROUTES = ['home', 'teams', 'community', 'club', 'shop'];
