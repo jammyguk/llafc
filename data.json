@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-10 16:22:08 UTC",
+    "updated": "2026-11-11 09:11:22 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -3842,14 +3842,6 @@
                 },
                 {
                     "fixtureDateTime": "13\/12\/26 10:30",
-                    "homeTeam": "Anstey Nomads U12 22's",
-                    "awayTeam": "Kirby Muxloe U12 Knights",
-                    "location": "RATBY SPORTS CLUB",
-                    "competition": "Under 12 Division 9",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "13\/12\/26 10:30",
                     "homeTeam": "Asfordby U12 Foxes",
                     "awayTeam": "Leicester St Andrews Junior U12 Corinthi",
                     "location": "ASFORDBY ACRES",
@@ -3869,6 +3861,14 @@
                     "homeTeam": "Market Bosworth Town Juniors U12",
                     "awayTeam": "Stoke Golding U12 Swords",
                     "location": "MARKET BOSWORTH SPORTS CLUB",
+                    "competition": "Under 12 Division 9",
+                    "status": ""
+                },
+                {
+                    "fixtureDateTime": "13\/12\/26 12:30",
+                    "homeTeam": "Anstey Nomads U12 22's",
+                    "awayTeam": "Kirby Muxloe U12 Knights",
+                    "location": "RATBY SPORTS CLUB",
                     "competition": "Under 12 Division 9",
                     "status": ""
                 },
