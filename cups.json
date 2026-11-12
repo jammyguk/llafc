@@ -1,5 +1,5 @@
 {
- "updated": "10 NOV 26",
+ "updated": "12 NOV 26",
  "cups": [
   {
    "name": "Soar Valley Press Sunday Youth U12 County Cup",
@@ -1730,6 +1730,12 @@
     },
     {
      "date": "15/11/26 10:30",
+     "home": "Lutterworth Town Juniors U12 AFC",
+     "away": "Quorn U12 Wildcats",
+     "venue": "Lutterworth Dynamos FC U12"
+    },
+    {
+     "date": "15/11/26 10:30",
      "home": "Narborough Foxes U12",
      "away": "Melton Foxes FC U12 Foxes",
      "venue": "BROCKINGTON COLLEGE"
@@ -1739,12 +1745,6 @@
      "home": "North Kilworth Junior & Youth U12 Tigers",
      "away": "Royce Rangers U12 Raiders",
      "venue": "SOUTH KILWORTH RECREATION GROUND"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Quorn U12 Wildcats",
-     "away": "Lutterworth Town Juniors U12 AFC",
-     "venue": "FARLEY WAY STADIUM"
     },
     {
      "date": "15/11/26 10:30",
