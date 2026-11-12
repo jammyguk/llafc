@@ -260,6 +260,15 @@ function addCups(){
       DATA.results.push(x);
     });
   });
+  // Cup games for any team in this league also go into the "all fixtures in the league" list, mixed in by date.
+  const inLg={};(DATA.teams||[]).forEach(n=>{inLg[U(n)]=1;});
+  CUPS.forEach(c=>(c.fixtures||[]).forEach(f=>{
+    if(!(inLg[U(f.home)]||inLg[U(f.away)]))return;
+    const p=pdate(f.date);if(!p||tsd(p.date)<today.getTime())return;
+    DATA.leagueFx.push({date:p.date,t:p.time,home:f.home,away:f.away,own:U(f.home)==us||U(f.away)==us,cup:c.name||"CUP",
+      st:/postpone/i.test(f.status||"")?"POSTPONED":/cancel|abandon/i.test(f.status||"")?"CANCELLED":""});
+  }));
+  DATA.leagueFx.sort((x,y)=>tsd(x.date)-tsd(y.date)||String(x.t||"").localeCompare(String(y.t||""))||U(x.home).localeCompare(U(y.home)));
   DATA.fixtures.sort((x,y)=>tsd(x.date)-tsd(y.date)||String(x.t).localeCompare(String(y.t)));
   DATA.results.sort((x,y)=>tsd(y.date)-tsd(x.date));
 }
@@ -503,11 +512,9 @@ function page(p){
         if(dk(x.date)!==last){if(last!==null)h+=ln("");last=dk(x.date);
           h+=ln(`${DOW[new Date(x.date.yr,x.date.mon-1,x.date.day).getDay()]} ${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]} ${x.date.yr}`,"c");}
         h+=ln(String(x.t||"").padEnd(5)+" "+short(x.home,15).padEnd(15)+" V "+short(x.away,15),x.own?"y":"w");
+        if(x.cup)h+=lines("      CUP - "+U(x.cup),"c");
         if(x.st)h+=ln("      "+(stText(x.st,1)),"m");
       });
-      const cf=DATA.fixtures.filter(x=>x.cup);
-      if(cf.length){h+=ln("")+ln("YOUR CUP GAMES","c");
-        cf.forEach(x=>{h+=ln(`${String(x.date.day).padStart(2,"0")} ${MON[x.date.mon-1]} ${x.t||""} ${x.home?"HOME":"AWAY"}`,"y")+lines(short(x.opp,W-2),"w")+lines(U(x.cup),"c");});}
     } else {
     if(!DATA.fixtures.length) h+=ln("NO FIXTURES SCHEDULED YET","w");
     DATA.fixtures.forEach(x=>{
