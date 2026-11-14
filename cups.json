@@ -1,5 +1,5 @@
 {
- "updated": "12 NOV 26",
+ "updated": "14 NOV 26",
  "cups": [
   {
    "name": "Soar Valley Press Sunday Youth U12 County Cup",
@@ -1845,8 +1845,7 @@
      "date": "15/11/26 10:30",
      "home": "East Goscote United U12 Boys",
      "away": "Beaumont Park U12 Panthers",
-     "venue": "WREAKE VALLEY ACADEMY",
-     "status": "Postponed"
+     "venue": "WREAKE VALLEY ACADEMY"
     },
     {
      "date": "15/11/26 10:30",
@@ -1882,7 +1881,8 @@
      "date": "15/11/26 10:30",
      "home": "Loughborough Lions AFC U12 Reds",
      "away": "Heather Juniors U12 Lions",
-     "venue": "Charnwood College LE11 4SQ"
+     "venue": "Charnwood College LE11 4SQ",
+     "status": "Postponed Match Notes: Loughborough cannot raise a team"
     },
     {
      "date": "15/11/26 10:30",
