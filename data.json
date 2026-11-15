@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-15 17:45:41 UTC",
+    "updated": "2026-11-15 21:39:54 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -7579,7 +7579,7 @@
                     "awayTeam": "AFC Andrews U13 Cobras",
                     "location": "MOSSDALE MEADOWS",
                     "competition": "Under 13 Division 4",
-                    "status": ""
+                    "status": "Postponed"
                 },
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
@@ -7587,7 +7587,7 @@
                     "awayTeam": "Coalville Town Ravens U13 Spartans",
                     "location": "ROYCE RANGERS FC",
                     "competition": "Under 13 Division 4",
-                    "status": ""
+                    "status": "Postponed"
                 },
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
