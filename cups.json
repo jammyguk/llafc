@@ -1694,27 +1694,9 @@
    "fixtures": [
     {
      "date": "15/11/26 10:30",
-     "home": "Birstall United U12 Lions",
-     "away": "Shepshed Dynamo Youth & Junior U12 Viper",
-     "venue": "BIRSTALL UNITED FOOTBALL CLUB"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Borough Alliance Junior U12 Pumas",
      "away": "Riverside United Junior U12 Seahawks",
      "venue": "SYMINGTONS RECREATION GROUND"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Coalville Town Ravens U12 Ruffs",
-     "away": "Anstey Nomads U12 47's",
-     "venue": "COALVILLE FC (VOLTAGE SOLUTIONS STADIUM)"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Glenfield United FC U12 Foxes",
-     "away": "Amanah All Stars U12 Amanah All Stars",
-     "venue": "BEAUMONT LEYS SCHOOL"
     },
     {
      "date": "15/11/26 10:30",
@@ -1733,12 +1715,6 @@
      "home": "Lutterworth Town Juniors U12 AFC",
      "away": "Quorn U12 Wildcats",
      "venue": "Lutterworth Dynamos FC U12"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Narborough Foxes U12",
-     "away": "Melton Foxes FC U12 Foxes",
-     "venue": "BROCKINGTON COLLEGE"
     },
     {
      "date": "15/11/26 10:30",
@@ -1840,18 +1816,6 @@
      "home": "Beaumont Park U12 Pumas",
      "away": "Carib Sport & Social Football Club U12 S",
      "venue": "BEAUMONT LEYS SCHOOL"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "East Goscote United U12 Boys",
-     "away": "Beaumont Park U12 Panthers",
-     "venue": "WREAKE VALLEY ACADEMY"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "FC Burbage U12 Lions",
-     "away": "Anstey Nomads U12 23's",
-     "venue": "COLTS CLOSE RECREATION PARK"
     },
     {
      "date": "15/11/26 10:30",
@@ -1961,12 +1925,6 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Asfordby U12 Foxes",
-     "away": "Aylestone Park Youth U12 94",
-     "venue": "ASFORDBY ACRES"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Highfield Rangers J&Y U12 Tigers",
      "away": "FC Burbage U12 Jaguars",
      "venue": "HIGHFIELD RANGERS FC"
@@ -1976,12 +1934,6 @@
      "home": "Ibstock United Juniors U12 Tigers",
      "away": "Coalville Town Ravens U12 Rooks",
      "venue": "ASHBY ROAD PLAYING FIELDS"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Leicester St Andrews Junior U12 Corinthi",
-     "away": "Stoke Golding U12 Dragons",
-     "venue": "ST ANDREWS SPORTS CLUB"
     },
     {
      "date": "15/11/26 10:30",
@@ -2000,12 +1952,6 @@
      "home": "Oadby Owls U12 Tawnys",
      "away": "Allexton & New Parks Junior U12 Hawks",
      "venue": "BEAUCHAMP COLLEGE"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Quorn U12 Panthers",
-     "away": "AFC Andrews U12 Ants",
-     "venue": "FARLEY WAY STADIUM"
     },
     {
      "date": "15/11/26 10:30",
@@ -2132,27 +2078,9 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Barrow Town U12 Eagles",
-     "away": "Borough Alliance Junior U12 Wolves",
-     "venue": "RIVERSIDE PARK (BARROW UPON SOAR)"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Chetwynd A U12 Cobras",
      "away": "GNG Juniors U12 Lions",
      "venue": "CHETWYND JUNIOR SCHOOL"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Dunton & Broughton United Jnrs U12 Tiger",
-     "away": "Oadby Owls U12 Eagles",
-     "venue": "BROUGHTON ASTLEY LEISURE CENTRE"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Fleckney Athletic Junior U12 Foxes",
-     "away": "Saffron Dynamo U12 Phoenix",
-     "venue": "LODGE ROAD RECREATION GROUND"
     },
     {
      "date": "15/11/26 10:30",
@@ -2162,21 +2090,9 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Houghton Rangers Junior U12 Foxes",
-     "away": "Uppingham Town U12",
-     "venue": "Houghton Playing Field LE7 9GR"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Lutterworth Athletic Youth U12 Thunder",
      "away": "Kibworth Town U12 Eagles",
      "venue": "Steve Rendall Park Hall Lane LE17 4LN"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Mowbray Rangers U12 Jaguars",
-     "away": "Kegworth Imps U12",
-     "venue": "MOWBRAY RANGERS FC"
     },
     {
      "date": "15/11/26 10:30",
@@ -2192,12 +2108,6 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Sporting Markfield U12 Foxes",
-     "away": "Groby Juniors U12 Spartans",
-     "venue": "SOUTH CHARNWOOD HIGH SCHOOL"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Wigston Willow U12 Pumas",
      "away": "Harborough Town Juniors U12 2012",
      "venue": "WIGSTON ACADEMY"
@@ -2207,6 +2117,12 @@
      "home": "Glen Villa Juniors U12 Panthers",
      "away": "Karma Leicester F.C. U12",
      "venue": "Great Glen Recreation Ground LE8 9FA"
+    },
+    {
+     "date": "29/11/26 10:30",
+     "home": "Kirby Muxloe U12 88's",
+     "away": "Barrow Town U12 Eagles",
+     "venue": "KIRBY MUXLOE RECREATION GROUND"
     }
    ],
    "results": []
@@ -2214,12 +2130,6 @@
   {
    "name": "U13 League Cup",
    "fixtures": [
-    {
-     "date": "15/11/26 10:30",
-     "home": "AFC Andrews U13 Lions",
-     "away": "Mowbray Rangers U13 Lions",
-     "venue": "Aylestone Recreation Ground LE2 6LU"
-    },
     {
      "date": "15/11/26 10:30",
      "home": "Coalville Town Ravens U13 Robins",
@@ -2234,39 +2144,9 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Groby Juniors U13 Spartans",
-     "away": "Ibstock United Juniors U13 Lions",
-     "venue": "BROOKVALE GROBY LEARNING CAMPUS"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Groby Juniors U13 Titans",
-     "away": "Coalville Town Ravens U13 Redwings",
-     "venue": "BROOKVALE GROBY LEARNING CAMPUS"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Kegworth Imps U13",
      "away": "Highfield Rangers J&Y U13 Jaguars",
      "venue": "Kegworth Imps JFC LE12 5HD"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Kirby Muxloe U13 Knights",
-     "away": "AFC Barwell U13 Arrows",
-     "venue": "MOSSDALE MEADOWS"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Loughborough Dynamo Junior U13 Ambers",
-     "away": "Glenfield United FC U13 Hawks",
-     "venue": "NANPANTAN SPORTS GROUND"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Oadby Owls U13 Hawks",
-     "away": "Melton Foxes FC U13 Foxes",
-     "venue": "Coombe Park Coombe Rise, Oadby, LE2 4TU"
     },
     {
      "date": "15/11/26 10:30",
@@ -2279,12 +2159,6 @@
      "home": "Thompsons United U13 Sparks",
      "away": "Oadby Owls U13 Greys",
      "venue": "ULLESTHORPE PLAYING FIELD"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Wigston Willow U13 Spitfires",
-     "away": "Dunton & Broughton United Jnrs U13 Panth",
-     "venue": "WIGSTON ACADEMY"
     },
     {
      "date": "15/11/26 12:30",
@@ -2370,12 +2244,6 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Coalville Town Ravens U13 Spartans",
-     "away": "Corby Kingswood U13 Vikings",
-     "venue": "THE NEWBRIDGE SCHOOL"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Dunton & Broughton United Jnrs U13 Puma",
      "away": "Hinckley Borough FC U13 Youth",
      "venue": "BROUGHTON ASTLEY LEISURE CENTRE"
@@ -2385,12 +2253,6 @@
      "home": "East Goscote United U13 Boys",
      "away": "Melton Town U13 Panthers",
      "venue": "Cedars academy 3G Wanlip Lane Birstall LE4 4GH"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Harborough Town Juniors U13 94",
-     "away": "Wigston Willow U13 Hurricanes",
-     "venue": "Harborough Town FC LE16 9HF"
     },
     {
      "date": "15/11/26 10:30",
@@ -2414,7 +2276,8 @@
      "date": "15/11/26 10:30",
      "home": "Royce Rangers U13 Avengers",
      "away": "Kirby Muxloe U13 Kings",
-     "venue": "ROYCE RANGERS FC"
+     "venue": "ROYCE RANGERS FC",
+     "status": "Postponed"
     },
     {
      "date": "15/11/26 10:30",
@@ -2500,33 +2363,9 @@
    "fixtures": [
     {
      "date": "15/11/26 10:30",
-     "home": "Coalville Town Ravens U13 Roosters",
-     "away": "Mountsorrel Juniors U13 Tigers",
-     "venue": "COALVILLE FC (VOLTAGE SOLUTIONS STADIUM)"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Croft Juniors 2013 U13 Royals",
-     "away": "Royce Rangers U13 Spartans",
-     "venue": "Stoney Stanton Playing Fields LE9 4LA"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Desford FC U13 Blues",
      "away": "Oadby Owls U13 Falcons",
      "venue": "BOSWORTH ACADEMY"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Fleckney Athletic Junior U13 Foxes",
-     "away": "Countesthorpe C.F. U13",
-     "venue": "FLECKNEY SPORTS AND LEISURE CENTRE"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Hinckley Borough FC U13 Colts",
-     "away": "Allexton & New Parks Junior U13 Eagles",
-     "venue": "WEAVERS SPRINGS PARK"
     },
     {
      "date": "15/11/26 10:30",
@@ -2551,18 +2390,6 @@
      "home": "Weddington Sports U13 Wolves",
      "away": "Thurlaston Magpies Junior U13 Eagles",
      "venue": "Etone School Playing Fields CV11 6YA"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Whetstone Athletic U13 Lions",
-     "away": "Thompsons United U13 Blazes",
-     "venue": "ELIZABETH PARK"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Wigston Willow U13 Typhoons",
-     "away": "Rothley Imps Junior U13 Raptors",
-     "venue": "WIGSTON ACADEMY"
     },
     {
      "date": "15/11/26 12:30",
