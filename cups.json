@@ -1938,20 +1938,7 @@
   },
   {
    "name": "U12 Foxes Cup",
-   "fixtures": [
-    {
-     "date": "15/11/26 10:30",
-     "home": "Ibstock United Juniors U12 Tigers",
-     "away": "Coalville Town Ravens U12 Rooks",
-     "venue": "ASHBY ROAD PLAYING FIELDS"
-    },
-    {
-     "date": "15/11/26 12:30",
-     "home": "Hinckley Town Juniors U12 Dragons",
-     "away": "Queniborough Athletic Juniors FC U12",
-     "venue": "CLARENDON PARK"
-    }
-   ],
+   "fixtures": [],
    "results": [
     {
      "date": "01/11/26",
@@ -2122,12 +2109,6 @@
      "home": "Anstey Nomads U13 47's",
      "away": "Borough Alliance Junior U13 Falcons",
      "venue": "RATBY SPORTS CLUB"
-    },
-    {
-     "date": "15/11/26 12:30",
-     "home": "Houghton Rangers Junior U13",
-     "away": "Birstall United U13 Foxes",
-     "venue": "HOUGHTON FIELD"
     }
    ],
    "results": [
