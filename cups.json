@@ -1706,12 +1706,6 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Loughborough Lions AFC U12 Golds",
-     "away": "Beaumont Town 2012 U12 Pumas",
-     "venue": "Charnwood College LE11 4SQ"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Lutterworth Town Juniors U12 AFC",
      "away": "Quorn U12 Wildcats",
      "venue": "Lutterworth Dynamos FC U12"
@@ -2066,30 +2060,6 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Anstey Nomads U12 Reds",
-     "away": "Birstall United U12 Bears",
-     "venue": "ANSTEY NOMADS FC"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Anstey Nomads U12 Swifts",
-     "away": "Whetstone Athletic U12 Panthers",
-     "venue": "RATBY SPORTS CLUB"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Chetwynd A U12 Cobras",
-     "away": "GNG Juniors U12 Lions",
-     "venue": "CHETWYND JUNIOR SCHOOL"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Hinckley Town Juniors U12 Warriors",
-     "away": "Community Football Academy U12",
-     "venue": "CLARENDON PARK"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Lutterworth Athletic Youth U12 Thunder",
      "away": "Kibworth Town U12 Eagles",
      "venue": "Steve Rendall Park Hall Lane LE17 4LN"
@@ -2120,6 +2090,18 @@
     },
     {
      "date": "29/11/26 10:30",
+     "home": "Community Football Academy U12",
+     "away": "Stoneygate Lions U12 Blues",
+     "venue": "JUDGEMEADOW COMMUNITY COLLEGE"
+    },
+    {
+     "date": "29/11/26 10:30",
+     "home": "Cosby United Youth & Junior U12 Sharks",
+     "away": "Birstall United U12 Bears",
+     "venue": "COSBY RECREATION GROUND"
+    },
+    {
+     "date": "29/11/26 10:30",
      "home": "Kirby Muxloe U12 88's",
      "away": "Barrow Town U12 Eagles",
      "venue": "KIRBY MUXLOE RECREATION GROUND"
@@ -2135,12 +2117,6 @@
      "home": "Coalville Town Ravens U13 Robins",
      "away": "Rothley Imps Junior U13 Rockets",
      "venue": "COALVILLE FC (VOLTAGE SOLUTIONS STADIUM)"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Community Football Academy U13 Shubaan",
-     "away": "Heather Juniors U13 Jaguars",
-     "venue": "JUDGEMEADOW COMMUNITY COLLEGE"
     },
     {
      "date": "15/11/26 10:30",
@@ -2361,12 +2337,6 @@
   {
    "name": "U13 Presidents Cup",
    "fixtures": [
-    {
-     "date": "15/11/26 10:30",
-     "home": "Desford FC U13 Blues",
-     "away": "Oadby Owls U13 Falcons",
-     "venue": "BOSWORTH ACADEMY"
-    },
     {
      "date": "15/11/26 10:30",
      "home": "Shepshed Dynamo Youth & Junior U13 Cobra",
