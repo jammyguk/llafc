@@ -1869,12 +1869,6 @@
      "home": "Coalville Town Ravens U12 Raptors",
      "away": "Harborough Town Juniors U12 Reds Sunday",
      "venue": "COALVILLE FC (VOLTAGE SOLUTIONS STADIUM)"
-    },
-    {
-     "date": "15/11/26 14:00",
-     "home": "Harborough Town Juniors U12 Rangers",
-     "away": "Whetstone Athletic U12 Jaguars",
-     "venue": "Harborough Town Juniors U12 Rangers"
     }
    ],
    "results": [
@@ -2522,26 +2516,7 @@
   },
   {
    "name": "U13 Presidents Cup",
-   "fixtures": [
-    {
-     "date": "15/11/26 10:30",
-     "home": "Shepshed Dynamo Youth & Junior U13 Cobra",
-     "away": "Narborough Foxes U13 White",
-     "venue": "IVESHEAD SCHOOL"
-    },
-    {
-     "date": "15/11/26 12:30",
-     "home": "Harborough Town Juniors U13 2022",
-     "away": "Beaumont Town 2012 U13 Panthers",
-     "venue": "BOWDENS PARK (HARBOROUGH TOWN FC)"
-    },
-    {
-     "date": "15/11/26 14:00",
-     "home": "Melton Foxes FC U13 Pumas",
-     "away": "Melton Foxes FC U13 United",
-     "venue": "Mars Sports Ground, Saxby Rd, Melton, LE13 1BP."
-    }
-   ],
+   "fixtures": [],
    "results": [
     {
      "date": "01/11/26",
