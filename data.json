@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-15 13:55:06 UTC",
+    "updated": "2026-11-15 15:40:03 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -6522,14 +6522,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Coalville Town Ravens U13 Ravens",
-                    "awayTeam": "Anstey Nomads U13 Reds",
-                    "location": "COALVILLE FC (VOLTAGE SOLUTIONS STADIUM)",
-                    "competition": "Under 13 Div 1D&amp;J Mobile Catering Ltd",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Harborough Town Juniors U13 ETP Sunday",
                     "awayTeam": "Beaumont Park U13 Pumas",
                     "location": "Harborough Town FC LE16 9HF",
@@ -6626,6 +6618,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Coalville Town Ravens U13 Ravens",
+                    "score": "2 - 1 (HT 2-1)",
+                    "homeScore": "2",
+                    "awayScore": "1",
+                    "awayTeam": "Anstey Nomads U13 Reds",
+                    "division": "Under 13 Div 1D&amp;J Mobile Catering Ltd"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Aylestone Park Youth U13 94",
