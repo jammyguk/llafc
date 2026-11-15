@@ -1795,18 +1795,6 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Harborough Town Juniors U12 ETP Sunday",
-     "away": "Mountsorrel Juniors U12 Shadowcats",
-     "venue": "Harborough Town FC LE16 9HF"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Ingles U12 Reds",
-     "away": "Whetstone Athletic U12 Lions",
-     "venue": "LITTLE HAW LANE PLAYING FIELDS"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Loughborough Lions AFC U12 Reds",
      "away": "Heather Juniors U12 Lions",
      "venue": "Charnwood College LE11 4SQ",
@@ -1980,12 +1968,6 @@
   {
    "name": "U12 League Cup",
    "fixtures": [
-    {
-     "date": "15/11/26 10:30",
-     "home": "Rothley Imps Junior U12 Raptors",
-     "away": "Coalville Town Ravens U12 Ravens",
-     "venue": "ROTHLEY SPORTS & SOCIAL CLUB"
-    },
     {
      "date": "15/11/26 10:30",
      "home": "Sileby Juniors U12 Snow Leopards",
