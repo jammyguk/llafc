@@ -1694,12 +1694,6 @@
    "fixtures": [
     {
      "date": "15/11/26 10:30",
-     "home": "Borough Alliance Junior U12 Pumas",
-     "away": "Riverside United Junior U12 Seahawks",
-     "venue": "SYMINGTONS RECREATION GROUND"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Hathern Juniors U12 Falcons",
      "away": "Hinckley Borough FC U12 Boys",
      "venue": "PASTURE LANE PLAYING FIELDS"
@@ -1826,12 +1820,6 @@
     },
     {
      "date": "15/11/26 10:30",
-     "home": "Quorn U12 Jaguars",
-     "away": "Barrow Town U12 Hawks",
-     "venue": "FARLEY WAY STADIUM"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Sporting Markfield U12 Tigers",
      "away": "Blaby & Whetstone U12 Rangers",
      "venue": "SOUTH CHARNWOOD HIGH SCHOOL"
@@ -1892,12 +1880,6 @@
      "home": "Ibstock United Juniors U12 Tigers",
      "away": "Coalville Town Ravens U12 Rooks",
      "venue": "ASHBY ROAD PLAYING FIELDS"
-    },
-    {
-     "date": "15/11/26 10:30",
-     "home": "Market Bosworth Town Juniors U12",
-     "away": "Harborough Town Juniors U12 2016",
-     "venue": "MARKET BOSWORTH SPORTS CLUB"
     },
     {
      "date": "15/11/26 10:30",
@@ -2004,12 +1986,6 @@
   {
    "name": "U12 League Cup",
    "fixtures": [
-    {
-     "date": "15/11/26 10:30",
-     "home": "Anstey Nomads U12 24's",
-     "away": "Rothley Imps Junior U12 Warriors",
-     "venue": "RATBY SPORTS CLUB"
-    },
     {
      "date": "15/11/26 10:30",
      "home": "Rothley Imps Junior U12 Raptors",
@@ -2130,12 +2106,6 @@
    "fixtures": [
     {
      "date": "15/11/26 10:30",
-     "home": "AFC Andrews U13 Cobras",
-     "away": "North Kilworth Junior & Youth U13 Lions",
-     "venue": "AYLESTONE RECREATION GROUND"
-    },
-    {
-     "date": "15/11/26 10:30",
      "home": "Allexton & New Parks Junior U13 Hawks",
      "away": "Oadby Owls U13 Juniors",
      "venue": "THE HEREWOODE ACADEMY"
@@ -2164,12 +2134,6 @@
      "home": "Beaumont Park U13 Lions",
      "away": "Leicester Nirvana Juniors U13 Reds",
      "venue": "BEAUMONT LEYS SCHOOL"
-    },
-    {
-     "date": "15/11/26 12:30",
-     "home": "Beaumont Park U13 Pumas",
-     "away": "Allexton & New Parks Junior U13 Magpies",
-     "venue": "BEAUMONT PARK"
     },
     {
      "date": "15/11/26 12:30",
