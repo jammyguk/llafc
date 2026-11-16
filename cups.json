@@ -1,5 +1,5 @@
 {
- "updated": "15 NOV 26",
+ "updated": "16 NOV 26",
  "cups": [
   {
    "name": "Soar Valley Press Sunday Youth U12 County Cup",
@@ -1901,9 +1901,9 @@
     },
     {
      "date": "29/11/26 10:30",
-     "home": "Loughborough Lions AFC U12 Reds",
+     "home": "Heather Juniors U12 Lions",
      "away": "Quorn U12 Jaguars",
-     "venue": "Charnwood College LE11 4SQ"
+     "venue": "HEATHER ST JOHNS FC (ST JOHNS PARK)"
     },
     {
      "date": "29/11/26 10:30",
@@ -2280,12 +2280,6 @@
     },
     {
      "date": "29/11/26 10:30",
-     "home": "Cosby United Youth & Junior U12 Sharks",
-     "away": "Birstall United U12 Bears",
-     "venue": "COSBY RECREATION GROUND"
-    },
-    {
-     "date": "29/11/26 10:30",
      "home": "Houghton Rangers Junior U12 Foxes",
      "away": "Saffron Dynamo U12 Phoenix",
      "venue": "HOUGHTON FIELD"
@@ -2307,6 +2301,12 @@
      "home": "Sporting Markfield U12 Foxes",
      "away": "Chetwynd A U12 Cobras",
      "venue": "SOUTH CHARNWOOD HIGH SCHOOL"
+    },
+    {
+     "date": "29/11/26 14:00",
+     "home": "Cosby United Youth & Junior U12 Sharks",
+     "away": "Birstall United U12 Bears",
+     "venue": "COSBY RECREATION GROUND"
     }
    ],
    "results": []
