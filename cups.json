@@ -2340,12 +2340,6 @@
     },
     {
      "date": "29/11/26 12:30",
-     "home": "AFC Barwell U13 Arrows",
-     "away": "Thompsons United U13 Sparks",
-     "venue": "AFC BARWELL"
-    },
-    {
-     "date": "29/11/26 12:30",
      "home": "Coalville Town Ravens U13 Redwings",
      "away": "Ibstock United Juniors U13 Lions",
      "venue": "THE NEWBRIDGE SCHOOL"
@@ -2361,6 +2355,12 @@
      "home": "Houghton Rangers Junior U13",
      "away": "Thurmaston Magpies Junior U13 Storm",
      "venue": "HOUGHTON FIELD"
+    },
+    {
+     "date": "29/11/26 14:00",
+     "home": "AFC Barwell U13 Arrows",
+     "away": "Thompsons United U13 Sparks",
+     "venue": "AFC BARWELL"
     }
    ],
    "results": [
