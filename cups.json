@@ -1,5 +1,5 @@
 {
- "updated": "16 NOV 26",
+ "updated": "17 NOV 26",
  "cups": [
   {
    "name": "Soar Valley Press Sunday Youth U12 County Cup",
@@ -1912,6 +1912,12 @@
      "venue": "SOUTH CHARNWOOD HIGH SCHOOL"
     },
     {
+     "date": "29/11/26 10:30",
+     "home": "Whetstone Athletic U12 Lions",
+     "away": "Harborough Town Juniors U12 ETP Sunday",
+     "venue": "ELIZABETH PARK"
+    },
+    {
      "date": "29/11/26 12:30",
      "home": "Beaumont Park U12 Panthers",
      "away": "Harborough Town Juniors U12 94",
@@ -1922,12 +1928,6 @@
      "home": "Kirby Muxloe U12 Kings",
      "away": "Whetstone Athletic U12 Jaguars",
      "venue": "KIRBY MUXLOE RECREATION GROUND"
-    },
-    {
-     "date": "29/11/26 12:30",
-     "home": "Whetstone Athletic U12 Lions",
-     "away": "Harborough Town Juniors U12 ETP Sunday",
-     "venue": "ELIZABETH PARK"
     }
    ],
    "results": [
