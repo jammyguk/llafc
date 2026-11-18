@@ -1,5 +1,5 @@
 {
- "updated": "17 NOV 26",
+ "updated": "18 NOV 26",
  "cups": [
   {
    "name": "Soar Valley Press Sunday Youth U12 County Cup",
@@ -926,6 +926,12 @@
      "home": "Glenfield United FC U13 Hawks",
      "away": "Beaumont Park U13 Pumas",
      "venue": "Glenfield United FC U11 Hawks"
+    },
+    {
+     "date": "06/12/26 10:30",
+     "home": "Harborough Town Juniors U13 94",
+     "away": "Melton Town U13 Panthers",
+     "venue": "Harborough Town Juniors U12 94"
     },
     {
      "date": "06/12/26 10:30",
@@ -2359,7 +2365,7 @@
     {
      "date": "29/11/26 14:00",
      "home": "AFC Barwell U13 Arrows",
-     "away": "Thompsons United U13 Sparks",
+     "away": "Oadby Owls U13 Greys",
      "venue": "AFC BARWELL"
     }
    ],

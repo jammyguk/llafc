@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-17 21:09:02 UTC",
+    "updated": "2026-11-18 11:30:35 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -1810,7 +1810,7 @@
                     "awayTeam": "Whetstone Athletic U12 Panthers",
                     "location": "KIRBY MUXLOE RECREATION GROUND",
                     "competition": "Under 12 Division 4 Cotton Counselling",
-                    "status": ""
+                    "status": "Postponed"
                 },
                 {
                     "fixtureDateTime": "13\/12\/26 10:30",
@@ -7197,7 +7197,7 @@
                     "awayTeam": "Harborough Town Juniors U13 94",
                     "location": "MELTON SPORTS VILLAGE",
                     "competition": "U13s Norths of Leicester Div 2",
-                    "status": ""
+                    "status": "Postponed Match Notes: COUNTY CUP TO BE ACTIONED"
                 },
                 {
                     "fixtureDateTime": "13\/12\/26 10:30",
@@ -8936,7 +8936,7 @@
                     "awayTeam": "Oadby Owls U13 Greys",
                     "location": "NANPANTAN SPORTS GROUND",
                     "competition": "Under 13 Division 6",
-                    "status": ""
+                    "status": "Postponed"
                 },
                 {
                     "fixtureDateTime": "06\/12\/26 10:30",
@@ -9004,17 +9004,17 @@
                 },
                 {
                     "fixtureDateTime": "13\/12\/26 12:30",
-                    "homeTeam": "AFC Barwell U13 Arrows",
-                    "awayTeam": "Oadby Owls U13 Greys",
-                    "location": "AFC BARWELL",
+                    "homeTeam": "Whetstone Athletic U13 Jaguars",
+                    "awayTeam": "Wigston Willow U13 Spitfires",
+                    "location": "Whetstone Juniors Lutterworth Road LE8 6NA",
                     "competition": "Under 13 Division 6",
                     "status": ""
                 },
                 {
-                    "fixtureDateTime": "13\/12\/26 12:30",
-                    "homeTeam": "Whetstone Athletic U13 Jaguars",
-                    "awayTeam": "Wigston Willow U13 Spitfires",
-                    "location": "Whetstone Juniors Lutterworth Road LE8 6NA",
+                    "fixtureDateTime": "13\/12\/26 14:00",
+                    "homeTeam": "AFC Barwell U13 Arrows",
+                    "awayTeam": "Oadby Owls U13 Greys",
+                    "location": "AFC BARWELL",
                     "competition": "Under 13 Division 6",
                     "status": ""
                 },
@@ -10007,14 +10007,6 @@
                     "homeTeam": "Hinckley Borough FC U13 Colts",
                     "awayTeam": "Asfordby U13 Tigers",
                     "location": "WEAVERS SPRINGS PARK",
-                    "competition": "Under 13 Division 8",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "06\/12\/26 10:30",
-                    "homeTeam": "Shepshed Dynamo Youth &amp; Junior U13 Cobra",
-                    "awayTeam": "Thurmaston Magpies Junior U13 Storm",
-                    "location": "IVESHEAD SCHOOL",
                     "competition": "Under 13 Division 8",
                     "status": ""
                 },
