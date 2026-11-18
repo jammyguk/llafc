@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-18 11:30:35 UTC",
+    "updated": "2026-11-18 20:03:44 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -118,11 +118,11 @@
                 },
                 {
                     "fixtureDateTime": "20\/12\/26 12:30",
-                    "homeTeam": "Beaumont Park U12 Panthers",
-                    "awayTeam": "Croft Juniors 2013 U12 Blues",
-                    "location": "SOUTH CHARNWOOD HIGH SCHOOL",
+                    "homeTeam": "Croft Juniors 2013 U12 Blues",
+                    "awayTeam": "Beaumont Park U12 Panthers",
+                    "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
                     "competition": "U12 Div 1 D&amp;J Mobile Catering Ltd",
-                    "status": ""
+                    "status": "Match Notes: game reversed due college at charnwood closed"
                 },
                 {
                     "fixtureDateTime": "20\/12\/26 12:30",
@@ -2418,20 +2418,20 @@
                     "status": ""
                 },
                 {
-                    "fixtureDateTime": "20\/12\/26 10:30",
-                    "homeTeam": "Sporting Markfield U12 Foxes",
-                    "awayTeam": "Karma Leicester F.C. U12",
-                    "location": "SOUTH CHARNWOOD HIGH SCHOOL",
-                    "competition": "U12 Industrial Laundry Equipment Div 5",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "20\/12\/26 12:30",
                     "homeTeam": "Harborough Town Juniors U12 2012",
                     "awayTeam": "Wigston Willow U12 Pumas",
                     "location": "Harborough Town FC LE16 9HF",
                     "competition": "U12 Industrial Laundry Equipment Div 5",
                     "status": ""
+                },
+                {
+                    "fixtureDateTime": "20\/12\/26 12:30",
+                    "homeTeam": "Karma Leicester F.C. U12",
+                    "awayTeam": "Sporting Markfield U12 Foxes",
+                    "location": "THE GROVE COMMUNITY HUB",
+                    "competition": "U12 Industrial Laundry Equipment Div 5",
+                    "status": "Match Notes: game reversed due college at charnwood closed"
                 },
                 {
                     "fixtureDateTime": "20\/12\/26 12:30",
@@ -4438,7 +4438,7 @@
                     "awayTeam": "Stoke Golding U12 Swords",
                     "location": "BLABY ROAD PARK",
                     "competition": "Under 12 Division 9",
-                    "status": ""
+                    "status": "Match Notes: League suspension"
                 },
                 {
                     "fixtureDateTime": "03\/01\/27 10:30",
@@ -5860,14 +5860,6 @@
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Hinckley Borough FC U12 Boys",
-                    "awayTeam": "Hinckley RFC U12 Stars",
-                    "location": "WEAVERS SPRINGS PARK",
-                    "competition": "Under 12 Division 13",
-                    "status": "Postponed"
-                },
-                {
-                    "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Hinckley Borough FC U12 Boys",
                     "awayTeam": "Beaumont Town 2012 U12 Pumas",
                     "location": "WEAVERS SPRINGS PARK",
                     "competition": "Under 12 Division 13",
@@ -5912,6 +5904,14 @@
                     "location": "BEAUMONT LEYS SCHOOL",
                     "competition": "Under 12 Division 13",
                     "status": "Postponed"
+                },
+                {
+                    "fixtureDateTime": "06\/12\/26 10:30",
+                    "homeTeam": "Hinckley Borough FC U12 Boys",
+                    "awayTeam": "Hinckley RFC U12 Stars",
+                    "location": "WEAVERS SPRINGS PARK",
+                    "competition": "Under 12 Division 13",
+                    "status": ""
                 },
                 {
                     "fixtureDateTime": "06\/12\/26 10:30",
@@ -5999,7 +5999,7 @@
                     "awayTeam": "Hinckley RFC U12 Stars",
                     "location": "THURLASTON FOOTBALL CLUB",
                     "competition": "Under 12 Division 13",
-                    "status": ""
+                    "status": "Postponed Match Notes: Hinckley in Girls County Cup"
                 },
                 {
                     "fixtureDateTime": "03\/01\/27 10:30",
@@ -10028,6 +10028,14 @@
                 },
                 {
                     "fixtureDateTime": "13\/12\/26 10:30",
+                    "homeTeam": "Anstey Nomads U13 47's",
+                    "awayTeam": "Asfordby U13 Tigers",
+                    "location": "RATBY SPORTS CLUB",
+                    "competition": "Under 13 Division 8",
+                    "status": "Match Notes: KO change on the 14 day rule"
+                },
+                {
+                    "fixtureDateTime": "13\/12\/26 10:30",
                     "homeTeam": "Croft Juniors 2013 U13 Diamonds",
                     "awayTeam": "Whetstone Athletic U13 Lions",
                     "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
@@ -10047,14 +10055,6 @@
                     "homeTeam": "Loughborough Phoenix FC U13 Juniors",
                     "awayTeam": "Shepshed Dynamo Youth &amp; Junior U13 Cobra",
                     "location": "Towels Field LE12 5TD",
-                    "competition": "Under 13 Division 8",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "13\/12\/26 12:30",
-                    "homeTeam": "Anstey Nomads U13 47's",
-                    "awayTeam": "Asfordby U13 Tigers",
-                    "location": "RATBY SPORTS CLUB",
                     "competition": "Under 13 Division 8",
                     "status": ""
                 },
