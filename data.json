@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-22 12:48:37 UTC",
+    "updated": "2026-11-22 13:23:39 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -2205,14 +2205,6 @@
             "name": "U12 Division 4",
             "fixtures": [
                 {
-                    "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "GNG Juniors U12 Lions",
-                    "awayTeam": "Anstey Nomads U12 24's",
-                    "location": "RIVERSIDE FOOTBALL GROUND",
-                    "competition": "Under 12 Division 4 Cotton Counselling",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "29\/11\/26 10:30",
                     "homeTeam": "Rothley Imps Junior U12 Warriors",
                     "awayTeam": "Uppingham Town U12",
@@ -2573,6 +2565,15 @@
                     "homeScore": "0",
                     "awayScore": "5",
                     "awayTeam": "Coalville Town Ravens U12 Ravens",
+                    "division": "Under 12 Division 4 Cotton Counselling"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "GNG Juniors U12 Lions",
+                    "score": "2 - 5 (HT 1-1)",
+                    "homeScore": "2",
+                    "awayScore": "5",
+                    "awayTeam": "Anstey Nomads U12 24's",
                     "division": "Under 12 Division 4 Cotton Counselling"
                 },
                 {
@@ -4252,14 +4253,6 @@
                     "status": ""
                 },
                 {
-                    "fixtureDateTime": "22\/11\/26 12:30",
-                    "homeTeam": "Community Football Academy U12 Shubaan",
-                    "awayTeam": "Whetstone Athletic U12 Tigers",
-                    "location": "JUDGEMEADOW COMMUNITY COLLEGE",
-                    "competition": "Under 12 Division 7",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "29\/11\/26 10:30",
                     "homeTeam": "Queniborough Athletic Juniors FC U12",
                     "awayTeam": "Whetstone Athletic U12 Tigers",
@@ -4421,6 +4414,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 12:30",
+                    "homeTeam": "Community Football Academy U12 Shubaan",
+                    "score": "0 - 1 (HT 0-0)",
+                    "homeScore": "0",
+                    "awayScore": "1",
+                    "awayTeam": "Whetstone Athletic U12 Tigers",
+                    "division": "Under 12 Division 7"
+                },
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Highfield Rangers J&amp;Y U12 Tigers",
@@ -9358,8 +9360,8 @@
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Community Football Academy U13",
-                    "score": "1 - 1 (HT 1-1)",
-                    "homeScore": "1",
+                    "score": "5 - 1 (HT 1-1)",
+                    "homeScore": "5",
                     "awayScore": "1",
                     "awayTeam": "Barrow Town U13 Falcons",
                     "division": "Under 13 Division 4"
@@ -12323,9 +12325,9 @@
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Oadby Owls U13 Falcons",
-                    "score": "3 - 0 (HT 3-0)",
-                    "homeScore": "3",
-                    "awayScore": "0",
+                    "score": "4 - 4 (HT 4-4)",
+                    "homeScore": "4",
+                    "awayScore": "4",
                     "awayTeam": "Harborough Town Juniors U13 2012",
                     "division": "Under 13 Division 9"
                 },
@@ -13335,14 +13337,6 @@
             "name": "U13 Division 11",
             "fixtures": [
                 {
-                    "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Beaumont Town 2012 U13 Panthers",
-                    "awayTeam": "Loughborough Lions AFC U13 Silvers",
-                    "location": "MOWMACRE HILL PRIMARY SCHOOL",
-                    "competition": "Under 13 Division 11",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Riverside United Junior U13 Eagles",
                     "awayTeam": "Fleckney Athletic Junior U13 Fire",
@@ -13767,6 +13761,15 @@
                     "homeScore": "9",
                     "awayScore": "0",
                     "awayTeam": "Coalville Town Ravens U13 Ruffs",
+                    "division": "Under 13 Division 11"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Beaumont Town 2012 U13 Panthers",
+                    "score": "2 - 1",
+                    "homeScore": "2",
+                    "awayScore": "1",
+                    "awayTeam": "Loughborough Lions AFC U13 Silvers",
                     "division": "Under 13 Division 11"
                 },
                 {
