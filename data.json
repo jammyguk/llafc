@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-22 17:28:21 UTC",
+    "updated": "2026-11-22 18:25:11 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -1424,14 +1424,6 @@
             "name": "U12 Division 3",
             "fixtures": [
                 {
-                    "fixtureDateTime": "22\/11\/26 14:00",
-                    "homeTeam": "Harborough Town Juniors U12 Rangers",
-                    "awayTeam": "Ingles U12 Reds",
-                    "location": "Harborough Town Juniors U12 Rangers",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "29\/11\/26 10:30",
                     "homeTeam": "Community Football Academy U12 Foxes",
                     "awayTeam": "Harborough Town Juniors U12 Rangers",
@@ -1802,6 +1794,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 14:00",
+                    "homeTeam": "Harborough Town Juniors U12 Rangers",
+                    "score": "2 - 0 (HT 1-0)",
+                    "homeScore": "2",
+                    "awayScore": "0",
+                    "awayTeam": "Ingles U12 Reds",
+                    "division": "U12 ESF26 - The Ultimate Tour Div 3"
+                },
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Royce Rangers U12 Raptors",
