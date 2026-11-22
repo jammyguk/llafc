@@ -1,5 +1,5 @@
 {
- "updated": "18 NOV 26",
+ "updated": "22 NOV 26",
  "cups": [
   {
    "name": "Soar Valley Press Sunday Youth U12 County Cup",
@@ -2321,10 +2321,10 @@
    "name": "U13 League Cup",
    "fixtures": [
     {
-     "date": "22/11/26 10:30",
-     "home": "Thurlaston Magpies Junior U13 Magpies",
-     "away": "Studs Junior U13",
-     "venue": "THURLASTON FOOTBALL CLUB"
+     "date": "TBC",
+     "home": "Studs Junior U13",
+     "away": "Glenfield United FC U13 Hawks",
+     "venue": "WINSTANLEY COMMUNITY COLLEGE"
     },
     {
      "date": "29/11/26 10:30",
@@ -2524,16 +2524,16 @@
    "name": "U13 Martin Dexter Cup",
    "fixtures": [
     {
-     "date": "22/11/26 10:30",
-     "home": "Kirby Muxloe U13 Kings",
-     "away": "Royce Rangers U13 Avengers",
-     "venue": "KIRBY MUXLOE SPORTS CLUB"
-    },
-    {
      "date": "29/11/26 10:30",
      "home": "Allexton & New Parks Junior U13 Hawks",
      "away": "North Kilworth Junior & Youth U13 Lions",
      "venue": "THE HEREWOODE ACADEMY"
+    },
+    {
+     "date": "29/11/26 10:30",
+     "home": "Corby Kingswood U13 Vikings",
+     "away": "Royce Rangers U13 Avengers",
+     "venue": "CORBY KINGSWOOD JUNIORS FC"
     },
     {
      "date": "29/11/26 10:30",
