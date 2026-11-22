@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-22 16:18:18 UTC",
+    "updated": "2026-11-22 16:53:13 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -13363,14 +13363,6 @@
             "name": "U13 Division 11",
             "fixtures": [
                 {
-                    "fixtureDateTime": "22\/11\/26 14:00",
-                    "homeTeam": "Melton Foxes FC U13 Pumas",
-                    "awayTeam": "Birstall United U13 Wolves",
-                    "location": "Mars Sports Ground, Saxby Rd, Melton, LE13 1BP.",
-                    "competition": "Under 13 Division 11",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "29\/11\/26 10:30",
                     "homeTeam": "Ambleside Junior U13 Nomads",
                     "awayTeam": "Fleckney Athletic Junior U13 Fire",
@@ -13772,6 +13764,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 14:00",
+                    "homeTeam": "Melton Foxes FC U13 Pumas",
+                    "score": "1 - 5 (HT 0-3)",
+                    "homeScore": "1",
+                    "awayScore": "5",
+                    "awayTeam": "Birstall United U13 Wolves",
+                    "division": "Under 13 Division 11"
+                },
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Riverside United Junior U13 Eagles",
