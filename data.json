@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-22 15:43:40 UTC",
+    "updated": "2026-11-22 16:18:18 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -6836,14 +6836,6 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Hinckley Borough FC U12 Boys",
-                    "awayTeam": "Beaumont Town 2012 U12 Pumas",
-                    "location": "WEAVERS SPRINGS PARK",
-                    "competition": "Under 12 Division 13",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Thurlaston Magpies Junior U12 Falcons",
                     "awayTeam": "Beaumont Town 2012 U12 Pumas",
                     "location": "THURLASTON FOOTBALL CLUB",
@@ -7101,6 +7093,15 @@
                     "homeScore": "1",
                     "awayScore": "1",
                     "awayTeam": "Karma Leicester F.C. U12 Blue",
+                    "division": "Under 12 Division 13"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Hinckley Borough FC U12 Boys",
+                    "score": "6 - 1 (HT 3-0)",
+                    "homeScore": "6",
+                    "awayScore": "1",
+                    "awayTeam": "Beaumont Town 2012 U12 Pumas",
                     "division": "Under 12 Division 13"
                 },
                 {
@@ -13053,7 +13054,7 @@
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Fleckney Athletic Junior U13 Foxes",
-                    "score": "3 - 1",
+                    "score": "3 - 1 (HT 1-0)",
                     "homeScore": "3",
                     "awayScore": "1",
                     "awayTeam": "Narborough Foxes U13 White",
@@ -13774,7 +13775,7 @@
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Riverside United Junior U13 Eagles",
-                    "score": "4 - 3",
+                    "score": "4 - 3 (HT 2-1)",
                     "homeScore": "4",
                     "awayScore": "3",
                     "awayTeam": "Fleckney Athletic Junior U13 Fire",
