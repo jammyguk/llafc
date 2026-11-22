@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-22 15:08:27 UTC",
+    "updated": "2026-11-22 15:43:40 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -3325,7 +3325,7 @@
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Saffron Dynamo U12 Phoenix",
-                    "score": "1 - 2",
+                    "score": "1 - 2 (HT 0-0)",
                     "homeScore": "1",
                     "awayScore": "2",
                     "awayTeam": "Rothley Imps Junior U12 Raptors",
@@ -3615,14 +3615,6 @@
                     "status": "Postponed Match Notes: 14 days Fleckney"
                 },
                 {
-                    "fixtureDateTime": "22\/11\/26 14:00",
-                    "homeTeam": "Borough Alliance Junior U12 Wolves",
-                    "awayTeam": "Hinckley Town Juniors U12 Warriors",
-                    "location": "SYMINGTONS RECREATION GROUND",
-                    "competition": "U12 A.B. WALLACE TROPHIES Div 6",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "29\/11\/26 10:30",
                     "homeTeam": "Fleckney Athletic Junior U12 Foxes",
                     "awayTeam": "Anstey Nomads U12 Reds",
@@ -3880,6 +3872,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 14:00",
+                    "homeTeam": "Borough Alliance Junior U12 Wolves",
+                    "score": "1 - 3",
+                    "homeScore": "1",
+                    "awayScore": "3",
+                    "awayTeam": "Hinckley Town Juniors U12 Warriors",
+                    "division": "U12 A.B. WALLACE TROPHIES Div 6"
+                },
                 {
                     "fixtureDateTime": "22\/11\/26 10:30",
                     "homeTeam": "Barrow Town U12 Eagles",
@@ -4728,14 +4729,6 @@
             "name": "U12 Division 8",
             "fixtures": [
                 {
-                    "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Aylestone Park Youth U12 94",
-                    "awayTeam": "Mountsorrel Juniors U12 Tigers",
-                    "location": "AYLESTONE PARK",
-                    "competition": "Under 12 Division 8",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "29\/11\/26 10:30",
                     "homeTeam": "Coalville Town Ravens U12 Rooks",
                     "awayTeam": "Aylestone Park Youth U12 94",
@@ -4921,6 +4914,15 @@
                     "homeScore": "2",
                     "awayScore": "8",
                     "awayTeam": "Loughborough Lions AFC U12 Bronzes",
+                    "division": "Under 12 Division 8"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Aylestone Park Youth U12 94",
+                    "score": "6 - 1 (HT 2-0)",
+                    "homeScore": "6",
+                    "awayScore": "1",
+                    "awayTeam": "Mountsorrel Juniors U12 Tigers",
                     "division": "Under 12 Division 8"
                 },
                 {
@@ -6216,7 +6218,7 @@
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Royce Rangers U12 Raiders",
-                    "score": "1 - 0",
+                    "score": "1 - 0 (HT 1-0)",
                     "homeScore": "1",
                     "awayScore": "0",
                     "awayTeam": "Ibstock United Juniors U12 Lions",
@@ -8332,14 +8334,6 @@
             "name": "U13 Division 2",
             "fixtures": [
                 {
-                    "fixtureDateTime": "22\/11\/26 12:30",
-                    "homeTeam": "Beaumont Park U13 Lions",
-                    "awayTeam": "Community Football Academy U13 Kickstart",
-                    "location": "BEAUMONT LEYS SCHOOL",
-                    "competition": "U13s Norths of Leicester Div 2",
-                    "status": ""
-                },
-                {
                     "fixtureDateTime": "29\/11\/26 10:30",
                     "homeTeam": "Melton Town U13",
                     "awayTeam": "Corby Kingswood U13 Vikings",
@@ -8493,6 +8487,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 12:30",
+                    "homeTeam": "Beaumont Park U13 Lions",
+                    "score": "2 - 4 (HT 1-0)",
+                    "homeScore": "2",
+                    "awayScore": "4",
+                    "awayTeam": "Community Football Academy U13 Kickstart",
+                    "division": "U13s Norths of Leicester Div 2"
+                },
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Blaby &amp; Whetstone U13 Blues",
