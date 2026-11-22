@@ -2321,16 +2321,16 @@
    "name": "U13 League Cup",
    "fixtures": [
     {
-     "date": "TBC",
-     "home": "Studs Junior U13",
-     "away": "Glenfield United FC U13 Hawks",
-     "venue": "WINSTANLEY COMMUNITY COLLEGE"
-    },
-    {
      "date": "29/11/26 10:30",
      "home": "Heather Juniors U13 Jaguars",
      "away": "Wigston Willow U13 Spitfires",
      "venue": "HEATHER ST JOHNS FC (ST JOHNS PARK)"
+    },
+    {
+     "date": "29/11/26 10:30",
+     "home": "Studs Junior U13",
+     "away": "Glenfield United FC U13 Hawks",
+     "venue": "WINSTANLEY COMMUNITY COLLEGE"
     },
     {
      "date": "29/11/26 10:30",
