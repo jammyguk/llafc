@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-22 16:53:13 UTC",
+    "updated": "2026-11-22 17:28:21 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -1424,14 +1424,6 @@
             "name": "U12 Division 3",
             "fixtures": [
                 {
-                    "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Leicester Nirvana Juniors U12 Reds",
-                    "awayTeam": "East Goscote United U12 Boys",
-                    "location": "HAMILTON PARK",
-                    "competition": "U12 ESF26 - The Ultimate Tour Div 3",
-                    "status": "Postponed"
-                },
-                {
                     "fixtureDateTime": "22\/11\/26 14:00",
                     "homeTeam": "Harborough Town Juniors U12 Rangers",
                     "awayTeam": "Ingles U12 Reds",
@@ -1798,6 +1790,15 @@
                     "location": "ROYCE RANGERS FC",
                     "competition": "U12 ESF26 - The Ultimate Tour Div 3",
                     "status": ""
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Leicester Nirvana Juniors U12 Reds",
+                    "awayTeam": "East Goscote United U12 Boys",
+                    "location": "HAMILTON PARK",
+                    "competition": "U12 ESF26 - The Ultimate Tour Div 3",
+                    "status": "Postponed",
+                    "removed": true
                 }
             ],
             "results": [
@@ -1817,15 +1818,6 @@
                     "homeScore": "3",
                     "awayScore": "4",
                     "awayTeam": "FC Burbage U12 Lions",
-                    "division": "U12 ESF26 - The Ultimate Tour Div 3"
-                },
-                {
-                    "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Leicester Nirvana Juniors U12 Reds",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "East Goscote United U12 Boys",
                     "division": "U12 ESF26 - The Ultimate Tour Div 3"
                 },
                 {
@@ -5709,14 +5701,6 @@
                 },
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
-                    "homeTeam": "Allexton &amp; New Parks Junior U12 Hawks",
-                    "awayTeam": "Loughborough Dynamo Junior U12 Golds",
-                    "location": "THE HEREWOODE ACADEMY",
-                    "competition": "Under 12 Division 10",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Kibworth Town U12 Falcons",
                     "awayTeam": "Croft Juniors 2013 U12 Diamonds",
                     "location": "Birds Barn, Fleckney Road LE8 0HJ",
@@ -5861,6 +5845,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 12:30",
+                    "homeTeam": "Allexton &amp; New Parks Junior U12 Hawks",
+                    "score": "5 - 2 (HT 2-2)",
+                    "homeScore": "5",
+                    "awayScore": "2",
+                    "awayTeam": "Loughborough Dynamo Junior U12 Golds",
+                    "division": "Under 12 Division 10"
+                },
                 {
                     "fixtureDateTime": "22\/11\/26 12:30",
                     "homeTeam": "Kibworth Town U12 Falcons",
@@ -6835,14 +6828,6 @@
             "name": "U12 Division 13",
             "fixtures": [
                 {
-                    "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Thurlaston Magpies Junior U12 Falcons",
-                    "awayTeam": "Beaumont Town 2012 U12 Pumas",
-                    "location": "THURLASTON FOOTBALL CLUB",
-                    "competition": "Under 12 Division 13",
-                    "status": "Postponed"
-                },
-                {
                     "fixtureDateTime": "29\/11\/26 10:30",
                     "homeTeam": "Beaumont Town 2012 U12 Pumas",
                     "awayTeam": "Loughborough Lions AFC U12 Silvers",
@@ -7065,6 +7050,15 @@
                     "location": "THE GROVE COMMUNITY HUB",
                     "competition": "Under 12 Division 13",
                     "status": ""
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Thurlaston Magpies Junior U12 Falcons",
+                    "awayTeam": "Beaumont Town 2012 U12 Pumas",
+                    "location": "THURLASTON FOOTBALL CLUB",
+                    "competition": "Under 12 Division 13",
+                    "status": "Postponed",
+                    "removed": true
                 }
             ],
             "results": [
@@ -7101,15 +7095,6 @@
                     "score": "6 - 1 (HT 3-0)",
                     "homeScore": "6",
                     "awayScore": "1",
-                    "awayTeam": "Beaumont Town 2012 U12 Pumas",
-                    "division": "Under 12 Division 13"
-                },
-                {
-                    "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Thurlaston Magpies Junior U12 Falcons",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
                     "awayTeam": "Beaumont Town 2012 U12 Pumas",
                     "division": "Under 12 Division 13"
                 },
@@ -9196,14 +9181,6 @@
                     "status": "Postponed"
                 },
                 {
-                    "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Royce Rangers U13 Avengers",
-                    "awayTeam": "Coalville Town Ravens U13 Spartans",
-                    "location": "ROYCE RANGERS FC",
-                    "competition": "Under 13 Division 4",
-                    "status": "Postponed"
-                },
-                {
                     "fixtureDateTime": "29\/11\/26 10:30",
                     "homeTeam": "Coalville Town Ravens U13 Spartans",
                     "awayTeam": "FC Burbage U13 Panthers",
@@ -9378,6 +9355,15 @@
                     "location": "THE NEWBRIDGE SCHOOL",
                     "competition": "Under 13 Division 4",
                     "status": ""
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Royce Rangers U13 Avengers",
+                    "awayTeam": "Coalville Town Ravens U13 Spartans",
+                    "location": "ROYCE RANGERS FC",
+                    "competition": "Under 13 Division 4",
+                    "status": "Postponed",
+                    "removed": true
                 }
             ],
             "results": [
@@ -9406,15 +9392,6 @@
                     "homeScore": "Postponed P",
                     "awayScore": "P",
                     "awayTeam": "AFC Andrews U13 Cobras",
-                    "division": "Under 13 Division 4"
-                },
-                {
-                    "fixtureDateTime": "22\/11\/26 10:30",
-                    "homeTeam": "Royce Rangers U13 Avengers",
-                    "score": "Postponed P - P",
-                    "homeScore": "Postponed P",
-                    "awayScore": "P",
-                    "awayTeam": "Coalville Town Ravens U13 Spartans",
                     "division": "Under 13 Division 4"
                 },
                 {
