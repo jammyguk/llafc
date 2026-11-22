@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-21 21:04:14 UTC",
+    "updated": "2026-11-22 09:40:47 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -1823,6 +1823,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Leicester Nirvana Juniors U12 Reds",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "East Goscote United U12 Boys",
+                    "division": "U12 ESF26 - The Ultimate Tour Div 3"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Carib Sport &amp; Social Football Club U12 S",
@@ -3879,6 +3888,15 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Community Football Academy U12",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Fleckney Athletic Junior U12 Foxes",
+                    "division": "U12 A.B. WALLACE TROPHIES Div 6"
+                },
+                {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Borough Alliance Junior U12 Wolves",
                     "score": "1 - 4",
@@ -5816,6 +5834,15 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "22\/11\/26 12:30",
+                    "homeTeam": "Kibworth Town U12 Falcons",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Croft Juniors 2013 U12 Diamonds",
+                    "division": "Under 12 Division 10"
+                },
+                {
                     "fixtureDateTime": "08\/11\/26 14:30",
                     "homeTeam": "Kibworth Town U12 Falcons",
                     "score": "1 - 8 (HT 0-5)",
@@ -6166,6 +6193,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "North Kilworth Junior &amp; Youth U12 Tigers",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Hathern Juniors U12 Falcons",
+                    "division": "Under 12 Division 11"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Coalville Town Ravens U12 Redwings",
@@ -7012,6 +7048,15 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Thurlaston Magpies Junior U12 Falcons",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Beaumont Town 2012 U12 Pumas",
+                    "division": "Under 12 Division 13"
+                },
+                {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Amanah All Stars U12 Amanah All Stars",
                     "score": "6 - 0 (HT 1-0)",
@@ -7576,6 +7621,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 14:00",
+                    "homeTeam": "Iannis FC U12 Reds",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Oadby Owls U12 Falcons",
+                    "division": "Under 12 Division 14"
+                },
                 {
                     "fixtureDateTime": "15\/11\/26 12:30",
                     "homeTeam": "Shepshed Dynamo Youth &amp; Junior U12 Cobra",
@@ -8708,7 +8762,7 @@
                     "awayTeam": "Leicester Nirvana Juniors U13 Reds",
                     "location": "AYLESTONE RECREATION GROUND",
                     "competition": "U13s MG Digital Div 3",
-                    "status": ""
+                    "status": "Postponed"
                 },
                 {
                     "fixtureDateTime": "13\/12\/26 10:30",
@@ -8724,7 +8778,7 @@
                     "awayTeam": "North Kilworth Junior &amp; Youth U13 Lions",
                     "location": "AYLESTONE RECREATION GROUND",
                     "competition": "U13s MG Digital Div 3",
-                    "status": ""
+                    "status": "Postponed"
                 },
                 {
                     "fixtureDateTime": "13\/12\/26 10:30",
@@ -8780,7 +8834,7 @@
                     "awayTeam": "AFC Andrews U13 Warriors",
                     "location": "SOUTH KILWORTH RECREATION GROUND",
                     "competition": "U13s MG Digital Div 3",
-                    "status": ""
+                    "status": "Postponed"
                 },
                 {
                     "fixtureDateTime": "20\/12\/26 10:30",
@@ -8804,7 +8858,7 @@
                     "awayTeam": "Market Bosworth Town Juniors U13 Knights",
                     "location": "AYLESTONE RECREATION GROUND",
                     "competition": "U13s MG Digital Div 3",
-                    "status": ""
+                    "status": "Postponed"
                 },
                 {
                     "fixtureDateTime": "03\/01\/27 10:30",
@@ -8840,6 +8894,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Oadby Owls U13 Juniors",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "AFC Andrews U13 Warriors",
+                    "division": "U13s MG Digital Div 3"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 11:05",
                     "homeTeam": "Anstey Nomads U13 78's",
@@ -9271,6 +9334,24 @@
             ],
             "results": [
                 {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Kirby Muxloe U13 Kings",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "AFC Andrews U13 Cobras",
+                    "division": "Under 13 Division 4"
+                },
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Royce Rangers U13 Avengers",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Coalville Town Ravens U13 Spartans",
+                    "division": "Under 13 Division 4"
+                },
+                {
                     "fixtureDateTime": "15\/11\/26 10:30",
                     "homeTeam": "Loughborough Lions AFC U13 Reds",
                     "score": "1 - 3",
@@ -9695,6 +9776,15 @@
                 }
             ],
             "results": [
+                {
+                    "fixtureDateTime": "22\/11\/26 10:30",
+                    "homeTeam": "Oadby Owls U13 Hawks",
+                    "score": "Postponed P - P",
+                    "homeScore": "Postponed P",
+                    "awayScore": "P",
+                    "awayTeam": "Thurlaston Magpies Junior U13 Magpies",
+                    "division": "Under 13 Division 5"
+                },
                 {
                     "fixtureDateTime": "08\/11\/26 13:00",
                     "homeTeam": "Birstall United U13 Foxes",
