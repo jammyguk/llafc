@@ -1,5 +1,5 @@
 {
- "updated": "22 NOV 26",
+ "updated": "23 NOV 26",
  "cups": [
   {
    "name": "Soar Valley Press Sunday Youth U12 County Cup",
@@ -2106,12 +2106,6 @@
     },
     {
      "date": "29/11/26 10:30",
-     "home": "Highfield Rangers J&Y U12 Tigers",
-     "away": "AFC Market Bosworth Juniors U12 Wolves",
-     "venue": "HIGHFIELD RANGERS FC"
-    },
-    {
-     "date": "29/11/26 10:30",
      "home": "Hinckley Town Juniors U12 Dragons",
      "away": "Community Football Academy U12 Shubaan",
      "venue": "CLARENDON PARK"
@@ -2327,6 +2321,13 @@
      "away": "Dunton & Broughton United Jnrs U12 Jagua",
      "hs": 1,
      "as": 0
+    },
+    {
+     "date": "29/11/26",
+     "home": "Highfield Rangers J&Y U12 Tigers",
+     "away": "AFC Market Bosworth Juniors U12 Wolves",
+     "hs": 5,
+     "as": 2
     }
    ]
   },
@@ -2376,7 +2377,129 @@
      "venue": "COSBY RECREATION GROUND"
     }
    ],
-   "results": []
+   "results": [
+    {
+     "date": "15/11/26",
+     "home": "Glen Villa Juniors U12 Panthers",
+     "away": "Karma Leicester F.C. U12",
+     "hs": 4,
+     "as": 1
+    },
+    {
+     "date": "15/11/26",
+     "home": "Anstey Nomads U12 24's",
+     "away": "Rothley Imps Junior U12 Warriors",
+     "hs": 4,
+     "as": 4,
+     "pens": [
+      3,
+      1
+     ]
+    },
+    {
+     "date": "15/11/26",
+     "home": "Anstey Nomads U12 Reds",
+     "away": "Birstall United U12 Bears",
+     "hs": 1,
+     "as": 2
+    },
+    {
+     "date": "15/11/26",
+     "home": "Anstey Nomads U12 Swifts",
+     "away": "Whetstone Athletic U12 Panthers",
+     "hs": 0,
+     "as": 4
+    },
+    {
+     "date": "15/11/26",
+     "home": "Barrow Town U12 Eagles",
+     "away": "Borough Alliance Junior U12 Wolves",
+     "hs": 3,
+     "as": 1
+    },
+    {
+     "date": "15/11/26",
+     "home": "Chetwynd A U12 Cobras",
+     "away": "GNG Juniors U12 Lions",
+     "hs": 2,
+     "as": 2,
+     "pens": [
+      4,
+      3
+     ]
+    },
+    {
+     "date": "15/11/26",
+     "home": "Dunton & Broughton United Jnrs U12 Tiger",
+     "away": "Oadby Owls U12 Eagles",
+     "hs": 4,
+     "as": 3
+    },
+    {
+     "date": "15/11/26",
+     "home": "Fleckney Athletic Junior U12 Foxes",
+     "away": "Saffron Dynamo U12 Phoenix",
+     "hs": 0,
+     "as": 5
+    },
+    {
+     "date": "15/11/26",
+     "home": "Hinckley Town Juniors U12 Warriors",
+     "away": "Community Football Academy U12",
+     "hs": 2,
+     "as": 2,
+     "pens": [
+      2,
+      4
+     ]
+    },
+    {
+     "date": "15/11/26",
+     "home": "Houghton Rangers Junior U12 Foxes",
+     "away": "Uppingham Town U12",
+     "hs": 6,
+     "as": 3
+    },
+    {
+     "date": "15/11/26",
+     "home": "Lutterworth Athletic Youth U12 Thunder",
+     "away": "Kibworth Town U12 Eagles",
+     "hs": 4,
+     "as": 5
+    },
+    {
+     "date": "15/11/26",
+     "home": "Mowbray Rangers U12 Jaguars",
+     "away": "Kegworth Imps U12",
+     "hs": 1,
+     "as": 12
+    },
+    {
+     "date": "15/11/26",
+     "home": "Rothley Imps Junior U12 Raptors",
+     "away": "Coalville Town Ravens U12 Ravens",
+     "hs": 1,
+     "as": 1,
+     "pens": [
+      1,
+      3
+     ]
+    },
+    {
+     "date": "15/11/26",
+     "home": "Sporting Markfield U12 Foxes",
+     "away": "Groby Juniors U12 Spartans",
+     "hs": 4,
+     "as": 1
+    },
+    {
+     "date": "15/11/26",
+     "home": "Wigston Willow U12 Pumas",
+     "away": "Harborough Town Juniors U12 2012",
+     "hs": 0,
+     "as": 9
+    }
+   ]
   },
   {
    "name": "U13 League Cup",
