@@ -1,5 +1,5 @@
 {
-    "updated": "2026-11-27 11:20:57 UTC",
+    "updated": "2026-11-27 20:14:15 UTC",
     "leagues": {
         "u12-div1": {
             "name": "U12 Div 1 D&J Mobile Catering Ltd",
@@ -7111,6 +7111,22 @@
             "name": "U12 Division 12",
             "fixtures": [
                 {
+                    "fixtureDateTime": "17\/01\/26 12:30",
+                    "homeTeam": "Leicester Nirvana Juniors U12 Greens",
+                    "awayTeam": "Loughborough Dynamo Junior U12 Ambers",
+                    "location": "HAMILTON PARK",
+                    "competition": "Under 12 Division 12",
+                    "status": ""
+                },
+                {
+                    "fixtureDateTime": "24\/01\/26 12:30",
+                    "homeTeam": "AFC Barwell U12 Raptors",
+                    "awayTeam": "Borough Alliance Junior U12 Pumas",
+                    "location": "AFC BARWELL",
+                    "competition": "Under 12 Division 12",
+                    "status": ""
+                },
+                {
                     "fixtureDateTime": "29\/11\/26 12:30",
                     "homeTeam": "Leicester Nirvana Juniors U12 Greens",
                     "awayTeam": "Anstey Nomads U12 47's",
@@ -7149,6 +7165,14 @@
                     "location": "MOORBARNS LANE",
                     "competition": "Under 12 Division 12",
                     "status": "Postponed Match Notes: 14 days Lutterworth"
+                },
+                {
+                    "fixtureDateTime": "13\/12\/26 10:30",
+                    "homeTeam": "Lutterworth Town Juniors U12 AFC",
+                    "awayTeam": "Loughborough Dynamo Junior U12 Ambers",
+                    "location": "MOORBARNS LANE",
+                    "competition": "Under 12 Division 12",
+                    "status": ""
                 },
                 {
                     "fixtureDateTime": "13\/12\/26 12:30",
@@ -7307,14 +7331,6 @@
                     "homeTeam": "Loughborough Lions AFC U12 Golds",
                     "awayTeam": "Rothley Imps Junior U12 Renegades",
                     "location": "Charnwood College LE11 4SQ",
-                    "competition": "Under 12 Division 12",
-                    "status": ""
-                },
-                {
-                    "fixtureDateTime": "31\/01\/27 10:30",
-                    "homeTeam": "Lutterworth Town Juniors U12 AFC",
-                    "awayTeam": "Loughborough Dynamo Junior U12 Ambers",
-                    "location": "MOORBARNS LANE",
                     "competition": "Under 12 Division 12",
                     "status": ""
                 },
@@ -7679,6 +7695,14 @@
                     "homeTeam": "Karma Leicester F.C. U12 Blue",
                     "awayTeam": "Loughborough Lions AFC U12 Silvers",
                     "location": "THE GROVE COMMUNITY HUB",
+                    "competition": "Under 12 Division 13",
+                    "status": ""
+                },
+                {
+                    "fixtureDateTime": "13\/12\/26 12:30",
+                    "homeTeam": "Thurlaston Magpies Junior U12 Falcons",
+                    "awayTeam": "Glenfield United FC U12 Foxes",
+                    "location": "THURLASTON FOOTBALL CLUB",
                     "competition": "Under 12 Division 13",
                     "status": ""
                 },
@@ -12682,6 +12706,14 @@
             "fixtures": [
                 {
                     "fixtureDateTime": "29\/11\/26 10:30",
+                    "homeTeam": "Anstey Nomads U13 47's",
+                    "awayTeam": "Loughborough Phoenix FC U13 Juniors",
+                    "location": "ANSTEY NOMADS FC",
+                    "competition": "Under 13 Division 8",
+                    "status": ""
+                },
+                {
+                    "fixtureDateTime": "29\/11\/26 10:30",
                     "homeTeam": "Croft Juniors 2013 U13 Diamonds",
                     "awayTeam": "Asfordby U13 Tigers",
                     "location": "STONEY STANTON WAR MEMORIAL PLAYING FIELDS",
@@ -12695,14 +12727,6 @@
                     "location": "Towels Field LE12 5TD",
                     "competition": "Under 13 Division 8",
                     "status": "Postponed"
-                },
-                {
-                    "fixtureDateTime": "29\/11\/26 12:30",
-                    "homeTeam": "Anstey Nomads U13 47's",
-                    "awayTeam": "Loughborough Phoenix FC U13 Juniors",
-                    "location": "RATBY SPORTS CLUB",
-                    "competition": "Under 13 Division 8",
-                    "status": ""
                 },
                 {
                     "fixtureDateTime": "29\/11\/26 12:30",
